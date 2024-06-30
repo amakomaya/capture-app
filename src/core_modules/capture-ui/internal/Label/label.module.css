@@ -1,0 +1,11 @@
+.labelContainer {
+    font-size: 14px;
+    color: #212934;
+}
+
+.labelContainerVertical {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

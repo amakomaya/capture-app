@@ -1,0 +1,1788 @@
+# 
+# Translators:
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2024
+# Karoline Tufte Lien <karoline@dhis2.org>, 2024
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2024-04-12T20:48:54.429Z\n"
+"PO-Revision-Date: 2019-06-27 07:31+0000\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2024\n"
+"Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Choose one or more dates..."
+msgstr "Velg en eller flere datoer"
+
+msgid "Choose a date..."
+msgstr "Velg en dato"
+
+msgid "Today"
+msgstr "I dag"
+
+msgid ""
+"A possible reason for this is that the browser or mode (e.g. privacy mode) "
+"is not supported. See log for details."
+msgstr ""
+"En mulig årsak til dette er at nettleseren eller modusen (f.eks. "
+"Personvernmodus) ikke støttes. Se logg for detaljer."
+
+msgid ""
+"You opened another version of the Capture App in the same domain. Currently,"
+" the Capture App only supports running one version concurrently (in the same"
+" domain). Please refresh this page if you would like to use this version "
+"again, but be aware that this will close other versions."
+msgstr ""
+"Du åpnet en annen versjon av Capture-appen i samme domene. Foreløpig støtter"
+" Capture App bare å kjøre en versjon samtidig (i samme domene). Oppdater "
+"denne siden hvis du vil bruke denne versjonen igjen, men vær oppmerksom på "
+"at dette vil lukke andre versjoner."
+
+msgid "View {{programName}} dashboard"
+msgstr "Vis {{programName}} dashbord"
+
+msgid "View dashboard"
+msgstr "Vis dashbord"
+
+msgid "View active enrollment"
+msgstr "Vis aktiv registrering"
+
+msgid "Re-enroll"
+msgstr "Registrer på nytt"
+
+msgid "in"
+msgstr "i"
+
+msgid "Enrolled"
+msgstr "Registrert"
+
+msgid "Previously enrolled"
+msgstr "Tidligere registrert"
+
+msgid "Organisation unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Date of enrollment"
+msgstr "Dato for registrering"
+
+msgid "Last updated"
+msgstr "Sist oppdatert"
+
+msgid "error encountered during field validation"
+msgstr "En feil oppsto under feltvalidering"
+
+msgid "error"
+msgstr "Feil"
+
+msgid "This value is validating"
+msgstr "Denne verdien validerer"
+
+msgid "Async field update failed"
+msgstr "Asynkront feltoppdatering mislyktes"
+
+msgid "A value is required"
+msgstr "En verdi kreves"
+
+msgid "Please provide a valid number"
+msgstr "Oppgi et gyldig nummer"
+
+msgid "Please provide a valid integer"
+msgstr "Oppgi et gyldig heltall"
+
+msgid "Please provide a positive integer"
+msgstr "Oppgi et positivt heltall"
+
+msgid "Please provide zero or a positive integer"
+msgstr "Oppgi null eller et positivt heltall"
+
+msgid "Please provide a negative integer"
+msgstr "Oppgi et negativt heltall"
+
+msgid "Please provide a valid date"
+msgstr "Oppgi en gyldig dato"
+
+msgid "A date in the future is not allowed"
+msgstr "En dato i fremtiden er ikke tillatt"
+
+msgid "Please provide a valid date and time"
+msgstr "Oppgi en gyldig dato og tid"
+
+msgid "Please provide a valid time"
+msgstr "Oppgi en gyldig tid"
+
+msgid "Please provide an integer between 0 and 100"
+msgstr "Oppgi et heltall mellom 0 og 100"
+
+msgid "Please provide a valid url"
+msgstr "Oppgi en gyldig url"
+
+msgid "Please provide a valid email address"
+msgstr "Vennligst fyll ut en gyldig e-postadresse"
+
+msgid "Please provide a valid age"
+msgstr "Oppgi en gyldig alder"
+
+msgid "Please provide a valid phone number"
+msgstr "Oppgi et gyldig telefonnummer"
+
+msgid "Please provide a valid organisation unit"
+msgstr "Oppgi en gyldig organisasjonsenhet"
+
+msgid "Please provide valid coordinates"
+msgstr "Oppgi gyldige koordinater"
+
+msgid "This value already exists"
+msgstr "Denne verdien finnes allerede"
+
+msgid "\"From\" cannot be greater than \"To\""
+msgstr "\"Fra\" kan ikke være større enn \"Til\""
+
+msgid "Checking..."
+msgstr "Sjekker..."
+
+msgid "Area"
+msgstr "Areal"
+
+msgid "Coordinate"
+msgstr "Koordinater"
+
+msgid "Enrollment"
+msgstr "Registrering"
+
+msgid "Complete event"
+msgstr "Fullfør hendelse"
+
+msgid "{{ stageName }} - Basic info"
+msgstr "{{ stageName }} - Grunnleggende informasjon"
+
+msgid "{{ stageName }} - Assignee"
+msgstr "{{ stageName }} - Tildelt bruker"
+
+msgid "{{ stageName }} - Status"
+msgstr "{{ stageName }} - Status"
+
+msgid "Please select {{categoryName}}"
+msgstr "Velg {{categoryName}}"
+
+msgid "A future date is not allowed"
+msgstr "En fremtidig dato er ikke tillatt"
+
+msgid "Saving a new enrollment in {{programName}} in {{orgUnitName}}."
+msgstr "Lagrer en ny registrering i {{programName}} i {{orgUnitName}}."
+
+msgid "Saving a {{trackedEntityName}} in {{programName}} in {{orgUnitName}}."
+msgstr "Lagrer {{trackedEntityName}} i {{programName}} i {{orgUnitName}}."
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Metadata error. see log for details"
+msgstr "Metadata feil, se logg for detaljer"
+
+msgid "{{ stageName }} - Details"
+msgstr "{{ stageName }} - Detaljer"
+
+msgid "{{ stageName }} - {{ sectionName }}"
+msgstr "{{ stageName }} - {{ sectionName }}"
+
+msgid "Assigned user"
+msgstr "Tildelt programbruker"
+
+msgid "Search for user"
+msgstr "Søk etter bruker"
+
+msgid "Basic info"
+msgstr "Grunnleggende informasjon"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Comments"
+msgstr "Kommentarer"
+
+msgid "Relationships"
+msgstr "Relasjoner"
+
+msgid "Assignee"
+msgstr "Tildelt programbruker"
+
+msgid "Saving to {{programName}} in {{orgUnitName}}"
+msgstr "Lagrer i {{programName}} i {{orgUnitName}}"
+
+msgid ""
+"This is not an event program or the metadata is corrupt. See log for "
+"details."
+msgstr ""
+"Dette er ikke et hendelsesprogram, eller metadataene er korrupte. Se logg "
+"for detaljer."
+
+msgid "This event"
+msgstr "Denne hendelsen"
+
+msgid ""
+"Relationship of type {{relationshipTypeName}} to {{entityName}} already "
+"exists"
+msgstr ""
+"Relasjon av type {{relationshipTypeName}} til {{entityName}} finnes allerede"
+
+msgid "Active"
+msgstr "Aktiv"
+
+msgid "Completed"
+msgstr "Fullført"
+
+msgid "Please add or cancel comment before saving the event"
+msgstr "Legg til eller avbryt kommentar før du lagrer hendelsen"
+
+msgid "Save and add another"
+msgstr "Lagre og legg til en til"
+
+msgid "Save and exit"
+msgstr "Lagre og avslutt"
+
+msgid "Finish"
+msgstr "Fullfør"
+
+msgid "Save without completing"
+msgstr "Lagre uten å fullføre"
+
+msgid "Complete"
+msgstr "Fullfør"
+
+msgid "No write access"
+msgstr "Ingen skrivetilgang"
+
+msgid "New {{titleText}}"
+msgstr "Ny {{titleText}}"
+
+msgid "Switch to form view"
+msgstr "Bytt til skjemavisning"
+
+msgid "Switch to row view"
+msgstr "Bytt til radvisning"
+
+msgid "events added"
+msgstr "Hendelser lagt til"
+
+msgid "No events added"
+msgstr "Ingen hendelser lagt til"
+
+msgid "New event relationship"
+msgstr "Ny hendelsesrelasjon"
+
+msgid "Adding relationship to event."
+msgstr "Legger til relasjon til hendelsen."
+
+msgid "Go back to event without saving relationship"
+msgstr "Gå tilbake til hendelsen uten å lagre relasjonen"
+
+msgid "Discard unsaved changes?"
+msgstr "Vil du forkaste ulagrede endringer?"
+
+msgid ""
+"Leaving this page will discard the selections you made for a new "
+"relationship"
+msgstr ""
+"Hvis du forlater denne siden, vil du forkaste valgene du gjorde for en ny "
+"relasjon"
+
+msgid "Yes, discard changes"
+msgstr "Ja, forkast endringer"
+
+msgid "No, cancel"
+msgstr "Nei, avbryt"
+
+msgid "New event"
+msgstr "Ny hendelse"
+
+msgid "You don't have access to create an event in the current selections"
+msgstr "Du har ikke tilgang til å lage en hendelse i gjeldende valg"
+
+msgid "Save"
+msgstr "Lagre"
+
+msgid "Saving a {{trackedEntityName}}"
+msgstr "Lagrer en {{trackedEntityName}}"
+
+msgid "without"
+msgstr "uten"
+
+msgid "enrollment"
+msgstr "registrering"
+
+msgid "Enroll in a program by selecting a program from the top bar."
+msgstr "Registrer i et program ved å velge et program fra topplinjen."
+
+msgid "An error has occurred. See log for details"
+msgstr "Det har oppstått en feil. Se logg for detaljer"
+
+msgid "{{programStageName}} completed"
+msgstr ""
+
+msgid ""
+"Would you like to complete the enrollment and all active events as well?"
+msgstr ""
+
+msgid "{{count}} event in {{programStageName}}"
+msgid_plural "{{count}} event in {{programStageName}}"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Yes, complete enrollment and events"
+msgstr ""
+
+msgid "Complete enrollment only"
+msgstr ""
+
+msgid "Would you like to complete the enrollment?"
+msgstr ""
+
+msgid "Complete enrollment"
+msgstr "Fullfør registrering"
+
+msgid "A duplicate exists (but there were some errors, see log for details"
+msgstr "En duplikat finnes (men det var noen feil, se logg for detaljer)"
+
+msgid ""
+"An item with this {{attributeName}} is already registered, but you don't "
+"have access to it"
+msgstr ""
+"Et element med dette {{attributeName}} er allerede registrert, men du har "
+"ikke tilgang til den."
+
+msgid "You have already registered this {{attributeName}}"
+msgstr "Du har allerede registrert dette {{attributeName}}"
+
+msgid ""
+"A {{trackedEntityTypeName}} with this {{attributeName}} is already "
+"registered"
+msgstr ""
+"En {{trackedEntityTypeName}} med dette {{attributeName}} er allerede "
+"registrert"
+
+msgid "Show registered {{trackedEntityTypeName}}"
+msgstr "Vis registrert {{trackedEntityTypeName}}"
+
+msgid "Registered person"
+msgstr "Registrert person"
+
+msgid "validation failed"
+msgstr "validering mislyktes"
+
+msgid "Errors"
+msgstr "Feil"
+
+msgid "Feedback"
+msgstr "Tilbakemelding"
+
+msgid "Indicators"
+msgstr "Indikatorer"
+
+msgid "Warnings"
+msgstr "Advarsler"
+
+msgid "Generate new event"
+msgstr "Generer en ny hendelse"
+
+msgid "Do you want to create another event?"
+msgstr "Vil du opprette en ny hendelse?"
+
+msgid "Yes, create new event"
+msgstr "Ja, legg til ny hendelse"
+
+msgid "Back to form"
+msgstr "Tilbake til skjemaet"
+
+msgid "Save anyway"
+msgstr "Lagre likevel"
+
+msgid "Validation errors and warnings"
+msgstr "Valideringsfeil og advarsler"
+
+msgid "Validation errors"
+msgstr "Valideringsfeil"
+
+msgid "Validation warnings"
+msgstr "Valideringsadvarsler"
+
+msgid "Some operations are still runnning. Please wait.."
+msgstr "Noen operasjoner kjører fortsatt. Vennligst vent.."
+
+msgid "Operations running"
+msgstr "Operasjoner kjører"
+
+msgid ""
+"This event has unsaved changes. Leaving this page without saving will lose "
+"these changes. Are you sure you want to discard unsaved changes?"
+msgstr ""
+"Denne hendelsen har ulagrede endringer. Hvis du forlater denne siden uten å "
+"lagre, mister du disse endringene. Er du sikker på at du vil forkaste "
+"ulagrede endringer?"
+
+msgid "No events to display"
+msgstr "Ingen hendelser å vise"
+
+msgid "Data for offline list not present"
+msgstr "Data for frakoblet liste er ikke til stede"
+
+msgid "Close"
+msgstr "Lukk"
+
+msgid "Please select the user"
+msgstr "Velg bruker"
+
+msgid "Me"
+msgstr "Meg"
+
+msgid "Anyone"
+msgstr "Hvem som helst"
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Select user"
+msgstr "Velg bruker"
+
+msgid "to"
+msgstr "til"
+
+msgid "Days in the future"
+msgstr "Dager i fremtiden"
+
+msgid "From"
+msgstr "Fra"
+
+msgid "Days in the past"
+msgstr "Dager i fortiden"
+
+msgid "To"
+msgstr "Til"
+
+msgid "This week"
+msgstr "Denne uken"
+
+msgid "This month"
+msgstr "Denne måneden"
+
+msgid "This Year"
+msgstr "Dette året"
+
+msgid "Last week"
+msgstr "Forrige uke"
+
+msgid "Last month"
+msgstr "Forrige måned"
+
+msgid "Last 3 months"
+msgstr "Siste 3 måneder"
+
+msgid "Absolute range"
+msgstr "Absolutt rekkevidde"
+
+msgid "Relative range"
+msgstr "Relativ rekkevidde"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Contains text"
+msgstr "Inneholder tekst"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "mm/dd/yyyy"
+msgstr "mm/dd/yyyy"
+
+msgid "Years"
+msgstr "År"
+
+msgid "Months"
+msgstr "Måneder"
+
+msgid "Days"
+msgstr "Dager"
+
+msgid "Uploading file"
+msgstr "Laster opp fil"
+
+msgid "selected"
+msgstr "valgt"
+
+msgid "Delete"
+msgstr "Slett"
+
+msgid "Select file"
+msgstr "Velg fil"
+
+msgid "No"
+msgstr "Nei"
+
+msgid "Uploading image"
+msgstr "Laster opp bilde"
+
+msgid "Select image"
+msgstr "Velg bilde"
+
+msgid "Type to filter options"
+msgstr "Skriv for å filtrere alternativer"
+
+msgid "No match found"
+msgstr "Ingen treff funnet"
+
+msgid "Search"
+msgstr "Søk"
+
+msgid "Clear"
+msgstr "Fjern"
+
+msgid "No results"
+msgstr "Ingen resultater"
+
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Icon for {{field}}"
+msgstr "Ikon for {{field}}"
+
+msgid "start typing to search"
+msgstr "begynn å skrive for å søke"
+
+msgid "suggestions could not be retrieved"
+msgstr "forslag kunne ikke hentes"
+
+msgid "No results found"
+msgstr "Ingen resultater funnet"
+
+msgid "No items to display"
+msgstr "Ingen elementer å vise"
+
+msgid "Select columns"
+msgstr "Velg kolonner"
+
+msgid "Columns to show in table"
+msgstr "Kolonner som skal vises i tabellen"
+
+msgid "Column"
+msgstr "Kolonne"
+
+msgid "Update"
+msgstr "Oppdater"
+
+msgid "Reset filter"
+msgstr "Nullstill filter"
+
+msgid "Remove filter"
+msgstr "Fjern filter"
+
+msgid "{{fromDate}} to {{toDate}}"
+msgstr "{{fromDate}} til {{toDate}}"
+
+msgid "after or equal to {{date}}"
+msgstr "etter eller lik {{date}}"
+
+msgid "before or equal to {{date}}"
+msgstr "før eller lik {{date}}"
+
+msgid "greater than or equal to"
+msgstr "større enn eller lik"
+
+msgid "less than or equal to"
+msgstr "mindre enn eller lik"
+
+msgid "More filters"
+msgstr "Flere filtre"
+
+msgid "Stage filters"
+msgstr "Fasefilter"
+
+msgid "Rows per page"
+msgstr "Rader per side"
+
+msgid "Could not get organisation unit"
+msgstr "Kunne ikke få tak i organisasjonsenhet"
+
+msgid "Program doesn't exist"
+msgstr "Programmet finnes ikke"
+
+msgid "Selected program is invalid for selected organisation unit"
+msgstr ""
+
+msgid "Online"
+msgstr "Påkoblet"
+
+msgid "Offline"
+msgstr "Frakoblet"
+
+msgid "Syncing"
+msgstr "Synkroniserer"
+
+msgid "Add comment"
+msgstr "Legg til en kommentar"
+
+msgid "You don't have access to write comments"
+msgstr "Du har ikke tilgang til å skrive kommentarer"
+
+msgid "Write comment"
+msgstr "Skriv kommentar"
+
+msgid "was blanked out and hidden by your last action"
+msgstr "ble tømt og skjult av den siste handlingen din"
+
+msgid "Notice"
+msgstr "Merknad"
+
+msgid "Close the notice"
+msgstr "Lukk merknaden"
+
+msgid "Use new Enrollment dashboard for {{programName}}"
+msgstr "Bruk nytt registreringsdashbord for {{programName}}"
+
+msgid "Opt in for {{programName}}"
+msgstr "Meld på for {{programName}}"
+
+msgid ""
+"By clicking opt-in below, you will start using the new enrollment dashboard "
+"in the Capture app for this Tracker program. At the moment, there is certain"
+" functionality from Tracker Capture that has not yet been added, including "
+"relationship and referral functionality. The work on including this Tracker "
+"functionality in Capture is ongoing and will be added in upcoming app "
+"releases."
+msgstr ""
+"Ved å klikke på \"meld på\" nedenfor, vil du begynne å bruke det nye "
+"registreringsdashbordet i Capture-appen for dette Tracker-programmet. For "
+"øyeblikket er det noe funksjonalitet fra Tracker Capture som ennå ikke er "
+"lagt til, inkludert relasjons- og henvisningsfunksjonalitet. Arbeidet med å "
+"inkludere denne Tracker-funksjonaliteten i Capture pågår og vil bli lagt til"
+" i kommende apputgivelser."
+
+msgid ""
+"The core team appreciates any feedback on this new functionality which is "
+"currently being beta tested, please report any issues and feedback in the "
+"DHIS2 JIRA project."
+msgstr ""
+"Kjerneteamet setter pris på all tilbakemelding på denne nye funksjonaliteten"
+" som for øyeblikket blir betatestet, vennligst rapporter eventuelle "
+"problemer og tilbakemeldinger i DHIS2 JIRA-prosjektet."
+
+msgid ""
+"Click the button below to opt-in to the new enrollment dashboard "
+"functionality in the Capture app (beta) for this Tracker program for all "
+"users."
+msgstr ""
+"Klikk på knappen nedenfor for å melde deg på den nye funksjonen for "
+"registreringsdashbord i Capture-appen (beta) for dette Tracker-programmet "
+"for alle brukere."
+
+msgid "Yes, opt in"
+msgstr "Ja, meld på"
+
+msgid "Stop using new Enrollment dashboard for {{programName}}"
+msgstr "Slutt å bruke nytt registreringsdashbord for {{programName}}"
+
+msgid "Opt out for {{programName}}"
+msgstr "Meld ut for {{programName}}"
+
+msgid "Enrollment with id \"{{enrollmentId}}\" does not exist"
+msgstr "Registrering med ID-en \"{{enrollmentId}}\" eksisterer ikke"
+
+msgid "Tracked entity instance with id \"{{teiId}}\" does not exist"
+msgstr "Sporet enhetsforekomst med id \"{{teiId}}\"  eksisterer ikke"
+
+msgid "Program with id \"{{programId}}\" does not exist"
+msgstr "Program med ID \"{{programId}}\" eksisterer ikke"
+
+msgid ""
+"An error occurred while fetching enrollments. Please enter a valid url."
+msgstr ""
+"Det oppsto en feil under henting av registreringer. Vennligst skriv inn en "
+"gyldig url."
+
+msgid "No feedback for this enrollment yet"
+msgstr "Ingen tilbakemeldinger for denne registreringen enda"
+
+msgid "No indicator output for this enrollment yet"
+msgstr "Ingen indikatorresultat for denne registreringen enda"
+
+msgid "Quick actions"
+msgstr "Snarveier"
+
+msgid "New Event"
+msgstr "Ny hendelse"
+
+msgid "Schedule an event"
+msgstr "Planlegg en hendelse"
+
+msgid "Make referral"
+msgstr "Opprett henvisning"
+
+msgid "No available program stages"
+msgstr "Ingen tilgjengelige programfaser"
+
+msgid "Program stage not found"
+msgstr "Programfase ikke funnet"
+
+msgid ""
+"Choose a program to add new or see existing enrollments for "
+"{{teiDisplayName}}"
+msgstr ""
+"Velg et program for å legge til nye eller se eksisterende registreringer for"
+" {{teiDisplayName}}"
+
+msgid ""
+"{{programName}} has categories. Choose all categories to view dashboard."
+msgstr ""
+"{{programName}} har kategorier. Velg alle kategorier for å se dashbordet."
+
+msgid "Invalid enrollment id {{enrollmentId}}."
+msgstr "Ugyldig registrerings-ID {{enrollmentId}}"
+
+msgid "Choose an enrollment to view the dashboard."
+msgstr "Velg en registrering for å se dashbordet."
+
+msgid "There are no active enrollments."
+msgstr "Det er ingen aktive registreringer."
+
+msgid "Add new enrollment for {{teiDisplayName}} in this program."
+msgstr "Legg til ny registrering for {{teiDisplayName}} i dette programmet."
+
+msgid "No access to program owner."
+msgstr "Ingen tilgang til programeier."
+
+msgid "{{teiDisplayName}} is not enrolled in this program."
+msgstr "{{teiDisplayName}} er ikke registrert i dette programmet."
+
+msgid "Enroll {{teiDisplayName}} in this program."
+msgstr "Registrer {{teiDisplayName}} i dette programmet"
+
+msgid ""
+"{{teiDisplayName}} is a {{tetName}} and cannot be enrolled in the "
+"{{programName}}. Choose another program that allows {{tetName}} enrollment. "
+msgstr ""
+"{{teiDisplayName}} er en {{tetName}} og kan ikke registreres i "
+"{{programName}}. Velg et annet program som tillater registrering av "
+"{{tetName}}."
+
+msgid "Enroll a new {{selectedTetName}} in this program."
+msgstr "Registrer en ny {{selectedTetName}} i dette programmet"
+
+msgid "{{programName}} is an event program and does not have enrollments."
+msgstr "{{programName}} er et hendelsesprogram og har ikke registreringer."
+
+msgid "Create a new event in this program."
+msgstr "Opprett ny hendelse i dette programmet"
+
+msgid "View working list in this program."
+msgstr "Se arbeidsliste i dette programmet."
+
+msgid "Page is missing required values from URL"
+msgstr "Siden mangler nødvendige verdier fra URL"
+
+msgid "Program is not valid"
+msgstr "Programmet er ikke gyldig"
+
+msgid "Org unit is not valid with current program"
+msgstr "Organisasjonsenheten er ikke gyldig med gjeldende program"
+
+msgid "There was an error opening the Page"
+msgstr "Det oppsto en feil ved åpning av siden"
+
+msgid "There was an error loading the page"
+msgstr "Det oppsto en feil under lasting av siden"
+
+msgid "Choose an organisation unit to start reporting"
+msgstr ""
+
+msgid "No feedback for this event yet"
+msgstr ""
+
+msgid "No indicator output for this event yet"
+msgstr ""
+
+msgid "Program stage is invalid"
+msgstr "Programfase er ugyldig"
+
+msgid "Report"
+msgstr "Rapport"
+
+msgid "Schedule"
+msgstr "Planlegg"
+
+msgid "Refer"
+msgstr "Henvis"
+
+msgid "You can't add any more {{ programStageName }} events"
+msgstr "Du kan ikke legge til flere {{ programStageName }}-hendelser"
+
+msgid "Cancel without saving"
+msgstr "Avbryt uten å lagre"
+
+msgid "Choose a stage for a new event"
+msgstr "Velg fase for ny hendelse"
+
+msgid "Program Stages could not be loaded"
+msgstr "Programfaser kunne ikke lastes inn"
+
+msgid "Stage"
+msgstr "Fase"
+
+msgid "Registered events"
+msgstr "Registrerte hendelser"
+
+msgid "Please select {{category}}."
+msgstr "Velg {{category}}."
+
+msgid "Or see all records accessible to you in {{program}} "
+msgstr "Eller se alle opptegnelser som er tilgjengelige for deg i {{program}}"
+
+msgid "Or see all events accessible to you in {{program}}"
+msgstr "Eller se alle hendelser som er tilgjengelige for deg i {{program}}"
+
+msgid "Please select an organisation unit."
+msgstr "Vennligst velg en organisasjonsenhet"
+
+msgid "New"
+msgstr "Ny"
+
+msgid "Choose the {{missingCategories}} to start reporting"
+msgstr "Velg {{missingCategories}} for å starte rapportering"
+
+msgid "Save as new"
+msgstr "Lagre som ny"
+
+msgid "View enrollment"
+msgstr "Se registrering"
+
+msgid "Create for"
+msgstr "Opprett for"
+
+msgid ""
+"You can also choose a program from the top bar and create in that program"
+msgstr ""
+"Du kan også velge et program fra topplinjen og opprette i det programmet"
+
+msgid "New Enrollment in program{{escape}} {{programName}}"
+msgstr "Ny registrering i programmet{{escape}} {{programName}}"
+
+msgid "Save {{trackedEntityTypeName}}"
+msgstr "Lagre {{trackedEntityTypeName}}"
+
+msgid "Save {{trackedEntityName}}"
+msgstr "Lagre {{trackedEntityName}}"
+
+msgid "Save new {{trackedEntityTypeName}} and link"
+msgstr "Opprett ny {{trackedEntityTypeName}} og link"
+
+msgid "Link"
+msgstr "Link"
+
+msgid "Save as new {{trackedEntityName}}"
+msgstr "Lagre som ny {{trackedEntityName}}"
+
+msgid "Some programs are being filtered."
+msgstr "Noen programmer blir filtrert."
+
+msgid "Show all"
+msgstr "Vis alle"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Organisation Unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Registration"
+msgstr "Registrering"
+
+msgid "Search results"
+msgstr "Søkeresultater"
+
+msgid "No {{trackedEntityTypeName}} found."
+msgstr "Ingen {{trackedEntityTypeName}} funnet."
+
+msgid "New search"
+msgstr "Nytt søk"
+
+msgid "Edit search"
+msgstr "Rediger søk"
+
+msgid "Link to an existing {{trackedEntityType}}"
+msgstr "Link til en eksisterende {{trackedEntityType}}"
+
+msgid "Create new {{trackedEntityType}}"
+msgstr "Opprett ny {{trackedEntityType}}"
+
+msgid "Register"
+msgstr "Registrere"
+
+msgid "Back"
+msgstr "Tilbake"
+
+msgid "events"
+msgstr "hendelser"
+
+msgid "event"
+msgstr "hendelse"
+
+msgid "You don't have access to edit this event"
+msgstr "Du har ikke tilgang til å redigere denne hendelsen"
+
+msgid "Edit event"
+msgstr "Rediger hendelse"
+
+msgid "View changelog"
+msgstr ""
+
+msgid "Event details"
+msgstr "Hendelsesdetaljer"
+
+msgid ""
+"Leaving this page will discard any selections you made for a new "
+"relationship"
+msgstr ""
+"Hvis du forlater denne siden, vil valgene du har satt bli forkastet for "
+"denne relasjonen"
+
+msgid "Show all events"
+msgstr "Vis alle hendelser"
+
+msgid "Event could not be loaded. Are you sure it exists?"
+msgstr "Hendelsen kunne ikke lastes. Er du sikker på at den finnes?"
+
+msgid "Event could not be loaded"
+msgstr "Hendelse kunne ikke lastes inn"
+
+msgid "Organisation unit could not be loaded"
+msgstr "Organisasjonsenhet kunne ikke lastes inn"
+
+msgid "Dashboard"
+msgstr "Dashbord"
+
+msgid "Edit Event"
+msgstr "Endre hendelse"
+
+msgid "View Event"
+msgstr "Se hendelse"
+
+msgid "Selected program"
+msgstr "Valgt program"
+
+msgid "Search {{uniqueAttrName}}"
+msgstr "Søk {{uniqueAttrName}}"
+
+msgid "Search by attributes"
+msgstr "Søk etter attributter"
+
+msgid "Fill in at least {{count}} attribute to search"
+msgid_plural "Fill in at least {{count}} attribute to search"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Could not retrieve metadata. Please try again later."
+msgstr "Kunne ikke hente metadata. Prøv igjen senere."
+
+msgid "The enrollment event data could not be found"
+msgstr "Hendelsessdataene ble ikke funnet"
+
+msgid "Possible duplicates found"
+msgstr "Mulige duplikater funnet"
+
+msgid "An error occurred loading possible duplicates"
+msgstr "En feil oppsto ved lasting av mulige duplikater"
+
+msgid "You don't have access to delete this relationship"
+msgstr "Du har ikke tilgang til å slette denne relasjonen"
+
+msgid "You don't have access to create any relationships"
+msgstr "Du har ikke tilgang til å opprette noen relasjoner"
+
+msgid "Add relationship"
+msgstr "Legg til relasjon"
+
+msgid "No results found for "
+msgstr "Ingen resultater funnet for"
+
+msgid "Choose an organisation unit"
+msgstr ""
+
+msgid "Clear selection"
+msgstr "Fjern valg"
+
+msgid "No programs available."
+msgstr "Ingen programmer tilgjengelig."
+
+msgid "Search for a program"
+msgstr "Søk for et program"
+
+msgid "Some programs are being filtered by the chosen organisation unit"
+msgstr ""
+
+msgid "Show all programs"
+msgstr "Vis alle programmer"
+
+msgid "Choose a program"
+msgstr "Velg et program"
+
+msgid "Search for {{titleText}}"
+msgstr "Søk etter {{titleText}}"
+
+msgid "Search for"
+msgstr "Søk etter"
+
+msgid ""
+"You can also choose a program from the top bar and search in that program"
+msgstr "Du kan også velge et program fra topplinjen og søke i det programmet"
+
+msgid "Choose a type to start searching"
+msgstr "Velg en type for å begynne å søke"
+
+msgid "Search {{name}}"
+msgstr "Søk {{name}}"
+
+msgid "Search by {{name}}"
+msgstr "Søk etter {{name}}"
+
+msgid "all programs"
+msgstr "alle programmer"
+
+msgid ""
+"Not finding the results you were looking for? Try to search all programs "
+"that use type "
+msgstr ""
+"Finner du ikke resultatene du leter etter? Prøv å søke i alle programmer som"
+" bruker type"
+
+msgid "Search in all programs"
+msgstr "Søk i alle programmer"
+
+msgid "If none of search results match, you can create a new "
+msgstr "Hvis ingen av søkeresultatene samsvarer, kan du opprette ny"
+
+msgid "Create new"
+msgstr "Opprett ny"
+
+msgid "Fill in these fields to search{{escape}} {{ searchableAttributes }}"
+msgstr "Fyll ut disse feltene for å søke{{escape}} {{ searchableAttributes }}"
+
+msgid ""
+"Fill in at least {{minAttributesRequiredToSearch}} of these fields to "
+"search{{escape}} {{searchableAttributes}}"
+msgstr ""
+"Fyll ut minst {{minAttributesRequiredToSearch}} av disse feltene for å "
+"søke{{escape}} {{searchableAttributes}}"
+
+msgid "Fill in this field to search{{escape}} {{searchableAttributes}}"
+msgstr "Fyll ut dette feltet for å søke {{escape}} {{searchableAttributes}}"
+
+msgid ""
+"You can change your search terms and search again to find what you are "
+"looking for."
+msgstr "Du kan endre søkeordene og søke igjen for å finne det du leter etter."
+
+msgid "Back to search"
+msgstr "Tilbake til søk"
+
+msgid "An error has occurred"
+msgstr "Det har oppstått en feil"
+
+msgid "Too many results"
+msgstr "For mange resultat"
+
+msgid "Cannot search in all programs"
+msgstr "Kan ikke søke i alle programmer"
+
+msgid "Missing search criteria"
+msgstr "Manglende søkekriterier"
+
+msgid "Results found"
+msgstr "Resultater funnet"
+
+msgid "Saved lists in this program"
+msgstr "Lagrede lister i dette programmet"
+
+msgid "Saved lists offer quick access to your most used views in a program."
+msgstr ""
+"Lagrede lister gir rask tilgang til dine mest brukte visninger i et program."
+
+msgid ""
+"There are no saved lists in this program yet, create one using the button "
+"below."
+msgstr ""
+"Det er ingen lagrede lister i dette programmet ennå, lag en ved å bruke "
+"knappen nedenfor."
+
+msgid "Create saved list"
+msgstr "Lag lagret liste"
+
+msgid "Create new in another program"
+msgstr ""
+
+msgid "Create new event"
+msgstr "Opprett ny hendelse"
+
+msgid "Search for a {{trackedEntityName}} in {{programName}}"
+msgstr "Søk etter {{trackedEntityName}} i {{programName}}"
+
+msgid "No tracked entity types available"
+msgstr ""
+
+msgid "Assigned to"
+msgstr "Tildelt til"
+
+msgid "You don't have access to edit this assignee"
+msgstr "Du har ikke tilgang til å redigere denne tildelte brukeren"
+
+msgid "Edit"
+msgstr "Rediger"
+
+msgid "No one is assigned to this event"
+msgstr "Ingen er tildelt denne hendelsen"
+
+msgid "You don't have access to assign an assignee"
+msgstr "Du har ikke tilgang til å tildele bruker"
+
+msgid "Assign"
+msgstr "Tildel"
+
+msgid "This program is protected"
+msgstr "Dette programmet er beskyttet"
+
+msgid "Reason to check for enrollments"
+msgstr "Grunn til å sjekke for registreringer"
+
+msgid ""
+"Describe the reason you are checking for enrollments in this protected "
+"program"
+msgstr ""
+"Beskriv årsaken til at du ser etter registreringer i dette beskyttede "
+"programmet"
+
+msgid "Check for enrollments"
+msgstr "Se etter registreringer"
+
+msgid ""
+"You must provide a reason to check for enrollments in this protected "
+"program. All activity will be logged."
+msgstr ""
+"Du må oppgi en grunn for å se etter registreringer i dette beskyttede "
+"programmet. All aktivitet vil bli logget."
+
+msgid "Save comment"
+msgstr "Lagre kommentar"
+
+msgid "Enrollment actions"
+msgstr "Registreringshandlinger"
+
+msgid "We are processing your request."
+msgstr "Vi behandler forespørselen din."
+
+msgid "Only one enrollment per {{tetName}} is allowed in this program"
+msgstr "Bare én registrering per {{tetName}} er tillatt i dette programmet"
+
+msgid "Add new"
+msgstr "Legg til ny"
+
+msgid "Reactivate"
+msgstr "Reaktiver"
+
+msgid "Mark as cancelled"
+msgstr "Merk som kansellert"
+
+msgid "Mark incomplete"
+msgstr "Merk som ufullstendig"
+
+msgid "Delete enrollment"
+msgstr "Slett registrering"
+
+msgid ""
+"Are you sure you want to delete this enrollment? This will permanently "
+"remove the current enrollment."
+msgstr ""
+"Er du sikker på at du vil slette denne registreringen? Dette vil fjerne den "
+"nåværende registreringen permanent."
+
+msgid "Yes, delete enrollment."
+msgstr "Ja, slett registrering"
+
+msgid "Remove mark for follow-up"
+msgstr "Fjern merk for oppfølging"
+
+msgid "Mark for follow-up"
+msgstr "Merk for oppfølging"
+
+msgid "Transfer"
+msgstr ""
+
+msgid "An error occurred while transferring ownership"
+msgstr ""
+
+msgid "Existing dates for auto-generated events will not be updated."
+msgstr ""
+"Eksisterende datoer for automatisk genererte hendelser vil ikke bli "
+"oppdatert."
+
+msgid "Latitude"
+msgstr "Breddegrad"
+
+msgid "Longitude"
+msgstr "Lengdegrad"
+
+msgid "Set coordinates"
+msgstr "Lagre koordinater"
+
+msgid "Coordinates"
+msgstr "Koordinater"
+
+msgid "Delete polygon"
+msgstr "Slett polygon"
+
+msgid "Close without saving"
+msgstr "Lukk uten å lagre"
+
+msgid "Finish drawing before saving"
+msgstr "Fullfør tegningen før du lagrer"
+
+msgid "Set area"
+msgstr "Sett område"
+
+msgid ""
+"Transferring enrollment ownership from {{ownerOrgUnit}} to "
+"{{newOrgUnit}}{{escape}}"
+msgstr ""
+
+msgid ""
+"You will lose access to the enrollment when transferring ownership to "
+"{{organisationUnit}}."
+msgstr ""
+
+msgid "Transfer Ownership"
+msgstr ""
+
+msgid ""
+"Choose the organisation unit to which enrollment ownership should be "
+"transferred."
+msgstr ""
+
+msgid "Enrollment date"
+msgstr "Registreringsdato"
+
+msgid "Incident date"
+msgstr "Forekomstdato"
+
+msgid "Enrollment widget could not be loaded. Please try again later"
+msgstr "Registreringsmodulen kunne ikke lastes inn. Prøv igjen senere"
+
+msgid "Follow-up"
+msgstr "Oppfølging"
+
+msgid "Started at {{orgUnitName}}"
+msgstr "Begynt på {{orgUnitName}}"
+
+msgid "Owned by {{ownerOrgUnit}}"
+msgstr "Eid av {{ownerOrgUnit}}"
+
+msgid "Last updated {{date}}"
+msgstr "Sist oppdatert {{date}}"
+
+msgid "Cancelled"
+msgstr "Kansellert"
+
+msgid "Add coordinates"
+msgstr "Legg til koordinater"
+
+msgid "Add area"
+msgstr "Legg til område"
+
+msgid "Comments about this enrollment"
+msgstr "Kommentarer om denne registreringen"
+
+msgid "Write a comment about this enrollment"
+msgstr "Skriv en kommentar om denne registreringen"
+
+msgid "This enrollment doesn't have any comments"
+msgstr "Denne registreringen har ingen kommentarer"
+
+msgid "organisation unit could not be retrieved. Please try again later."
+msgstr "organisasjonsenheten kunne ikke hentes. Prøv igjen senere."
+
+msgid "Saving to {{stageName}} for {{programName}} in {{orgUnitName}}"
+msgstr "Lagrer i {{stageName}} for {{programName}} i {{orgUnitName}}"
+
+msgid "program or stage is invalid"
+msgstr "program eller fase er ugyldig"
+
+msgid "Error"
+msgstr "Feil"
+
+msgid "Warning"
+msgstr "Advarsel"
+
+msgid "Comments about this event"
+msgstr "Kommentarer om denne hendelsen"
+
+msgid "Write a comment about this event"
+msgstr "Skriv en kommentar om denne hendelsen"
+
+msgid "This event doesn't have any comments"
+msgstr "Denne hendelsen har ingen kommentarer"
+
+msgid "stage not found in rules execution"
+msgstr "fase ikke funnet i regelutførelse"
+
+msgid "Delete event"
+msgstr "Slett hendelse"
+
+msgid "Yes, delete event"
+msgstr "Ja, slett hendelse"
+
+msgid "Go to “Schedule” tab to reschedule this event"
+msgstr "Gå til \"Planlegg\"-fanen for å endre planlagt dato for denne hendelsen"
+
+msgid "Scheduled date cannot be changed for {{ eventStatus }} events"
+msgstr "Planlagt dato kan ikke endres for {{ eventStatus }} hendelser"
+
+msgid "Event completed"
+msgstr "Hendelse fullført"
+
+msgid "Back to all stages and events"
+msgstr "Tilbake til alle faser og hendelser"
+
+msgid "Schedule date info"
+msgstr "Informasjon for planlagt dato"
+
+msgid "Scheduled automatically for {{suggestedScheduleDate}}"
+msgstr "Planlagt automatisk for {{suggestedScheduleDate}}"
+
+msgid ""
+"The scheduled date matches the suggested date, but can be changed if needed."
+msgstr ""
+"Den planlagte datoen samsvarer med den foreslåtte datoen, men kan endres om "
+"nødvendig."
+
+msgid "The scheduled date is {{count}} days {{position}} the suggested date."
+msgid_plural ""
+"The scheduled date is {{count}} days {{position}} the suggested date."
+msgstr[0] ""
+"Den planlagte datoen er {{count}} dag {{posisjon}} den foreslåtte datoen."
+msgstr[1] ""
+"Den planlagte datoen er {{count}} dager {{posisjon}} den foreslåtte datoen."
+
+msgid "after"
+msgstr "etter"
+
+msgid "before"
+msgstr "før"
+
+msgid "There are {{count}} scheduled event in {{orgUnitName}} on this day."
+msgid_plural ""
+"There are {{count}} scheduled event in {{orgUnitName}} on this day."
+msgstr[0] "Det er {{count}} planlagt hendelse i {{orgUnitName}} denne dagen."
+msgstr[1] ""
+"Det er {{count}} planlagte hendelser i {{orgUnitName}} denne dagen."
+
+msgid ""
+"Scheduling an event in {{stageName}} for {{programName}} in {{orgUnitName}}"
+msgstr ""
+"Planlegger en hendelse i {{stageName}} for {{programName}} i {{orgUnitName}}"
+
+msgid "Schedule info"
+msgstr "Tidsplaninformasjon"
+
+msgid "Schedule date / Due date"
+msgstr "Planlagt dato / Forfallsdato"
+
+msgid "Event comments"
+msgstr "Hendelseskommentarer"
+
+msgid "Write a comment about this scheduled event"
+msgstr "Skriv en kommentar om denne planlagte hendelsen"
+
+msgid ""
+"Change information about this {{trackedEntityName}} here. To change "
+"information about this enrollment, use the Edit button in the in the "
+"Enrollment box on this dashboard"
+msgstr ""
+"Endre informasjon om denne {{trackedEntityName}} her. For å endre "
+"informasjon om denne registreringen, bruk Rediger-knappen i "
+"registreringsboksen på dette dashbordet"
+
+msgid " Loading..."
+msgstr "Laster..."
+
+msgid "Save changes"
+msgstr "Lagre endringer"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "There is a problem with this form"
+msgstr "Det er et problem med dette skjemaet"
+
+msgid "There are warnings in this form"
+msgstr "Det er advarsler i dette skjemaet"
+
+msgid "There was a problem saving changes"
+msgstr "Det oppsto et problem under lagring av endringer"
+
+msgid "Try again or contact your system administrator for support"
+msgstr "Prøv igjen eller kontakt systemadministratoren din for hjelp"
+
+msgid "Fix errors in the form to continue."
+msgstr "Rett opp feil i skjemaet for å fortsette."
+
+msgid "You do not have access to delete this {{trackedEntityTypeName}}"
+msgstr ""
+
+msgid "Delete {{trackedEntityTypeName}}"
+msgstr ""
+
+msgid ""
+"Are you sure you want to delete this {{trackedEntityTypeName}}? This will "
+"permanently remove the {{trackedEntityTypeName}} and all its associated "
+"enrollments and events in all programs."
+msgstr ""
+
+msgid "There was a problem deleting the {{trackedEntityTypeName}}"
+msgstr ""
+
+msgid "Yes, delete {{trackedEntityTypeName}}"
+msgstr ""
+
+msgid "Profile widget could not be loaded. Please try again later"
+msgstr "Profil -widgeten kunne ikke lastes inn. Prøv igjen senere"
+
+msgid "{{trackedEntityTypeName}} profile"
+msgstr ""
+
+msgid "tracked entity instance"
+msgstr "Sporet enhetforekomst"
+
+msgid "Link to an existing {{linkableStageLabel}}"
+msgstr ""
+
+msgid "Choose a {{linkableStageLabel}}"
+msgstr ""
+
+msgid "Ambiguous relationships, contact system administrator"
+msgstr ""
+
+msgid ""
+"Enter {{linkableStageLabel}} details in the next step after completing this "
+"{{currentStageLabel}}."
+msgstr ""
+
+msgid "Enter details now"
+msgstr ""
+
+msgid "Link to an existing"
+msgstr ""
+
+msgid "Scheduled date"
+msgstr "Planlagt dato"
+
+msgid "Report date"
+msgstr "Rapporteringsdato"
+
+msgid "Please select a valid event"
+msgstr ""
+
+msgid "New {{ eventName }} event"
+msgstr "Ny {{ eventName }} hendelse"
+
+msgid "To open this event, please wait until saving is complete"
+msgstr "For å åpne denne hendelsen, vennligst vent til lagringen er fullført"
+
+msgid "Show {{ rest }} more"
+msgstr "Vis {{ rest }} flere"
+
+msgid "Reset list"
+msgstr "Nullstill liste"
+
+msgid "Go to full {{ eventName }}"
+msgstr "Gå til hele {{ eventName }}"
+
+msgid "This stage can only have one event"
+msgstr "Denne fasen kan bare ha en hendelse"
+
+msgid "Events could not be retrieved. Please try again later."
+msgstr "Hendelser kunne ikke hentes. Prøv igjen senere."
+
+msgid "{{ count }} event"
+msgid_plural "{{ count }} event"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "{{ overdueEvents }} overdue"
+msgstr "{{ overdueEvents }} forfalt"
+
+msgid "{{ scheduledEvents }} scheduled"
+msgstr "{{ scheduledEvents }} planlagt"
+
+msgid "Stages and Events"
+msgstr "Faser og hendelser"
+
+msgid "Changelog"
+msgstr ""
+
+msgid "No changes to display"
+msgstr ""
+
+msgid "Created"
+msgstr "Opprettet"
+
+msgid "Deleted"
+msgstr "Slettet"
+
+msgid "Date"
+msgstr "Dato"
+
+msgid "User"
+msgstr "Bruker"
+
+msgid "Data item"
+msgstr "Datapunkt"
+
+msgid "Change"
+msgstr ""
+
+msgid "New {{trackedEntityTypeName}} relationship"
+msgstr "Ny {{trackedEntityTypeName}}relasjon"
+
+msgid "Missing implementation step"
+msgstr "Manglende implementeringstrinn"
+
+msgid "Go back without saving relationship"
+msgstr "Gå tilbake uten å lagre relasjon"
+
+msgid "New Relationship"
+msgstr "Ny relasjon"
+
+msgid "Link to an existing {{tetName}}"
+msgstr "Link til eksisterende {{tetName}}"
+
+msgid "An error occurred while adding the relationship"
+msgstr "Det oppsto en feil da relasjonen skulle lagres"
+
+msgid ""
+"Something went wrong while loading relationships. Please try again later."
+msgstr "Noe gikk galt under innlasting av relasjoner. Prøv igjen senere."
+
+msgid "{{trackedEntityTypeName}} relationships"
+msgstr "{{trackedEntityTypeName}}-relasjoner"
+
+msgid "Delete relationship"
+msgstr "Slett relasjon"
+
+msgid ""
+"Deleting the relationship is permanent and cannot be undone. Are you sure "
+"you want to delete this relationship?"
+msgstr ""
+
+msgid "Yes, delete relationship"
+msgstr ""
+
+msgid "An error occurred while deleting the relationship."
+msgstr ""
+
+msgid "To open this relationship, please wait until saving is complete"
+msgstr "For å åpne denne relasjonen, vennligst vent til lagringen er fullført"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Created date"
+msgstr "Opprettelsesdato"
+
+msgid "Program stage name"
+msgstr "Programfase navn"
+
+msgid "Working list could not be loaded"
+msgstr "Arbeidslisten kunne ikke lastes inn"
+
+msgid "Download data..."
+msgstr "Last ned data..."
+
+msgid "an error occurred loading working lists"
+msgstr "en feil oppstod ved lasting av arbeidslister"
+
+msgid "Registration Date"
+msgstr "Innregistreringsdato"
+
+msgid "Inactive"
+msgstr "Inaktiv"
+
+msgid "Enrollment status"
+msgstr "Registreringsstatus"
+
+msgid "Follow up"
+msgstr "Oppfølging"
+
+msgid "Choose a program stage to filter by {{label}}"
+msgstr "Velg en programfase å filtrere etter {{label}}"
+
+msgid "Active enrollments"
+msgstr "Aktive registreringer"
+
+msgid "Completed enrollments"
+msgstr "Fullførte registreringer"
+
+msgid "Cancelled enrollments"
+msgstr "Avbrutte registreringer"
+
+msgid "Working list could not be updated"
+msgstr "Arbeidslisten kunne ikke oppdateres"
+
+msgid "an error occurred loading the working lists"
+msgstr "det oppstod en feil ved lasting av arbeidslistene"
+
+msgid "an error occurred loading Tracked entity instance lists"
+msgstr "det oppstod en feil ved lasting av lister over sporede enheter"
+
+msgid "Update view"
+msgstr "Oppdater visning"
+
+msgid "Save current view..."
+msgstr "Lagre gjeldende visning..."
+
+msgid "Save current view as..."
+msgstr "Lagre gjeldende visning som..."
+
+msgid "Delete view"
+msgstr "Slett visning"
+
+msgid "Share view..."
+msgstr "Del visning ..."
+
+msgid "Do you really want to delete the '{{templateName}}' view?"
+msgstr "Vil du virkelig slette visningen '{{templateName}}'?"
+
+msgid "Confirm"
+msgstr "Bekreft"
+
+msgid "Save As view"
+msgstr "Lagre som visning"
+
+msgid "View name"
+msgstr "Vis navn"
+
+msgid "Show Less"
+msgstr "Vis mindre"
+
+msgid "Show All"
+msgstr "Vis alle"
+
+msgid "Download as JSON"
+msgstr "Last ned i JSON format"
+
+msgid "Download as CSV"
+msgstr "Last ned i CSV format"
+
+msgid "Download with current filters"
+msgstr "Last ned med gjeldende filtre"
+
+msgid "An error has occured. See log for details"
+msgstr "Det har oppstått en feil. Se logg for detaljer"
+
+msgid "Scheduled{{ escape }} due {{ time }}"
+msgstr "Planlagt{{ escape }} forfaller {{ time }}"
+
+msgid "Scheduled"
+msgstr "Planlagt"
+
+msgid "Overdue{{ escape }} due {{ time }}"
+msgstr "Forfalt {{ escape }} forfalt {{ time }}"
+
+msgid "Overdue"
+msgstr "Forfalt"
+
+msgid "Skipped"
+msgstr "Hoppet over"
+
+msgid "Visited"
+msgstr "Besøkte"
+
+msgid "{{trackedEntityName}} in program{{escape}} {{programName}}"
+msgstr "{{trackedEntityName}} i program{{escape}} {{programName}}"
+
+msgid "Program not found"
+msgstr "Program ble ikke funnet"
+
+msgid "Program is not a tracker program"
+msgstr "Programmet er ikke et sporingsprogram"
+
+msgid "Error saving event"
+msgstr "Feil ved lagring av hendelse"
+
+msgid "Could not save event"
+msgstr "Kunne ikke lagre hendelse"
+
+msgid "Could not delete event"
+msgstr "Kunne ikke slette hendelse"
+
+msgid "Could not save working list"
+msgstr "Kunne ikke lagre arbeidsliste"
+
+msgid "Could not add working list"
+msgstr "Kunne ikke legge til arbeidsliste"
+
+msgid "Could not delete working list"
+msgstr "Kunne ikke slette arbeidsliste"
+
+msgid "Organisation unit search failed."
+msgstr "Organisasjonsenhetssøk mislyktes."
+
+msgid "Error saving tracked entity instance"
+msgstr "Feil ved lagring av sporet enhetsforekomst"
+
+msgid "Error saving enrollment"
+msgstr "Feil ved lagring av registrering"
+
+msgid "Error saving the enrollment event"
+msgstr "Feil under lagring av hendelsen"
+
+msgid "Error deleting the enrollment event"
+msgstr "Feil ved sletting av hendelsen"
+
+msgid "Error editing the event, the changes made were not saved"
+msgstr "Feil under redigering av hendelsen, endringer ble ikke lagret"
+
+msgid "Error updating the Assignee"
+msgstr "Feil under oppdatering av tildelt bruker"
+
+msgid "Set coordinate"
+msgstr "Sett koordinater"
+
+msgid "Time"
+msgstr "Klokkeslett"
+
+msgid "From date"
+msgstr "Fra dato"
+
+msgid "From time"
+msgstr "Fra klokkeslett"
+
+msgid "To date"
+msgstr "Til dato"
+
+msgid "To time"
+msgstr "Til klokkeslett"
+
+msgid "Page {{currentPage}}"
+msgstr "Side {{currentPage}}"
+
+msgid "Area on map saved"
+msgstr "Området på kartet er lagret"
+
+msgid "Compatibility mode"
+msgstr "Kompabilitetsmodus"

@@ -1,0 +1,1849 @@
+# 
+# Translators:
+# Sergio Valenzuela <sergio.valenzuela@ehas.org>, 2020
+# ericbp <ericbarredap@gmail.com>, 2021
+# Jaime Bosque <jaime.bosque@dhis2.org>, 2021
+# Marta Vila <marta@dhis2.org>, 2022
+# Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2022
+# Prabhjot Singh, 2023
+# Christian Atavillos, 2023
+# Alison Andrade <aandrade@ippfwhr.org>, 2024
+# Philip Larsen Donnelly, 2024
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2024
+# Janeth Cruz, 2024
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
+# Viktor Varland <viktor@dhis2.org>, 2024
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2024-04-12T20:48:54.429Z\n"
+"PO-Revision-Date: 2019-06-27 07:31+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
+"Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+msgid "Choose one or more dates..."
+msgstr "Elija una o más fechas..."
+
+msgid "Choose a date..."
+msgstr "Elija una fecha..."
+
+msgid "Today"
+msgstr "Hoy"
+
+msgid ""
+"A possible reason for this is that the browser or mode (e.g. privacy mode) "
+"is not supported. See log for details."
+msgstr ""
+"Una posible razón es que el navegador o el modo (por ejemplo, el modo de "
+"privacidad) no es compatible. Consulte el logpara obtener más detalles."
+
+msgid ""
+"You opened another version of the Capture App in the same domain. Currently,"
+" the Capture App only supports running one version concurrently (in the same"
+" domain). Please refresh this page if you would like to use this version "
+"again, but be aware that this will close other versions."
+msgstr ""
+"Abriste otra versión de la aplicación de Captura en el mismo dominio. "
+"Actualmente, la aplicación de Captura solo admite la ejecución de una "
+"versión al mismo tiempo (en el mismo dominio). Actualice esta página si "
+"desea utilizar esta versión nuevamente, pero tenga en cuenta que esto "
+"cerrará otras versiones."
+
+msgid "View {{programName}} dashboard"
+msgstr "Ver panel de {{programName}}"
+
+msgid "View dashboard"
+msgstr "Ver tablero"
+
+msgid "View active enrollment"
+msgstr "Ver inscripción activa"
+
+msgid "Re-enroll"
+msgstr "Volver a inscribirse"
+
+msgid "in"
+msgstr "en"
+
+msgid "Enrolled"
+msgstr "Inscrito"
+
+msgid "Previously enrolled"
+msgstr "Inscrito previamente"
+
+msgid "Organisation unit"
+msgstr "Unidad organizativa"
+
+msgid "Date of enrollment"
+msgstr "Fecha de inscripción"
+
+msgid "Last updated"
+msgstr "Última actualización"
+
+msgid "error encountered during field validation"
+msgstr "error encontrado durante la validación de campo"
+
+msgid "error"
+msgstr "error"
+
+msgid "This value is validating"
+msgstr "Este valor está siendo validado"
+
+msgid "Async field update failed"
+msgstr "Error al actualizar el campo asincrónico"
+
+msgid "A value is required"
+msgstr "Se requiere un valor"
+
+msgid "Please provide a valid number"
+msgstr "Proporcione un número válido"
+
+msgid "Please provide a valid integer"
+msgstr "Proporcione un número entero válido"
+
+msgid "Please provide a positive integer"
+msgstr "Proporcione un número entero positivo"
+
+msgid "Please provide zero or a positive integer"
+msgstr "Proporcione cero o un número entero positivo"
+
+msgid "Please provide a negative integer"
+msgstr "Proporcione un número entero negativo"
+
+msgid "Please provide a valid date"
+msgstr "Proporcione una fecha válida"
+
+msgid "A date in the future is not allowed"
+msgstr "No se permite una fecha en el futuro"
+
+msgid "Please provide a valid date and time"
+msgstr "Proporcione una fecha y hora válidas"
+
+msgid "Please provide a valid time"
+msgstr "Proporcione una hora válida"
+
+msgid "Please provide an integer between 0 and 100"
+msgstr "Proporcione un número entero entre 0 y 100"
+
+msgid "Please provide a valid url"
+msgstr "Proporcione una URL válida"
+
+msgid "Please provide a valid email address"
+msgstr "Por favor ingrese una dirección de correo electrónico válida"
+
+msgid "Please provide a valid age"
+msgstr "Proporcione una edad válida"
+
+msgid "Please provide a valid phone number"
+msgstr "Proporcione un número de teléfono válido"
+
+msgid "Please provide a valid organisation unit"
+msgstr "Proporcione una unidad organizativa válida"
+
+msgid "Please provide valid coordinates"
+msgstr "Proporcione coordenadas válidas"
+
+msgid "This value already exists"
+msgstr "Este valor ya existe"
+
+msgid "\"From\" cannot be greater than \"To\""
+msgstr "\"Desde\" no puede ser mayor que \"Hasta\""
+
+msgid "Checking..."
+msgstr "Verificando..."
+
+msgid "Area"
+msgstr "Área"
+
+msgid "Coordinate"
+msgstr "Coordenada"
+
+msgid "Enrollment"
+msgstr "Inscripción"
+
+msgid "Complete event"
+msgstr "Completar el evento"
+
+msgid "{{ stageName }} - Basic info"
+msgstr "{{ stageName }} - Información básica"
+
+msgid "{{ stageName }} - Assignee"
+msgstr "{{ stageName }} - Asignado"
+
+msgid "{{ stageName }} - Status"
+msgstr "{{ stageName }} - Estado"
+
+msgid "Please select {{categoryName}}"
+msgstr "Seleccione {{categoryName}}"
+
+msgid "A future date is not allowed"
+msgstr "No se permite una fecha futura"
+
+msgid "Saving a new enrollment in {{programName}} in {{orgUnitName}}."
+msgstr ""
+"Guardando una nueva inscripción en {{programName}} en {{orgUnitName}}."
+
+msgid "Saving a {{trackedEntityName}} in {{programName}} in {{orgUnitName}}."
+msgstr ""
+"Guardando un@ {{trackedEntityName}} en {{programName}} en {{orgUnitName}}."
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Metadata error. see log for details"
+msgstr "Error de metadatos. ver registro para más detalles"
+
+msgid "{{ stageName }} - Details"
+msgstr "{{ stageName }} - Detalles"
+
+msgid "{{ stageName }} - {{ sectionName }}"
+msgstr "{{ stageName }} - {{ sectionName }}"
+
+msgid "Assigned user"
+msgstr "Usuario asignado"
+
+msgid "Search for user"
+msgstr "Buscar usuario"
+
+msgid "Basic info"
+msgstr "Información básica"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Comments"
+msgstr "Comentarios"
+
+msgid "Relationships"
+msgstr "Relaciones"
+
+msgid "Assignee"
+msgstr "Asignado por"
+
+msgid "Saving to {{programName}} in {{orgUnitName}}"
+msgstr "Guardando en {{programName}} en {{orgUnitName}}"
+
+msgid ""
+"This is not an event program or the metadata is corrupt. See log for "
+"details."
+msgstr ""
+"Este no es un programa de eventos o los metadatos están corruptos. Consulte "
+"el registro para obtener más detalles."
+
+msgid "This event"
+msgstr "Este evento"
+
+msgid ""
+"Relationship of type {{relationshipTypeName}} to {{entityName}} already "
+"exists"
+msgstr ""
+"La relación del tipo {{relationshipTypeName}} con {{entityName}} ya existe"
+
+msgid "Active"
+msgstr "Activo"
+
+msgid "Completed"
+msgstr "Completado"
+
+msgid "Please add or cancel comment before saving the event"
+msgstr "Agregue o cancele el comentario antes de guardar el evento"
+
+msgid "Save and add another"
+msgstr "Guardar y agregar otro"
+
+msgid "Save and exit"
+msgstr "Guardar y salir"
+
+msgid "Finish"
+msgstr "Finalizar"
+
+msgid "Save without completing"
+msgstr "Guardar sin completar"
+
+msgid "Complete"
+msgstr "Completo"
+
+msgid "No write access"
+msgstr "Sin acceso de escritura"
+
+msgid "New {{titleText}}"
+msgstr "Nuevo {{titleText}}"
+
+msgid "Switch to form view"
+msgstr "Cambiar a la vista de formulario"
+
+msgid "Switch to row view"
+msgstr "Cambiar a la vista de filas"
+
+msgid "events added"
+msgstr "eventos agregados"
+
+msgid "No events added"
+msgstr "No se agregaron eventos"
+
+msgid "New event relationship"
+msgstr "Nueva relación de eventos"
+
+msgid "Adding relationship to event."
+msgstr "Agregando relación al evento"
+
+msgid "Go back to event without saving relationship"
+msgstr "Volver al evento sin guardar la relación"
+
+msgid "Discard unsaved changes?"
+msgstr "¿Descartar los cambios no guardados ?"
+
+msgid ""
+"Leaving this page will discard the selections you made for a new "
+"relationship"
+msgstr ""
+"Al salir de esta página, se descartarán las selecciones que realizó para una"
+" nueva relación"
+
+msgid "Yes, discard changes"
+msgstr "Sí, descartar cambios"
+
+msgid "No, cancel"
+msgstr "No, cancelar"
+
+msgid "New event"
+msgstr "Evento nuevo"
+
+msgid "You don't have access to create an event in the current selections"
+msgstr "No tiene acceso para crear un evento en las selecciones actuales"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Saving a {{trackedEntityName}}"
+msgstr "Guardando un(a) {{trackedEntityName}}"
+
+msgid "without"
+msgstr "Sin"
+
+msgid "enrollment"
+msgstr "inscripción"
+
+msgid "Enroll in a program by selecting a program from the top bar."
+msgstr ""
+"Inscríbase en un programa seleccionando un programa de la barra superior."
+
+msgid "An error has occurred. See log for details"
+msgstr "Se ha producido un error. Ver registro para más detalles"
+
+msgid "{{programStageName}} completed"
+msgstr "{{programStageName}} completado/a"
+
+msgid ""
+"Would you like to complete the enrollment and all active events as well?"
+msgstr ""
+"¿Le gustaría completar la inscripción y también todos los eventos activos?"
+
+msgid "{{count}} event in {{programStageName}}"
+msgid_plural "{{count}} event in {{programStageName}}"
+msgstr[0] "{{count}} evento en {{programStageName}}"
+msgstr[1] "{{count}} eventos en {{programStageName}}"
+msgstr[2] "{{count}} eventos en {{programStageName}}"
+
+msgid "Yes, complete enrollment and events"
+msgstr "Sí, completae inscripción y eventos."
+
+msgid "Complete enrollment only"
+msgstr "Sólo completar la inscripción"
+
+msgid "Would you like to complete the enrollment?"
+msgstr "¿Quieres completar la inscripción?"
+
+msgid "Complete enrollment"
+msgstr "Completar inscripción"
+
+msgid "A duplicate exists (but there were some errors, see log for details"
+msgstr ""
+"Existe un duplicado (pero hubo algunos errores, consulte el registro para "
+"obtener más detalles"
+
+msgid ""
+"An item with this {{attributeName}} is already registered, but you don't "
+"have access to it"
+msgstr ""
+"Un artículo con este {{attributeName}} ya está registrado, pero no tiene "
+"acceso a él."
+
+msgid "You have already registered this {{attributeName}}"
+msgstr "Ya ha registrado este {{attributeName}}"
+
+msgid ""
+"A {{trackedEntityTypeName}} with this {{attributeName}} is already "
+"registered"
+msgstr ""
+"Un {{trackedEntityTypeName}} con este {{attributeName}} ya está registrado"
+
+msgid "Show registered {{trackedEntityTypeName}}"
+msgstr "Mostrar {{trackedEntityTypeName}} registrado"
+
+msgid "Registered person"
+msgstr "Persona registrada"
+
+msgid "validation failed"
+msgstr "Validación fallida"
+
+msgid "Errors"
+msgstr "Errores"
+
+msgid "Feedback"
+msgstr "Retroalimentación"
+
+msgid "Indicators"
+msgstr "Indicadores"
+
+msgid "Warnings"
+msgstr "Advertencias"
+
+msgid "Generate new event"
+msgstr "Generar nuevo evento"
+
+msgid "Do you want to create another event?"
+msgstr "¿Quiere crear un nuevo evento?"
+
+msgid "Yes, create new event"
+msgstr "Sí, crear un nuevo evento"
+
+msgid "Back to form"
+msgstr "Volver al formulario"
+
+msgid "Save anyway"
+msgstr "Guardar de todos modos"
+
+msgid "Validation errors and warnings"
+msgstr "Errores de validación y advertencias"
+
+msgid "Validation errors"
+msgstr "Errores de validación"
+
+msgid "Validation warnings"
+msgstr "Advertencias de validación"
+
+msgid "Some operations are still runnning. Please wait.."
+msgstr "Algunas operaciones aún se están ejecutando. Espere por favor.."
+
+msgid "Operations running"
+msgstr "Operaciones en ejecución"
+
+msgid ""
+"This event has unsaved changes. Leaving this page without saving will lose "
+"these changes. Are you sure you want to discard unsaved changes?"
+msgstr ""
+"Este evento tiene cambios no guardados. Si abandona esta página sin guardar,"
+" se perderán estos cambios. ¿Está seguro de que desea descartar los cambios "
+"no guardados?"
+
+msgid "No events to display"
+msgstr "No hay eventos para mostrar"
+
+msgid "Data for offline list not present"
+msgstr "Los datos de la lista sin conexión no están presentes"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Please select the user"
+msgstr "Por favor seleccione el usuario"
+
+msgid "Me"
+msgstr "Yo"
+
+msgid "Anyone"
+msgstr "Alguien"
+
+msgid "None"
+msgstr "Ninguno"
+
+msgid "Select user"
+msgstr "Seleccionar usuario"
+
+msgid "to"
+msgstr "a"
+
+msgid "Days in the future"
+msgstr "Días en el futuro"
+
+msgid "From"
+msgstr "Desde"
+
+msgid "Days in the past"
+msgstr "Días en el pasado"
+
+msgid "To"
+msgstr "Hasta"
+
+msgid "This week"
+msgstr "Esta semana"
+
+msgid "This month"
+msgstr "Este mes"
+
+msgid "This Year"
+msgstr "Este año"
+
+msgid "Last week"
+msgstr "Última semana"
+
+msgid "Last month"
+msgstr "Mes anterior"
+
+msgid "Last 3 months"
+msgstr "Últimos 3 meses"
+
+msgid "Absolute range"
+msgstr "Rango absoluto"
+
+msgid "Relative range"
+msgstr "Rango relativo"
+
+msgid "Max"
+msgstr "Máx"
+
+msgid "Min"
+msgstr "Mín"
+
+msgid "Contains text"
+msgstr "Contiene texto"
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "mm/dd/yyyy"
+msgstr "mm / dd / aaaa"
+
+msgid "Years"
+msgstr "Años"
+
+msgid "Months"
+msgstr "Meses"
+
+msgid "Days"
+msgstr "Días"
+
+msgid "Uploading file"
+msgstr "Subiendo archivo"
+
+msgid "selected"
+msgstr "seleccionado"
+
+msgid "Delete"
+msgstr "Borrar"
+
+msgid "Select file"
+msgstr "Seleccionar archivos"
+
+msgid "No"
+msgstr "No"
+
+msgid "Uploading image"
+msgstr "Subiendo imagen"
+
+msgid "Select image"
+msgstr "Seleccionar imagen"
+
+msgid "Type to filter options"
+msgstr "Escriba para filtrar opciones"
+
+msgid "No match found"
+msgstr "No se encontraron coincidencias"
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "Clear"
+msgstr "Limpiar"
+
+msgid "No results"
+msgstr "No hay resultados"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Icon for {{field}}"
+msgstr "Icono de {{field}}"
+
+msgid "start typing to search"
+msgstr "Empiece a escribir para buscar"
+
+msgid "suggestions could not be retrieved"
+msgstr "No se pudieron recuperar las sugerencias"
+
+msgid "No results found"
+msgstr "No results found"
+
+msgid "No items to display"
+msgstr "No hay elementos para mostrar"
+
+msgid "Select columns"
+msgstr "Seleccionar columnas"
+
+msgid "Columns to show in table"
+msgstr "Columnas para mostrar en la tabla"
+
+msgid "Column"
+msgstr "Columna"
+
+msgid "Update"
+msgstr "Actualizar"
+
+msgid "Reset filter"
+msgstr "Restablecer filtro"
+
+msgid "Remove filter"
+msgstr "Quitar filtro"
+
+msgid "{{fromDate}} to {{toDate}}"
+msgstr "{{fromDate}} a {{toDate}}"
+
+msgid "after or equal to {{date}}"
+msgstr "igual o posterior a {{date}}"
+
+msgid "before or equal to {{date}}"
+msgstr "antes o igual a {{date}}"
+
+msgid "greater than or equal to"
+msgstr "mayor qué o igual a"
+
+msgid "less than or equal to"
+msgstr "menos que o igual a"
+
+msgid "More filters"
+msgstr "Más filtros"
+
+msgid "Stage filters"
+msgstr "Filtros de etapa"
+
+msgid "Rows per page"
+msgstr "Filas por página"
+
+msgid "Could not get organisation unit"
+msgstr "No se pudo obtener la unidad organizativa"
+
+msgid "Program doesn't exist"
+msgstr "El programa no existe"
+
+msgid "Selected program is invalid for selected organisation unit"
+msgstr ""
+
+msgid "Online"
+msgstr "Conectado"
+
+msgid "Offline"
+msgstr "Desconectado"
+
+msgid "Syncing"
+msgstr "Sincronizando"
+
+msgid "Add comment"
+msgstr "Agregar comentario"
+
+msgid "You don't have access to write comments"
+msgstr "No tiene acceso para escribir comentarios."
+
+msgid "Write comment"
+msgstr "Escribir comentario"
+
+msgid "was blanked out and hidden by your last action"
+msgstr "fue borrado y oculto por tu última acción"
+
+msgid "Notice"
+msgstr "Aviso"
+
+msgid "Close the notice"
+msgstr "cerrar el aviso"
+
+msgid "Use new Enrollment dashboard for {{programName}}"
+msgstr "Usar el nuevo panel de inscripción para {{programName}}"
+
+msgid "Opt in for {{programName}}"
+msgstr "Utilizar el nuevo capture para {{programName}}"
+
+msgid ""
+"By clicking opt-in below, you will start using the new enrollment dashboard "
+"in the Capture app for this Tracker program. At the moment, there is certain"
+" functionality from Tracker Capture that has not yet been added, including "
+"relationship and referral functionality. The work on including this Tracker "
+"functionality in Capture is ongoing and will be added in upcoming app "
+"releases."
+msgstr ""
+"Al hacer clic en registrarse a continuación, comenzará a utilizar el nuevo "
+"panel de inscripción en la aplicación Capture para este programa. Por el "
+"momento, hay ciertas funciones de la Tracker Capture que aún no se han "
+"agregado, incluida la función de relación y referencia. El trabajo para "
+"incluir esta funcionalidad Tracker en Capture está en curso y se agregará en"
+" próximos lanzamientos de la aplicación."
+
+msgid ""
+"The core team appreciates any feedback on this new functionality which is "
+"currently being beta tested, please report any issues and feedback in the "
+"DHIS2 JIRA project."
+msgstr ""
+"El equipo de desarrollo agradece cualquier comentario sobre esta nueva "
+"funcionalidad que actualmente se está probando en versión beta. Informe "
+"cualquier problema y comentario en el proyecto de JIRA de DHIS2"
+
+msgid ""
+"Click the button below to opt-in to the new enrollment dashboard "
+"functionality in the Capture app (beta) for this Tracker program for all "
+"users."
+msgstr ""
+"Haga clic en el botón de abajo para optar por la nueva funcionalidad del "
+"panel de inscripción en la aplicación Capture (beta) para este programa "
+"Tracker para todos los usuarios."
+
+msgid "Yes, opt in"
+msgstr "Sí, aceptar"
+
+msgid "Stop using new Enrollment dashboard for {{programName}}"
+msgstr "Deje de usar el nuevo panel de inscripción para {{programName}}"
+
+msgid "Opt out for {{programName}}"
+msgstr "Salir de la prueba del nuevo Capture {{programName}}"
+
+msgid "Enrollment with id \"{{enrollmentId}}\" does not exist"
+msgstr "La inscripción con el ID \"{{enrollmentId}}\" no existe"
+
+msgid "Tracked entity instance with id \"{{teiId}}\" does not exist"
+msgstr "La instancia de entidad rastreada con el ID \"{{teiId}}\" no existe"
+
+msgid "Program with id \"{{programId}}\" does not exist"
+msgstr "El programa con el id \"{{programId}}\" no existe."
+
+msgid ""
+"An error occurred while fetching enrollments. Please enter a valid url."
+msgstr ""
+"Se produjo un error al obtener las inscripciones. Por favor introduzca un "
+"URL válido."
+
+msgid "No feedback for this enrollment yet"
+msgstr "Aún no hay comentarios para esta inscripción"
+
+msgid "No indicator output for this enrollment yet"
+msgstr "Aún no hay resultados de indicadores para esta inscripción"
+
+msgid "Quick actions"
+msgstr "Acciones rápidas"
+
+msgid "New Event"
+msgstr "Nuevo evento"
+
+msgid "Schedule an event"
+msgstr "Programar un evento"
+
+msgid "Make referral"
+msgstr "Hacer referencia"
+
+msgid "No available program stages"
+msgstr "No hay etapas de programa disponibles"
+
+msgid "Program stage not found"
+msgstr "Etapa del programa no encontrada"
+
+msgid ""
+"Choose a program to add new or see existing enrollments for "
+"{{teiDisplayName}}"
+msgstr ""
+"Elija un programa para agregar nuevas o ver inscripciones existentes para "
+"{{teiDisplayName}}"
+
+msgid ""
+"{{programName}} has categories. Choose all categories to view dashboard."
+msgstr ""
+"{{programName}} tiene categorías. Elija todas las categorías para ver el "
+"tablero."
+
+msgid "Invalid enrollment id {{enrollmentId}}."
+msgstr "ID de inscripción no válida {{enrollmentId}}."
+
+msgid "Choose an enrollment to view the dashboard."
+msgstr "Elija una inscripción para ver el tablero."
+
+msgid "There are no active enrollments."
+msgstr "No hay inscripciones activas."
+
+msgid "Add new enrollment for {{teiDisplayName}} in this program."
+msgstr ""
+"Agregue una nueva inscripción para {{teiDisplayName}} en este programa."
+
+msgid "No access to program owner."
+msgstr "Sin acceso al propietario del programa."
+
+msgid "{{teiDisplayName}} is not enrolled in this program."
+msgstr "{{teiDisplayName}} no está inscrito en este programa."
+
+msgid "Enroll {{teiDisplayName}} in this program."
+msgstr "Inscribe a {{teiDisplayName}} en este programa."
+
+msgid ""
+"{{teiDisplayName}} is a {{tetName}} and cannot be enrolled in the "
+"{{programName}}. Choose another program that allows {{tetName}} enrollment. "
+msgstr ""
+"{{teiDisplayName}} es un {{tetName}} y no se puede inscribir en "
+"{{programName}}. Elija otro programa que permita la inscripción de "
+"{{tetName}}."
+
+msgid "Enroll a new {{selectedTetName}} in this program."
+msgstr "Inscribir a un(a) nuevo(a) {{selectedTetName}} en este programa."
+
+msgid "{{programName}} is an event program and does not have enrollments."
+msgstr "{{programName}} es un programa de eventos y no tiene inscripciones."
+
+msgid "Create a new event in this program."
+msgstr "Crea un nuevo evento en este programa."
+
+msgid "View working list in this program."
+msgstr "Ver lista de trabajo en este programa."
+
+msgid "Page is missing required values from URL"
+msgstr "A la página le faltan los valores obligatorios de la URL"
+
+msgid "Program is not valid"
+msgstr "El programa no es válido"
+
+msgid "Org unit is not valid with current program"
+msgstr "La unidad organizativa no es válida con el programa actual"
+
+msgid "There was an error opening the Page"
+msgstr "Hubo un error al abrir la página"
+
+msgid "There was an error loading the page"
+msgstr "Hubo un error al cargar la página"
+
+msgid "Choose an organisation unit to start reporting"
+msgstr ""
+
+msgid "No feedback for this event yet"
+msgstr "Aún no hay retroalimentación para este evento."
+
+msgid "No indicator output for this event yet"
+msgstr "Aún no hay resultados de indicador para este evento"
+
+msgid "Program stage is invalid"
+msgstr "La etapa del programa no es válida"
+
+msgid "Report"
+msgstr "Informe"
+
+msgid "Schedule"
+msgstr "Programado"
+
+msgid "Refer"
+msgstr "Referir"
+
+msgid "You can't add any more {{ programStageName }} events"
+msgstr "No se pueden agregar más eventos de {{ programStageName }}"
+
+msgid "Cancel without saving"
+msgstr "Cancelar sin guardar"
+
+msgid "Choose a stage for a new event"
+msgstr "Elige una etapa para un nuevo evento"
+
+msgid "Program Stages could not be loaded"
+msgstr "No se pudieron cargar las etapas del programa"
+
+msgid "Stage"
+msgstr "Etapa"
+
+msgid "Registered events"
+msgstr "Eventos registrados"
+
+msgid "Please select {{category}}."
+msgstr "Seleccione {{category}}."
+
+msgid "Or see all records accessible to you in {{program}} "
+msgstr "O vea todos los registros a los que puede acceder en {{program}}"
+
+msgid "Or see all events accessible to you in {{program}}"
+msgstr "O vea todos los eventos a los que puede acceder en {{program}}"
+
+msgid "Please select an organisation unit."
+msgstr "Seleccione una unidad organizativa."
+
+msgid "New"
+msgstr "Nuevo"
+
+msgid "Choose the {{missingCategories}} to start reporting"
+msgstr "Elija los {{missingCategories}} para comenzar a informar"
+
+msgid "Save as new"
+msgstr "Guardar como nuevo"
+
+msgid "View enrollment"
+msgstr "Ver inscripción"
+
+msgid "Create for"
+msgstr "Crear"
+
+msgid ""
+"You can also choose a program from the top bar and create in that program"
+msgstr ""
+"También puede elegir un programa de la barra superior y crear en ese "
+"programa"
+
+msgid "New Enrollment in program{{escape}} {{programName}}"
+msgstr "Nueva inscripción en el programa{{escape}} {{programName}}"
+
+msgid "Save {{trackedEntityTypeName}}"
+msgstr "Guardar {{trackedEntityTypeName}}"
+
+msgid "Save {{trackedEntityName}}"
+msgstr "Guardar {{trackedEntityName}}"
+
+msgid "Save new {{trackedEntityTypeName}} and link"
+msgstr "Guardar el(la) nuevo(a) {{trackedEntityTypeName}} y enlazar"
+
+msgid "Link"
+msgstr "Enlace"
+
+msgid "Save as new {{trackedEntityName}}"
+msgstr "Guardar como nuevo {{trackedEntityName}}"
+
+msgid "Some programs are being filtered."
+msgstr "Se están filtrando algunos programas."
+
+msgid "Show all"
+msgstr "Mostrar todo"
+
+msgid "Program"
+msgstr "Programa"
+
+msgid "Organisation Unit"
+msgstr "Unidad Organizativa"
+
+msgid "Registration"
+msgstr "Registro"
+
+msgid "Search results"
+msgstr "Resultados de la búsqueda"
+
+msgid "No {{trackedEntityTypeName}} found."
+msgstr "No se encontró {{trackedEntityTypeName}}."
+
+msgid "New search"
+msgstr "Nueva búsqueda"
+
+msgid "Edit search"
+msgstr "Editar búsqueda"
+
+msgid "Link to an existing {{trackedEntityType}}"
+msgstr "Enlace a un {{trackedEntityType}} existente"
+
+msgid "Create new {{trackedEntityType}}"
+msgstr "Crear nuevo {{trackedEntityType}}"
+
+msgid "Register"
+msgstr "Registrar"
+
+msgid "Back"
+msgstr "Atrás"
+
+msgid "events"
+msgstr "Eventos"
+
+msgid "event"
+msgstr "evento"
+
+msgid "You don't have access to edit this event"
+msgstr "No tiene acceso para editar este evento"
+
+msgid "Edit event"
+msgstr "Editar evento"
+
+msgid "View changelog"
+msgstr "Ver registro de cambios"
+
+msgid "Event details"
+msgstr "Detalles del evento"
+
+msgid ""
+"Leaving this page will discard any selections you made for a new "
+"relationship"
+msgstr ""
+"Al salir de esta página, se descartarán las selecciones que haya realizado "
+"para una nueva relación"
+
+msgid "Show all events"
+msgstr "Mostrar todos los eventos"
+
+msgid "Event could not be loaded. Are you sure it exists?"
+msgstr "No se pudo cargar el evento. ¿Está seguro de que existe?"
+
+msgid "Event could not be loaded"
+msgstr "No se pudo cargar el evento"
+
+msgid "Organisation unit could not be loaded"
+msgstr "No se pudo cargar la unidad organizativa"
+
+msgid "Dashboard"
+msgstr "Tablero"
+
+msgid "Edit Event"
+msgstr "Editar evento"
+
+msgid "View Event"
+msgstr "Ver evento"
+
+msgid "Selected program"
+msgstr "Programa seleccionado"
+
+msgid "Search {{uniqueAttrName}}"
+msgstr "Buscar {{uniqueAttrName}}"
+
+msgid "Search by attributes"
+msgstr "Buscar por atributos de {{trackedEntityName}}"
+
+msgid "Fill in at least {{count}} attribute to search"
+msgid_plural "Fill in at least {{count}} attribute to search"
+msgstr[0] "Complete al menos {{count}} atributo para buscar"
+msgstr[1] "Complete al menos {{count}} atributos para buscar"
+msgstr[2] "Complete al menos {{count}} atributo(s) para buscar"
+
+msgid "Could not retrieve metadata. Please try again later."
+msgstr ""
+"No se pudo recuperar los metadatos. Por favor, inténtelo de nuevo más tarde."
+
+msgid "The enrollment event data could not be found"
+msgstr "No se pudieron encontrar los datos del evento de inscripción"
+
+msgid "Possible duplicates found"
+msgstr "Posibles duplicados encontrados"
+
+msgid "An error occurred loading possible duplicates"
+msgstr "Se produjo un error al cargar posibles duplicados"
+
+msgid "You don't have access to delete this relationship"
+msgstr "No tiene acceso para eliminar esta relación"
+
+msgid "You don't have access to create any relationships"
+msgstr "No tiene acceso para crear ninguna relación."
+
+msgid "Add relationship"
+msgstr "Añadir relación"
+
+msgid "No results found for "
+msgstr "No se encontraron resultados para"
+
+msgid "Choose an organisation unit"
+msgstr ""
+
+msgid "Clear selection"
+msgstr "Despejar selecciones"
+
+msgid "No programs available."
+msgstr "No hay programas disponibles."
+
+msgid "Search for a program"
+msgstr "Buscar un programa"
+
+msgid "Some programs are being filtered by the chosen organisation unit"
+msgstr ""
+
+msgid "Show all programs"
+msgstr "Mostrar todos los programas"
+
+msgid "Choose a program"
+msgstr "Elija un programa"
+
+msgid "Search for {{titleText}}"
+msgstr "Buscar por {{titleText}}"
+
+msgid "Search for"
+msgstr "Buscar por"
+
+msgid ""
+"You can also choose a program from the top bar and search in that program"
+msgstr ""
+"También puede elegir un programa de la barra superior y buscar en ese "
+"programa"
+
+msgid "Choose a type to start searching"
+msgstr "Elija un tipo para comenzar a buscar"
+
+msgid "Search {{name}}"
+msgstr "Buscar {{name}}"
+
+msgid "Search by {{name}}"
+msgstr "Buscar por {{name}}"
+
+msgid "all programs"
+msgstr "todos los programas"
+
+msgid ""
+"Not finding the results you were looking for? Try to search all programs "
+"that use type "
+msgstr ""
+"¿No encuentra los resultados que buscaba? Intente buscar todos los programas"
+" que usan el tipo"
+
+msgid "Search in all programs"
+msgstr "Buscar en todos los programas"
+
+msgid "If none of search results match, you can create a new "
+msgstr ""
+"Si ninguno de los resultados de la búsqueda coincide, puede crear una nueva"
+
+msgid "Create new"
+msgstr "Crear nuevo"
+
+msgid "Fill in these fields to search{{escape}} {{ searchableAttributes }}"
+msgstr ""
+"Complete estos campos para buscar{{escape}} {{ searchableAttributes }}"
+
+msgid ""
+"Fill in at least {{minAttributesRequiredToSearch}} of these fields to "
+"search{{escape}} {{searchableAttributes}}"
+msgstr ""
+"Complete al menos {{minAttributesRequiredToSearch}} de estos campos para "
+"buscar{{escape}} {{searchableAttributes}}"
+
+msgid "Fill in this field to search{{escape}} {{searchableAttributes}}"
+msgstr "Complete este campo para buscar{{escape}} {{searchableAttributes}}"
+
+msgid ""
+"You can change your search terms and search again to find what you are "
+"looking for."
+msgstr ""
+"Puede cambiar los términos de búsqueda y volver a buscar para encontrar lo "
+"que busca."
+
+msgid "Back to search"
+msgstr "Volver a buscar"
+
+msgid "An error has occurred"
+msgstr "Se ha producido un error"
+
+msgid "Too many results"
+msgstr "Demasiados resultados"
+
+msgid "Cannot search in all programs"
+msgstr "No se puede buscar en todos los programas"
+
+msgid "Missing search criteria"
+msgstr "Faltan criterios de búsqueda"
+
+msgid "Results found"
+msgstr "Resultados encontrados"
+
+msgid "Saved lists in this program"
+msgstr "Listas guardadas en este programa"
+
+msgid "Saved lists offer quick access to your most used views in a program."
+msgstr ""
+"Las listas guardadas ofrecen acceso rápido a las vistas más utilizadas en un"
+" programa."
+
+msgid ""
+"There are no saved lists in this program yet, create one using the button "
+"below."
+msgstr ""
+"Todavía no hay listas guardadas en este programa, cree una usando el botón "
+"de abajo."
+
+msgid "Create saved list"
+msgstr "Crear lista guardada"
+
+msgid "Create new in another program"
+msgstr "Crear nuevo en otro programa"
+
+msgid "Create new event"
+msgstr "Crear un nuevo evento"
+
+msgid "Search for a {{trackedEntityName}} in {{programName}}"
+msgstr "Buscar un(a) {{trackedEntityName}} en {{programName}}"
+
+msgid "No tracked entity types available"
+msgstr ""
+
+msgid "Assigned to"
+msgstr "Asignado a"
+
+msgid "You don't have access to edit this assignee"
+msgstr "No tienes acceso para editar este asignado."
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "No one is assigned to this event"
+msgstr "Nadie está asignado a este evento"
+
+msgid "You don't have access to assign an assignee"
+msgstr "No tienes acceso para asignar un asignado."
+
+msgid "Assign"
+msgstr "Asignar"
+
+msgid "This program is protected"
+msgstr "Este programa está protegido"
+
+msgid "Reason to check for enrollments"
+msgstr "Razón para comprobar las inscripciones"
+
+msgid ""
+"Describe the reason you are checking for enrollments in this protected "
+"program"
+msgstr ""
+"Describa la razón por la que está buscando inscripciones en este programa "
+"protegido"
+
+msgid "Check for enrollments"
+msgstr "Consultar por inscripciones"
+
+msgid ""
+"You must provide a reason to check for enrollments in this protected "
+"program. All activity will be logged."
+msgstr ""
+"Debe proporcionar una razón para ver inscripciones en este programa "
+"protegido. Toda actividad será registrada en el log."
+
+msgid "Save comment"
+msgstr "Guardar comentario"
+
+msgid "Enrollment actions"
+msgstr "Acciones de inscripción"
+
+msgid "We are processing your request."
+msgstr "Estamos tramitando su solicitud."
+
+msgid "Only one enrollment per {{tetName}} is allowed in this program"
+msgstr "Solo se permite una inscripción por {{tetName}} en este programa"
+
+msgid "Add new"
+msgstr "Agregar nuevo"
+
+msgid "Reactivate"
+msgstr "Reactiva"
+
+msgid "Mark as cancelled"
+msgstr "Marca como cancelado"
+
+msgid "Mark incomplete"
+msgstr "Marca como incompleto"
+
+msgid "Delete enrollment"
+msgstr "Borrar inscripción"
+
+msgid ""
+"Are you sure you want to delete this enrollment? This will permanently "
+"remove the current enrollment."
+msgstr ""
+"¿Está seguro de que desea eliminar esta inscripción? Esto eliminará "
+"permanentemente la inscripción actual."
+
+msgid "Yes, delete enrollment."
+msgstr "Sí, elimine la inscripción."
+
+msgid "Remove mark for follow-up"
+msgstr "Elimina la marca para el seguimiento"
+
+msgid "Mark for follow-up"
+msgstr "Marcar para seguimiento"
+
+msgid "Transfer"
+msgstr "Transferir"
+
+msgid "An error occurred while transferring ownership"
+msgstr "Se produjo un error al transferir"
+
+msgid "Existing dates for auto-generated events will not be updated."
+msgstr ""
+"Las fechas existentes para los eventos generados automáticamente no se "
+"actualizarán."
+
+msgid "Latitude"
+msgstr "Latitud"
+
+msgid "Longitude"
+msgstr "Longitud"
+
+msgid "Set coordinates"
+msgstr "Establecer coordenadas"
+
+msgid "Coordinates"
+msgstr "Coordenadas"
+
+msgid "Delete polygon"
+msgstr "Eliminar polígono"
+
+msgid "Close without saving"
+msgstr "Cerrar sin guardar"
+
+msgid "Finish drawing before saving"
+msgstr "Termina de dibujar antes de guardar"
+
+msgid "Set area"
+msgstr "Establecer área"
+
+msgid ""
+"Transferring enrollment ownership from {{ownerOrgUnit}} to "
+"{{newOrgUnit}}{{escape}}"
+msgstr ""
+"Transferir la inscripción de {{ownerOrgUnit}} a {{newOrgUnit}}{{escape}}"
+
+msgid ""
+"You will lose access to the enrollment when transferring ownership to "
+"{{organisationUnit}}."
+msgstr ""
+"Perderá el acceso a la inscripción cuando transfiera a {{organisationUnit}}."
+
+msgid "Transfer Ownership"
+msgstr "Transferir"
+
+msgid ""
+"Choose the organisation unit to which enrollment ownership should be "
+"transferred."
+msgstr ""
+"Elija la unidad organizativa a la que se debe transferir la inscripción."
+
+msgid "Enrollment date"
+msgstr "Fecha de inscripción"
+
+msgid "Incident date"
+msgstr "Fecha del incidente"
+
+msgid "Enrollment widget could not be loaded. Please try again later"
+msgstr ""
+"No se pudo cargar el widget de inscripción. Por favor, inténtelo de nuevo "
+"más tarde"
+
+msgid "Follow-up"
+msgstr "Seguimiento"
+
+msgid "Started at {{orgUnitName}}"
+msgstr "Comenzó en {{orgUnitName}}"
+
+msgid "Owned by {{ownerOrgUnit}}"
+msgstr "Propiedad de {{ownerOrgUnit}}"
+
+msgid "Last updated {{date}}"
+msgstr "Última actualización {{date}}"
+
+msgid "Cancelled"
+msgstr "Cancelar"
+
+msgid "Add coordinates"
+msgstr "Establecer coordenadas"
+
+msgid "Add area"
+msgstr "Agregar área"
+
+msgid "Comments about this enrollment"
+msgstr "Comentarios sobre esta inscripción"
+
+msgid "Write a comment about this enrollment"
+msgstr "Escribe un comentario sobre esta inscripción"
+
+msgid "This enrollment doesn't have any comments"
+msgstr "Esta inscripción no tiene comentarios"
+
+msgid "organisation unit could not be retrieved. Please try again later."
+msgstr ""
+"No se pudo recuperar la unidad de organización. Por favor, inténtelo de "
+"nuevo más tarde."
+
+msgid "Saving to {{stageName}} for {{programName}} in {{orgUnitName}}"
+msgstr "Guardando en {{stageName}} para {{programName}} en {{orgUnitName}}"
+
+msgid "program or stage is invalid"
+msgstr "el programa o la etapa no es válido"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Warning"
+msgstr "Advertencia"
+
+msgid "Comments about this event"
+msgstr "Comentarios sobre este evento"
+
+msgid "Write a comment about this event"
+msgstr "Escriba un comentario sobre este evento"
+
+msgid "This event doesn't have any comments"
+msgstr "Este evento no tiene comentarios."
+
+msgid "stage not found in rules execution"
+msgstr "etapa no encontrada en la ejecución de reglas"
+
+msgid "Delete event"
+msgstr "Eliminar evento"
+
+msgid "Yes, delete event"
+msgstr "Sí, eliminar evento"
+
+msgid "Go to “Schedule” tab to reschedule this event"
+msgstr "Vaya a la pestaña \"Programar\" para reprogramar este evento"
+
+msgid "Scheduled date cannot be changed for {{ eventStatus }} events"
+msgstr ""
+"La fecha programada no se puede cambiar para eventos {{ eventStatus }} "
+
+msgid "Event completed"
+msgstr "Evento completado"
+
+msgid "Back to all stages and events"
+msgstr "Volver a todas las etapas y eventos"
+
+msgid "Schedule date info"
+msgstr "Programar información de fecha"
+
+msgid "Scheduled automatically for {{suggestedScheduleDate}}"
+msgstr "Programado automáticamente para {{suggestedScheduleDate}}"
+
+msgid ""
+"The scheduled date matches the suggested date, but can be changed if needed."
+msgstr ""
+"La fecha programada coincide con la fecha sugerida, pero se puede cambiar si"
+" es necesario."
+
+msgid "The scheduled date is {{count}} days {{position}} the suggested date."
+msgid_plural ""
+"The scheduled date is {{count}} days {{position}} the suggested date."
+msgstr[0] ""
+"La fecha programada es {{count}} día {{position}} la fecha sugerida."
+msgstr[1] ""
+"La fecha programada es {{count}} días {{position}} la fecha sugerida."
+msgstr[2] ""
+"La fecha programada es {{count}} días {{position}} la fecha sugerida."
+
+msgid "after"
+msgstr "después"
+
+msgid "before"
+msgstr "antes"
+
+msgid "There are {{count}} scheduled event in {{orgUnitName}} on this day."
+msgid_plural ""
+"There are {{count}} scheduled event in {{orgUnitName}} on this day."
+msgstr[0] "Hay {{count}} evento programado en {{orgUnitName}} para este día."
+msgstr[1] ""
+"Hay {{count}} eventos programados en {{orgUnitName}} para este día."
+msgstr[2] ""
+"Hay {{count}} eventos programados en {{orgUnitName}} para este día."
+
+msgid ""
+"Scheduling an event in {{stageName}} for {{programName}} in {{orgUnitName}}"
+msgstr ""
+"Programando un evento en {{stageName}} para {{programName}} en "
+"{{orgUnitName}}"
+
+msgid "Schedule info"
+msgstr "Programar información"
+
+msgid "Schedule date / Due date"
+msgstr "Fecha de programación/fecha de vencimiento"
+
+msgid "Event comments"
+msgstr "Comentarios del evento"
+
+msgid "Write a comment about this scheduled event"
+msgstr "Escriba un comentario sobre este evento programado"
+
+msgid ""
+"Change information about this {{trackedEntityName}} here. To change "
+"information about this enrollment, use the Edit button in the in the "
+"Enrollment box on this dashboard"
+msgstr ""
+"Cambie la información sobre este {{trackedEntityName}} aquí. Para cambiar la"
+" información sobre esta inscripción, use el botón Editar en el cuadro "
+"Inscripción en este tablero"
+
+msgid " Loading..."
+msgstr " Cargando..."
+
+msgid "Save changes"
+msgstr "Guardar cambios"
+
+msgid "Profile"
+msgstr "Perfil"
+
+msgid "There is a problem with this form"
+msgstr "Hay un problema con este formulario"
+
+msgid "There are warnings in this form"
+msgstr "Hay advertencias en este formulario."
+
+msgid "There was a problem saving changes"
+msgstr "Hubo un problema al guardar los cambios"
+
+msgid "Try again or contact your system administrator for support"
+msgstr ""
+"Vuelva a intentarlo o póngase en contacto con el administrador del sistema "
+"para obtener asistencia"
+
+msgid "Fix errors in the form to continue."
+msgstr "Corregir errores en el formulario para continuar"
+
+msgid "You do not have access to delete this {{trackedEntityTypeName}}"
+msgstr "No tienes acceso para eliminar esta {{trackedEntityTypeName}}"
+
+msgid "Delete {{trackedEntityTypeName}}"
+msgstr "Borrar {{trackedEntityTypeName}}"
+
+msgid ""
+"Are you sure you want to delete this {{trackedEntityTypeName}}? This will "
+"permanently remove the {{trackedEntityTypeName}} and all its associated "
+"enrollments and events in all programs."
+msgstr ""
+"¿Estás seguro de que deseas eliminar este {{trackedEntityTypeName}}? Esto "
+"eliminará permanentemente {{trackedEntityTypeName}} y todas sus "
+"inscripciones y eventos asociados en todos los programas."
+
+msgid "There was a problem deleting the {{trackedEntityTypeName}}"
+msgstr "Hubo un problema al borrar {{trackedEntityTypeName}}"
+
+msgid "Yes, delete {{trackedEntityTypeName}}"
+msgstr "Sí, borrar {{trackedEntityTypeName}}"
+
+msgid "Profile widget could not be loaded. Please try again later"
+msgstr ""
+"No se pudo cargar el widget de perfil. Por favor, inténtelo de nuevo más "
+"tarde"
+
+msgid "{{trackedEntityTypeName}} profile"
+msgstr " Perfil de {{trackedEntityTypeName}}"
+
+msgid "tracked entity instance"
+msgstr "instancia de entidad rastreada"
+
+msgid "Link to an existing {{linkableStageLabel}}"
+msgstr ""
+
+msgid "Choose a {{linkableStageLabel}}"
+msgstr ""
+
+msgid "Ambiguous relationships, contact system administrator"
+msgstr ""
+
+msgid ""
+"Enter {{linkableStageLabel}} details in the next step after completing this "
+"{{currentStageLabel}}."
+msgstr ""
+
+msgid "Enter details now"
+msgstr ""
+
+msgid "Link to an existing"
+msgstr ""
+
+msgid "Scheduled date"
+msgstr "Fecha planificada"
+
+msgid "Report date"
+msgstr "Fecha de reporte"
+
+msgid "Please select a valid event"
+msgstr ""
+
+msgid "New {{ eventName }} event"
+msgstr "Nuevo evento {{ eventName }}"
+
+msgid "To open this event, please wait until saving is complete"
+msgstr "Para abrir este evento, espere hasta que se complete el guardado."
+
+msgid "Show {{ rest }} more"
+msgstr "Mostrar más {{ rest }} "
+
+msgid "Reset list"
+msgstr "Resetear lista"
+
+msgid "Go to full {{ eventName }}"
+msgstr "Ir a {{ eventName }} completado"
+
+msgid "This stage can only have one event"
+msgstr "Esta etapa solo puede tener un evento"
+
+msgid "Events could not be retrieved. Please try again later."
+msgstr ""
+"No se pudieron recuperar los eventos. Por favor, inténtelo de nuevo más "
+"tarde."
+
+msgid "{{ count }} event"
+msgid_plural "{{ count }} event"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+msgid "{{ overdueEvents }} overdue"
+msgstr "{{ overdueEvents }} atrasado(s)"
+
+msgid "{{ scheduledEvents }} scheduled"
+msgstr "{{ scheduledEvents }} programado(s)"
+
+msgid "Stages and Events"
+msgstr "Etapas y eventos"
+
+msgid "Changelog"
+msgstr "Registro de cambios"
+
+msgid "No changes to display"
+msgstr "No hay cambios para mostrar"
+
+msgid "Created"
+msgstr "Creado"
+
+msgid "Deleted"
+msgstr "Eliminar"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "Data item"
+msgstr "Elemento de datos"
+
+msgid "Change"
+msgstr "Cambio"
+
+msgid "New {{trackedEntityTypeName}} relationship"
+msgstr "Nueva relación de {{trackedEntityTypeName}}"
+
+msgid "Missing implementation step"
+msgstr "Falta paso de implementación"
+
+msgid "Go back without saving relationship"
+msgstr "Volver atrás sin guardar la relación"
+
+msgid "New Relationship"
+msgstr "Nueva relación"
+
+msgid "Link to an existing {{tetName}}"
+msgstr "Enlace a un {{tetName}} existente"
+
+msgid "An error occurred while adding the relationship"
+msgstr "¡Ocurrió un error al agregar la relación!"
+
+msgid ""
+"Something went wrong while loading relationships. Please try again later."
+msgstr ""
+"Algo salió mal al cargar las relaciones. Por favor, inténtalo de nuevo más "
+"tarde."
+
+msgid "{{trackedEntityTypeName}} relationships"
+msgstr "relaciones de {{trackedEntityTypeName}}"
+
+msgid "Delete relationship"
+msgstr "Borrar relación"
+
+msgid ""
+"Deleting the relationship is permanent and cannot be undone. Are you sure "
+"you want to delete this relationship?"
+msgstr ""
+"Eliminar la relación es permanente y no se puede deshacer. ¿Estás seguro de "
+"que deseas eliminar esta relación?"
+
+msgid "Yes, delete relationship"
+msgstr "Sí, eliminar relación"
+
+msgid "An error occurred while deleting the relationship."
+msgstr "Se produjo un error al eliminar la relación."
+
+msgid "To open this relationship, please wait until saving is complete"
+msgstr ""
+"Para abrir esta relación, por favor espere hasta que se complete el "
+"guardado."
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Created date"
+msgstr "Fecha de creación"
+
+msgid "Program stage name"
+msgstr "Nombre de la etapa del programa"
+
+msgid "Working list could not be loaded"
+msgstr "No se pudo cargar la lista de trabajo"
+
+msgid "Download data..."
+msgstr "Descargar datos"
+
+msgid "an error occurred loading working lists"
+msgstr "se produjo un error al cargar listas de trabajo"
+
+msgid "Registration Date"
+msgstr "Fecha de registro"
+
+msgid "Inactive"
+msgstr "Inactivo"
+
+msgid "Enrollment status"
+msgstr "Estado de la inscripción."
+
+msgid "Follow up"
+msgstr "Seguimiento"
+
+msgid "Choose a program stage to filter by {{label}}"
+msgstr "Elija una etapa del programa para filtrar por {{label}}"
+
+msgid "Active enrollments"
+msgstr "Inscripciones activas"
+
+msgid "Completed enrollments"
+msgstr "Inscripciónes completadas"
+
+msgid "Cancelled enrollments"
+msgstr "Inscripciones canceladas "
+
+msgid "Working list could not be updated"
+msgstr "No se pudo actualizar la lista de trabajo"
+
+msgid "an error occurred loading the working lists"
+msgstr "se produjo un error al cargar las listas de trabajo"
+
+msgid "an error occurred loading Tracked entity instance lists"
+msgstr ""
+"se produjo un error al cargar las listas de instancias de entidades "
+"rastreadas"
+
+msgid "Update view"
+msgstr "Actualizar vista"
+
+msgid "Save current view..."
+msgstr "Guardar la vista actual..."
+
+msgid "Save current view as..."
+msgstr "Guardar la vista actual como..."
+
+msgid "Delete view"
+msgstr "Eliminar vista"
+
+msgid "Share view..."
+msgstr "Compartir vista..."
+
+msgid "Do you really want to delete the '{{templateName}}' view?"
+msgstr "¿Realmente desea eliminar la vista '{{templateName}}'?"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Save As view"
+msgstr "Guardar como vista"
+
+msgid "View name"
+msgstr "Ver nombre"
+
+msgid "Show Less"
+msgstr "Mostrar menos"
+
+msgid "Show All"
+msgstr "Mostrar todo"
+
+msgid "Download as JSON"
+msgstr "Descargar como JSON"
+
+msgid "Download as CSV"
+msgstr "Descargar como CSV"
+
+msgid "Download with current filters"
+msgstr "Descargar con filtros actuales"
+
+msgid "An error has occured. See log for details"
+msgstr "Se ha producido un error. Ver registro para más detalles"
+
+msgid "Scheduled{{ escape }} due {{ time }}"
+msgstr "Programado{{ escape }} para {{ time }}"
+
+msgid "Scheduled"
+msgstr "Planificado"
+
+msgid "Overdue{{ escape }} due {{ time }}"
+msgstr "Atrasado {{ escape }} para {{ time }}"
+
+msgid "Overdue"
+msgstr "Atrasado"
+
+msgid "Skipped"
+msgstr "Omitido"
+
+msgid "Visited"
+msgstr "Visitado"
+
+msgid "{{trackedEntityName}} in program{{escape}} {{programName}}"
+msgstr "{{trackedEntityName}} en el programa {{escape}} {{programName}}"
+
+msgid "Program not found"
+msgstr "Programa no encontrado"
+
+msgid "Program is not a tracker program"
+msgstr "El programa no es un programa de datos individuales longitudinales"
+
+msgid "Error saving event"
+msgstr "Error al guardar el evento"
+
+msgid "Could not save event"
+msgstr "No se pudo guardar el evento"
+
+msgid "Could not delete event"
+msgstr "No se pudo eliminar el evento"
+
+msgid "Could not save working list"
+msgstr "No se pudo guardar la lista de trabajo"
+
+msgid "Could not add working list"
+msgstr "No se pudo agregar la lista de trabajo"
+
+msgid "Could not delete working list"
+msgstr "No se pudo eliminar la lista de trabajo"
+
+msgid "Organisation unit search failed."
+msgstr "Error en la búsqueda de la unidad organizativa."
+
+msgid "Error saving tracked entity instance"
+msgstr "Error al guardar la instancia de la entidad rastreada"
+
+msgid "Error saving enrollment"
+msgstr "Error al guardar la inscripción"
+
+msgid "Error saving the enrollment event"
+msgstr "Error al guardar la inscripción"
+
+msgid "Error deleting the enrollment event"
+msgstr "Error al eliminar la inscripción"
+
+msgid "Error editing the event, the changes made were not saved"
+msgstr "Error al editar el evento, no se guardaron los cambios realizados"
+
+msgid "Error updating the Assignee"
+msgstr "Error al actualizar el asignado"
+
+msgid "Set coordinate"
+msgstr "Establecer coordenadas"
+
+msgid "Time"
+msgstr "Hora"
+
+msgid "From date"
+msgstr "Desde fecha"
+
+msgid "From time"
+msgstr "Desde la hora"
+
+msgid "To date"
+msgstr "A la fecha"
+
+msgid "To time"
+msgstr "Hasta la hora"
+
+msgid "Page {{currentPage}}"
+msgstr "Página {{currentPage}}"
+
+msgid "Area on map saved"
+msgstr "Área en el mapa guardada"
+
+msgid "Compatibility mode"
+msgstr "Modo de compatibilidad"
