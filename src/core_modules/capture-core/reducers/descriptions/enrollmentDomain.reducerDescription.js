@@ -127,7 +127,6 @@ export const enrollmentDomainDesc = createReducerDescription(
                 enrollment: {
                     ...state.enrollment,
                     events: enrollmentEvents,
-                    hello: 'adasdad'
                 },
             };
         },

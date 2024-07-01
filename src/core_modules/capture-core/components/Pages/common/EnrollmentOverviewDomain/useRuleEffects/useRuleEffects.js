@@ -7,7 +7,6 @@ import type { UseRuleEffectsInput } from './useRuleEffects.types';
 
 // $FlowFixMe
 const convertDate = (date: string): string => {
-    alert('hey2')
     return convertValue(date, dataElementTypes.DATE);
 };
 
