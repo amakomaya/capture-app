@@ -1,0 +1,47 @@
+.booleanLabel {
+    padding-top: 13px;
+}
+
+.trueOnlyLabel {
+    padding-top: 6px;
+}
+
+.textLabel {
+    padding-top: 8px;
+}
+
+.ageLabel {
+    padding-top: 8px;
+}
+
+.coordinateLabel {
+    padding-top: 8px;
+}
+
+.polygonLabel {
+    padding-top: 3px;
+}
+
+.dateLabel {
+    padding-top: 8px;
+}
+
+.dateTimeLabel {
+    padding-top: 8px;
+}
+
+.imageLabel {
+    padding-top: 9px;
+}
+
+.fileLabel {
+    padding-top: 9px;
+}
+
+.orgUnitLabel {
+    padding-top: 3px;
+}
+
+.optionSetBoxesLabel {
+    padding-top: 8px;
+}

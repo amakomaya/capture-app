@@ -1,0 +1,85 @@
+.coordinateField {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.coordinateFieldsHorizontal {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.coordinateFieldsVertical {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.mapIconContainer {
+    position: relative;
+}
+
+.mapIconContainerWithMargin {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    height: 40.5px;
+    width: 40.5px;
+    border: 1px solid #a0adba;
+    border-radius: 4px 0px 0px 4px;
+    color: #212934;
+    background-color: #f9fafb;
+}
+
+.inputContainer {
+    flex-grow: 1;
+    padding: 0;
+}
+
+.latitudeTextInput {
+    border-radius: 0px;
+}
+
+.longitudeTextInput {
+    border-radius: 0px 3px 3px 0px;
+}
+
+.dialogActionOuterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.dialogActionInnerContainer {
+    padding: 24px 0px 0px 5px;
+}
+
+
+.mapContainer {
+    flex-grow: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.leafletContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.dialogContent {
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+}
+
+.buttonsContainerVertical {
+    display: flex;
+}
