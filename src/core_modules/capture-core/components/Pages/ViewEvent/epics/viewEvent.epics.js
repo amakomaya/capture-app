@@ -111,9 +111,10 @@ const isDateString = (value) => {
 };
 const convertNepaliDate =(value) =>{
     if (isDateString(value)) {
-        console.log('value to show in event',value);
+        // console.log('value to show in event',value);
+        // console.log();
         const convertedDate = adToBs(value.split('T')[0]);
-        console.log('convertedDate to view in event',convertedDate) 
+        // console.log('convertedDate to view in event',convertedDate) 
         return convertedDate;
     }
     return value;
@@ -151,10 +152,10 @@ export const getEventFromUrlEpic = (
                             updatedEventContainer.event.scheduledAt = convertNepaliDate(updatedEventContainer.event.scheduledAt);
 
                             updatedEventContainer.values = convertValuesDates(updatedEventContainer.values);
-                            console.log('updatedEventContainer.values',updatedEventContainer.values)
+                            // console.log('updatedEventContainer.values',updatedEventContainer.values)
 
     
-                            console.log('eventcontainer', updatedEventContainer);                       
+                            // console.log('eventcontainer', updatedEventContainer);                       
 
                             return eventFromUrlRetrieved(updatedEventContainer, prevProgramId, categoriesData)
                         });

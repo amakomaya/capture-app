@@ -38,7 +38,7 @@ export const requestSaveEditEventDataEntry = (itemId: string, dataEntryId: strin
     
 const isDateString = (value) => {
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-    console.log('value',value)
+    // console.log('value',value)
     return datePattern.test(value);
 };
 
