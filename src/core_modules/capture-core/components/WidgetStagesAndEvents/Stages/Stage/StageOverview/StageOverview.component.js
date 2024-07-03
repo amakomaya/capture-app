@@ -10,6 +10,8 @@ import { statusTypes } from 'capture-core/events/statusTypes';
 import { NonBundledDhis2Icon } from '../../../../NonBundledDhis2Icon';
 import type { Props } from './stageOverview.types';
 import { isEventOverdue } from '../StageDetail/hooks/helpers';
+// import { bsToAd } from '@sbmdkl/nepali-date-converter';
+
 
 const styles = {
     container: {
@@ -48,19 +50,20 @@ const styles = {
     },
 };
 
-const getLastUpdatedAt = (events, fromServerDate) => {
-    const lastEventUpdated = events.reduce((acc, event) => (
-        new Date(acc.updatedAt).getTime() > new Date(event.updatedAt).getTime() ? acc : event
-    ));
+// const getLastUpdatedAt = (events, fromServerDate) => {
+//     const lastEventUpdated = events.reduce((acc, event) => (
+//         new Date(acc.updatedAt).getTime() > new Date(event.updatedAt).getTime() ? acc : event
+//     ));
+//     // console.log(fromServerDate);
 
-    if (lastEventUpdated) {
-        const { updatedAt } = lastEventUpdated;
-        return lastEventUpdated?.updatedAt && moment(updatedAt).isValid()
-            ? i18n.t('Last updated {{date}}', { date: moment(fromServerDate(updatedAt)).fromNow() })
-            : null;
-    }
-    return null;
-};
+//     if (lastEventUpdated) {
+//         const { updatedAt } = lastEventUpdated;
+//         return lastEventUpdated?.updatedAt && moment(updatedAt).isValid()
+//             ? i18n.t('Last updated {{date}}', { date: moment(fromServerDate(updatedAt)).fromNow() })
+//             : null;
+//     }
+//     return null;
+// };
 
 export const StageOverviewPlain = ({ title, icon, description, events, classes }: Props) => {
     const { fromServerDate } = useTimeZoneConversion();
@@ -117,9 +120,9 @@ export const StageOverviewPlain = ({ title, icon, description, events, classes }
         </div> : null }
         {totalEvents > 0 && <div className={cx(classes.indicator)}>
             <div className={classes.indicatorIcon}>
-                <IconClockHistory16 />
+                {/* <IconClockHistory16 /> */}
             </div>
-            {getLastUpdatedAt(events, fromServerDate)}
+            {/* {getLastUpdatedAt(events, fromServerDate)} */}
         </div>}
     </div>);
 };

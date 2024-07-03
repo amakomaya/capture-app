@@ -1,6 +1,7 @@
 // @flow
 import { createReducerDescription } from '../../trackerRedux/trackerReducer';
 import { searchBoxActionTypes } from '../../components/SearchBox';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
 
 export const searchBoxStatus = {
     INITIAL: 'INITIAL',
@@ -20,18 +21,114 @@ const initialReducerValue = {
     keptFallbackSearchFormValues: {},
     otherCurrentPage: 0,
 };
+const convertDateToBS = (dateString) => {
+    const dateOnlyString = dateString.split('T')[0];
+    const nepaliDate = adToBs(dateOnlyString);
+    return nepaliDate;
+};
+const convertEnrollmentDates = (enrollment) => {
+    if (enrollment.enrolledAt) {
+        enrollment.enrolledAt = convertDateToBS(enrollment.enrolledAt);
+    }
+    
+    if (enrollment.occurredAt) {
+        enrollment.occurredAt = convertDateToBS(enrollment.occurredAt);
+    }
+
+    if (enrollment.createdAt) {
+        enrollment.createdAt = convertDateToBS(enrollment.createdAt);
+    }
+
+    if (enrollment.updatedAt) {
+        enrollment.updatedAt = convertDateToBS(enrollment.updatedAt);
+    }
+};
+
+// const convertAllDatesToBS = (data) => {
+//     console.log('data',data);
+//     if (Array.isArray(data)) {
+//         return data.map(item => convertAllDatesToBS(item));
+//     } else if (typeof data === 'object' && data !== null) {
+//         const newData = {};
+//         for (const key in data) {
+//             if (typeof data[key] === 'string' && data[key].match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/)) {
+//                 newData[key] = convertDateToBS(data[key]);
+//             } else if (key === 'enrollments') {
+//                 newData[key] = data[key].map(enrollment => {
+//                     convertEnrollmentDates(enrollment);
+//                     return enrollment;
+//                 });
+//             } 
+            
+//             else {
+//                 newData[key] = convertAllDatesToBS(data[key]);
+//             }
+//         }
+//         return newData;
+//     }
+//     return data;
+// };
+
+const convertAllDatesToBS = (data) => {
+    if (Array.isArray(data)) {
+        return data.map(item => convertAllDatesToBS(item));
+    } else if (typeof data === 'object' && data !== null) {
+        const newData = {};
+        for (const key in data) {
+            if (typeof data[key] === 'string' && data[key].match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/)) {
+                newData[key] = convertDateToBS(data[key]);
+            } else if (key === 'enrollments') {
+                newData[key] = data[key].map(enrollment => {
+                    convertEnrollmentDates(enrollment);
+                    return enrollment;
+                });
+            } else if (key === 'attributes') {
+                newData[key] = data[key].map(attribute => {
+                    if (typeof attribute.value === 'string' && attribute.value.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                        attribute.value = convertDateToBS(attribute.value);
+                    }
+                    return attribute;
+                });
+            } else if (key === 'values') {
+                newData[key] = {};
+                for (const valKey in data[key]) {
+                    if (typeof data[key][valKey] === 'string' && data[key][valKey].match(/^\d{4}-\d{2}-\d{2}$/)) {
+                        newData[key][valKey] = convertDateToBS(data[key][valKey]);
+                    } else {
+                        newData[key][valKey] = data[key][valKey];
+                    }
+                }
+            } else {
+                newData[key] = convertAllDatesToBS(data[key]);
+            }
+        }
+        return newData;
+    }
+    return data;
+};
+
+const searchResultsSuccessViewReducer = (state, { payload: { searchResults, currentPage } }) => {
+    const convertedSearchResults = convertAllDatesToBS(searchResults);
+    return {
+        ...state,
+        searchStatus: searchBoxStatus.SHOW_RESULTS,
+        searchResults: convertedSearchResults,
+        currentPage,
+    };
+};
 
 export const searchDomainDesc = createReducerDescription({
     [searchBoxActionTypes.SEARCH_RESULTS_INITIAL_VIEW]: state => ({
         ...state,
         searchStatus: searchBoxStatus.INITIAL,
     }),
-    [searchBoxActionTypes.SEARCH_RESULTS_SUCCESS_VIEW]: (state, { payload: { searchResults, currentPage } }) => ({
-        ...state,
-        searchStatus: searchBoxStatus.SHOW_RESULTS,
-        searchResults,
-        currentPage,
-    }),
+    // [searchBoxActionTypes.SEARCH_RESULTS_SUCCESS_VIEW]: (state, { payload: { searchResults, currentPage } }) => ({
+    //     ...state,
+    //     searchStatus: searchBoxStatus.SHOW_RESULTS,
+    //     searchResults,
+    //     currentPage,
+    // }),
+    [searchBoxActionTypes.SEARCH_RESULTS_SUCCESS_VIEW]: searchResultsSuccessViewReducer,
     [searchBoxActionTypes.ADD_SEARCH_RESULTS_SUCCESS_VIEW]: (state, { payload: { otherResults, otherCurrentPage } }) => ({
         ...state,
         searchStatus: searchBoxStatus.SHOW_RESULTS,

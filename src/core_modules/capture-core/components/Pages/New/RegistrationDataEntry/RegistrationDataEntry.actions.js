@@ -8,8 +8,7 @@ import type {
     TeiPayload,
 } from '../../common/TEIRelationshipsWidget/RegisterTei/DataEntry/TrackedEntityInstance/dataEntryTrackedEntityInstance.types';
 import { bsToAd } from '@sbmdkl/nepali-date-converter';
-import moment from 'moment';
-// import NepaliDate from 'nepali-date-converter';
+
 
 export const registrationFormActionTypes = {
     NEW_TRACKED_ENTITY_INSTANCE_SAVE_START: 'StartSavingNewTrackedEntityInstance',
@@ -69,18 +68,8 @@ export const saveNewTrackedEntityInstanceWithEnrollment = ({
 }) => {
     const convertDateToAD = (dateString) => {
         const englishDate = bsToAd(dateString);
-        // const formattedDate = moment(englishDate).format("YYYY-MM-DDTHH:mm:ss.SSS");
-        // console.log('formattedDate',formattedDate);
         return englishDate;
     };
-
-    // const convertDateToAD = (dateString) => {
-    //     const [year, month, day] = dateString.split('-').map(Number);
-    //     const nepaliDate = new NepaliDate(year, month, day);
-    //     const adDate = nepaliDate.getAD();
-    //     const formattedDate = new Date(adDate.year, adDate.month - 1, adDate.day).toISOString();
-    //     return formattedDate;
-    // };
 
     const isDateString = (value) => {
         const datePattern = /^\d{4}-\d{2}-\d{2}$/;

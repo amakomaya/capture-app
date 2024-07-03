@@ -2,6 +2,9 @@
 import { useMemo, useEffect, useState } from 'react';
 import { useDataQuery } from '@dhis2/app-runtime';
 import { useUpdateEnrollment } from './useUpdateEnrollment';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
 
 type Props = {
     enrollmentId: string,
@@ -42,9 +45,25 @@ export const useEnrollment = ({
 
     useEffect(() => {
         if (data) {
-            setEnrollment(data.enrollment);
+            const enrollmentData = { ...data.enrollment };
+            
+            try {
+                enrollmentData.enrolledAt = adToBs(moment(enrollmentData.enrolledAt).format('YYYY-MM-DD'));
+            } catch (error) {
+                console.error("Error converting enrolledAt date:", error);
+                enrollmentData.enrolledAt = null;
+            }
+            
+            try {
+                enrollmentData.occurredAt = adToBs(moment(enrollmentData.occurredAt).format('YYYY-MM-DD'));
+            } catch (error) {
+                console.error("Error converting occurredAt date:", error);
+                enrollmentData.occurredAt = null;
+            }
+            
+            setEnrollment(enrollmentData);
         }
-    }, [setEnrollment, data]);
+    }, [data]);
 
     useEffect(() => {
         if (externalData?.status?.value) {

@@ -4,7 +4,6 @@ import i18n from '@dhis2/d2-i18n';
 import moment from 'moment';
 import { parseDate } from '../../../../utils/converters/date';
 import { bsToAd, } from '@sbmdkl/nepali-date-converter';
-// import NepaliDate from 'nepali-date-converter';
 
 
 const isValidEnrollmentDate = (value: string, isFutureDateAllowed: boolean) => {
@@ -28,22 +27,9 @@ const isValidEnrollmentDate = (value: string, isFutureDateAllowed: boolean) => {
 };
 
 const convertNepaliDateToGregorian = (nepaliDate: string) => {
-    // const parsedNepaliDate = NepaliDate.parse(nepaliDate);
-    // const adDate = parsedNepaliDate.getAD();
-    
-    // console.log('nepalidate',nepaliDate);
-    // console.log('engdate',adDate);
     const engdate = bsToAd(nepaliDate);
     return bsToAd(nepaliDate);
-    // return adDate;
 };
-
-// const convertNepaliDateToGregorian = (nepaliDate) => {
-//     const parsedNepaliDate = NepaliDate.parse(nepaliDate);
-//     const adDate = parsedNepaliDate.getAD();
-//     const jsAdDate = new Date(adDate.year, adDate.month, adDate.date);
-//     return moment(jsAdDate).format('YYYY-MM-DD');
-// };
 
 
 export const getEnrollmentDateValidatorContainer = (isFutureEnrollmentDateAllowed: boolean) => {
