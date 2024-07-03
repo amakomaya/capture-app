@@ -45,7 +45,7 @@ const isDateString = (value) => {
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
         const convertedDate = moment(bsToAd(value)).format('YYYY-MM-DDTHH:mm:ss');
-        console.log('convertedDate after evetn',convertedDate);
+        // console.log('convertedDate after evetn',convertedDate);
         return convertedDate;
     }
     return value;
