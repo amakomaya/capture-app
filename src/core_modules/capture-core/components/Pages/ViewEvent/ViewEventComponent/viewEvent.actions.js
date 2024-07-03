@@ -3,6 +3,8 @@ import { actionCreator } from 'capture-core/actions/actions.utils';
 import type { OrgUnit } from '@dhis2/rules-engine-javascript';
 import type { UserFormField } from '../../../FormFields/UserField';
 import { adToBs } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
 
 export const actionTypes = {
     VIEW_EVENT_FROM_URL: 'ViewEventFromUrl',
@@ -47,20 +49,11 @@ export const eventFromUrlRetrieved = (eventContainer: Object, prevProgramId: ?st
     
     const convertIfDateString = (value) => {
         if (isDateString(value)) {
-            const convertedDate = adToBs(value.split('T')[0]); 
+            const convertedDate = adToBs(moment(value).format('YYYY-MM-DD')); 
             return convertedDate;
         }
         return value;
     };
-
-    // const convertIfDateString = (value) => {
-    //     if (isDateString(value)) {
-    //         const [year, month, day] = value.split('T')[0].split('-').map(Number);
-    //         const nepaliDate = NepaliDate.fromAD(new Date(year, month - 1, day)).format('YYYY-MM-DD');
-    //         return nepaliDate;
-    //     }
-    //     return value;
-    // };
     
     const convertDatesToNepali = (eventContainer) => {
         if (eventContainer && eventContainer.event) {
@@ -75,7 +68,6 @@ export const eventFromUrlRetrieved = (eventContainer: Object, prevProgramId: ?st
     };
 
 export const orgUnitRetrievedOnUrlUpdate = (orgUnit: Object, eventContainer: Object) => {
-    // const convertedEventContainer = convertDatesToNepali(eventContainer);
     return actionCreator(actionTypes.ORG_UNIT_RETRIEVED_ON_URL_UPDATE)({ orgUnit, eventContainer});
 };
 export const orgUnitCouldNotBeRetrievedOnUrlUpdate = (eventContainer: Object) =>

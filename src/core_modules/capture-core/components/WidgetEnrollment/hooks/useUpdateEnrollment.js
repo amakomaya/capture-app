@@ -24,7 +24,7 @@ const isDateString = (value) => {
 };
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
-        const convertedDate = bsToAd(value.split('T')[0]);
+        const convertedDate = bsToAd(moment(value).format('YYYY-MM-DD'));
         return convertedDate;
 
     }

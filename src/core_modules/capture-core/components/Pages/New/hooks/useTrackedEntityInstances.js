@@ -80,8 +80,7 @@ export const useTrackedEntityInstances = (teiId: string, programId: string) => {
             }
         };
     }
-    // console.log('processedData',processedData);
-    // console.log('processedData.trackedEntityInstances.enrollments',data.enrollments);
+
     return {
         error,
         refetch,

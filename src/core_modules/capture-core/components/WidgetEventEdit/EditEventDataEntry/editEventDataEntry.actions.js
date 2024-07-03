@@ -38,7 +38,6 @@ export const requestSaveEditEventDataEntry = (itemId: string, dataEntryId: strin
     
 const isDateString = (value) => {
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-    // console.log('value',value)
     return datePattern.test(value);
 };
 
@@ -66,7 +65,6 @@ const convertDatesToGregorian = (events) => {
             });
         }
         
-        // console.log('event',event);
         return event;
     });
 };
@@ -105,7 +103,6 @@ export const startSaveEditEventDataEntry = (
     triggerActionRollback?: ?string,
 ) => {
     serverData.events = convertDatesToGregorian(serverData.events);
-    console.log('serverData  after update',serverData)
     return actionCreator(actionTypes.START_SAVE_EDIT_EVENT_DATA_ENTRY)(
         {},
         {

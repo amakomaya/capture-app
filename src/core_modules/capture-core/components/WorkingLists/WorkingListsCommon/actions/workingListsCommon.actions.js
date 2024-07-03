@@ -4,6 +4,7 @@ import type {
     SharingSettings,
 } from '../../WorkingListsBase';
 import { adToBs } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
 
 
 export const workingListsCommonActionTypesBatchActionTypes = {
@@ -123,7 +124,7 @@ return datePattern.test(value.split('T')[0]);
 
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
-        const convertedDate = adToBs(value.split('T')[0]); 
+        const convertedDate = adToBs(moment(value).format('YYYY-MM-DD')); 
         return convertedDate;
     }
     return value;
@@ -147,15 +148,13 @@ const convertDatesInObject = (obj) => {
 };
 
 export const initListViewSuccess = (storeId: string, data: Object) => {
-    // Convert dates in the entire data object to Nepali
     const convertedData = convertDatesInObject(data);
 
     return actionCreator(workingListsCommonActionTypes.LIST_VIEW_INIT_SUCCESS)({ ...convertedData, storeId });
 };
 
 
-// export const initListViewSuccess = (storeId: string, data: Object) =>
-//     actionCreator(workingListsCommonActionTypes.LIST_VIEW_INIT_SUCCESS)({ ...data, storeId });
+
 
 export const initListViewError = (storeId: string, errorMessage: string) =>
     actionCreator(workingListsCommonActionTypes.LIST_VIEW_INIT_ERROR)({ storeId, errorMessage });
@@ -165,9 +164,6 @@ export const initListViewCancel =
 
 export const updateList = (queryArgs: Object, meta: Object) =>
     actionCreator(workingListsCommonActionTypes.LIST_UPDATE)({ queryArgs, ...meta });
-
-// export const updateListSuccess = (storeId: string, data: Object) =>
-//     actionCreator(workingListsCommonActionTypes.LIST_UPDATE_SUCCESS)({ ...data, storeId });
 
 export const updateListSuccess = (storeId: string, data: Object) => {
     // Convert dates in the entire data object to Nepali

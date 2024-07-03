@@ -94,7 +94,6 @@ const WidgetProfilePlain = ({
 
     const convertClientToView = (clientAttribute) => {
         const { value } = clientAttribute;
-        // console.log('value',clientAttribute);
         if (typeof value === 'string' && (value.match(/^\d{4}-\d{2}-\d{2}$/) || value.match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/))) {
             const dateOnlyString = value.split('T')[0];
             return adToBs(dateOnlyString);

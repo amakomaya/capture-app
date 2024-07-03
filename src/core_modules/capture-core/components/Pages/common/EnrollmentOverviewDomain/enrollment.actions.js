@@ -34,24 +34,10 @@ const convertDateToBS = (dateString) => {
 const convertDateToAD = (dateString) => {
     const dateOnlyString = dateString.split('T')[0]; 
     const englishDate = bsToAd(dateOnlyString);
-    // console.log(englishDate);
     return englishDate;
 };
 
-// const convertDateToBS = (dateString) => {
-//     const dateOnlyString = dateString.split('T')[0]; 
-//     const [year, month, day] = dateOnlyString.split('-').map(Number);
-//     const nepaliDate = NepaliDate.fromAD(new Date(year, month - 1, day)).format('YYYY-MM-DD');
-//     return nepaliDate;
-// };
 
-// const convertDateToAD = (dateString) => {
-//     const [year, month, day] = dateString.split('-').map(Number);
-//     const nepaliDate = new NepaliDate(year, month, day);
-//     const adDate = nepaliDate.getAD();
-//     const jsAdDate = new Date(adDate.year, adDate.month - 1, adDate.date);
-//     return jsAdDate.toISOString().split('T')[0];
-// };
 
 const isDateString = (value) => {
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
@@ -265,27 +251,6 @@ export const updateEnrollmentEventWithoutId = (uid: string, eventData: Object) =
 
 export const saveFailed = () => actionCreator(enrollmentSiteActionTypes.SAVE_FAILED)();
 
-// export const updateEnrollmentAttributeValues = (attributeValues: Array<{ [key: string]: string }>) =>
-//     actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_ATTRIBUTE_VALUES)({
-//         attributeValues,
-//     });
-
-// export const updateEnrollmentAttributeValues = (attributeValues) => {
-//     const updatedAttributeValues = attributeValues.map(attr => {
-//         if (attr.id === 'spFvx9FndA4'||attr.id === 'i607dSgfm4F'||attr.id === 'DSvwIwSjPu9'||attr.id === 'O4LsEDDUqLt'||attr.id === 'LeelllbVRYW') {
-//             console.log('attribute', attr);
-//             return {
-//                 ...attr,
-//                 value: convertDateToAD(attr.value),
-//             };
-//         }
-//         return attr;
-//     });
-
-//     return actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_ATTRIBUTE_VALUES)({
-//         attributeValues: updatedAttributeValues,
-//     });
-// };
 
 const isDateValue = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value);
 export const updateEnrollmentAttributeValues = (attributeValues) => {

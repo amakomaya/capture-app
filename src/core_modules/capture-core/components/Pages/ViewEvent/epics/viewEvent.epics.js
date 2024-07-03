@@ -8,6 +8,8 @@ import { getCoreOrgUnit } from 'capture-core/metadataRetrieval/coreOrgUnit';
 import { isSelectionsEqual } from '../../../App/isSelectionsEqual';
 import { getErrorMessageAndDetails } from '../../../../utils/errors/getErrorMessageAndDetails';
 import { adToBs } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
 
 import {
     actionTypes as viewEventActionTypes,
@@ -71,37 +73,6 @@ export const getEventOpeningFromEventListEpic = (
         ),
     );
 
-// export const getEventFromUrlEpic = (
-//     action$: InputObservable,
-//     store: ReduxStore,
-//     { absoluteApiPath, querySingleResource }: ApiUtils,
-// ) =>
-//     action$.pipe(
-//         ofType(viewEventActionTypes.VIEW_EVENT_FROM_URL),
-//         switchMap((action) => {
-//             const eventId = action.payload.eventId;
-//             const prevProgramId = store.value.currentSelections.programId; // used to clear columns and filters in eventlist if program id is changed
-//             return getEvent(eventId, absoluteApiPath, querySingleResource)
-//                 .then((eventContainer) => {
-//                     if (!eventContainer) {
-//                         return eventFromUrlCouldNotBeRetrieved(
-//                             i18n.t('Event could not be loaded. Are you sure it exists?'));
-//                     }
-//                     console.log('event container from viewEvent.epics',eventContainer);
-//                     // need to retrieve category names from API (due to 50k category options requirement)
-//                     return getCategoriesDataFromEventAsync(eventContainer.event, querySingleResource)
-//                         .then(categoriesData => eventFromUrlRetrieved(eventContainer, prevProgramId, categoriesData));
-//                 })
-//                 .catch((error) => {
-//                     const { message, details } = getErrorMessageAndDetails(error);
-//                     log.error(
-//                         errorCreator(
-//                             message ||
-//                             i18n.t('Event could not be loaded'))(details));
-//                     return eventFromUrlCouldNotBeRetrieved(
-//                         i18n.t('Event could not be loaded. Are you sure it exists?'));
-//                 });
-//         }));
 
 const isDateString = (value) => {
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
@@ -109,10 +80,7 @@ const isDateString = (value) => {
 };
 const convertNepaliDate =(value) =>{
     if (isDateString(value)) {
-        console.log('value to show in event',value);
-        // console.log();
-        const convertedDate = adToBs(value.split('T')[0]);
-        console.log('convertedDate to view in event',convertedDate) 
+        const convertedDate = adToBs(moment(value).format('YYYY-MM-DD'));
         return convertedDate;
     }
     return value;
@@ -145,16 +113,9 @@ export const getEventFromUrlEpic = (
                     return getCategoriesDataFromEventAsync(eventContainer.event, querySingleResource)
                         .then(categoriesData => {
                             const updatedEventContainer = { ...eventContainer }; 
-                            // console.log('occurredAt before',occurredAt);
                             updatedEventContainer.event.occurredAt = convertNepaliDate(updatedEventContainer.event.occurredAt);
                             updatedEventContainer.event.scheduledAt = convertNepaliDate(updatedEventContainer.event.scheduledAt);
-
                             updatedEventContainer.values = convertValuesDates(updatedEventContainer.values);
-                            // console.log('updatedEventContainer.values',updatedEventContainer.values)
-
-    
-                            // console.log('eventcontainer', updatedEventContainer);                       
-
                             return eventFromUrlRetrieved(updatedEventContainer, prevProgramId, categoriesData)
                         });
                 })

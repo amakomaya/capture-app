@@ -16,7 +16,7 @@ const isDateString = (value) => {
 
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
-        const convertedDate = bsToAd(value.split('T')[0]);
+        const convertedDate = bsToAd(moment(value).format('YYYY-MM-DD'));
         return convertedDate;
     }
     return value;
@@ -111,24 +111,6 @@ export const requestScheduleEvent = ({
     };
     
 
-    
-//     export const updateScheduledDateForEvent = (
-//     serverData: Object,
-//     eventId: string,
-//     onSaveSuccessActionType?: string,
-//     onSaveErrorActionType?: string,
-// ) => actionCreator(scheduleEventWidgetActionTypes.EVENT_UPDATE_SCHEDULED_DATE)({}, {
-//     offline: {
-//         effect: {
-//             url: 'tracker?async=false&importStrategy=UPDATE',
-//             method: effectMethods.POST,
-//             data: serverData,
-//         },
-//         commit: onSaveSuccessActionType && { type: onSaveSuccessActionType, meta: { eventId, serverData } },
-//         rollback: onSaveErrorActionType && { type: onSaveErrorActionType, meta: { eventId, serverData } },
-//     },
-// });
-
 
 export const updateScheduledDateForEvent = (
     serverData: object,
@@ -137,7 +119,6 @@ export const updateScheduledDateForEvent = (
     onSaveErrorActionType?: string,
 ) => {
     serverData.events = convertDatesToGregorian(serverData.events);
-    // console.log('Schedule update', serverData.events);
 
     return actionCreator(scheduleEventWidgetActionTypes.EVENT_UPDATE_SCHEDULED_DATE)(
         {},

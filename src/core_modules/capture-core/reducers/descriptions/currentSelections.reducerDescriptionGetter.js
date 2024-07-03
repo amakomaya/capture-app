@@ -99,7 +99,7 @@ const isDateString = (value) => {
 };
 const convertNepaliDate =(value) =>{
     if (isDateString(value)) {
-        const convertedDate = adToBs(value.split('T')[0]); 
+        const convertedDate = adToBs(moment(value).format('YYYY-MM-DD')); 
         return convertedDate;
     }
     return value;
@@ -121,7 +121,6 @@ const convertNepaliDate =(value) =>{
         if (event.updatedAt) {
             event.updatedAt = convertNepaliDate(event.updatedAt);
         }
-        // console.log('event',event);
         return event;
     };
 

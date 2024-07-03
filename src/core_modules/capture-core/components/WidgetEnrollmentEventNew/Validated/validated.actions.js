@@ -119,7 +119,6 @@ export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessAct
     if (serverData.events) {
         serverData.events = convertDatesToGregorian(serverData.events);
     }
-    console.log("while saving new event",serverData);
     return actionCreator(newEventWidgetActionTypes.EVENT_SAVE)({}, {
         offline: {
             effect: {
