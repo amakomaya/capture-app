@@ -35,7 +35,6 @@ const getAssigneeFilter = filter => ({
 });
 
 const convertDate = (rawValue: string): string => {
-    alert('hey14')
     const momentDate = moment(rawValue);
     momentDate.locale('en');
     return momentDate.format('YYYY-MM-DD');

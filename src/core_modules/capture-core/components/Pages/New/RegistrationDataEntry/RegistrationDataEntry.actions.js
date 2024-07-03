@@ -43,6 +43,10 @@ export const saveNewTrackedEntityInstance = (candidateForRegistration: any) =>
                 rollback: {
                     type: registrationFormActionTypes.NEW_TRACKED_ENTITY_INSTANCE_SAVE_FAILED,
                 },
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/amakomaya
             },
         },
     );
@@ -148,6 +152,11 @@ export const saveNewTrackedEntityInstanceWithEnrollment = ({
                     type: registrationFormActionTypes.NEW_TRACKED_ENTITY_INSTANCE_WITH_ENROLLMENT_SAVE_FAILED,
                 },
             },
+<<<<<<< HEAD
         }
     );
 };
+=======
+        },
+    );
+>>>>>>> origin/amakomaya

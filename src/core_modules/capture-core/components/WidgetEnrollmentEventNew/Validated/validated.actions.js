@@ -1,3 +1,4 @@
+// @flow
 import { actionCreator } from '../../../actions/actions.utils';
 import { effectMethods } from '../../../trackerOffline';
 import { actions as RelatedStageModes } from '../../WidgetRelatedStages/constants';

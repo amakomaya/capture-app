@@ -7,9 +7,12 @@ import { errorCreator } from 'capture-core-utils';
 import { getCoreOrgUnit } from 'capture-core/metadataRetrieval/coreOrgUnit';
 import { isSelectionsEqual } from '../../../App/isSelectionsEqual';
 import { getErrorMessageAndDetails } from '../../../../utils/errors/getErrorMessageAndDetails';
+<<<<<<< HEAD
 import moment from 'moment';
 
 import { bsToAd ,adToBs} from '@sbmdkl/nepali-date-converter';
+=======
+>>>>>>> origin/amakomaya
 
 import {
     actionTypes as viewEventActionTypes,
@@ -32,7 +35,10 @@ import { getCategoriesDataFromEventAsync } from './getCategoriesDataFromEvent';
 import { eventWorkingListsActionTypes } from '../../../WorkingLists/EventWorkingLists';
 import { resetLocationChange } from '../../../ScopeSelector/QuickSelector/actions/QuickSelector.actions';
 import { buildUrlQueryString } from '../../../../utils/routing';
+<<<<<<< HEAD
 import { CodeSharp } from '@material-ui/icons';
+=======
+>>>>>>> origin/amakomaya
 
 export const getEventOpeningFromEventListEpic = (
     action$: InputObservable,
@@ -73,6 +79,7 @@ export const getEventOpeningFromEventListEpic = (
         ),
     );
 
+<<<<<<< HEAD
 // export const getEventFromUrlEpic = (
 //     action$: InputObservable,
 //     store: ReduxStore,
@@ -127,6 +134,8 @@ const convertValuesDates = (values) => {
     });
     return convertedValues;
 };
+=======
+>>>>>>> origin/amakomaya
 export const getEventFromUrlEpic = (
     action$: InputObservable,
     store: ReduxStore,
@@ -143,6 +152,7 @@ export const getEventFromUrlEpic = (
                         return eventFromUrlCouldNotBeRetrieved(
                             i18n.t('Event could not be loaded. Are you sure it exists?'));
                     }
+<<<<<<< HEAD
                    
                     return getCategoriesDataFromEventAsync(eventContainer.event, querySingleResource)
                         .then(categoriesData => {
@@ -159,6 +169,11 @@ export const getEventFromUrlEpic = (
 
                             return eventFromUrlRetrieved(updatedEventContainer, prevProgramId, categoriesData)
                         });
+=======
+                    // need to retrieve category names from API (due to 50k category options requirement)
+                    return getCategoriesDataFromEventAsync(eventContainer.event, querySingleResource)
+                        .then(categoriesData => eventFromUrlRetrieved(eventContainer, prevProgramId, categoriesData));
+>>>>>>> origin/amakomaya
                 })
                 .catch((error) => {
                     const { message, details } = getErrorMessageAndDetails(error);
@@ -171,13 +186,19 @@ export const getEventFromUrlEpic = (
                 });
         }));
 
+<<<<<<< HEAD
         
         
+=======
+>>>>>>> origin/amakomaya
 export const getOrgUnitOnUrlUpdateEpic = (action$: InputObservable) =>
     action$.pipe(
         ofType(viewEventActionTypes.EVENT_FROM_URL_RETRIEVED),
         map((action) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/amakomaya
             const eventContainer = action.payload.eventContainer;
             return getCoreOrgUnit({
                 orgUnitId: eventContainer.event.orgUnitId,
@@ -192,8 +213,11 @@ export const getOrgUnitOnUrlUpdateEpic = (action$: InputObservable) =>
             });
         }));
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/amakomaya
 export const openViewPageLocationChangeEpic = (action$: InputObservable, _: ReduxStore, { history }: ApiUtils) =>
     action$.pipe(
         ofType(eventWorkingListsActionTypes.VIEW_EVENT_PAGE_OPEN),

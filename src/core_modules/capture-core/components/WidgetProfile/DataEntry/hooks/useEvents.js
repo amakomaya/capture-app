@@ -4,10 +4,7 @@ import { convertValue } from '../../../../converters/serverToClient';
 import { dataElementTypes } from '../../../../metaData';
 import { useOrgUnitNames } from '../../../../metadataRetrieval/orgUnitName';
 
-const convertDate = date => {
-    alert('hey5')
-    return convertValue(date, dataElementTypes.DATE);
-};
+const convertDate = date => convertValue(date, dataElementTypes.DATE);
 
 const getClientFormattedDataValuesAsObject = (dataValues, elementsById) =>
     dataValues.reduce((acc, { dataElement: id, value }) => {

@@ -6,9 +6,7 @@ import { dataElementTypes, type TrackerProgram } from '../../../../../metaData';
 import type { UseRuleEffectsInput } from './useRuleEffects.types';
 
 // $FlowFixMe
-const convertDate = (date: string): string => {
-    return convertValue(date, dataElementTypes.DATE);
-};
+const convertDate = (date: string): string => convertValue(date, dataElementTypes.DATE);
 
 const getDataElementsInProgram = (program: TrackerProgram) =>
     [...program.stages.values()]

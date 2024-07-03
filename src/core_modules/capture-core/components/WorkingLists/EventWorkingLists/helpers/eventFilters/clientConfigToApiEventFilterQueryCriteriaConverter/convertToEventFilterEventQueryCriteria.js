@@ -62,7 +62,6 @@ const getTrueOnlyFilter = (): ApiDataFilterTrueOnly => ({
 });
 
 const convertDate = (rawValue: string): string => {
-    alert('hey10')
     const momentDate = moment(rawValue);
     momentDate.locale('en');
     return momentDate.format('YYYY-MM-DD');

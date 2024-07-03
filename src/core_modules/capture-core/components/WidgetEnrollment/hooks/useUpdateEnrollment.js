@@ -35,7 +35,7 @@ const convertIfDateString = (value) => {
 const convertNepaliToEnglishDate = (nepaliDateString) => {
     try {
         if (!isDateString(nepaliDateString)) {
-            console.error("Invalid Nepali date provided:", nepaliDateString);
+            // console.error("Invalid Nepali date provided:", nepaliDateString);
             return null;
         }
         const convertedDate = convertIfDateString(nepaliDateString);
@@ -101,7 +101,5 @@ export const useUpdateEnrollment = ({
         updateEnrollmentMutation(updatedEnrollment);
         updateHandler && updateHandler(value);
     }, [enrollment, setEnrollment, propertyName, updateHandler, updateEnrollmentMutation]);
-
-    
     
 };

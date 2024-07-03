@@ -163,7 +163,6 @@ export const EnrollmentPageDefault = () => {
         return error?.errorComponent;
     }
 
-
     return (
         <EnrollmentPageLayout
             pageLayout={pageLayout}

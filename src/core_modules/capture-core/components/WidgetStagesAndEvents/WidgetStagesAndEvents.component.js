@@ -7,9 +7,6 @@ import type { Props } from './stagesAndEvents.types';
 
 export const WidgetStagesAndEvents = ({ className, stages, events, ...passOnProps }: Props) => {
     const [open, setOpenStatus] = useState(true);
-    // console.log('stages', stages)
-    // console.log('events', events)
-
     return (
         <div
             data-test="stages-and-events-widget"

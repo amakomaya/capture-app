@@ -5,10 +5,7 @@ import { dataElementTypes } from '../../../metaData';
 import { convertStringToDateFormat } from '../../../utils/converters/date';
 
 
-const convertDate = (date): any => {
-    alert('hey3')
-    return convertServerToClient(date, dataElementTypes.DATE);
-};
+const convertDate = (date): any => convertServerToClient(date, dataElementTypes.DATE);
 
 const sortByMostRecentDate = (a, b) => moment.utc(b.eventDate).diff(moment.utc(a.eventDate));
 

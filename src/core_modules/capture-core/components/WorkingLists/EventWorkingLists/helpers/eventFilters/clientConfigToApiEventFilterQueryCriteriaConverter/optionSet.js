@@ -12,7 +12,6 @@ import type {
 const stringifyNumber = (rawValue: number) => rawValue.toString();
 
 const convertDate = (rawValue: string): string => {
-    alert('hey11')
     const momentDate = moment(rawValue);
     momentDate.locale('en');
     return momentDate.format('YYYY-MM-DD');

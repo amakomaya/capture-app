@@ -86,7 +86,10 @@ export function convertValue(value: any, type: $Keys<typeof dataElementTypes>) {
     let toConvertValue;
     if (isString(value)) {
         toConvertValue = value.trim();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/amakomaya
         if (!toConvertValue) {
             return null;
         }
