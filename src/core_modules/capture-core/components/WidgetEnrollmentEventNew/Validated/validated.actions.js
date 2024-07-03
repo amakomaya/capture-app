@@ -4,6 +4,9 @@ import { actions as RelatedStageModes } from '../../WidgetRelatedStages/constant
 import type { RequestEvent, LinkedRequestEvent } from './validated.types';
 import type { ExternalSaveHandler } from '../common.types';
 import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import { CodeSharp } from '@material-ui/icons';
+import moment from 'moment';
+
 // import NepaliDate from 'nepali-date-converter';
 
 
@@ -79,8 +82,10 @@ const isDateString = (value) => {
 
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
-        const convertedDate = bsToAd(value.split('T')[0]); // converting only the date part
+        const convertedDate = moment(bsToAd(value)).format('YYYY-MM-DDTHH:mm:ss');
+        console.log('convertedDate',convertedDate);
         return convertedDate;
+
     }
     return value;
 };

@@ -4,6 +4,8 @@ import type { OrgUnit } from '@dhis2/rules-engine-javascript';
 import { actionCreator } from '../../../actions/actions.utils';
 import { effectMethods } from '../../../trackerOffline';
 import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
 // import NepaliDate from 'nepali-date-converter';
 export const batchActionTypes = {
     START_SAVE_EDIT_EVENT_DATA_ENTRY_BATCH: 'StartSaveEditEventDataEntryBatchForViewSingleEvent',
@@ -36,29 +38,34 @@ export const requestSaveEditEventDataEntry = (itemId: string, dataEntryId: strin
     
 const isDateString = (value) => {
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-    return datePattern.test(value.split('T')[0]);
+    console.log('value',value)
+    return datePattern.test(value);
 };
 
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
-        const convertedDate = bsToAd(value.split('T')[0]);
+        const convertedDate = moment(bsToAd(value)).format('YYYY-MM-DDTHH:mm:ss');
+        console.log('convertedDate after evetn',convertedDate);
         return convertedDate;
     }
     return value;
 };
 const convertDatesToGregorian = (events) => {
     return events.map(event => {
-        if (event.occurredAt) {
+        if (event.scheduledAt) {
             event.occurredAt = convertIfDateString(event.occurredAt);
         }
-        // if (event.dataValues && event.dataValues.length > 0) {
-        //     event.dataValues = event.dataValues.map(dataValue => {
-        //         if (isDateString(dataValue.value)) {
-        //             dataValue.value = convertIfDateString(dataValue.value);
-        //         }
-        //         return dataValue;
-        //     });
-        // }
+        if (event.scheduledAt) {
+            event.scheduledAt = convertIfDateString(event.scheduledAt);
+        }
+        if (event.dataValues && event.dataValues.length > 0) {
+            event.dataValues = event.dataValues.map(dataValue => {
+                if (isDateString(dataValue.value)) {
+                    dataValue.value = convertIfDateString(dataValue.value);
+                }
+                return dataValue;
+            });
+        }
         
         // console.log('event',event);
         return event;

@@ -7,6 +7,8 @@ import { errorCreator } from 'capture-core-utils';
 import { getCoreOrgUnit } from 'capture-core/metadataRetrieval/coreOrgUnit';
 import { isSelectionsEqual } from '../../../App/isSelectionsEqual';
 import { getErrorMessageAndDetails } from '../../../../utils/errors/getErrorMessageAndDetails';
+import moment from 'moment';
+
 import { bsToAd ,adToBs} from '@sbmdkl/nepali-date-converter';
 
 import {
@@ -30,6 +32,7 @@ import { getCategoriesDataFromEventAsync } from './getCategoriesDataFromEvent';
 import { eventWorkingListsActionTypes } from '../../../WorkingLists/EventWorkingLists';
 import { resetLocationChange } from '../../../ScopeSelector/QuickSelector/actions/QuickSelector.actions';
 import { buildUrlQueryString } from '../../../../utils/routing';
+import { CodeSharp } from '@material-ui/icons';
 
 export const getEventOpeningFromEventListEpic = (
     action$: InputObservable,
@@ -108,7 +111,9 @@ const isDateString = (value) => {
 };
 const convertNepaliDate =(value) =>{
     if (isDateString(value)) {
-        const convertedDate = adToBs(value.split('T')[0]); 
+        console.log('value to show in event',value);
+        const convertedDate = adToBs(value.split('T')[0]);
+        console.log('convertedDate to view in event',convertedDate) 
         return convertedDate;
     }
     return value;

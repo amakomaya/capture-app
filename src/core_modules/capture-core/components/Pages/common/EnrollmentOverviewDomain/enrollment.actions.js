@@ -165,7 +165,6 @@ export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
                     event.completedAt = convertIfDateString(event.completedAt);
                 }
 
-                // Convert dates in dataValues
                 if (event.dataValues && event.dataValues.length > 0) {
                     event.dataValues.forEach(dataValue => {
                         if (dataValue.createdAt) {
@@ -194,7 +193,6 @@ export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
     };
 
     attributeValues = convertAttributeValuesDates(attributeValues);
-    // console.log('attributeValues',attributeValues);
 
     return actionCreator(enrollmentSiteActionTypes.COMMON_ENROLLMENT_SITE_DATA_SET)({ enrollment, attributeValues });
 };
