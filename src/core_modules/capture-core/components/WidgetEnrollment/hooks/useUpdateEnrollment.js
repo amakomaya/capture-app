@@ -25,7 +25,6 @@ const isDateString = (value) => {
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
         const convertedDate = bsToAd(moment(value).format('YYYY-MM-DD'));
-        console.log('value',value);
         return convertedDate;
 
     }
