@@ -2,6 +2,7 @@
 import { actionCreator } from '../../actions/actions.utils';
 import { effectMethods } from '../../trackerOffline';
 import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
 
 export const scheduleEventWidgetActionTypes = {
     EVENT_SCHEDULE_REQUEST: 'ScheduleEvent.RequestScheduleEvent',
