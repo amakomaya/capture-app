@@ -25,6 +25,7 @@ const isDateString = (value) => {
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
         const convertedDate = bsToAd(moment(value).format('YYYY-MM-DD'));
+        console.log('value',value);
         return convertedDate;
 
     }
@@ -34,7 +35,6 @@ const convertIfDateString = (value) => {
 const convertNepaliToEnglishDate = (nepaliDateString) => {
     try {
         if (!isDateString(nepaliDateString)) {
-            // console.error("Invalid Nepali date provided:", nepaliDateString);
             return null;
         }
         const convertedDate = convertIfDateString(nepaliDateString);

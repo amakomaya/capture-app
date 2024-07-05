@@ -1,13 +1,53 @@
 // @flow
 import { useDataMutation, type QueryRefetchFunction } from '@dhis2/app-runtime';
 import { useRef } from 'react';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
 
 const enrollmentUpdate = {
     resource: 'tracker?async=false&importStrategy=UPDATE',
     type: 'create',
     data: enrollment => ({
-        enrollments: [enrollment],
-    }),
+        enrollments: [convertToNepali(enrollment)],   
+     }),
+};
+const convertToNepali = (enrollment) => {
+    return {
+        ...enrollment,
+        enrolledAt: convertNepaliToEnglishDate(enrollment.enrolledAt),
+        occurredAt: convertNepaliToEnglishDate(enrollment.occurredAt)
+    };
+};
+const isDateString = (value) => {
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    return datePattern.test(value.split('T')[0]);
+};
+const convertIfDateString = (value) => {
+    if (isDateString(value)) {
+        const convertedDate = bsToAd(moment(value).format('YYYY-MM-DD'));
+        console.log('value',value);
+        return convertedDate;
+
+    }
+    return value;
+};
+
+const convertNepaliToEnglishDate = (nepaliDateString) => {
+    try {
+        if (!isDateString(nepaliDateString)) {
+            return null;
+        }
+        const convertedDate = convertIfDateString(nepaliDateString);
+        if (moment(convertedDate).isValid()) {
+            return moment(convertedDate).format('YYYY-MM-DDTHH:mm:ss.SSS');
+        } else {
+            console.error("Invalid English date after conversion:", convertedDate);
+            return null;
+        }
+    } catch (error) {
+        console.error("Error converting Nepali date to English:", error);
+        return null;
+    }
 };
 
 const enrollmentDelete = {
