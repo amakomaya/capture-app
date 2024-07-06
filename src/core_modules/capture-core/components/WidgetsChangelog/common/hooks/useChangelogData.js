@@ -104,10 +104,11 @@ export const useChangelogData = ({
                 metadataElement.type,
                 options,
             );
+        
 
             return {
                 reactKey: uuid(),
-                date: adToBs(moment(fromServerDate(createdAt)).format('YYYY-MM-DD')),
+                date: adToBs(moment(fromServerDate(createdAt)).format('YYYY-MM-DD')) +' '+ moment(fromServerDate(createdAt)).format('HH:mm:ss'),
                 user: `${firstName} ${surname} (${username})`,
                 dataItemId: fieldId,
                 changeType: changelog.type,

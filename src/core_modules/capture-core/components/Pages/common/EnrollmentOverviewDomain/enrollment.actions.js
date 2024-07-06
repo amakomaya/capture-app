@@ -1,7 +1,6 @@
 // @flow
 import { actionCreator } from '../../../../actions/actions.utils';
 import { adToBs ,bsToAd} from '@sbmdkl/nepali-date-converter';
-// import NepaliDate from 'nepali-date-converter';
 import type { EventReducerProps } from '../../../WidgetEnrollment/enrollment.types';
 
 export const enrollmentSiteActionTypes = {
@@ -59,62 +58,6 @@ const convertIfDateengString = (value) => {
     }
     return value;
 };
-
-// export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
-
-//     const convertEnrollmentDates = (enrollment) => {
-//         if (enrollment.enrolledAt) {
-//             enrollment.enrolledAt = convertIfDateString(enrollment.enrolledAt);
-//         }
-        
-//         if (enrollment.occurredAt) {
-//             enrollment.occurredAt = convertIfDateString(enrollment.occurredAt);
-//         }
-
-//         if (enrollment.createdAt) {
-//             enrollment.createdAt = convertIfDateString(enrollment.createdAt);
-//         }
-//         if (enrollment.updatedAt) {
-//             enrollment.updatedAt = convertIfDateString(enrollment.updatedAt);
-//         }
-
-//         if (enrollment.events && enrollment.events.length > 0) {
-//             enrollment.events.forEach(event => {
-//                 if (event.scheduledAt) {
-//                     event.scheduledAt = convertIfDateString(event.scheduledAt);
-//                 } 
-//                 if (event.occurredAt) {
-//                     event.occurredAt = convertIfDateString(event.occurredAt);
-//                 }                
-//                 if (event.createdAt) {
-//                     event.createdAt = convertIfDateString(event.createdAt);
-//                 }
-//                 if (event.updatedAt) {
-//                     event.updatedAt = convertIfDateString(event.updatedAt);
-//                 }
-
-//             });
-//         }
-        
-
-//         return enrollment;
-//     };
-
-//     enrollment = convertEnrollmentDates(enrollment);
-
-//     const convertAttributeValuesDates = (attributeValues) => {
-//         return attributeValues.map(attr => {
-//             if (isDateString(attr.value)) {
-//                 attr.value = convertDateToBS(attr.value);
-//             }
-//             return attr;
-//         });
-//     };
-
-//     attributeValues = convertAttributeValuesDates(attributeValues);
-
-//     return actionCreator(enrollmentSiteActionTypes.COMMON_ENROLLMENT_SITE_DATA_SET)({ enrollment, attributeValues });
-// };
 
 export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
     const convertEnrollmentDates = (enrollment) => {
@@ -210,8 +153,6 @@ export const commitEnrollmentEvent = (eventId: string) =>
         eventId,
     });
 
-// export const updateOrAddEnrollmentEvents = ({ events }: EventReducerProps) =>
-//     actionCreator(enrollmentSiteActionTypes.UPDATE_OR_ADD_ENROLLMENT_EVENTS)({ events });
 
 const convertDatesToGregorian = (events) => {
     return events.map(event => {
