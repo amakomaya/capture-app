@@ -1,7 +1,9 @@
 // @flow
 import { actionCreator } from '../../../../actions/actions.utils';
 import { adToBs ,bsToAd} from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
 import type { EventReducerProps } from '../../../WidgetEnrollment/enrollment.types';
+import { getTimeZone } from '../../../../../capture-core-utils/date/date.utils';
 
 export const enrollmentSiteActionTypes = {
     COMMON_ENROLLMENT_SITE_DATA_SET: 'EnrollmentSite.SetCommonData',
@@ -25,8 +27,9 @@ export const enrollmentSiteActionTypes = {
 };
 
 const convertDateToBS = (dateString) => {
-    const dateOnlyString = dateString.split('T')[0]; 
-    const nepaliDate = adToBs(dateOnlyString);
+    const dateOnlyString = dateString.split('T')[0];
+    const timezone = getTimeZone(dateString);
+    const nepaliDate = `${adToBs(dateOnlyString)}T${timezone}`;
     return nepaliDate;
 };
 

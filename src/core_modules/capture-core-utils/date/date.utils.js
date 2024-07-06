@@ -1,5 +1,7 @@
 // @flow
 
+import moment from "moment";
+
 /**
  * Some locales are using numeral glyphs other than european. This method ensures the moment format method returns a value in european glyphs
  * @param {*} momentDate: the moment instance
@@ -12,4 +14,8 @@ export function getFormattedStringFromMomentUsingEuropeanGlyphs(
 ) {
     const europeanMoment = momentDate.clone().locale('en');
     return europeanMoment.format(format);
+}
+
+export function getTimeZone(date){
+    return moment(date).format('HH:mm:ss.SSS');
 }
