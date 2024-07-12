@@ -117,10 +117,13 @@ export const deleteTemplateError = (template: Object, storeId: string) =>
 export const initListView = (selectedTemplate: Object, context: Object, meta: Object) =>
     actionCreator(workingListsCommonActionTypes.LIST_VIEW_INIT)({ ...meta, selectedTemplate, context });
 
-const isDateString = (value) => {
-const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-return datePattern.test(value.split('T')[0]);
-};
+    const isDateString = (value) => {
+        if (typeof value !== 'string') {
+            return false; // Return false if value is not a string
+        }
+        const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+        return datePattern.test(value.split('T')[0]); 
+    };
 
 const convertIfDateString = (value) => {
     if (isDateString(value)) {

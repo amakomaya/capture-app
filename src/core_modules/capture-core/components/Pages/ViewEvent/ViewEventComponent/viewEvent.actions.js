@@ -43,8 +43,11 @@ export const eventFromUrlRetrieved = (eventContainer: Object, prevProgramId: ?st
 
 
     const isDateString = (value) => {
+        if (typeof value !== 'string') {
+            return false; // Return false if value is not a string
+        }
         const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-        return datePattern.test(value.split('T')[0]);
+        return datePattern.test(value.split('T')[0]); 
     };
     
     const convertIfDateString = (value) => {
