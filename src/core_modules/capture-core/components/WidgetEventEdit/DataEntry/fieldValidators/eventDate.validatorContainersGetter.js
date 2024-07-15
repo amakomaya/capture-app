@@ -4,7 +4,6 @@ import i18n from '@dhis2/d2-i18n';
 import { isValidDate } from '../../../../utils/validators/form';
 
 const preValidateDate = (value?: ?string) => {
-    console.log('value',value);
     if (!value) {
         return true;
     }
