@@ -51,9 +51,15 @@ type IdSuite = {
 };
 
 const convertDateToBS = (dateString) => {
-    const dateOnlyString = dateString.split('T')[0];
-    const nepaliDate = adToBs(dateOnlyString);
-    return nepaliDate;
+    try{
+        const dateOnlyString = dateString.split('T')[0];
+        const nepaliDate = adToBs(dateOnlyString);
+        return nepaliDate;
+    }
+    catch(e){
+        return dateString;
+    }
+   
 };
 
 

@@ -15,8 +15,14 @@ import { adToBs } from '@sbmdkl/nepali-date-converter';
 //     }
 // };
 const convertDateToBS = (dateString) => {
-    const nepaliDate = adToBs(dateString);
-    return nepaliDate;
+    try{
+        const nepaliDate = adToBs(dateString);
+        return nepaliDate;
+    }
+    catch(e){
+        return dateString;
+    }
+   
 };
 
 const isDateString = (value) => {

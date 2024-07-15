@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { Calendar } from '@dhis2/ui';
-// import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
 import '@joakim_sm/react-infinite-calendar/styles.css';
 import './customStyles.css';
 

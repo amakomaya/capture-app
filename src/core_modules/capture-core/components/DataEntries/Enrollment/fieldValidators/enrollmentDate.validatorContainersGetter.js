@@ -27,7 +27,6 @@ const isValidEnrollmentDate = (value: string, isFutureDateAllowed: boolean) => {
 };
 
 const convertNepaliDateToGregorian = (nepaliDate: string) => {
-    const engdate = bsToAd(nepaliDate);
     return bsToAd(nepaliDate);
 };
 

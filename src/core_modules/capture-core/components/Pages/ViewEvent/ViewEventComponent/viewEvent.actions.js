@@ -52,8 +52,14 @@ export const eventFromUrlRetrieved = (eventContainer: Object, prevProgramId: ?st
     
     const convertIfDateString = (value) => {
         if (isDateString(value)) {
-            const convertedDate = adToBs(moment(value).format('YYYY-MM-DD')); 
-            return convertedDate;
+            try{
+                const convertedDate = adToBs(moment(value).format('YYYY-MM-DD')); 
+                return convertedDate;
+            }
+            catch (e){
+                return value;
+            }
+            
         }
         return value;
     };

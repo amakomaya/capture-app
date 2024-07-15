@@ -1,7 +1,6 @@
 // @flow
 import { actionCreator } from '../../../../actions/actions.utils';
 import { adToBs ,bsToAd} from '@sbmdkl/nepali-date-converter';
-import moment from 'moment';
 import type { EventReducerProps } from '../../../WidgetEnrollment/enrollment.types';
 import { getTimeZone } from '../../../../../capture-core-utils/date/date.utils';
 
@@ -27,23 +26,35 @@ export const enrollmentSiteActionTypes = {
 };
 
 const convertDateToBS = (dateString) => {
-    const dateOnlyString = dateString.split('T')[0];
-    const timezone = getTimeZone(dateString);
-    const nepaliDate = `${adToBs(dateOnlyString)}T${timezone}`;
-    return nepaliDate;
+    try{
+        const dateOnlyString = dateString.split('T')[0];
+        const timezone = getTimeZone(dateString);
+        const nepaliDate = `${adToBs(dateOnlyString)}T${timezone}`;
+        return nepaliDate;
+    }
+    catch(e){
+        return dateString;
+    }
+    
 };
 
 const convertDateToAD = (dateString) => {
-    const dateOnlyString = dateString.split('T')[0]; 
-    const englishDate = bsToAd(dateOnlyString);
-    return englishDate;
+    try{
+        const dateOnlyString = dateString.split('T')[0]; 
+        const englishDate = bsToAd(dateOnlyString);
+        return englishDate;
+    }
+    catch(e){
+        return dateString;
+    }  
+    
 };
 
 
 
 const isDateString = (value) => {
     if (typeof value !== 'string') {
-        return false; // Return false if value is not a string
+        return false; 
     }
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
     return datePattern.test(value.split('T')[0]); 

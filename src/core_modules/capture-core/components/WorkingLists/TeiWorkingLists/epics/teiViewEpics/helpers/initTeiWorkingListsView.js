@@ -49,7 +49,6 @@ export const initTeiWorkingListsViewAsync = async ({
     const promiseToGetRecordsList = programStageId
         ? getEventListData({ ...rawQueryArgs, programStageId }, params)
         : getTeiListData(rawQueryArgs, params);
-
     return promiseToGetRecordsList
         .then(({ recordContainers, request }) =>
             initListViewSuccess(storeId, {
