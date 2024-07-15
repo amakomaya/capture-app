@@ -17,7 +17,7 @@ type Props = {
     displayOptions?: ?Object,
     calendarTheme: Object,
     onConvertValueIn: (inputValue: ?string) => Date,
-    onConvertValueOut: (date: Date) => string,
+    // onConvertValueOut: (date: Date) => string,
 };
 
 type State = {
@@ -59,12 +59,12 @@ export class DateCalendar extends Component<Props, State> {
         showMonthsForYears: false,
     };
 
+  
     handleChange(changeDate: Date) {
-        const changeDateInLocalFormat = this.props.onConvertValueOut(changeDate.calendarDateString);
+        const changeDateInLocalFormat =changeDate.calendarDateString;
         this.setState({ selectedDate: changeDateInLocalFormat });
         this.props.onDateSelected(changeDateInLocalFormat);
     }
-
 
     getValue(inputValue: ?string) {
                 return this.props.onConvertValueIn(inputValue);
@@ -101,7 +101,6 @@ export class DateCalendar extends Component<Props, State> {
 
         return (
             <div>
-
                 <Calendar
                     date={selectedDate}
                     onDateSelect={this.handleChange}
