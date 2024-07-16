@@ -53,6 +53,8 @@ export const startSavingNewTrackedEntityInstanceWithEnrollment = (enrollmentPayl
         uid,
     });
 
+
+
 export const saveNewTrackedEntityInstanceWithEnrollment = ({
     candidateForRegistration,
     redirectTo,
@@ -90,9 +92,9 @@ export const saveNewTrackedEntityInstanceWithEnrollment = ({
 
     const modifyDatesInEnrollments = (enrollments) => {
         return enrollments.map(enrollment => {
-            if (isDateString(enrollment.enrolledAt)) {
-                enrollment.enrolledAt = convertDateToAD(enrollment.enrolledAt);
-            }
+            // if (isDateString(enrollment.enrolledAt)) {
+            //     enrollment.enrolledAt = convertDateToAD(enrollment.enrolledAt);
+            // }
             if (isDateString(enrollment.occurredAt)) {
                 enrollment.occurredAt = convertDateToAD(enrollment.occurredAt);
             }

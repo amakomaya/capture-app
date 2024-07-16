@@ -11,6 +11,8 @@ import { rulesExecutedPostUpdateField } from '../../../DataEntry/actions/dataEnt
 import { TrackerProgram, RenderFoundation, ProgramStage } from '../../../../metaData';
 import { startRunRulesPostUpdateField } from '../../../DataEntry';
 import { startRunRulesOnUpdateForNewEnrollment } from './enrollment.actions';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+
 
 export const batchActionTypes = {
     RULES_EXECUTED_POST_UPDATE_FIELD_FOR_ENROLLMENT: 'RulesExecutedPostUpdateFieldForEnrollment',
@@ -45,6 +47,7 @@ export const runRulesOnUpdateFieldBatch = ({
     formFoundation?: RenderFoundation,
     currentEvent?: {[id: string]: any},
 }) => {
+
     const effects = getApplicableRuleEffectsForTrackerProgram({
         program,
         stage,
@@ -70,7 +73,7 @@ export const updateDataEntryFieldBatch = (
 ) => {
     const { dataEntryId, itemId } = innerAction.payload;
     const uid = uuid();
-
+    innerAction.payload.value = bsToAd(innerAction.payload.value);
     return batchActions([
         innerAction,
         startRunRulesPostUpdateField(dataEntryId, itemId, uid),

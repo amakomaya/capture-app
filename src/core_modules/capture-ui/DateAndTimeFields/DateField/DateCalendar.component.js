@@ -17,7 +17,6 @@ type Props = {
     displayOptions?: ?Object,
     calendarTheme: Object,
     onConvertValueIn: (inputValue: ?string) => Date,
-    // onConvertValueOut: (date: Date) => string,
 };
 
 type State = {
@@ -25,7 +24,7 @@ type State = {
 };
 
 export class DateCalendar extends Component<Props, State> {
-    handleChange: (e: any, dates: ?Array<Date>) => void;
+    handleChange: (date: { calendarDateString: string }) => void;
     displayOptions: Object;
 
     constructor(props: Props) {
@@ -59,16 +58,15 @@ export class DateCalendar extends Component<Props, State> {
         showMonthsForYears: false,
     };
 
-  
-    handleChange(changeDate: Date) {
-        const changeDateInLocalFormat =changeDate.calendarDateString;
+    handleChange(date: { calendarDateString: string }) {
+        const changeDateInLocalFormat = date.calendarDateString;
         this.setState({ selectedDate: changeDateInLocalFormat });
         this.props.onDateSelected(changeDateInLocalFormat);
     }
 
     getValue(inputValue: ?string) {
-                return this.props.onConvertValueIn(inputValue);
-            }
+        return inputValue;
+    }
 
     getMinMaxProps() {
         const { minMoment = moment('1900-01-01'), maxMoment = moment('2099-12-31') } = this.props;
