@@ -73,7 +73,7 @@ export const updateDataEntryFieldBatch = (
 ) => {
     const { dataEntryId, itemId } = innerAction.payload;
     const uid = uuid();
-    innerAction.payload.value = bsToAd(innerAction.payload.value);
+    // innerAction.payload.value = bsToAd(innerAction.payload.value);
     return batchActions([
         innerAction,
         startRunRulesPostUpdateField(dataEntryId, itemId, uid),
