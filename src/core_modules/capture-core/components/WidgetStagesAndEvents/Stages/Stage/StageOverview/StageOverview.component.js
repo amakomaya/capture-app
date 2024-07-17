@@ -10,6 +10,9 @@ import { statusTypes } from 'capture-core/events/statusTypes';
 import { NonBundledDhis2Icon } from '../../../../NonBundledDhis2Icon';
 import type { Props } from './stageOverview.types';
 import { isEventOverdue } from '../StageDetail/hooks/helpers';
+import { adToBs, bsToAd } from '@sbmdkl/nepali-date-converter';
+import { getTimeZone } from 'capture-core-utils/date/date.utils';
+
 
 const styles = {
     container: {
@@ -55,8 +58,11 @@ const getLastUpdatedAt = (events, fromServerDate) => {
 
     if (lastEventUpdated) {
         const { updatedAt } = lastEventUpdated;
-        return lastEventUpdated?.updatedAt && moment(updatedAt).isValid()
-            ? i18n.t('Last updated {{date}}', { date: moment(fromServerDate(updatedAt)).fromNow() })
+        const dateOnlyString = updatedAt.split('T')[0];
+        const timezone = getTimeZone(updatedAt);
+        const engdate = `${bsToAd(dateOnlyString)}T${timezone}` ;
+        return lastEventUpdated?.updatedAt && moment(engdate).isValid()
+            ? i18n.t('Last updated {{date}}', { date: moment(fromServerDate(engdate)).fromNow() })
             : null;
     }
     return null;

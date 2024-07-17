@@ -10,6 +10,8 @@ import { CHANGELOG_ENTITY_TYPES, QUERY_KEYS_BY_ENTITY_TYPE } from '../Changelog/
 import type { Change, ChangelogRecord, ItemDefinitions, SortDirection } from '../Changelog/Changelog.types';
 import { convertServerToClient } from '../../../../converters';
 import { convert } from '../../../../converters/clientToList';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
+
 
 type Props = {
     entityId: string,
@@ -102,10 +104,11 @@ export const useChangelogData = ({
                 metadataElement.type,
                 options,
             );
+        
 
             return {
                 reactKey: uuid(),
-                date: moment(fromServerDate(createdAt)).format('YYYY-MM-DD HH:mm'),
+                date: adToBs(moment(fromServerDate(createdAt)).format('YYYY-MM-DD')) +' '+ moment(fromServerDate(createdAt)).format('HH:mm:ss'),
                 user: `${firstName} ${surname} (${username})`,
                 dataItemId: fieldId,
                 changeType: changelog.type,

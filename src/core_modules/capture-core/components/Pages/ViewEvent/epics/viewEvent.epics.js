@@ -7,6 +7,9 @@ import { errorCreator } from 'capture-core-utils';
 import { getCoreOrgUnit } from 'capture-core/metadataRetrieval/coreOrgUnit';
 import { isSelectionsEqual } from '../../../App/isSelectionsEqual';
 import { getErrorMessageAndDetails } from '../../../../utils/errors/getErrorMessageAndDetails';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
 
 import {
     actionTypes as viewEventActionTypes,
@@ -29,6 +32,7 @@ import { getCategoriesDataFromEventAsync } from './getCategoriesDataFromEvent';
 import { eventWorkingListsActionTypes } from '../../../WorkingLists/EventWorkingLists';
 import { resetLocationChange } from '../../../ScopeSelector/QuickSelector/actions/QuickSelector.actions';
 import { buildUrlQueryString } from '../../../../utils/routing';
+import { CodeSharp } from '@material-ui/icons';
 
 export const getEventOpeningFromEventListEpic = (
     action$: InputObservable,
@@ -69,6 +73,35 @@ export const getEventOpeningFromEventListEpic = (
         ),
     );
 
+
+const isDateString = (value) => {
+    if (typeof value !== 'string') {
+        return false;
+    }
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    return datePattern.test(value.split('T')[0]); 
+};
+
+const convertNepaliDate =(value) =>{
+    if (isDateString(value)) {
+        try{
+            const convertedDate = adToBs(moment(value).format('YYYY-MM-DD'));
+            return convertedDate;
+        }
+        catch(e){
+            return value; 
+        }
+    }
+    return value;
+};
+
+const convertValuesDates = (values) => {
+    const convertedValues = {};
+    Object.keys(values).forEach(key => {
+        convertedValues[key] = convertNepaliDate(values[key]);
+    });
+    return convertedValues;
+};
 export const getEventFromUrlEpic = (
     action$: InputObservable,
     store: ReduxStore,
@@ -85,9 +118,15 @@ export const getEventFromUrlEpic = (
                         return eventFromUrlCouldNotBeRetrieved(
                             i18n.t('Event could not be loaded. Are you sure it exists?'));
                     }
-                    // need to retrieve category names from API (due to 50k category options requirement)
+                   
                     return getCategoriesDataFromEventAsync(eventContainer.event, querySingleResource)
-                        .then(categoriesData => eventFromUrlRetrieved(eventContainer, prevProgramId, categoriesData));
+                        .then(categoriesData => {
+                            const updatedEventContainer = { ...eventContainer }; 
+                            updatedEventContainer.event.occurredAt = convertNepaliDate(updatedEventContainer.event.occurredAt);
+                            updatedEventContainer.event.scheduledAt = convertNepaliDate(updatedEventContainer.event.scheduledAt);
+                            updatedEventContainer.values = convertValuesDates(updatedEventContainer.values);
+                            return eventFromUrlRetrieved(updatedEventContainer, prevProgramId, categoriesData)
+                        });
                 })
                 .catch((error) => {
                     const { message, details } = getErrorMessageAndDetails(error);
@@ -99,7 +138,7 @@ export const getEventFromUrlEpic = (
                         i18n.t('Event could not be loaded. Are you sure it exists?'));
                 });
         }));
-
+        
 export const getOrgUnitOnUrlUpdateEpic = (action$: InputObservable) =>
     action$.pipe(
         ofType(viewEventActionTypes.EVENT_FROM_URL_RETRIEVED),

@@ -3,9 +3,14 @@ import { hasValue } from 'capture-core-utils/validators/form';
 import i18n from '@dhis2/d2-i18n';
 import moment from 'moment';
 import { parseDate } from '../../../../utils/converters/date';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
 
+const convertNepaliDateToGregorian = (nepaliDate: string) => {
+    return bsToAd(nepaliDate);
+};
 const isValidIncidentDate = (value: string, isFutureDateAllowed: boolean) => {
-    const dateContainer = parseDate(value);
+    const gregorianDate = convertNepaliDateToGregorian(value);
+    const dateContainer = parseDate(gregorianDate);
     if (!dateContainer.isValid) {
         return false;
     }

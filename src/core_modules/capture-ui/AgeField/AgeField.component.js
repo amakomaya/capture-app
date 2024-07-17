@@ -10,7 +10,7 @@ import { AgeDateInput } from '../internal/AgeInput/AgeDateInput.component';
 import defaultClasses from './ageField.module.css';
 import { orientations } from '../constants/orientations.const';
 import { withInternalChangeHandler } from '../HOC/withInternalChangeHandler';
-
+import { calculateAge } from '@sbmdkl/nepali-date-converter';
 type AgeValues = {
     date?: ?string,
     years?: ?string,
@@ -66,22 +66,26 @@ function getCalculatedValues(
             days: '',
         };
     }
-    const now = moment();
-    const age = moment(parseData.momentDate);
+    // const now = moment();
+    // const age = moment(parseData.momentDate);
 
-    const years = now.diff(age, 'years');
-    age.add(years, 'years');
+    // const years = now.diff(age, 'years');
+    // age.add(years, 'years');
 
-    const months = now.diff(age, 'months');
-    age.add(months, 'months');
-
-    const days = now.diff(age, 'days');
+    // const months = now.diff(age, 'months');
+    // age.add(months, 'months');
+    // const days = now.diff(age, 'days');
+    const { day, month, year } = calculateAge(dateValue);
 
     return {
+        // date: onGetFormattedDateStringFromMoment(parseData.momentDate),
+        // years: years.toString(),
+        // months: months.toString(),
+        // days: days.toString(),
         date: onGetFormattedDateStringFromMoment(parseData.momentDate),
-        years: years.toString(),
-        months: months.toString(),
-        days: days.toString(),
+        years: year,
+        months: month,
+        days: day,
     };
 }
 
@@ -177,11 +181,13 @@ class D2AgeFieldPlain extends Component<Props> {
             dateCalendarLocale,
             moment,
             onParseDate,
+            disabled,
             ...passOnProps } = this.props;
         return (
             <div className={defaultClasses.ageNumberInputContainer}>
                 {/* $FlowFixMe[cannot-spread-inexact] automated comment */}
                 <AgeNumberInput
+                    disabled="true"
                     label={i18n.t(label)}
                     value={currentValues[key]}
                     onBlur={numberValue => this.handleNumberBlur({ ...currentValues, [key]: numberValue })}

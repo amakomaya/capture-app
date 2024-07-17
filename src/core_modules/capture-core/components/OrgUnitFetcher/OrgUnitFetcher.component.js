@@ -13,6 +13,5 @@ export const OrgUnitFetcher = (({ orgUnitId, children, error }: Object) => {
             dispatch(fetchOrgUnit(orgUnitId));
         }
     }, [orgUnitId, orgUnit, dispatch]);
-
     return orgUnit || !orgUnitId || error ? children : <LoadingMaskElementCenter />;
 });

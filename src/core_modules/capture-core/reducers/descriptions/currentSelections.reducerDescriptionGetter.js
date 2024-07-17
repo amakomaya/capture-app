@@ -21,6 +21,8 @@ import { mainPageActionTypes } from '../../components/Pages/MainPage/MainPage.ac
 import { newPageActionTypes } from '../../components/Pages/New/NewPage.actions';
 import { viewEventPageActionTypes } from '../../components/Pages/ViewEvent/ViewEventPage.actions';
 import { trackedEntityTypeSelectorActionTypes } from '../../components/TrackedEntityTypeSelector/TrackedEntityTypeSelector.actions';
+import { adToBs,bsToAd } from '@sbmdkl/nepali-date-converter';
+
 
 const setCategoryOption = (
     state: Object,
@@ -91,6 +93,39 @@ const allCategoryOptionsReset = state => ({
     categories: undefined,
     categoriesMeta: undefined,
 });
+const isDateString = (value) => {
+    if (typeof value !== 'string') {
+        return false; // Return false if value is not a string
+    }
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    return datePattern.test(value.split('T')[0]); 
+};
+const convertNepaliDate =(value) =>{
+    if (isDateString(value)) {
+        const convertedDate = adToBs(moment(value).format('YYYY-MM-DD')); 
+        return convertedDate;
+    }
+    return value;
+};
+
+    const convertEventDatesToNepali = (event) => {
+        if (event.occurredAt) {
+            event.occurredAt = convertNepaliDate(event.occurredAt);
+        }
+        if (event.scheduledAt) {
+            event.scheduledAt = convertNepaliDate(event.scheduledAt);
+        }
+        if (event.completedAt) {
+            event.completedAt = convertNepaliDate(event.completedAt);
+        }
+        if (event.createdAt) {
+            event.createdAt = convertNepaliDate(event.createdAt);
+        }
+        if (event.updatedAt) {
+            event.updatedAt = convertNepaliDate(event.updatedAt);
+        }
+        return event;
+    };
 
 export const getCurrentSelectionsReducerDesc = (appUpdaters: Updaters) => createReducerDescription({
     ...appUpdaters,
@@ -141,9 +176,12 @@ export const getCurrentSelectionsReducerDesc = (appUpdaters: Updaters) => create
 
         return newState;
     },
+    
     [viewEventActionTypes.EVENT_FROM_URL_RETRIEVED]: (state, action) => {
         const { eventContainer, categoriesData } = action.payload;
+        const eventData = eventContainer.event;
         const event = eventContainer.event;
+        // const event = convertEventDatesToNepali(eventData);
 
         const categories = categoriesData ? categoriesData.reduce((acc, data) => {
             acc[data.categoryId] = data.categoryOption.id;
