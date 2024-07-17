@@ -11,6 +11,11 @@ import defaultClasses from './ageField.module.css';
 import { orientations } from '../constants/orientations.const';
 import { withInternalChangeHandler } from '../HOC/withInternalChangeHandler';
 import { calculateAge } from '@sbmdkl/nepali-date-converter';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
+
+
 type AgeValues = {
     date?: ?string,
     years?: ?string,
@@ -57,36 +62,25 @@ function getCalculatedValues(
     onGetFormattedDateStringFromMoment: DateStringFromMomentFormatter,
     moment: any,
 ): AgeValues {
-    const parseData = dateValue && onParseDate(dateValue);
-    if (!parseData || !parseData.isValid) {
+    const adDate = bsToAd(dateValue);
+
+    if (moment(adDate).isAfter(moment(), 'day')) {
         return {
             date: dateValue,
             years: '',
             months: '',
-            days: '',
+            days: '-1',
         };
-    }
-    // const now = moment();
-    // const age = moment(parseData.momentDate);
-
-    // const years = now.diff(age, 'years');
-    // age.add(years, 'years');
-
-    // const months = now.diff(age, 'months');
-    // age.add(months, 'months');
-    // const days = now.diff(age, 'days');
-    const { day, month, year } = calculateAge(dateValue);
-
-    return {
-        // date: onGetFormattedDateStringFromMoment(parseData.momentDate),
-        // years: years.toString(),
-        // months: months.toString(),
-        // days: days.toString(),
-        date: onGetFormattedDateStringFromMoment(parseData.momentDate),
-        years: year,
-        months: month,
-        days: day,
-    };
+    }   
+        const { day, month, year } = calculateAge(dateValue);
+        return {
+            date: dateValue,
+            years: year,
+            months: month,
+            days: day,
+        };
+    
+    
 }
 
 const messageTypeClass = {
