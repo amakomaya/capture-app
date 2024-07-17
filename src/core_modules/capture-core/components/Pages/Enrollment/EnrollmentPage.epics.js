@@ -315,7 +315,6 @@ export const autoSwitchOrgUnitEpic = (action$: InputObservable, store: ReduxStor
                     .pipe(
                         concatMap(({ organisationUnits }) => {
                             if (organisationUnits.length > 0 && store.value.enrollmentPage.pageOpen) {
-                                // Update orgUnitId in url
                                 const { orgUnitId, ...restOfQueries } = getLocationQuery();
                                 history.push(`/enrollment?${buildUrlQueryString({ ...restOfQueries, orgUnitId: programOwner.orgUnit })}`);
                             }

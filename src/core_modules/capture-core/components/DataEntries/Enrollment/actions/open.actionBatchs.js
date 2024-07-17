@@ -80,9 +80,6 @@ export const openDataEntryForNewEnrollmentBatchAsync = async ({
         const englishDate = moment(today).format('YYYY-MM-DD');
         const nepaliDate = adToBs(englishDate );
 
-        // const today = new NepaliDate();
-        // const nepaliDate = today.format('YYYY-MM-DD'); 
-
         const defaultDataEntryValues = { enrolledAt: nepaliDate};
     const dataEntryPropsToInclude = [
         ...enrollmentDataEntryPropsToInclude,

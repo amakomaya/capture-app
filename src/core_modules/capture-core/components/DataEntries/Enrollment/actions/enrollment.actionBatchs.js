@@ -33,7 +33,8 @@ export const runRulesOnUpdateFieldBatch = ({
     stage,
     formFoundation,
     currentEvent,
-}: {
+}: 
+{
     program: TrackerProgram,
     formId: string,
     dataEntryId: string,
@@ -47,7 +48,6 @@ export const runRulesOnUpdateFieldBatch = ({
     formFoundation?: RenderFoundation,
     currentEvent?: {[id: string]: any},
 }) => {
-
     const effects = getApplicableRuleEffectsForTrackerProgram({
         program,
         stage,
@@ -73,6 +73,8 @@ export const updateDataEntryFieldBatch = (
 ) => {
     const { dataEntryId, itemId } = innerAction.payload;
     const uid = uuid();
+    console.log('innerAction',innerAction);
+    // console.log(bsToAd(innerAction.payload.value));
     // innerAction.payload.value = bsToAd(innerAction.payload.value);
     return batchActions([
         innerAction,

@@ -9,6 +9,8 @@ import './customStyles.css';
 import { parseDate, convertDateObjectToDateFormatString } from '../../../../utils/converters/date';
 import { CurrentLocaleData } from '../../../../utils/localeData/CurrentLocaleData';
 import { getTheme } from './getTheme';
+import { Calendar } from '@dhis2/ui';
+
 
 type Props = {
     onDateSelected: (value: any) => void,
@@ -81,7 +83,10 @@ class D2DateCalendarPlain extends Component<Props> {
     };
 
     handleChange(changeDate: Date) {
-        const dateFormatString = convertDateObjectToDateFormatString(changeDate);
+        console.log('changeDate',changeDate);
+        const dateFormatString = changeDate.calendarDateString;
+        console.log('dateFormatString',dateFormatString);
+
         this.props.onDateSelected(dateFormatString);
     }
 

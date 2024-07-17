@@ -146,6 +146,7 @@ export const fetchEnrollments = () =>
 //     actionCreator(enrollmentPageActionTypes.VERIFY_FETCHED_ENROLLMENTS)({ teiId, programId, action });
 export const verifyFetchedEnrollments = ({ teiId, programId, action }) => {
     // Assuming action.payload contains enrollments array similar to the provided example
+
     const convertEnrollmentDates = (enrollment) => {
         if (enrollment.enrolledAt) {
             enrollment.enrolledAt = convertIfDateString(enrollment.enrolledAt);
