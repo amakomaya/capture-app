@@ -11,7 +11,6 @@ const configQuery = {
 };
 
 export const useDataEntryFormConfig = ({ selectedScopeId }: Props) => {
-
     const { data: dataEntryFormConfig, isFetched: configIsFetched } = useApiMetadataQuery(
         ['dataEntryFormConfig', selectedScopeId],
         configQuery,

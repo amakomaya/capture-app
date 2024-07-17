@@ -55,7 +55,7 @@ const runRulesOnEnrollmentUpdate =
         const currentEvent = stage
             ? { ...currentEventValues, ...currentEventMainData, programStageId: stage.id } : undefined;
 
-    return runRulesOnUpdateFieldBatch({
+        return runRulesOnUpdateFieldBatch({
             program,
             formId,
             dataEntryId,

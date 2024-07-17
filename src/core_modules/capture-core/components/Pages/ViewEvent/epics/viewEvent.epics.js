@@ -138,8 +138,6 @@ export const getEventFromUrlEpic = (
                         i18n.t('Event could not be loaded. Are you sure it exists?'));
                 });
         }));
-
-        
         
 export const getOrgUnitOnUrlUpdateEpic = (action$: InputObservable) =>
     action$.pipe(
@@ -158,8 +156,6 @@ export const getOrgUnitOnUrlUpdateEpic = (action$: InputObservable) =>
                 },
             });
         }));
-
-
 
 export const openViewPageLocationChangeEpic = (action$: InputObservable, _: ReduxStore, { history }: ApiUtils) =>
     action$.pipe(

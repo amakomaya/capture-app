@@ -40,7 +40,7 @@ const convertDatesToGregorian = (events) => {
 
 export const requestScheduleEvent = ({
     scheduleDate,
-    comments,
+    notes,
     programId,
     orgUnitId,
     stageId,
@@ -54,7 +54,7 @@ export const requestScheduleEvent = ({
     assignedUser,
 }: {
     scheduleDate: string,
-    comments: Array<{value: string}>,
+    notes: Array<{value: string}>,
     programId: string,
     orgUnitId: string,
     stageId: string,
@@ -69,7 +69,7 @@ export const requestScheduleEvent = ({
 }) =>
     actionCreator(scheduleEventWidgetActionTypes.EVENT_SCHEDULE_REQUEST)({
         scheduleDate,
-        comments,
+        notes,
         programId,
         orgUnitId,
         stageId,

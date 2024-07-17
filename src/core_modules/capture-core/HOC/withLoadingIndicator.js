@@ -16,7 +16,6 @@ export const withLoadingIndicator =
                 if (!isReady) {
                     const containerStyles = getContainerStylesFn ? getContainerStylesFn(props) : null;
                     const indicatorProps = getIndicatorProps ? getIndicatorProps(props) : null;
-                    // return null;
                     return (
                         <LoadingMaskElementCenter
                             containerStyle={containerStyles}
