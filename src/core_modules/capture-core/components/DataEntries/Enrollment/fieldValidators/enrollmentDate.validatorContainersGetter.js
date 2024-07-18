@@ -3,7 +3,7 @@ import { hasValue } from 'capture-core-utils/validators/form';
 import i18n from '@dhis2/d2-i18n';
 import moment from 'moment';
 import { parseDate } from '../../../../utils/converters/date';
-import { bsToAd, } from '@sbmdkl/nepali-date-converter';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
 
 
 const isValidEnrollmentDate = (value: string, isFutureDateAllowed: boolean) => {
