@@ -2,7 +2,6 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import moment from 'moment';
-import InfiniteCalendar from '@joakim_sm/react-infinite-calendar';
 import { Calendar } from '@dhis2/ui';
 import '@joakim_sm/react-infinite-calendar/styles.css';
 import './customStyles.css';
@@ -19,10 +18,6 @@ type Props = {
     calendarTheme: Object,
     onConvertValueIn: (inputValue: ?string) => Date,
     onConvertValueOut: (date: Date) => string,
-};
-
-export class DateCalendar extends Component<Props> {
-    handleChange: (e: any, dates: ?Array<Date>) => void;
 };
 
 type State = {
