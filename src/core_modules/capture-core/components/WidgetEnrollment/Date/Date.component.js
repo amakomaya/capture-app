@@ -78,11 +78,10 @@ const DateComponentPlain = ({
     const dateChangeHandler = useCallback(({ calendarDateString }) => {
         setSelectedDate(calendarDateString);
     }, [setSelectedDate]);
-    const displayDate = String(convertValueClientToView(date, dataElementTypes.DATE));
-
+    const displayDate = date;
     const onOpenEdit = () => {
         // CalendarInput component only supports the YYYY-MM-DD format
-        setSelectedDate(moment(date).format('YYYY-MM-DD'));
+        setSelectedDate(date);
         setEditMode(true);
     };
     const saveHandler = () => {
