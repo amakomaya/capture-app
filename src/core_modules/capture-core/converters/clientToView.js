@@ -11,8 +11,7 @@ import { MinimalCoordinates } from '../components/MinimalCoordinates';
 
 
 function convertDateForView(rawValue: string): string {
-    const momentDate = moment(rawValue);
-    return convertMomentToDateFormatString(momentDate);
+    return rawValue;
 }
 
 function convertDateTimeForView(rawValue: string): string {
@@ -93,7 +92,6 @@ export function convertValue(value: any, type: $Keys<typeof dataElementTypes>, d
         }
         return dataElement.optionSet.getOptionText(value);
     }
-
     // $FlowFixMe dataElementTypes flow error
     return valueConvertersForType[type] ? valueConvertersForType[type](value) : value;
 }
