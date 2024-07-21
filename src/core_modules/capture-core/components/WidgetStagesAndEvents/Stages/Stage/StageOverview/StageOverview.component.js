@@ -60,7 +60,7 @@ const getLastUpdatedAt = (events, fromServerDate) => {
         const { updatedAt } = lastEventUpdated;
         const dateOnlyString = updatedAt.split('T')[0];
         const timezone = getTimeZone(updatedAt);
-        const engdate = `${bsToAd(dateOnlyString)}T${timezone}` ;
+        const engdate = `${bsToAd(dateOnlyString)}T${timezone}`;
         return lastEventUpdated?.updatedAt && moment(engdate).isValid()
             ? i18n.t('Last updated {{date}}', { date: moment(fromServerDate(engdate)).fromNow() })
             : null;
