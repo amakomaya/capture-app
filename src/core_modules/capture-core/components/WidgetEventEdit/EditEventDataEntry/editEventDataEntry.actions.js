@@ -50,7 +50,7 @@ const convertIfDateString = (value) => {
 };
 const convertDatesToGregorian = (events) => {
     return events.map(event => {
-        if (event.scheduledAt) {
+        if (event.occurredAt) {
             event.occurredAt = convertIfDateString(event.occurredAt);
         }
         if (event.scheduledAt) {
@@ -68,33 +68,6 @@ const convertDatesToGregorian = (events) => {
         return event;
     });
 };
-        
-// export const startSaveEditEventDataEntry = (
-//     eventId: string,
-//     serverData: Object,
-//     triggerActionCommit?: ?string,
-//     triggerActionRollback?: ?string,
-// ) =>
-//     actionCreator(actionTypes.START_SAVE_EDIT_EVENT_DATA_ENTRY)(
-//         {},
-//         {
-//             offline: {
-//                 effect: {
-//                     url: 'tracker?async=false&importStrategy=UPDATE',
-//                     method: effectMethods.POST,
-//                     data: serverData,
-//                 },
-//                 commit: {
-//                     type: actionTypes.EDIT_EVENT_DATA_ENTRY_SAVED,
-//                     meta: { eventId, triggerAction: triggerActionCommit },
-//                 },
-//                 rollback: {
-//                     type: actionTypes.SAVE_EDIT_EVENT_DATA_ENTRY_FAILED,
-//                     meta: { eventId, triggerAction: triggerActionRollback },
-//                 },
-//             },
-//         },,
-//     );
 
 export const startSaveEditEventDataEntry = (
     eventId: string,
