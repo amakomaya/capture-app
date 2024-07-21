@@ -10,11 +10,9 @@ import { AgeDateInput } from '../internal/AgeInput/AgeDateInput.component';
 import defaultClasses from './ageField.module.css';
 import { orientations } from '../constants/orientations.const';
 import { withInternalChangeHandler } from '../HOC/withInternalChangeHandler';
-import { calculateAge } from '@sbmdkl/nepali-date-converter';
+import { adToBs, calculateAge } from '@sbmdkl/nepali-date-converter';
 import { bsToAd } from '@sbmdkl/nepali-date-converter';
-import moment from 'moment';
-
-
+import moment from 'moment'; 
 
 type AgeValues = {
     date?: ?string,
@@ -97,6 +95,14 @@ class D2AgeFieldPlain extends Component<Props> {
     static isPositiveOrZeroNumber(value: any) {
         return isValidPositiveInteger(value) || Number(value) === 0;
     }
+
+    static isValidMonth(value: any){
+        return Number(value)<12;
+    }
+
+    static isValidDay(value: any){
+        return Number(value)<3;
+    }
     // eslint-disable-next-line complexity
     static isValidNumbers(values: AgeValues) {
         return D2AgeFieldPlain.isPositiveOrZeroNumber(values.years || '0') &&
@@ -126,16 +132,56 @@ class D2AgeFieldPlain extends Component<Props> {
             return;
         }
 
-        const momentDate = moment(undefined, undefined, true);
-        momentDate.subtract(D2AgeFieldPlain.getNumberOrZero(values.years), 'years');
-        momentDate.subtract(D2AgeFieldPlain.getNumberOrZero(values.months), 'months');
-        momentDate.subtract(D2AgeFieldPlain.getNumberOrZero(values.days), 'days');
+        const today = new Date();
+        const englishDate = moment(today).format('YYYY-MM-DD');
+        const nepaliDate = adToBs(englishDate);
+
+        let nepYear = nepaliDate.substring(0, 4);
+        let nepMonth = nepaliDate.substring(5, 7); 
+        let nepDay = nepaliDate.substring(8, 10);
+
+        let year = D2AgeFieldPlain.getNumberOrZero(values.years);
+        let month =D2AgeFieldPlain.isValidMonth(D2AgeFieldPlain.getNumberOrZero(values.months));
+
+        let day= D2AgeFieldPlain.isValidDay(D2AgeFieldPlain.getNumberOrZero(values.days));
+
+        let dayDifference = nepDay - day;
+      
+
+        if(dayDifference<0){
+            console.log(nepDay,'nepDay');
+            console.log(day,'day')
+            console.log(nepMonth,'nepMonth')
+            dayDifference = Number(nepDay) + 30 * Math.floor(day / 30) - Number(day);
+            console.log(dayDifference,'dayDifference');
+            nepMonth = Number(nepMonth) - Math.floor(day / 30);
+            console.log(nepMonth,'nepMonth');
+        }
+
+        let yearDifference = nepYear - year;
+        let monthDifference = nepMonth - month;
+
+        if(monthDifference<0){
+
+            monthDifference = Number(nepMonth) + 12 * Math.floor(month / 12) - Number(month);
+            nepYear = Number(nepYear) - Math.floor(month / 12);
+        }
+    
+        let formattedMonthDifference = monthDifference.toString().padStart(2, '0');
+        let formattedDayDifference = dayDifference.toString().padStart(2, '0');
+
+        const calculatAgeDateBS = `${yearDifference}-${formattedMonthDifference}-${formattedDayDifference}`;
+        console.log(calculatAgeDateBS)
+
+      
+
         const calculatedValues = getCalculatedValues(
-            onGetFormattedDateStringFromMoment(momentDate),
+            calculatAgeDateBS,
             onParseDate,
             onGetFormattedDateStringFromMoment,
             moment,
         );
+    
         this.props.onBlur(calculatedValues);
     }
 
@@ -147,6 +193,7 @@ class D2AgeFieldPlain extends Component<Props> {
             onParseDate,
             onGetFormattedDateStringFromMoment,
             moment) : null;
+        
         this.props.onBlur(calculatedValues);
     }
 
@@ -181,7 +228,7 @@ class D2AgeFieldPlain extends Component<Props> {
             <div className={defaultClasses.ageNumberInputContainer}>
                 {/* $FlowFixMe[cannot-spread-inexact] automated comment */}
                 <AgeNumberInput
-                    disabled="true"
+                    disabled = "true"
                     label={i18n.t(label)}
                     value={currentValues[key]}
                     onBlur={numberValue => this.handleNumberBlur({ ...currentValues, [key]: numberValue })}

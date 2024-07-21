@@ -5,7 +5,6 @@ import { actions as RelatedStageModes } from '../../WidgetRelatedStages/constant
 import type { RequestEvent, LinkedRequestEvent } from './validated.types';
 import type { ExternalSaveHandler } from '../common.types';
 import { bsToAd } from '@sbmdkl/nepali-date-converter';
-import { CodeSharp } from '@material-ui/icons';
 import moment from 'moment';
 
 // import NepaliDate from 'nepali-date-converter';
@@ -78,7 +77,7 @@ export const setSaveEnrollmentEventInProgress = ({
 
 const isDateString = (value) => {
     if (typeof value !== 'string') {
-        return false; // Return false if value is not a string
+        return false;
     }
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
     return datePattern.test(value.split('T')[0]);

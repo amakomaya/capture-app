@@ -83,10 +83,7 @@ class D2DateCalendarPlain extends Component<Props> {
     };
 
     handleChange(changeDate: Date) {
-        console.log('changeDate',changeDate);
         const dateFormatString = changeDate.calendarDateString;
-        console.log('dateFormatString',dateFormatString);
-
         this.props.onDateSelected(dateFormatString);
     }
 

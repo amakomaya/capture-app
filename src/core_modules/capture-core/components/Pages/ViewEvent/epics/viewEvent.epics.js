@@ -32,7 +32,6 @@ import { getCategoriesDataFromEventAsync } from './getCategoriesDataFromEvent';
 import { eventWorkingListsActionTypes } from '../../../WorkingLists/EventWorkingLists';
 import { resetLocationChange } from '../../../ScopeSelector/QuickSelector/actions/QuickSelector.actions';
 import { buildUrlQueryString } from '../../../../utils/routing';
-import { CodeSharp } from '@material-ui/icons';
 
 export const getEventOpeningFromEventListEpic = (
     action$: InputObservable,

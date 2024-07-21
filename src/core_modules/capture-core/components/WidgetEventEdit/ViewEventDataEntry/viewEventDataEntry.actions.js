@@ -61,6 +61,7 @@ export const loadViewEventDataEntry =
         onCategoriesQuery?: ?Promise<Object>,
         serverMinorVersion: number
     }) => {
+        console.log(eventContainer,'eventContainer');
         const dataEntryPropsToInclude = [
             {
                 id: 'occurredAt',
@@ -110,7 +111,6 @@ export const loadViewEventDataEntry =
         const extraProps = {
             eventId: eventContainer.event.eventId,
         };
-
         const { actions: dataEntryActions, dataEntryValues, formValues } = await
         loadEditDataEntryAsync(
             dataEntryId,

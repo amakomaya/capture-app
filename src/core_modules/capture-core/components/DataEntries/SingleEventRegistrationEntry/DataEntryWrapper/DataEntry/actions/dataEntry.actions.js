@@ -103,7 +103,6 @@ export const startSaveNewEventAfterReturnedToMainPage = (serverData: Object, rel
     if (serverData.events) {
         serverData.events = convertDatesToGregorian(serverData.events);
     }
-    console.log('serverData',serverData);
     return actionCreator(actionType)({ selections }, {
         offline: {
             effect: {

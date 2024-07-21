@@ -8,10 +8,10 @@ const enrollmentUpdate = {
     resource: 'tracker?async=false&importStrategy=UPDATE',
     type: 'create',
     data: enrollment => ({
-        enrollments: [convertToNepali(enrollment)],   
+        enrollments: [convertToEnglish(enrollment)],   
      }),
 };
-const convertToNepali = (enrollment) => {
+const convertToEnglish = (enrollment) => {
     return {
         ...enrollment,
         enrolledAt: convertNepaliToEnglishDate(enrollment.enrolledAt),
@@ -56,9 +56,10 @@ const enrollmentDelete = {
     resource: 'tracker?async=false&importStrategy=DELETE',
     type: 'create',
     data: enrollment => ({
-        enrollments: [enrollment],
-    }),
+        enrollments: [convertToEnglish(enrollment)],   
+     }),
 };
+
 
 const processErrorReports = (error) => {
     // $FlowFixMe[prop-missing]
