@@ -2,6 +2,9 @@
 import { actionCreator, actionPayloadAppender } from '../../../../../../actions/actions.utils';
 import { effectMethods } from '../../../../../../trackerOffline';
 import typeof { newEventSaveTypes } from '../newEventSaveTypes';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
 
 export const batchActionTypes = {
     UPDATE_DATA_ENTRY_FIELD_NEW_SINGLE_EVENT_ACTION_BATCH: 'UpdateDataEntryFieldForNewSingleEventActionsBatch',
@@ -46,6 +49,44 @@ export const actionTypes = {
     NEW_EVENT_SAVED_AFTER_RETURN_TO_LIST: 'NewEventSavedAfterReturnToList',
 };
 
+const isDateString = (value) => {
+    if (typeof value !== 'string') {
+        return false; 
+    }
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    return datePattern.test(value.split('T')[0]);
+};
+
+const convertIfDateString = (value) => {
+    if (isDateString(value)) {
+        const convertedDate = moment(bsToAd(value)).format('YYYY-MM-DDTHH:mm:ss');
+        return convertedDate;
+
+    }
+    return value;
+};
+
+const convertDatesToGregorian = (events) => {
+    return events.map(event => {
+        if (event.occurredAt) {
+            event.occurredAt = convertIfDateString(event.occurredAt);
+        }
+        if (event.scheduledAt) {
+            event.scheduledAt = convertIfDateString(event.scheduledAt);
+        }
+        if (event.dataValues && event.dataValues.length > 0) {
+            event.dataValues = event.dataValues.map(dataValue => {
+                if (isDateString(dataValue.value)) {
+                    dataValue.value = convertIfDateString(dataValue.value);
+                }
+                return dataValue;
+            });
+        }
+        
+        return event;
+    });
+};
+
 export const startRunRulesOnUpdateForNewSingleEvent = (actionData: { payload: Object}) =>
     actionCreator(actionTypes.START_RUN_RULES_ON_UPDATE)(actionData);
 
@@ -59,6 +100,10 @@ export const newEventSavedAfterReturnedToMainPage = (selections: Object) =>
 
 export const startSaveNewEventAfterReturnedToMainPage = (serverData: Object, relationshipData: ?Object, selections: Object) => {
     const actionType = actionTypes.START_SAVE_AFTER_RETURNED_TO_MAIN_PAGE;
+    if (serverData.events) {
+        serverData.events = convertDatesToGregorian(serverData.events);
+    }
+    console.log('serverData',serverData);
     return actionCreator(actionType)({ selections }, {
         offline: {
             effect: {
