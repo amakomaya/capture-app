@@ -11,7 +11,8 @@ import { MinimalCoordinates } from '../components/MinimalCoordinates';
 
 
 function convertDateForView(rawValue: string): string {
-    return rawValue;
+    const value = rawValue.length > 10 ? rawValue.substring(0, 10) : rawValue;
+    return value;
 }
 
 function convertDateTimeForView(rawValue: string): string {
