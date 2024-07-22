@@ -149,13 +149,13 @@ class D2AgeFieldPlain extends Component<Props> {
       
 
         if(dayDifference<0){
-            console.log(nepDay,'nepDay');
-            console.log(day,'day')
-            console.log(nepMonth,'nepMonth')
+            // console.log(nepDay,'nepDay');
+            // console.log(day,'day')
+            // console.log(nepMonth,'nepMonth')
             dayDifference = Number(nepDay) + 30 * Math.floor(day / 30) - Number(day);
-            console.log(dayDifference,'dayDifference');
+            // console.log(dayDifference,'dayDifference');
             nepMonth = Number(nepMonth) - Math.floor(day / 30);
-            console.log(nepMonth,'nepMonth');
+            // console.log(nepMonth,'nepMonth');
         }
 
         let yearDifference = nepYear - year;
@@ -171,7 +171,7 @@ class D2AgeFieldPlain extends Component<Props> {
         let formattedDayDifference = dayDifference.toString().padStart(2, '0');
 
         const calculatAgeDateBS = `${yearDifference}-${formattedMonthDifference}-${formattedDayDifference}`;
-        console.log(calculatAgeDateBS)
+        // console.log(calculatAgeDateBS)
 
       
 
