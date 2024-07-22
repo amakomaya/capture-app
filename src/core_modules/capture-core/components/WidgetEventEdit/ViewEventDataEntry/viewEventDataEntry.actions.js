@@ -61,7 +61,6 @@ export const loadViewEventDataEntry =
         onCategoriesQuery?: ?Promise<Object>,
         serverMinorVersion: number
     }) => {
-        console.log(eventContainer,'eventContainer');
         const dataEntryPropsToInclude = [
             {
                 id: 'occurredAt',
