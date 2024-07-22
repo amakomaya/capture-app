@@ -49,17 +49,17 @@ export const NewPage: ComponentType<{||}> = () => {
     const { orgUnitId, programId, teiId } = useLocationQuery();
     const program = programId && programCollection.get(programId);
 
-    const convertTrackedEntityInstanceAttributes = (trackedEntityAttribute)=>{
-        Object.keys(trackedEntityAttribute).forEach( key =>{
-            let attribute = trackedEntityAttribute[key];
-            if (attribute.valueType === 'AGE') {
-                 attribute.value = ''; 
-            } 
-         })
-        };
+    // const convertTrackedEntityInstanceAttributes = (trackedEntityAttribute)=>{
+    //     Object.keys(trackedEntityAttribute).forEach( key =>{
+    //         let attribute = trackedEntityAttribute[key];
+    //         if (attribute.valueType === 'AGE') {
+    //              attribute.value = ''; 
+    //         } 
+    //      })
+    //     };
 
     const { trackedEntityInstanceAttributes } = useTrackedEntityInstances(teiId, programId);
-    convertTrackedEntityInstanceAttributes(trackedEntityInstanceAttributes);
+    // convertTrackedEntityInstanceAttributes(trackedEntityInstanceAttributes);
  
     const trackedEntityType = program?.trackedEntityType;
     const teiDisplayName =
