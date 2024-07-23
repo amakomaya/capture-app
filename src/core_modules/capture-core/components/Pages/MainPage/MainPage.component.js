@@ -12,6 +12,9 @@ import { withErrorMessageHandler, withLoadingIndicator } from '../../../HOC';
 import { TopBar } from './TopBar.container';
 import { SearchBox } from '../../SearchBox';
 import { TemplateSelector } from '../../TemplateSelector';
+import { left } from '@popperjs/core';
+// import { Img } from '../MainPage/Image/dhis2-app-icon.png'
+
 
 const getStyles = () => ({
     listContainer: {
@@ -106,6 +109,12 @@ const MainPage = ({
                 showMainPage={showMainPage}
                 {...passOnProps}
             />
+        
+        {!displayFrontPageList && (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="https://mnch.mohp.gov.np/storage/dhis2-erecord.png" alt="Img" style={{ width: '50%', height: 'auto', margin: '30px' }} />
+            </div>
+        )}
         </>
     );
 };
