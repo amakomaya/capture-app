@@ -98,7 +98,7 @@ const MainPage = ({
         displayFrontPageList,
         selectedTemplateId,
     });
-
+    console.log(showMainPage,'showMainPage');
     return (
         <>
             <TopBar programId={programId} orgUnitId={orgUnitId} selectedCategories={selectedCategories} />
@@ -110,7 +110,7 @@ const MainPage = ({
                 {...passOnProps}
             />
         
-        {!displayFrontPageList && (
+        {!programId && (
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <img src="https://mnch.mohp.gov.np/storage/dhis2-erecord.png" alt="Img" style={{ width: '50%', height: 'auto', margin: '30px' }} />
             </div>
