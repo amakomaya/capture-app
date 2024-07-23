@@ -87,7 +87,7 @@ const DateComponentPlain = ({
     const saveHandler = () => {
         // CalendarInput component only supports the YYYY-MM-DD format
         if (selectedDate) {
-            const newDate = moment.utc(selectedDate, 'YYYY-MM-DD').format('YYYY-MM-DDTHH:mm:ss.SSS');
+            const newDate = moment.utc(selectedDate, 'YYYY-MM-DD').format('YYYY-MM-DD');
             if (newDate !== date) {
                 onSave(newDate);
             }
