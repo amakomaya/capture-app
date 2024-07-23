@@ -98,7 +98,6 @@ const MainPage = ({
         displayFrontPageList,
         selectedTemplateId,
     });
-    console.log(showMainPage,'showMainPage');
     return (
         <>
             <TopBar programId={programId} orgUnitId={orgUnitId} selectedCategories={selectedCategories} />
