@@ -4,6 +4,7 @@ import { convertMomentToDateFormatString } from '../utils/converters/date';
 import { dataElementTypes } from '../metaData';
 
 import { stringifyNumber } from './common/stringifyNumber';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
 
 type DateTimeFormValue = {
     date: string,
@@ -23,8 +24,7 @@ type RangeValue = {
 }
 
 function convertDateForEdit(rawValue: string): string {
-    const momentInstance = moment(rawValue);
-    return convertMomentToDateFormatString(momentInstance);
+    return rawValue;
 }
 
 function convertDateTimeForEdit(rawValue: string): DateTimeFormValue {
@@ -44,7 +44,11 @@ function convertTimeForEdit(rawValue: string) {
 
 function convertAgeForEdit(rawValue: string): AgeFormValue {
     const now = moment();
-    const age = moment(rawValue);
+    let date = rawValue;
+    if(now.add(1, 'years').year() <= parseInt(rawValue.substring(0, 5),10)){
+         date = bsToAd(rawValue);
+    }
+    const age = moment(date);
 
     const years = now.diff(age, 'years');
     age.add(years, 'years');
@@ -53,9 +57,8 @@ function convertAgeForEdit(rawValue: string): AgeFormValue {
     age.add(months, 'months');
 
     const days = now.diff(age, 'days');
-
     return {
-        date: convertMomentToDateFormatString(moment(rawValue)),
+        date: rawValue,
         years: years.toString(),
         months: months.toString(),
         days: days.toString(),
