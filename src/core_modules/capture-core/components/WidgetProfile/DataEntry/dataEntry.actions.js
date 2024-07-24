@@ -215,21 +215,6 @@ export const updateTei = ({
             dataEntryActionTypes.OPEN_DATA_ENTRY_PROFILE_ACTION_BATCH,
         );
     };
-// export const getOpenDataEntryActions = ({
-//     dataEntryId,
-//     itemId,
-//     formValues,
-// }: {
-//     dataEntryId: string,
-//     itemId: string,
-//     formValues: { [key: string]: any },
-// }) =>
-//     batchActions(
-//         [
-//             ...loadNewDataEntry(dataEntryId, itemId, dataEntryPropsToInclude),
-//             addFormData(`${dataEntryId}-${itemId}`, formValues),
-//         ],
-//         dataEntryActionTypes.OPEN_DATA_ENTRY_PROFILE_ACTION_BATCH,
-//     );
+
 
 
