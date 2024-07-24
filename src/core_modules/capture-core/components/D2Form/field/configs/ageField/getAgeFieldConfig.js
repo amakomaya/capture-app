@@ -16,7 +16,7 @@ export const getAgeFieldConfig = (metaData: DataElement, options: Object, queryS
         dateCalendarWidth: options.formHorizontal ? 250 : 350,
         datePopupAnchorPosition: getCalendarAnchorPosition(options.formHorizontal),
     }, options, metaData);
-
+console.log(props,'metaData')
     return createFieldConfig({
         component: AgeFieldForForm,
         props,

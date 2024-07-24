@@ -27,7 +27,7 @@ const isDateString = (value) => {
 };
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
-        const convertedDate = bsToAd(moment(value).format('YYYY-MM-DD'));
+        const convertedDate = bsToAd(value);
         return convertedDate;
 
     }
@@ -75,26 +75,6 @@ export const useUpdateEnrollment = ({
         },
     });
 
-    // return useCallback((value: string) => {
-        
-    //     const updatedEnrollment = { ...enrollment };
-    
-    //     console.log(propertyName);
-    //     if (propertyName === 'enrolledAt' || propertyName === 'occurredAt') {
-    //         const englishDate = convertNepaliToEnglishDate(value);
-    //         if (!englishDate) {
-    //             console.error("Invalid Nepali date provided:", value);
-    //             return;
-    //         }
-    //         updatedEnrollment[propertyName] = englishDate;
-    //     } else {
-    //         updatedEnrollment[propertyName] = value;
-    //     }
-    
-    //     setEnrollment(updatedEnrollment);
-    //     updateEnrollmentMutation(updatedEnrollment);
-    //     updateHandler && updateHandler(value);
-    // }, [enrollment, setEnrollment, propertyName, updateHandler, updateEnrollmentMutation]);
     return useCallback((value: string) => {
         const updatedEnrollment = { ...enrollment };
         updatedEnrollment[propertyName] = value;
