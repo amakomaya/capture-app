@@ -21,6 +21,7 @@ import {
     isMultiTextWithoutOptionset,
 } from '../../../../../../metaDataMemoryStoreBuilders/common/helpers/dataElement/unsupportedMultiText';
 import { useOrgUnitNames } from '../../../../../../metadataRetrieval/orgUnitName';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
 
 const baseKeys = [{ id: 'status' }, { id: 'occurredAt' }, { id: 'assignedUser' }, { id: 'orgUnitName' }, { id: 'scheduledAt' }, { id: 'notes' }];
 const basedFieldTypes = [
@@ -61,6 +62,27 @@ const getAllFieldsWithValue = (
     }, {});
 
 const useComputeDataFromEvent = (dataElements: Array<StageDataElement>, events: Array<ApiEnrollmentEvent>) => {
+    const convertDate = (dateString) => {
+        try {
+            console.log(dateString,'dateString')
+            const adDate = dateString.split('T')[0];
+            const convertedDate = adToBs(adDate);
+            return convertedDate;
+        } catch (error) {
+            return dateString;
+        }
+    };
+
+    const convertDatesToNepali = (event) => {
+        return {
+            ...event,
+            occurredAt: event.occurredAt ? convertDate(event.occurredAt) : null,
+            scheduledAt: event.scheduledAt ? convertDate(event.scheduledAt) : null,
+            
+        };
+    };
+
+    const convertedEvents = useMemo(() => events.map(convertDatesToNepali), [events]);
     const [value, setValue] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -68,15 +90,16 @@ const useComputeDataFromEvent = (dataElements: Array<StageDataElement>, events: 
     const { baseUrl, apiVersion } = useConfig();
     const orgUnits = useMemo(() => events.map(({ orgUnit }) => orgUnit), [events]);
     const { orgUnitNames, error: orgUnitNamesError } = useOrgUnitNames(orgUnits);
+
     const computeData = useCallback(async () => {
         try {
             setLoading(true);
             const querySingleResource = makeQuerySingleResource(dataEngine.query.bind(dataEngine));
             const absoluteApiPath = buildUrl(baseUrl, `api/${apiVersion}`);
             const dataElementsByType =
-                await groupRecordsByType(events, dataElements, querySingleResource, absoluteApiPath);
+                await groupRecordsByType(convertedEvents, dataElements, querySingleResource, absoluteApiPath);
             const eventsData = [];
-            for (const event of events) {
+            for (const event of convertedEvents) {
                 const eventId = event.event;
                 const predefinedFields = baseFields.reduce((acc, field) => {
                     acc[field.id] = convertServerToClient(getValueByKeyFromEvent(event, field), field.type);
@@ -97,7 +120,7 @@ const useComputeDataFromEvent = (dataElements: Array<StageDataElement>, events: 
         } finally {
             setLoading(false);
         }
-    }, [events, dataElements, dataEngine, baseUrl, apiVersion]);
+    }, [convertedEvents, dataElements, dataEngine, baseUrl, apiVersion]);
 
     useEffect(() => {
         if (orgUnitNames) {
@@ -163,6 +186,7 @@ const formatRowForView = (row: Object, dataElements: Array<StageDataElement>) =>
     const stageDataElement = dataElements.find(el => el.id === id);
     const { type } = stageDataElement || {};
     const value = row[id];
+    console.log(value,'value')
     if (predefinedType) {
         acc[id] = convertClientToList(value, predefinedType);
     } else if (!type) {
