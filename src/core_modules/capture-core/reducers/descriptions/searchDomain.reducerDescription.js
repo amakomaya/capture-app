@@ -50,31 +50,6 @@ const convertEnrollmentDates = (enrollment) => {
     }
 };
 
-// const convertAllDatesToBS = (data) => {
-//     console.log('data',data);
-//     if (Array.isArray(data)) {
-//         return data.map(item => convertAllDatesToBS(item));
-//     } else if (typeof data === 'object' && data !== null) {
-//         const newData = {};
-//         for (const key in data) {
-//             if (typeof data[key] === 'string' && data[key].match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/)) {
-//                 newData[key] = convertDateToBS(data[key]);
-//             } else if (key === 'enrollments') {
-//                 newData[key] = data[key].map(enrollment => {
-//                     convertEnrollmentDates(enrollment);
-//                     return enrollment;
-//                 });
-//             } 
-            
-//             else {
-//                 newData[key] = convertAllDatesToBS(data[key]);
-//             }
-//         }
-//         return newData;
-//     }
-//     return data;
-// };
-
 const convertAllDatesToBS = (data) => {
     if (Array.isArray(data)) {
         return data.map(item => convertAllDatesToBS(item));
