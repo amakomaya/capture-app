@@ -82,7 +82,6 @@ const StageDetailPlain = (props: Props) => {
    
     const { loading, value: dataSource, error } = useComputeDataFromEvent(dataElements, events);
     
-    console.log(dataSource,'events')
     const [{ columnName, sortDirection }, setSortInstructions] = useState(defaultSortState);
     const [displayedRowNumber, setDisplayedRowNumber] = useState(DEFAULT_NUMBER_OF_ROW);
 
