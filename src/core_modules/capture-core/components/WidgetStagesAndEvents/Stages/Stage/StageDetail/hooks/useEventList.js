@@ -64,7 +64,6 @@ const getAllFieldsWithValue = (
 const useComputeDataFromEvent = (dataElements: Array<StageDataElement>, events: Array<ApiEnrollmentEvent>) => {
     const convertDate = (dateString) => {
         try {
-            console.log(dateString,'dateString')
             const adDate = dateString.split('T')[0];
             const convertedDate = adToBs(adDate);
             return convertedDate;
@@ -186,7 +185,6 @@ const formatRowForView = (row: Object, dataElements: Array<StageDataElement>) =>
     const stageDataElement = dataElements.find(el => el.id === id);
     const { type } = stageDataElement || {};
     const value = row[id];
-    console.log(value,'value')
     if (predefinedType) {
         acc[id] = convertClientToList(value, predefinedType);
     } else if (!type) {
