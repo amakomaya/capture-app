@@ -42,20 +42,21 @@ function convertTimeForEdit(rawValue: string) {
     return momentTime.format('HH:mm');
 }
 // Function to check if a date is likely Nepali
-function isLikelyNepaliDate(dateString) {
-    const currentYear = new Date().getFullYear();
-    const yearPart = parseInt(dateString.substring(0, 4), 10);
-    return yearPart > (currentYear - 60) && yearPart <= (currentYear + 10);
-}
+// function isLikelyNepaliDate(dateString) {
+//     const currentYear = new Date().getFullYear();
+//     const yearPart = parseInt(dateString.substring(0, 4), 10);
+//     return yearPart > (currentYear - 60) && yearPart <= (currentYear + 10);
+// }
 function convertAgeForEdit(rawValue: string): AgeFormValue {
+    console.log(rawValue,'rawValue')
     const now = moment();
     let date = rawValue;
-    // if(now.add(1, 'years').year() <= parseInt(rawValue.substring(0, 5),10)){
-    //      date = bsToAd(rawValue);
-    // }
-    if (isLikelyNepaliDate(rawValue)) {
-        date = bsToAd(rawValue);
+    if(now.add(1, 'years').year() <= parseInt(rawValue.substring(0, 5),10)){
+         date = bsToAd(rawValue);
     }
+    // if (isLikelyNepaliDate(rawValue)) {
+    //     date = bsToAd(rawValue);
+    // }
     
 
     const age = moment(date);

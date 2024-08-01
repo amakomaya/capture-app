@@ -54,6 +54,14 @@ type Props = {
     datePlaceholder?: ?string,
     disabled?: ?boolean,
 };
+
+function checkDisabled(key){
+    if (key=="years"){
+        return false;
+    }
+    return true;
+}
+
 function getCalculatedValues(
     dateValue: ?string,
     onParseDate: DateParser,
@@ -208,7 +216,7 @@ class D2AgeFieldPlain extends Component<Props> {
     }
 
     renderNumberInput = (currentValues: AgeValues, key: string, label: string) => {
-        const {
+        let {
             innerMessage,
             onChange,
             inFocus,
@@ -224,11 +232,13 @@ class D2AgeFieldPlain extends Component<Props> {
             onParseDate,
             disabled,
             ...passOnProps } = this.props;
+       
+        
         return (
             <div className={defaultClasses.ageNumberInputContainer}>
                 {/* $FlowFixMe[cannot-spread-inexact] automated comment */}
                 <AgeNumberInput
-                    disabled = "true"
+                    disabled = {checkDisabled(key)}
                     label={i18n.t(label)}
                     value={currentValues[key]}
                     onBlur={numberValue => this.handleNumberBlur({ ...currentValues, [key]: numberValue })}
@@ -238,7 +248,9 @@ class D2AgeFieldPlain extends Component<Props> {
                 {innerMessage && this.renderMessage(key)}
             </div>
         );
+
     }
+
     renderDateInput = (currentValues: AgeValues, isVertical: boolean) => {
         const {
             onChange,
