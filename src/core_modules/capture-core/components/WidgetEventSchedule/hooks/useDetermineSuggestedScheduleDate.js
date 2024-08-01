@@ -68,9 +68,9 @@ const calculateSuggestedDateFromStart = ({
 }: Object) => {
     let suggestedScheduleDate;
     if (generatedByEnrollmentDate || !displayIncidentDate) {
-        suggestedScheduleDate = moment(enrolledAt).add(minDaysFromStart, 'days').format();
+        suggestedScheduleDate = `${enrolledAt}+5:45`;
     } else {
-        suggestedScheduleDate = moment(occurredAt).add(minDaysFromStart, 'days').format();
+        suggestedScheduleDate =`${occurredAt}+5:45`;
     }
     return suggestedScheduleDate;
 };
