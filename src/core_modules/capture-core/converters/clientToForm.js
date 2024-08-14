@@ -48,11 +48,11 @@ function convertTimeForEdit(rawValue: string) {
 //     return yearPart > (currentYear - 60) && yearPart <= (currentYear + 10);
 // }
 function convertAgeForEdit(rawValue: string): AgeFormValue {
-    console.log(rawValue,'rawValue')
     const now = moment();
     let date = rawValue;
     if(now.add(1, 'years').year() <= parseInt(rawValue.substring(0, 5),10)){
          date = bsToAd(rawValue);
+
     }
     // if (isLikelyNepaliDate(rawValue)) {
     //     date = bsToAd(rawValue);
@@ -60,8 +60,10 @@ function convertAgeForEdit(rawValue: string): AgeFormValue {
     
 
     const age = moment(date);
+    console.log(age,'age');
 
     const years = now.diff(age, 'years');
+    console.log(years,'years');
     age.add(years, 'years');
 
     const months = now.diff(age, 'months');
