@@ -383,20 +383,20 @@ class DateFilterPlain extends Component<Props, State> implements UpdatableFilter
                     <div className={classes.inputContainer}>
                         {/* $FlowSuppress: Flow not working 100% with HOCs */}
                         {/* $FlowFixMe[prop-missing] automated comment */}
-                        <FromDateFilter
+                        {/* <FromDateFilter
                             value={value && value.from}
                             error={minValueError}
                             errorClass={classes.error}
                             onBlur={this.handleFieldBlur}
                             onEnterKey={this.handleEnterKeyInFrom}
                             onDateSelectedFromCalendar={this.handleDateSelectedFromCalendarInFrom}
-                        />
+                        /> */}
                     </div>
-                    <div className={classes.toLabelContainer}>{i18n.t('to')}</div>
+                    {/* <div className={classes.toLabelContainer}>{i18n.t('to')}</div> */}
                     <div className={classes.inputContainer}>
                         {/* $FlowSuppress: Flow not working 100% with HOCs */}
                         {/* $FlowFixMe[prop-missing] automated comment */}
-                        <ToDateFilter
+                        {/* <ToDateFilter
                             value={value && value.to}
                             error={maxValueError}
                             errorClass={classes.error}
@@ -404,7 +404,7 @@ class DateFilterPlain extends Component<Props, State> implements UpdatableFilter
                             onEnterKey={this.handleEnterKeyInTo}
                             textFieldRef={this.setToD2DateTextFieldInstance}
                             onFocusUpdateButton={onFocusUpdateButton}
-                        />
+                        /> */}
                     </div>
                 </div>
                 <div>
