@@ -80,14 +80,13 @@ const isDateString = (value) => {
         return false;
     }
     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-    return datePattern.test(value.split('T')[0]);
+    return datePattern.test(value);
 };
 
 const convertIfDateString = (value) => {
     if (isDateString(value)) {
         const convertedDate = moment(bsToAd(value)).format('YYYY-MM-DDTHH:mm:ss');
         return convertedDate;
-
     }
     return value;
 };
@@ -117,7 +116,7 @@ const convertDatesToGregorian = (events) => {
 
 
 export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessActionType }: Object) => {
-    // Convert dates in serverData events to Gregorian
+    console.log(serverData.events,'serverData.events')
     if (serverData.events) {
         serverData.events = convertDatesToGregorian(serverData.events);
     }
