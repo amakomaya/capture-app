@@ -60,10 +60,8 @@ function convertAgeForEdit(rawValue: string): AgeFormValue {
     
 
     const age = moment(date);
-    console.log(age,'age');
 
     const years = now.diff(age, 'years');
-    console.log(years,'years');
     age.add(years, 'years');
 
     const months = now.diff(age, 'months');
