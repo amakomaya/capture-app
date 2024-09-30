@@ -96,14 +96,14 @@ const WidgetProfilePlain = ({
     const teiDisplayName = useTeiDisplayName(program, storedAttributeValues, clientAttributesWithSubvalues, teiId);
     const displayChangelog = supportsChangelog && program && program.trackedEntityType?.changelogEnabled;
 
-    const convertClientToView = (clientAttribute) => {
-        const { value } = clientAttribute;
-        if (typeof value === 'string' && (value.match(/^\d{4}-\d{2}-\d{2}$/) || value.match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/))) {
-            const dateOnlyString = value.split('T')[0];
-            return adToBs(dateOnlyString);
-        }
-        return value;
-    };
+    // const convertClientToView = (clientAttribute) => {
+    //     const { value  } = clientAttribute;
+    //     if (typeof value === 'string' && (value.match(/^\d{4}-\d{2}-\d{2}$/) || value.match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/))) {
+    //         const dateOnlyString = value.split('T')[0];
+    //         return adToBs(dateOnlyString);
+    //     }
+    //     return value;
+    // };
 
 
     const displayInListAttributes = useMemo(() => clientAttributesWithSubvalues
