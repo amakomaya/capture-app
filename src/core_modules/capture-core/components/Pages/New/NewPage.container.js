@@ -7,7 +7,7 @@ import { NewPageComponent } from './NewPage.component';
 import {
     showMessageToSelectOrgUnitOnNewPage,
     showDefaultViewOnNewPage,
-    showMessageToSelectProgramCategoryOnNewPage,
+    showMessageToSelectProgramCategoryOnNewPage, showMessageThatCategoryOptionIsInvalidForOrgUnit,
 } from './NewPage.actions';
 import { typeof newPageStatuses } from './NewPage.constants';
 import { buildUrlQueryString, useLocationQuery } from '../../../utils/routing';
@@ -19,6 +19,7 @@ import { deriveTeiName } from '../common/EnrollmentOverviewDomain/useTeiDisplayN
 import { programCollection } from '../../../metaDataMemoryStores/programCollection/programCollection';
 import { adToBs} from '@sbmdkl/nepali-date-converter';
 
+import { useCategoryOptionIsValidForOrgUnit } from '../../../hooks/useCategoryComboIsValidForOrgUnit';
 
 const useUserWriteAccess = (scopeId) => {
     const scope = getScopeFromScopeId(scopeId);
@@ -58,6 +59,9 @@ export const NewPage: ComponentType<{||}> = () => {
     //      })
     //     };
 
+    const { categoryOptionIsInvalidForOrgUnit } = useCategoryOptionIsValidForOrgUnit({
+        selectedOrgUnitId: orgUnitId,
+    });
     const { trackedEntityInstanceAttributes } = useTrackedEntityInstances(teiId, programId);
     // convertTrackedEntityInstanceAttributes(trackedEntityInstanceAttributes);
  
@@ -68,6 +72,10 @@ export const NewPage: ComponentType<{||}> = () => {
 
     const dispatchShowMessageToSelectOrgUnitOnNewPage = useCallback(
         () => { dispatch(showMessageToSelectOrgUnitOnNewPage()); },
+        [dispatch]);
+
+    const dispatchShowMessageThatCategoryOptionIsInvalidForOrgUnit = useCallback(
+        () => { dispatch(showMessageThatCategoryOptionIsInvalidForOrgUnit()); },
         [dispatch]);
 
     const dispatchShowMessageToSelectProgramCategoryOnNewPage = useCallback(
@@ -118,11 +126,13 @@ export const NewPage: ComponentType<{||}> = () => {
             showMessageToSelectOrgUnitOnNewPage={dispatchShowMessageToSelectOrgUnitOnNewPage}
             showMessageToSelectProgramCategoryOnNewPage={dispatchShowMessageToSelectProgramCategoryOnNewPage}
             showDefaultViewOnNewPage={dispatchShowDefaultViewOnNewPage}
+            showMessageThatCategoryOptionIsInvalidForOrgUnit={dispatchShowMessageThatCategoryOptionIsInvalidForOrgUnit}
             handleMainPageNavigation={handleMainPageNavigation}
             currentScopeId={currentScopeId}
             orgUnitSelectionIncomplete={orgUnitSelectionIncomplete}
             programCategorySelectionIncomplete={programSelectionIsIncomplete}
             missingCategoriesInProgramSelection={missingCategories}
+            categoryOptionIsInvalidForOrgUnit={categoryOptionIsInvalidForOrgUnit}
             writeAccess={writeAccess}
             newPageStatus={newPageStatus}
             error={error}

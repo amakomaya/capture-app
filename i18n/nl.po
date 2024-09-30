@@ -3,13 +3,13 @@
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Yury Rogachev <yury@dhis2.org>, 2021
 # Philip Larsen Donnelly, 2024
-# Rica Zamora Duchateau, 2024
+# Rica, 2024
 # Charel van den Elsen, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-04-12T20:48:54.429Z\n"
+"POT-Creation-Date: 2024-09-02T11:08:16.281Z\n"
 "PO-Revision-Date: 2019-06-27 07:31+0000\n"
 "Last-Translator: Charel van den Elsen, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
@@ -46,6 +46,9 @@ msgstr ""
 "hetzelfde domein). Vernieuw deze pagina als u deze versie opnieuw wilt "
 "gebruiken, maar houd er rekening mee dat hierdoor andere versies worden "
 "gesloten."
+
+msgid "More"
+msgstr "Meer"
 
 msgid "View {{programName}} dashboard"
 msgstr "Bekijk het {{programName}}-dashboard"
@@ -202,14 +205,14 @@ msgstr "Toegewezen gebruiker"
 msgid "Search for user"
 msgstr "Zoek naar gebruiker"
 
+msgid "Notes"
+msgstr "Notities"
+
 msgid "Basic info"
 msgstr "Basis informatie"
 
 msgid "Status"
 msgstr "status"
-
-msgid "Comments"
-msgstr "Opmerkingen"
 
 msgid "Relationships"
 msgstr "Relaties"
@@ -242,9 +245,8 @@ msgstr "Actief"
 msgid "Completed"
 msgstr "Voltooid"
 
-msgid "Please add or cancel comment before saving the event"
+msgid "Please add or cancel note before saving the event"
 msgstr ""
-"Voeg een opmerking toe of annuleer deze voordat u het evenement opslaat"
 
 msgid "Save and add another"
 msgstr "Sla op en voeg er nog een toe"
@@ -385,17 +387,11 @@ msgstr "Geregistreerde persoon"
 msgid "validation failed"
 msgstr "validatie mislukt"
 
-msgid "Errors"
-msgstr "Fouten"
+msgid "No feedback for this event yet"
+msgstr ""
 
-msgid "Feedback"
-msgstr "Feedback"
-
-msgid "Indicators"
-msgstr "Indicatoren"
-
-msgid "Warnings"
-msgstr "Waarschuwingen"
+msgid "No indicator output for this event yet"
+msgstr ""
 
 msgid "Generate new event"
 msgstr "Nieuw evenement genereren"
@@ -507,18 +503,6 @@ msgstr "Bevat tekst"
 msgid "Yes"
 msgstr "Ja"
 
-msgid "mm/dd/yyyy"
-msgstr "mm/dd/jjjj"
-
-msgid "Years"
-msgstr "Jaren"
-
-msgid "Months"
-msgstr "Maanden"
-
-msgid "Days"
-msgstr "Dagen"
-
 msgid "Uploading file"
 msgstr "Bestand uploaden"
 
@@ -585,6 +569,9 @@ msgstr "Kolommen om in tabel weer te geven"
 msgid "Column"
 msgstr "Kolom"
 
+msgid "Visible"
+msgstr ""
+
 msgid "Update"
 msgstr "Bijwerken"
 
@@ -636,14 +623,14 @@ msgstr "offline"
 msgid "Syncing"
 msgstr "synchroniseren"
 
-msgid "Add comment"
-msgstr "Voeg opmerking toe"
+msgid "Add note"
+msgstr "Notitie toevoegen"
 
-msgid "You don't have access to write comments"
-msgstr "U heeft geen toegang om opmerkingen te schrijven"
+msgid "You don't have access to write notes"
+msgstr ""
 
-msgid "Write comment"
-msgstr "Schrijf commentaar"
+msgid "Write note"
+msgstr ""
 
 msgid "was blanked out and hidden by your last action"
 msgstr ""
@@ -818,12 +805,6 @@ msgstr "Er is een fout opgetreden bij het laden van de pagina"
 msgid "Choose an organisation unit to start reporting"
 msgstr ""
 
-msgid "No feedback for this event yet"
-msgstr ""
-
-msgid "No indicator output for this event yet"
-msgstr ""
-
 msgid "Program stage is invalid"
 msgstr "Programmafase is ongeldig"
 
@@ -854,6 +835,11 @@ msgstr "Stadium"
 msgid "Registered events"
 msgstr "Geregistreerde evenementen"
 
+msgid ""
+"The category option is not valid for the selected organisation unit. Please "
+"select a valid combination."
+msgstr ""
+
 msgid "Please select {{category}}."
 msgstr "Selecteer {{category}}."
 
@@ -867,8 +853,10 @@ msgstr ""
 msgid "Please select an organisation unit."
 msgstr "Selecteer een organisatie-eenheid."
 
-msgid "New"
-msgstr "Nieuw"
+msgid ""
+"You don't have access to create a {{trackedEntityName}} in the current "
+"selections"
+msgstr ""
 
 msgid "Choose the {{missingCategories}} to start reporting"
 msgstr "Kies de {{missingCategories}} om te beginnen met rapporteren"
@@ -876,8 +864,8 @@ msgstr "Kies de {{missingCategories}} om te beginnen met rapporteren"
 msgid "Save as new"
 msgstr "Opslaan als nieuw"
 
-msgid "View enrollment"
-msgstr "Inschrijving bekijken"
+msgid "New"
+msgstr "Nieuw"
 
 msgid "Create for"
 msgstr "Creëer voor"
@@ -970,6 +958,18 @@ msgstr ""
 "Als u deze pagina verlaat, worden alle selecties die u voor een nieuwe "
 "relatie hebt gemaakt, verwijderd"
 
+msgid "Errors"
+msgstr "Fouten"
+
+msgid "Feedback"
+msgstr "Feedback"
+
+msgid "Indicators"
+msgstr "Indicatoren"
+
+msgid "Warnings"
+msgstr "Waarschuwingen"
+
 msgid "Show all events"
 msgstr "Toon alle evenementen"
 
@@ -1011,6 +1011,12 @@ msgstr ""
 msgid "The enrollment event data could not be found"
 msgstr ""
 "De gegevens van de inschrijvingsgebeurtenis konden niet worden gevonden"
+
+msgid "Loading"
+msgstr ""
+
+msgid "An error occurred while loading the form"
+msgstr ""
 
 msgid "Possible duplicates found"
 msgstr "Mogelijke duplicaten gevonden"
@@ -1199,9 +1205,6 @@ msgstr ""
 "U moet een reden opgeven om te controleren op inschrijvingen voor dit "
 "beschermde programma. Alle activiteiten worden geregistreerd."
 
-msgid "Save comment"
-msgstr "Opmerking opslaan"
-
 msgid "Enrollment actions"
 msgstr "Inschrijving acties"
 
@@ -1307,15 +1310,6 @@ msgstr ""
 msgid "Follow-up"
 msgstr "Opvolgen"
 
-msgid "Started at {{orgUnitName}}"
-msgstr "Gestart bij {{orgUnitName}}"
-
-msgid "Owned by {{ownerOrgUnit}}"
-msgstr "Eigendom van {{ownerOrgUnit}}"
-
-msgid "Last updated {{date}}"
-msgstr "Laatst bijgewerkt {{date}}"
-
 msgid "Cancelled"
 msgstr "Geannuleerd"
 
@@ -1325,14 +1319,8 @@ msgstr ""
 msgid "Add area"
 msgstr ""
 
-msgid "Comments about this enrollment"
-msgstr "Opmerkingen over deze inschrijving"
-
-msgid "Write a comment about this enrollment"
-msgstr "Schrijf een opmerking over deze inschrijving"
-
-msgid "This enrollment doesn't have any comments"
-msgstr "Deze inschrijving heeft geen opmerkingen"
+msgid "Please add or cancel the note before saving the event"
+msgstr ""
 
 msgid "organisation unit could not be retrieved. Please try again later."
 msgstr ""
@@ -1344,20 +1332,20 @@ msgstr "Opslaan in {{stageName}} voor {{programName}} in {{orgUnitName}}"
 msgid "program or stage is invalid"
 msgstr "programma of fase is ongeldig"
 
+msgid "Notes about this enrollment"
+msgstr ""
+
+msgid "Write a note about this enrollment"
+msgstr ""
+
+msgid "This enrollment doesn't have any notes"
+msgstr ""
+
 msgid "Error"
 msgstr "Fout"
 
 msgid "Warning"
 msgstr "Waarschuwing"
-
-msgid "Comments about this event"
-msgstr "Opmerkingen over dit evenement"
-
-msgid "Write a comment about this event"
-msgstr "Schrijf een reactie over dit evenement"
-
-msgid "This event doesn't have any comments"
-msgstr "Dit evenement heeft geen opmerkingen"
 
 msgid "stage not found in rules execution"
 msgstr "stadium niet gevonden in uitvoering van regels"
@@ -1378,8 +1366,20 @@ msgstr ""
 msgid "Event completed"
 msgstr "Evenement voltooid"
 
+msgid "The event cannot be edited after it has been completed"
+msgstr ""
+
 msgid "Back to all stages and events"
 msgstr "Terug naar alle stadium en evenementen"
+
+msgid "Notes about this event"
+msgstr ""
+
+msgid "Write a note about this event"
+msgstr ""
+
+msgid "This event doesn't have any notes"
+msgstr ""
 
 msgid "Schedule date info"
 msgstr "Plan datum info"
@@ -1427,11 +1427,14 @@ msgstr "Schema info"
 msgid "Schedule date / Due date"
 msgstr "Schemadatum / Vervaldatum"
 
-msgid "Event comments"
-msgstr "Evenement opmerkingen"
+msgid "Event notes"
+msgstr ""
 
-msgid "Write a comment about this scheduled event"
-msgstr "Schrijf een opmerking over dit geplande evenement"
+msgid "Write a note about this scheduled event"
+msgstr ""
+
+msgid "Save note"
+msgstr "Notitie opslaan"
 
 msgid ""
 "Change information about this {{trackedEntityName}} here. To change "
@@ -1501,6 +1504,12 @@ msgstr ""
 msgid "Choose a {{linkableStageLabel}}"
 msgstr ""
 
+msgid "{{ linkableStageLabel }} is not repeatable"
+msgstr ""
+
+msgid "{{ linkableStageLabel }} has no linkable events"
+msgstr ""
+
 msgid "Ambiguous relationships, contact system administrator"
 msgstr ""
 
@@ -1524,8 +1533,31 @@ msgstr "Rapporteer datum"
 msgid "Please select a valid event"
 msgstr ""
 
+msgid "You do not have access to create events in this stage"
+msgstr ""
+
+msgid "This stage can only have one event"
+msgstr "Deze fase kan maar één evenement hebben"
+
 msgid "New {{ eventName }} event"
 msgstr "Nieuwe {{ eventName }} evenement"
+
+msgid "An error occurred while deleting the event"
+msgstr ""
+
+msgid ""
+"Deleting an event is permanent and cannot be undone. Are you sure you want "
+"to delete this event?"
+msgstr ""
+
+msgid "An error occurred when updating event status"
+msgstr ""
+
+msgid "Unskip"
+msgstr ""
+
+msgid "Skip"
+msgstr "Overslaan"
 
 msgid "To open this event, please wait until saving is complete"
 msgstr "Wacht tot het opslaan is voltooid om dit evenement te openen"
@@ -1533,14 +1565,8 @@ msgstr "Wacht tot het opslaan is voltooid om dit evenement te openen"
 msgid "Show {{ rest }} more"
 msgstr "Toon {{ rest }} meer"
 
-msgid "Reset list"
-msgstr "Lijst resetten"
-
 msgid "Go to full {{ eventName }}"
 msgstr "Ga naar volledige {{ eventName }}"
-
-msgid "This stage can only have one event"
-msgstr "Deze fase kan maar één evenement hebben"
 
 msgid "Events could not be retrieved. Please try again later."
 msgstr ""
@@ -1559,6 +1585,15 @@ msgstr "{{ scheduledEvents }} gepland"
 
 msgid "Stages and Events"
 msgstr "stadiums en evenementen"
+
+msgid "An error occurred while loading the widget."
+msgstr ""
+
+msgid "View linked event"
+msgstr ""
+
+msgid "Scheduled"
+msgstr "Gepland"
 
 msgid "Changelog"
 msgstr ""
@@ -1726,9 +1761,6 @@ msgstr "Er is een fout opgetreden. Zie logboek voor details"
 
 msgid "Scheduled{{ escape }} due {{ time }}"
 msgstr "Gepland{{ escape }} vanwege {{ time }}"
-
-msgid "Scheduled"
-msgstr "Gepland"
 
 msgid "Overdue{{ escape }} due {{ time }}"
 msgstr "Te laat{{ escape }} vanwege {{ time }}"

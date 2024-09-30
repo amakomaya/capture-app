@@ -2,14 +2,14 @@
 # Translators:
 # Philip Larsen Donnelly, 2023
 # Wanda <wanda@frontlineaids.org>, 2024
-# Nadiia <semchuk@aph.org.ua>, 2024
 # Éva Tamási, 2024
+# Nadiia <semchuk@aph.org.ua>, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-04-12T20:48:54.429Z\n"
+"POT-Creation-Date: 2024-08-10T10:42:21.141Z\n"
 "PO-Revision-Date: 2019-06-27 07:31+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -39,6 +39,9 @@ msgid ""
 " domain). Please refresh this page if you would like to use this version "
 "again, but be aware that this will close other versions."
 msgstr ""
+
+msgid "More"
+msgstr "Більше"
 
 msgid "View {{programName}} dashboard"
 msgstr ""
@@ -193,14 +196,14 @@ msgstr "Призначений користувач"
 msgid "Search for user"
 msgstr ""
 
+msgid "Notes"
+msgstr "Примітки"
+
 msgid "Basic info"
 msgstr ""
 
 msgid "Status"
 msgstr "Статус"
-
-msgid "Comments"
-msgstr "Коментарі"
 
 msgid "Relationships"
 msgstr "Зв'язки"
@@ -230,7 +233,7 @@ msgstr "Активне"
 msgid "Completed"
 msgstr "Завершено"
 
-msgid "Please add or cancel comment before saving the event"
+msgid "Please add or cancel note before saving the event"
 msgstr ""
 
 msgid "Save and add another"
@@ -364,16 +367,10 @@ msgstr ""
 msgid "validation failed"
 msgstr ""
 
-msgid "Errors"
-msgstr "Помилки"
+msgid "No feedback for this event yet"
+msgstr ""
 
-msgid "Feedback"
-msgstr "Відгук"
-
-msgid "Indicators"
-msgstr "Показники"
-
-msgid "Warnings"
+msgid "No indicator output for this event yet"
 msgstr ""
 
 msgid "Generate new event"
@@ -486,18 +483,6 @@ msgstr ""
 msgid "Yes"
 msgstr "Так"
 
-msgid "mm/dd/yyyy"
-msgstr ""
-
-msgid "Years"
-msgstr "Роки"
-
-msgid "Months"
-msgstr "Місяці"
-
-msgid "Days"
-msgstr "Дні"
-
 msgid "Uploading file"
 msgstr ""
 
@@ -564,6 +549,9 @@ msgstr ""
 msgid "Column"
 msgstr "Стовпчик"
 
+msgid "Visible"
+msgstr ""
+
 msgid "Update"
 msgstr "Оновити"
 
@@ -615,13 +603,13 @@ msgstr "Офлайн"
 msgid "Syncing"
 msgstr ""
 
-msgid "Add comment"
+msgid "Add note"
+msgstr "Додати нотатку"
+
+msgid "You don't have access to write notes"
 msgstr ""
 
-msgid "You don't have access to write comments"
-msgstr ""
-
-msgid "Write comment"
+msgid "Write note"
 msgstr ""
 
 msgid "was blanked out and hidden by your last action"
@@ -771,12 +759,6 @@ msgstr ""
 msgid "Choose an organisation unit to start reporting"
 msgstr ""
 
-msgid "No feedback for this event yet"
-msgstr ""
-
-msgid "No indicator output for this event yet"
-msgstr ""
-
 msgid "Program stage is invalid"
 msgstr ""
 
@@ -807,6 +789,11 @@ msgstr ""
 msgid "Registered events"
 msgstr ""
 
+msgid ""
+"The category option is not valid for the selected organisation unit. Please "
+"select a valid combination."
+msgstr ""
+
 msgid "Please select {{category}}."
 msgstr ""
 
@@ -819,8 +806,10 @@ msgstr ""
 msgid "Please select an organisation unit."
 msgstr ""
 
-msgid "New"
-msgstr "Нове"
+msgid ""
+"You don't have access to create a {{trackedEntityName}} in the current "
+"selections"
+msgstr ""
 
 msgid "Choose the {{missingCategories}} to start reporting"
 msgstr ""
@@ -828,8 +817,8 @@ msgstr ""
 msgid "Save as new"
 msgstr ""
 
-msgid "View enrollment"
-msgstr ""
+msgid "New"
+msgstr "Нове"
 
 msgid "Create for"
 msgstr ""
@@ -918,6 +907,18 @@ msgid ""
 "relationship"
 msgstr ""
 
+msgid "Errors"
+msgstr "Помилки"
+
+msgid "Feedback"
+msgstr "Відгук"
+
+msgid "Indicators"
+msgstr "Показники"
+
+msgid "Warnings"
+msgstr ""
+
 msgid "Show all events"
 msgstr ""
 
@@ -959,6 +960,12 @@ msgid "Could not retrieve metadata. Please try again later."
 msgstr ""
 
 msgid "The enrollment event data could not be found"
+msgstr ""
+
+msgid "Loading"
+msgstr "Завантаження"
+
+msgid "An error occurred while loading the form"
 msgstr ""
 
 msgid "Possible duplicates found"
@@ -1133,9 +1140,6 @@ msgid ""
 "program. All activity will be logged."
 msgstr ""
 
-msgid "Save comment"
-msgstr "Зберегти коментар"
-
 msgid "Enrollment actions"
 msgstr ""
 
@@ -1243,9 +1247,6 @@ msgstr ""
 msgid "Owned by {{ownerOrgUnit}}"
 msgstr ""
 
-msgid "Last updated {{date}}"
-msgstr ""
-
 msgid "Cancelled"
 msgstr "Скасовано"
 
@@ -1255,13 +1256,7 @@ msgstr ""
 msgid "Add area"
 msgstr ""
 
-msgid "Comments about this enrollment"
-msgstr ""
-
-msgid "Write a comment about this enrollment"
-msgstr ""
-
-msgid "This enrollment doesn't have any comments"
+msgid "Please add or cancel the note before saving the event"
 msgstr ""
 
 msgid "organisation unit could not be retrieved. Please try again later."
@@ -1273,20 +1268,20 @@ msgstr ""
 msgid "program or stage is invalid"
 msgstr ""
 
+msgid "Notes about this enrollment"
+msgstr ""
+
+msgid "Write a note about this enrollment"
+msgstr ""
+
+msgid "This enrollment doesn't have any notes"
+msgstr ""
+
 msgid "Error"
 msgstr "Помилка"
 
 msgid "Warning"
 msgstr "Попередження"
-
-msgid "Comments about this event"
-msgstr ""
-
-msgid "Write a comment about this event"
-msgstr ""
-
-msgid "This event doesn't have any comments"
-msgstr ""
 
 msgid "stage not found in rules execution"
 msgstr ""
@@ -1306,7 +1301,19 @@ msgstr ""
 msgid "Event completed"
 msgstr ""
 
+msgid "The event cannot be edited after it has been completed"
+msgstr ""
+
 msgid "Back to all stages and events"
+msgstr ""
+
+msgid "Notes about this event"
+msgstr ""
+
+msgid "Write a note about this event"
+msgstr ""
+
+msgid "This event doesn't have any notes"
 msgstr ""
 
 msgid "Schedule date info"
@@ -1351,11 +1358,14 @@ msgstr ""
 msgid "Schedule date / Due date"
 msgstr ""
 
-msgid "Event comments"
+msgid "Event notes"
 msgstr ""
 
-msgid "Write a comment about this scheduled event"
+msgid "Write a note about this scheduled event"
 msgstr ""
+
+msgid "Save note"
+msgstr "Зберегти нотатку"
 
 msgid ""
 "Change information about this {{trackedEntityName}} here. To change "
@@ -1420,6 +1430,12 @@ msgstr ""
 msgid "Choose a {{linkableStageLabel}}"
 msgstr ""
 
+msgid "{{ linkableStageLabel }} is not repeatable"
+msgstr ""
+
+msgid "{{ linkableStageLabel }} has no linkable events"
+msgstr ""
+
 msgid "Ambiguous relationships, contact system administrator"
 msgstr ""
 
@@ -1443,8 +1459,31 @@ msgstr "Дата звіту"
 msgid "Please select a valid event"
 msgstr ""
 
+msgid "You do not have access to create events in this stage"
+msgstr ""
+
+msgid "This stage can only have one event"
+msgstr ""
+
 msgid "New {{ eventName }} event"
 msgstr ""
+
+msgid "An error occurred while deleting the event"
+msgstr ""
+
+msgid ""
+"Deleting an event is permanent and cannot be undone. Are you sure you want "
+"to delete this event?"
+msgstr ""
+
+msgid "An error occurred when updating event status"
+msgstr ""
+
+msgid "Unskip"
+msgstr ""
+
+msgid "Skip"
+msgstr "Пропустити"
 
 msgid "To open this event, please wait until saving is complete"
 msgstr ""
@@ -1452,13 +1491,7 @@ msgstr ""
 msgid "Show {{ rest }} more"
 msgstr ""
 
-msgid "Reset list"
-msgstr ""
-
 msgid "Go to full {{ eventName }}"
-msgstr ""
-
-msgid "This stage can only have one event"
 msgstr ""
 
 msgid "Events could not be retrieved. Please try again later."
@@ -1479,6 +1512,15 @@ msgstr ""
 
 msgid "Stages and Events"
 msgstr ""
+
+msgid "An error occurred while loading the widget."
+msgstr ""
+
+msgid "View linked event"
+msgstr ""
+
+msgid "Scheduled"
+msgstr "Заплановано"
 
 msgid "Changelog"
 msgstr ""
@@ -1644,9 +1686,6 @@ msgstr ""
 
 msgid "Scheduled{{ escape }} due {{ time }}"
 msgstr ""
-
-msgid "Scheduled"
-msgstr "Заплановано"
 
 msgid "Overdue{{ escape }} due {{ time }}"
 msgstr ""

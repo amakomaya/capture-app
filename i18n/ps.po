@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-04-12T20:48:54.429Z\n"
+"POT-Creation-Date: 2024-08-10T10:42:21.141Z\n"
 "PO-Revision-Date: 2019-06-27 07:31+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Pashto (https://app.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -36,6 +36,9 @@ msgid ""
 " domain). Please refresh this page if you would like to use this version "
 "again, but be aware that this will close other versions."
 msgstr ""
+
+msgid "More"
+msgstr "نور"
 
 msgid "View {{programName}} dashboard"
 msgstr ""
@@ -190,14 +193,14 @@ msgstr ""
 msgid "Search for user"
 msgstr ""
 
+msgid "Notes"
+msgstr "یادداښتونه"
+
 msgid "Basic info"
 msgstr ""
 
 msgid "Status"
 msgstr "وضعیت"
-
-msgid "Comments"
-msgstr "څرګندونې"
 
 msgid "Relationships"
 msgstr "اړیکې"
@@ -227,7 +230,7 @@ msgstr "فعال"
 msgid "Completed"
 msgstr "بشپړ شوی"
 
-msgid "Please add or cancel comment before saving the event"
+msgid "Please add or cancel note before saving the event"
 msgstr ""
 
 msgid "Save and add another"
@@ -359,16 +362,10 @@ msgstr ""
 msgid "validation failed"
 msgstr ""
 
-msgid "Errors"
-msgstr "تېروتنې"
+msgid "No feedback for this event yet"
+msgstr ""
 
-msgid "Feedback"
-msgstr "د فیډبک یا نظر ورکول"
-
-msgid "Indicators"
-msgstr "شاخصونه"
-
-msgid "Warnings"
+msgid "No indicator output for this event yet"
 msgstr ""
 
 msgid "Generate new event"
@@ -481,18 +478,6 @@ msgstr ""
 msgid "Yes"
 msgstr "هو [ درست ]"
 
-msgid "mm/dd/yyyy"
-msgstr ""
-
-msgid "Years"
-msgstr "کلونه"
-
-msgid "Months"
-msgstr "میاشت"
-
-msgid "Days"
-msgstr "ورځې"
-
 msgid "Uploading file"
 msgstr ""
 
@@ -559,6 +544,9 @@ msgstr ""
 msgid "Column"
 msgstr "ستون"
 
+msgid "Visible"
+msgstr "د لیدو وړ دی"
+
 msgid "Update"
 msgstr "تجدید یا نوي یې کړئ"
 
@@ -610,13 +598,13 @@ msgstr "په لیکه کې نشته"
 msgid "Syncing"
 msgstr ""
 
-msgid "Add comment"
+msgid "Add note"
+msgstr "نوټ ور اضافه کړئ"
+
+msgid "You don't have access to write notes"
 msgstr ""
 
-msgid "You don't have access to write comments"
-msgstr ""
-
-msgid "Write comment"
+msgid "Write note"
 msgstr ""
 
 msgid "was blanked out and hidden by your last action"
@@ -766,12 +754,6 @@ msgstr ""
 msgid "Choose an organisation unit to start reporting"
 msgstr ""
 
-msgid "No feedback for this event yet"
-msgstr ""
-
-msgid "No indicator output for this event yet"
-msgstr ""
-
 msgid "Program stage is invalid"
 msgstr ""
 
@@ -802,6 +784,11 @@ msgstr "پړاو"
 msgid "Registered events"
 msgstr "ثبت شوې پېښې"
 
+msgid ""
+"The category option is not valid for the selected organisation unit. Please "
+"select a valid combination."
+msgstr ""
+
 msgid "Please select {{category}}."
 msgstr ""
 
@@ -814,8 +801,10 @@ msgstr ""
 msgid "Please select an organisation unit."
 msgstr ""
 
-msgid "New"
-msgstr "نوی"
+msgid ""
+"You don't have access to create a {{trackedEntityName}} in the current "
+"selections"
+msgstr ""
 
 msgid "Choose the {{missingCategories}} to start reporting"
 msgstr ""
@@ -823,8 +812,8 @@ msgstr ""
 msgid "Save as new"
 msgstr ""
 
-msgid "View enrollment"
-msgstr ""
+msgid "New"
+msgstr "نوی"
 
 msgid "Create for"
 msgstr ""
@@ -913,6 +902,18 @@ msgid ""
 "relationship"
 msgstr ""
 
+msgid "Errors"
+msgstr "تېروتنې"
+
+msgid "Feedback"
+msgstr "د فیډبک یا نظر ورکول"
+
+msgid "Indicators"
+msgstr "شاخصونه"
+
+msgid "Warnings"
+msgstr ""
+
 msgid "Show all events"
 msgstr ""
 
@@ -952,6 +953,12 @@ msgid "Could not retrieve metadata. Please try again later."
 msgstr ""
 
 msgid "The enrollment event data could not be found"
+msgstr ""
+
+msgid "Loading"
+msgstr "د پورته کېدو یا لوډینګ په حال کې"
+
+msgid "An error occurred while loading the form"
 msgstr ""
 
 msgid "Possible duplicates found"
@@ -1126,9 +1133,6 @@ msgid ""
 "program. All activity will be logged."
 msgstr ""
 
-msgid "Save comment"
-msgstr ""
-
 msgid "Enrollment actions"
 msgstr ""
 
@@ -1236,9 +1240,6 @@ msgstr ""
 msgid "Owned by {{ownerOrgUnit}}"
 msgstr ""
 
-msgid "Last updated {{date}}"
-msgstr ""
-
 msgid "Cancelled"
 msgstr "لغوه شوی"
 
@@ -1248,13 +1249,7 @@ msgstr ""
 msgid "Add area"
 msgstr ""
 
-msgid "Comments about this enrollment"
-msgstr ""
-
-msgid "Write a comment about this enrollment"
-msgstr ""
-
-msgid "This enrollment doesn't have any comments"
+msgid "Please add or cancel the note before saving the event"
 msgstr ""
 
 msgid "organisation unit could not be retrieved. Please try again later."
@@ -1266,20 +1261,20 @@ msgstr ""
 msgid "program or stage is invalid"
 msgstr ""
 
+msgid "Notes about this enrollment"
+msgstr ""
+
+msgid "Write a note about this enrollment"
+msgstr ""
+
+msgid "This enrollment doesn't have any notes"
+msgstr ""
+
 msgid "Error"
 msgstr "تېروته"
 
 msgid "Warning"
 msgstr "خبرداری"
-
-msgid "Comments about this event"
-msgstr ""
-
-msgid "Write a comment about this event"
-msgstr ""
-
-msgid "This event doesn't have any comments"
-msgstr ""
 
 msgid "stage not found in rules execution"
 msgstr ""
@@ -1299,7 +1294,19 @@ msgstr ""
 msgid "Event completed"
 msgstr ""
 
+msgid "The event cannot be edited after it has been completed"
+msgstr ""
+
 msgid "Back to all stages and events"
+msgstr ""
+
+msgid "Notes about this event"
+msgstr ""
+
+msgid "Write a note about this event"
+msgstr ""
+
+msgid "This event doesn't have any notes"
 msgstr ""
 
 msgid "Schedule date info"
@@ -1340,11 +1347,14 @@ msgstr ""
 msgid "Schedule date / Due date"
 msgstr ""
 
-msgid "Event comments"
+msgid "Event notes"
 msgstr ""
 
-msgid "Write a comment about this scheduled event"
+msgid "Write a note about this scheduled event"
 msgstr ""
+
+msgid "Save note"
+msgstr "یادداښت ثبت کړئ"
 
 msgid ""
 "Change information about this {{trackedEntityName}} here. To change "
@@ -1409,6 +1419,12 @@ msgstr ""
 msgid "Choose a {{linkableStageLabel}}"
 msgstr ""
 
+msgid "{{ linkableStageLabel }} is not repeatable"
+msgstr ""
+
+msgid "{{ linkableStageLabel }} has no linkable events"
+msgstr ""
+
 msgid "Ambiguous relationships, contact system administrator"
 msgstr ""
 
@@ -1432,8 +1448,31 @@ msgstr "د راپور نېټه"
 msgid "Please select a valid event"
 msgstr ""
 
+msgid "You do not have access to create events in this stage"
+msgstr ""
+
+msgid "This stage can only have one event"
+msgstr ""
+
 msgid "New {{ eventName }} event"
 msgstr ""
+
+msgid "An error occurred while deleting the event"
+msgstr ""
+
+msgid ""
+"Deleting an event is permanent and cannot be undone. Are you sure you want "
+"to delete this event?"
+msgstr ""
+
+msgid "An error occurred when updating event status"
+msgstr ""
+
+msgid "Unskip"
+msgstr ""
+
+msgid "Skip"
+msgstr "ترې تېر شئ"
 
 msgid "To open this event, please wait until saving is complete"
 msgstr ""
@@ -1441,13 +1480,7 @@ msgstr ""
 msgid "Show {{ rest }} more"
 msgstr ""
 
-msgid "Reset list"
-msgstr ""
-
 msgid "Go to full {{ eventName }}"
-msgstr ""
-
-msgid "This stage can only have one event"
 msgstr ""
 
 msgid "Events could not be retrieved. Please try again later."
@@ -1466,6 +1499,15 @@ msgstr ""
 
 msgid "Stages and Events"
 msgstr ""
+
+msgid "An error occurred while loading the widget."
+msgstr ""
+
+msgid "View linked event"
+msgstr ""
+
+msgid "Scheduled"
+msgstr "پروګرام شوی"
 
 msgid "Changelog"
 msgstr ""
@@ -1631,9 +1673,6 @@ msgstr ""
 
 msgid "Scheduled{{ escape }} due {{ time }}"
 msgstr ""
-
-msgid "Scheduled"
-msgstr "پروګرام شوی"
 
 msgid "Overdue{{ escape }} due {{ time }}"
 msgstr ""

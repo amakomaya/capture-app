@@ -28,22 +28,19 @@ const getFileResourceSubvalue = async ({ attribute, querySingleResource }: SubVa
     };
 };
 
-const getImageResourceSubvalue = async ({ attribute, querySingleResource, minorServerVersion }: SubValueFunctionParams) => {
+const getImageResourceSubvalue = async ({ attribute, minorServerVersion }: SubValueFunctionParams) => {
     const { id, value, teiId, programId, absoluteApiPath } = attribute;
     if (!value) return null;
-
-    const { displayName } = await querySingleResource({ resource: 'fileResources', id: value });
 
     const urls = hasAPISupportForFeature(minorServerVersion, FEATURES.trackerImageEndpoint) ? {
         url: `${absoluteApiPath}/tracker/trackedEntities/${teiId}/attributes/${id}/image?program=${programId}`,
         previewUrl: `${absoluteApiPath}/tracker/trackedEntities/${teiId}/attributes/${id}/image?program=${programId}&dimension=small`,
     } : {
-        url: `${absoluteApiPath}/trackedEntityInstances/${teiId}/${id}/image`,
-        previewUrl: `${absoluteApiPath}/trackedEntityInstances/${teiId}/${id}/image`,
+        url: `${absoluteApiPath}/trackedEntityInstances/${teiId}/${id}/image?program=${programId}`,
+        previewUrl: `${absoluteApiPath}/trackedEntityInstances/${teiId}/${id}/image?program=${programId}&dimension=SMALL`,
     };
 
     return {
-        name: displayName,
         value,
         ...urls,
     };
@@ -54,10 +51,17 @@ const getOrganisationUnitSubvalue = async ({ attribute, querySingleResource }: S
         resource: 'organisationUnits',
         id: attribute.value,
         params: {
-            fields: 'id,name',
+            fields: 'id,name,ancestors[displayName]',
         },
     });
-    return { ...organisationUnit };
+
+    const orgUnitClientValue = {
+        id: organisationUnit.id,
+        name: organisationUnit.name,
+        ancestors: organisationUnit.ancestors.map(ancestor => ancestor.displayName),
+    };
+
+    return orgUnitClientValue;
 };
 
 export const subValueGetterByElementType = {

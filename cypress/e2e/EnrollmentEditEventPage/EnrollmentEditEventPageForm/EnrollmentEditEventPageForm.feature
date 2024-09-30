@@ -51,12 +51,10 @@ Then the user see the following text: Low-dose acetylsalicylic acid given
 When the user sets Plurality assessed to Singleton
 Then the user don't see the following text: Low-dose acetylsalicylic acid given
 
-# DHIS2-17730
-@skip
 Scenario: User can modify and save the data in the form
 Given you land on the enrollment event page with selected Person by having typed /#/enrollmentEventEdit?orgUnitId=DiszpKrYNg8&eventId=V1CerIi3sdL
 Then the user see the following text: Enrollment: View Event
-And the user see the following text: 11
+And the apgar score is 11
 When the user clicks on the edit button
 And the user set the apgar score to 5
 And the user clicks on the save button
@@ -103,6 +101,12 @@ Scenario: User can see disabled scheduled date for active event
     Then the user see the following text: Enrollment: Edit Event
     Then the user see the schedule date field with tooltip: Scheduled date cannot be changed for Active events
     
+@user:trackerAutoTestRestricted
+Scenario: The user cannot enter edit mode for completed events
+    Given you land on the enrollment event page with selected Person by having typed /#/enrollmentEventEdit?eventId=nUVwTLuQ6FT&orgUnitId=DiszpKrYNg8
+    And the user see the following text: Enrollment: View Event
+    Then the edit button should be disabled
+
 Scenario: User can edit the event and complete the enrollment
     Given you land on the enrollment event page with selected Malaria Entity by having typed #/enrollmentEventEdit?eventId=MHR4Zj6KLz0&orgUnitId=DiszpKrYNg8
     And the enrollment status is active

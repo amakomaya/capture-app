@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Philip Larsen Donnelly, 2024
-# Viktor Varland <viktor@dhis2.org>, 2024
 # 晓东 林 <13981924470@126.com>, 2024
+# Viktor Varland <viktor@dhis2.org>, 2024
 # easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-04-12T20:48:54.429Z\n"
+"POT-Creation-Date: 2024-09-02T11:08:16.281Z\n"
 "PO-Revision-Date: 2019-06-27 07:31+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -40,6 +40,9 @@ msgid ""
 msgstr ""
 "您在同一域中打开了另一个版本的Capture App。当前，Capture "
 "App仅支持同时运行一个版本（在同一域中）。如果您想再次使用此版本，请刷新此页面，但是请注意，它将关闭其他版本。"
+
+msgid "More"
+msgstr "更多"
 
 msgid "View {{programName}} dashboard"
 msgstr "查看 {{programName}} 仪表板"
@@ -194,14 +197,14 @@ msgstr "分配的用户"
 msgid "Search for user"
 msgstr "搜索用户 "
 
+msgid "Notes"
+msgstr "笔记"
+
 msgid "Basic info"
 msgstr "基本信息"
 
 msgid "Status"
 msgstr "状态"
-
-msgid "Comments"
-msgstr "评论"
 
 msgid "Relationships"
 msgstr "关系"
@@ -231,8 +234,8 @@ msgstr "活动的"
 msgid "Completed"
 msgstr "已完成"
 
-msgid "Please add or cancel comment before saving the event"
-msgstr "保存事件前请添加或取消被或许"
+msgid "Please add or cancel note before saving the event"
+msgstr "请在保存事件前添加或取消备注"
 
 msgid "Save and add another"
 msgstr "保存并另外添加"
@@ -362,17 +365,11 @@ msgstr "登记的人"
 msgid "validation failed"
 msgstr "验证失败"
 
-msgid "Errors"
-msgstr "错误"
+msgid "No feedback for this event yet"
+msgstr "此事件尚未有任何反馈"
 
-msgid "Feedback"
-msgstr "反馈"
-
-msgid "Indicators"
-msgstr "指标"
-
-msgid "Warnings"
-msgstr "错误"
+msgid "No indicator output for this event yet"
+msgstr "此事件尚无指标输出"
 
 msgid "Generate new event"
 msgstr "生成新事件"
@@ -484,18 +481,6 @@ msgstr "包含文本"
 msgid "Yes"
 msgstr "是"
 
-msgid "mm/dd/yyyy"
-msgstr "mm/dd/yyyy"
-
-msgid "Years"
-msgstr "年"
-
-msgid "Months"
-msgstr "月"
-
-msgid "Days"
-msgstr "天"
-
 msgid "Uploading file"
 msgstr "上传文件"
 
@@ -562,6 +547,9 @@ msgstr "表中显示的列"
 msgid "Column"
 msgstr "列"
 
+msgid "Visible"
+msgstr "可见"
+
 msgid "Update"
 msgstr "更新"
 
@@ -602,7 +590,7 @@ msgid "Program doesn't exist"
 msgstr "项目不存在"
 
 msgid "Selected program is invalid for selected organisation unit"
-msgstr "所选项目对所选组织机构无效"
+msgstr "所选项目对所选机构无效"
 
 msgid "Online"
 msgstr "在线"
@@ -613,14 +601,14 @@ msgstr "离线"
 msgid "Syncing"
 msgstr "同步"
 
-msgid "Add comment"
-msgstr "添加备注"
+msgid "Add note"
+msgstr "添加笔记"
 
-msgid "You don't have access to write comments"
-msgstr "您无权撰写评论"
+msgid "You don't have access to write notes"
+msgstr "您无法写笔记"
 
-msgid "Write comment"
-msgstr "写备注"
+msgid "Write note"
+msgstr "编写说明"
 
 msgid "was blanked out and hidden by your last action"
 msgstr "被你的最后一个动作清空并隐藏"
@@ -770,13 +758,7 @@ msgid "There was an error loading the page"
 msgstr "加载页面时出错"
 
 msgid "Choose an organisation unit to start reporting"
-msgstr "选择一个组织机构开始报告"
-
-msgid "No feedback for this event yet"
-msgstr "此事件尚未有任何反馈"
-
-msgid "No indicator output for this event yet"
-msgstr "此事件尚无指标输出"
+msgstr "选择一个机构开始报告"
 
 msgid "Program stage is invalid"
 msgstr "项目阶段无效"
@@ -808,6 +790,11 @@ msgstr "阶段"
 msgid "Registered events"
 msgstr "注册的事件"
 
+msgid ""
+"The category option is not valid for the selected organisation unit. Please "
+"select a valid combination."
+msgstr "类别选项对所选机构无效。请选择一个有效的组合。"
+
 msgid "Please select {{category}}."
 msgstr "请选择 {{category}}."
 
@@ -818,10 +805,12 @@ msgid "Or see all events accessible to you in {{program}}"
 msgstr "或者在{{program}}中查看您可以访问的所有事件"
 
 msgid "Please select an organisation unit."
-msgstr "请选择一个组织单位。"
+msgstr "请选择一个机构。"
 
-msgid "New"
-msgstr "新建"
+msgid ""
+"You don't have access to create a {{trackedEntityName}} in the current "
+"selections"
+msgstr "您没有权限在当前选择中创建{{trackedEntityName}} "
 
 msgid "Choose the {{missingCategories}} to start reporting"
 msgstr "选择{{missingCategories}}开始报告"
@@ -829,8 +818,8 @@ msgstr "选择{{missingCategories}}开始报告"
 msgid "Save as new"
 msgstr "另存为新"
 
-msgid "View enrollment"
-msgstr "查看报名"
+msgid "New"
+msgstr "新建"
 
 msgid "Create for"
 msgstr "为创建"
@@ -867,7 +856,7 @@ msgid "Program"
 msgstr "项目"
 
 msgid "Organisation Unit"
-msgstr "组织机构"
+msgstr "机构"
 
 msgid "Registration"
 msgstr "注册"
@@ -919,6 +908,18 @@ msgid ""
 "relationship"
 msgstr "离开该页将丢失你创建新关系的所有选择"
 
+msgid "Errors"
+msgstr "错误"
+
+msgid "Feedback"
+msgstr "反馈"
+
+msgid "Indicators"
+msgstr "指标"
+
+msgid "Warnings"
+msgstr "错误"
+
 msgid "Show all events"
 msgstr "显示所有事件"
 
@@ -959,6 +960,12 @@ msgstr "无法检索元数据。请稍后再试。"
 msgid "The enrollment event data could not be found"
 msgstr "找不到报名事件数据"
 
+msgid "Loading"
+msgstr "载入"
+
+msgid "An error occurred while loading the form"
+msgstr "加载表格时发生错误"
+
 msgid "Possible duplicates found"
 msgstr "发现可能的重复"
 
@@ -978,7 +985,7 @@ msgid "No results found for "
 msgstr "没有找到结果"
 
 msgid "Choose an organisation unit"
-msgstr "选择组织单位"
+msgstr "选择机构"
 
 msgid "Clear selection"
 msgstr "清空选项"
@@ -990,7 +997,7 @@ msgid "Search for a program"
 msgstr "搜索项目"
 
 msgid "Some programs are being filtered by the chosen organisation unit"
-msgstr "某些项目正在被所选组织单位过滤"
+msgstr "某些项目正在被所选机构过滤"
 
 msgid "Show all programs"
 msgstr "显示所有项目"
@@ -1133,9 +1140,6 @@ msgid ""
 "program. All activity will be logged."
 msgstr "您必须提供一个理由来检查此受保护计划的注册情况。所有活动都将被记录。"
 
-msgid "Save comment"
-msgstr "保存注释"
-
 msgid "Enrollment actions"
 msgstr "报名操作"
 
@@ -1223,7 +1227,7 @@ msgstr "所有权转让"
 msgid ""
 "Choose the organisation unit to which enrollment ownership should be "
 "transferred."
-msgstr "选择注册所有权应转移到的组织单位。"
+msgstr "选择注册所有权应转移到的机构。"
 
 msgid "Enrollment date"
 msgstr "报名日期"
@@ -1237,15 +1241,6 @@ msgstr "无法加载报名的小部件。请稍后再试"
 msgid "Follow-up"
 msgstr "后续"
 
-msgid "Started at {{orgUnitName}}"
-msgstr "始于{{orgUnitName}}"
-
-msgid "Owned by {{ownerOrgUnit}}"
-msgstr "由{{ownerOrgUnit}}拥有"
-
-msgid "Last updated {{date}}"
-msgstr "最近更新的{{date}}"
-
 msgid "Cancelled"
 msgstr "已取消"
 
@@ -1255,17 +1250,11 @@ msgstr "添加坐标"
 msgid "Add area"
 msgstr "添加区域"
 
-msgid "Comments about this enrollment"
-msgstr "关于本次报名的评论"
-
-msgid "Write a comment about this enrollment"
-msgstr "写一篇关于这个报名的评论"
-
-msgid "This enrollment doesn't have any comments"
-msgstr "本次报名没有任何评论"
+msgid "Please add or cancel the note before saving the event"
+msgstr "请在保存事件前添加或取消备注"
 
 msgid "organisation unit could not be retrieved. Please try again later."
-msgstr "无法检索组织机构。请稍后再试。"
+msgstr "无法检索机构。请稍后再试。"
 
 msgid "Saving to {{stageName}} for {{programName}} in {{orgUnitName}}"
 msgstr "为 {{orgUnitName}} 中的 {{programName}} 保存到 {{stageName}}"
@@ -1273,20 +1262,20 @@ msgstr "为 {{orgUnitName}} 中的 {{programName}} 保存到 {{stageName}}"
 msgid "program or stage is invalid"
 msgstr "项目或阶段无效"
 
+msgid "Notes about this enrollment"
+msgstr "入学须知"
+
+msgid "Write a note about this enrollment"
+msgstr "撰写有关此次入学的说明"
+
+msgid "This enrollment doesn't have any notes"
+msgstr "本次招生没有任何说明"
+
 msgid "Error"
 msgstr "错误"
 
 msgid "Warning"
 msgstr "警告"
-
-msgid "Comments about this event"
-msgstr "对本次事件的评论"
-
-msgid "Write a comment about this event"
-msgstr "写一篇关于该事件的评论"
-
-msgid "This event doesn't have any comments"
-msgstr "此事件没有任何评论"
 
 msgid "stage not found in rules execution"
 msgstr "在规则执行中找不到阶段"
@@ -1306,8 +1295,20 @@ msgstr "无法更改 {{ eventStatus }} 事件的预定日期"
 msgid "Event completed"
 msgstr "事件完成"
 
+msgid "The event cannot be edited after it has been completed"
+msgstr ""
+
 msgid "Back to all stages and events"
 msgstr "回到所有阶段和事件"
+
+msgid "Notes about this event"
+msgstr "事件注意事项"
+
+msgid "Write a note about this event"
+msgstr "撰写关于此次事件的说明"
+
+msgid "This event doesn't have any notes"
+msgstr "该事件没有任何说明"
 
 msgid "Schedule date info"
 msgstr "预定日期信息"
@@ -1345,11 +1346,14 @@ msgstr "日程信息"
 msgid "Schedule date / Due date"
 msgstr "计划日期/截止日期"
 
-msgid "Event comments"
-msgstr "事件评论、注释"
+msgid "Event notes"
+msgstr "事件说明"
 
-msgid "Write a comment about this scheduled event"
-msgstr "写一篇关于这个预定事件的评论"
+msgid "Write a note about this scheduled event"
+msgstr "撰写关于此预定活动的说明"
+
+msgid "Save note"
+msgstr "保存笔记"
 
 msgid ""
 "Change information about this {{trackedEntityName}} here. To change "
@@ -1416,6 +1420,12 @@ msgstr "链接到现有的 {{linkableStageLabel}}"
 msgid "Choose a {{linkableStageLabel}}"
 msgstr "选择 {{linkableStageLabel}}"
 
+msgid "{{ linkableStageLabel }} is not repeatable"
+msgstr "{{ linkableStageLabel }} 不可重复"
+
+msgid "{{ linkableStageLabel }} has no linkable events"
+msgstr "{{ linkableStageLabel }} 没有可链接的事件"
+
 msgid "Ambiguous relationships, contact system administrator"
 msgstr "关系不明确，请联系系统管理员"
 
@@ -1439,8 +1449,31 @@ msgstr "报告日期"
 msgid "Please select a valid event"
 msgstr "请选择一个有效的事件"
 
+msgid "You do not have access to create events in this stage"
+msgstr ""
+
+msgid "This stage can only have one event"
+msgstr "这个阶段只能有一个事件"
+
 msgid "New {{ eventName }} event"
 msgstr "新的 {{ eventName }} 事件"
+
+msgid "An error occurred while deleting the event"
+msgstr ""
+
+msgid ""
+"Deleting an event is permanent and cannot be undone. Are you sure you want "
+"to delete this event?"
+msgstr ""
+
+msgid "An error occurred when updating event status"
+msgstr ""
+
+msgid "Unskip"
+msgstr ""
+
+msgid "Skip"
+msgstr "跳过"
 
 msgid "To open this event, please wait until saving is complete"
 msgstr "要打开此活动，请等待保存完成"
@@ -1448,14 +1481,8 @@ msgstr "要打开此活动，请等待保存完成"
 msgid "Show {{ rest }} more"
 msgstr "显示 {{ rest }} 更多"
 
-msgid "Reset list"
-msgstr "重置列表"
-
 msgid "Go to full {{ eventName }}"
 msgstr "转到完整的{{ eventName }}"
-
-msgid "This stage can only have one event"
-msgstr "这个阶段只能有一个事件"
 
 msgid "Events could not be retrieved. Please try again later."
 msgstr "无法检索事件。请稍后再试。"
@@ -1472,6 +1499,15 @@ msgstr "{{ scheduledEvents }} 已安排"
 
 msgid "Stages and Events"
 msgstr "阶段与活动"
+
+msgid "An error occurred while loading the widget."
+msgstr "加载小部件时发生错误。"
+
+msgid "View linked event"
+msgstr "查看链接事件"
+
+msgid "Scheduled"
+msgstr "已经调度"
 
 msgid "Changelog"
 msgstr "变更日志"
@@ -1638,9 +1674,6 @@ msgstr "发生错误。查看日志以获取详细信息"
 msgid "Scheduled{{ escape }} due {{ time }}"
 msgstr "调度{{ escape }}到期{{ time }}"
 
-msgid "Scheduled"
-msgstr "已经调度"
-
 msgid "Overdue{{ escape }} due {{ time }}"
 msgstr "逾期{{ escape }}到期{{ time }}"
 
@@ -1681,7 +1714,7 @@ msgid "Could not delete working list"
 msgstr "不能删除工作列表"
 
 msgid "Organisation unit search failed."
-msgstr "组织机构搜索失败。"
+msgstr "机构搜索失败。"
 
 msgid "Error saving tracked entity instance"
 msgstr "保存跟踪的实体实例时出错"

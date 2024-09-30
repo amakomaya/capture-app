@@ -6,6 +6,7 @@ import { bsToAd } from '@sbmdkl/nepali-date-converter';
  *
  * @export
  * @param {string} value
+ * @param {string} format
  * @returns {boolean}
  */
 

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-07-16T13:00:48.899Z\n"
-"PO-Revision-Date: 2024-07-16T13:00:48.899Z\n"
+"POT-Creation-Date: 2024-09-30T05:19:09.121Z\n"
+"PO-Revision-Date: 2024-09-30T05:19:09.121Z\n"
 
 msgid "Choose one or more dates..."
 msgstr "Choose one or more dates..."
@@ -34,6 +34,9 @@ msgstr ""
 "Currently, the Capture App only supports running one version concurrently "
 "(in the same domain). Please refresh this page if you would like to use "
 "this version again, but be aware that this will close other versions."
+
+msgid "More"
+msgstr "More"
 
 msgid "View {{programName}} dashboard"
 msgstr "View {{programName}} dashboard"
@@ -366,17 +369,11 @@ msgstr "Registered person"
 msgid "validation failed"
 msgstr "validation failed"
 
-msgid "Errors"
-msgstr "Errors"
+msgid "No feedback for this event yet"
+msgstr "No feedback for this event yet"
 
-msgid "Feedback"
-msgstr "Feedback"
-
-msgid "Indicators"
-msgstr "Indicators"
-
-msgid "Warnings"
-msgstr "Warnings"
+msgid "No indicator output for this event yet"
+msgstr "No indicator output for this event yet"
 
 msgid "Generate new event"
 msgstr "Generate new event"
@@ -490,18 +487,6 @@ msgstr "Contains text"
 msgid "Yes"
 msgstr "Yes"
 
-msgid "mm/dd/yyyy"
-msgstr "mm/dd/yyyy"
-
-msgid "Years"
-msgstr "Years"
-
-msgid "Months"
-msgstr "Months"
-
-msgid "Days"
-msgstr "Days"
-
 msgid "Uploading file"
 msgstr "Uploading file"
 
@@ -567,6 +552,9 @@ msgstr "Columns to show in table"
 
 msgid "Column"
 msgstr "Column"
+
+msgid "Visible"
+msgstr "Visible"
 
 msgid "Update"
 msgstr "Update"
@@ -789,12 +777,6 @@ msgstr "There was an error loading the page"
 msgid "Choose an organisation unit to start reporting"
 msgstr "Choose an organisation unit to start reporting"
 
-msgid "No feedback for this event yet"
-msgstr "No feedback for this event yet"
-
-msgid "No indicator output for this event yet"
-msgstr "No indicator output for this event yet"
-
 msgid "Program stage is invalid"
 msgstr "Program stage is invalid"
 
@@ -824,6 +806,13 @@ msgstr "Stage"
 
 msgid "Registered events"
 msgstr "Registered events"
+
+msgid ""
+"The category option is not valid for the selected organisation unit. Please "
+"select a valid combination."
+msgstr ""
+"The category option is not valid for the selected organisation unit. Please "
+"select a valid combination."
 
 msgid "Please select {{category}}."
 msgstr "Please select {{category}}."
@@ -941,6 +930,18 @@ msgstr ""
 "Leaving this page will discard any selections you made for a new "
 "relationship"
 
+msgid "Errors"
+msgstr "Errors"
+
+msgid "Feedback"
+msgstr "Feedback"
+
+msgid "Indicators"
+msgstr "Indicators"
+
+msgid "Warnings"
+msgstr "Warnings"
+
 msgid "Show all events"
 msgstr "Show all events"
 
@@ -981,6 +982,12 @@ msgstr "Could not retrieve metadata. Please try again later."
 
 msgid "The enrollment event data could not be found"
 msgstr "The enrollment event data could not be found"
+
+msgid "Loading"
+msgstr "Loading"
+
+msgid "An error occurred while loading the form"
+msgstr "An error occurred while loading the form"
 
 msgid "Possible duplicates found"
 msgstr "Possible duplicates found"
@@ -1277,15 +1284,6 @@ msgstr "Enrollment widget could not be loaded. Please try again later"
 msgid "Follow-up"
 msgstr "Follow-up"
 
-msgid "Started at {{orgUnitName}}"
-msgstr "Started at {{orgUnitName}}"
-
-msgid "Owned by {{ownerOrgUnit}}"
-msgstr "Owned by {{ownerOrgUnit}}"
-
-msgid "Last updated {{date}}"
-msgstr "Last updated {{date}}"
-
 msgid "Cancelled"
 msgstr "Cancelled"
 
@@ -1357,6 +1355,9 @@ msgstr "Scheduled date cannot be changed for {{ eventStatus }} events"
 
 msgid "Event completed"
 msgstr "Event completed"
+
+msgid "The event cannot be edited after it has been completed"
+msgstr "The event cannot be edited after it has been completed"
 
 msgid "Back to all stages and events"
 msgstr "Back to all stages and events"
@@ -1485,8 +1486,8 @@ msgstr "Choose a {{linkableStageLabel}}"
 msgid "{{ linkableStageLabel }} is not repeatable"
 msgstr "{{ linkableStageLabel }} is not repeatable"
 
-msgid "{{ linkableStageLabel }} has no existing events"
-msgstr "{{ linkableStageLabel }} has no existing events"
+msgid "{{ linkableStageLabel }} has no linkable events"
+msgstr "{{ linkableStageLabel }} has no linkable events"
 
 msgid "Ambiguous relationships, contact system administrator"
 msgstr "Ambiguous relationships, contact system administrator"
@@ -1513,8 +1514,33 @@ msgstr "Report date"
 msgid "Please select a valid event"
 msgstr "Please select a valid event"
 
+msgid "You do not have access to create events in this stage"
+msgstr "You do not have access to create events in this stage"
+
+msgid "This stage can only have one event"
+msgstr "This stage can only have one event"
+
 msgid "New {{ eventName }} event"
 msgstr "New {{ eventName }} event"
+
+msgid "An error occurred while deleting the event"
+msgstr "An error occurred while deleting the event"
+
+msgid ""
+"Deleting an event is permanent and cannot be undone. Are you sure you want "
+"to delete this event?"
+msgstr ""
+"Deleting an event is permanent and cannot be undone. Are you sure you want "
+"to delete this event?"
+
+msgid "An error occurred when updating event status"
+msgstr "An error occurred when updating event status"
+
+msgid "Unskip"
+msgstr "Unskip"
+
+msgid "Skip"
+msgstr "Skip"
 
 msgid "To open this event, please wait until saving is complete"
 msgstr "To open this event, please wait until saving is complete"
@@ -1522,17 +1548,14 @@ msgstr "To open this event, please wait until saving is complete"
 msgid "Show {{ rest }} more"
 msgstr "Show {{ rest }} more"
 
-msgid "Reset list"
-msgstr "Reset list"
-
 msgid "Go to full {{ eventName }}"
 msgstr "Go to full {{ eventName }}"
 
-msgid "This stage can only have one event"
-msgstr "This stage can only have one event"
-
 msgid "Events could not be retrieved. Please try again later."
 msgstr "Events could not be retrieved. Please try again later."
+
+msgid "Last updated {{date}}"
+msgstr "Last updated {{date}}"
 
 msgid "{{ count }} event"
 msgid_plural "{{ count }} event"
@@ -1547,6 +1570,15 @@ msgstr "{{ scheduledEvents }} scheduled"
 
 msgid "Stages and Events"
 msgstr "Stages and Events"
+
+msgid "An error occurred while loading the widget."
+msgstr "An error occurred while loading the widget."
+
+msgid "View linked event"
+msgstr "View linked event"
+
+msgid "Scheduled"
+msgstr "Scheduled"
 
 msgid "Changelog"
 msgstr "Changelog"
@@ -1713,9 +1745,6 @@ msgstr "An error has occured. See log for details"
 
 msgid "Scheduled{{ escape }} due {{ time }}"
 msgstr "Scheduled{{ escape }} due {{ time }}"
-
-msgid "Scheduled"
-msgstr "Scheduled"
 
 msgid "Overdue{{ escape }} due {{ time }}"
 msgstr "Overdue{{ escape }} due {{ time }}"

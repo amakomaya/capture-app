@@ -1,14 +1,13 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2024
-# Ibatov <ibatovk@who.int>, 2024
+# Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-04-12T20:48:54.429Z\n"
+"POT-Creation-Date: 2024-09-02T11:08:16.281Z\n"
 "PO-Revision-Date: 2019-06-27 07:31+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2024\n"
+"Last-Translator: Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,6 +41,9 @@ msgstr ""
 "Назорат Иловаси фақат битта версияни бир вақтда (бир хил ддомендаги) "
 "ишлашини қўллаб қувватлайди. Ушбу версияни қайта ишлатмоқчи бўлсангиз, "
 "Илтимос, саҳифани янгиланг, аммо бошқа версиялар ёпилишини унутманг."
+
+msgid "More"
+msgstr "Кўпроқ"
 
 msgid "View {{programName}} dashboard"
 msgstr ""
@@ -197,14 +199,14 @@ msgstr "Тавсия этилган фойдаланувчи"
 msgid "Search for user"
 msgstr "Фойдаланувчини излаш"
 
+msgid "Notes"
+msgstr "Изоҳлар"
+
 msgid "Basic info"
 msgstr "Асосий маълумот"
 
 msgid "Status"
 msgstr "Статус"
-
-msgid "Comments"
-msgstr "Изоҳлар"
 
 msgid "Relationships"
 msgstr "Ўзаро алоқалар"
@@ -238,8 +240,8 @@ msgstr "Фаол"
 msgid "Completed"
 msgstr "Тўлдирилди"
 
-msgid "Please add or cancel comment before saving the event"
-msgstr "Илтимос, ҳодиса/тадбирни сақлашдан олдин шарҳ ёзинг ёки бекор қилинг"
+msgid "Please add or cancel note before saving the event"
+msgstr ""
 
 msgid "Save and add another"
 msgstr "Сақлаш ва бошқасини қўшиш"
@@ -377,17 +379,11 @@ msgstr "Рўйхатдан ўтган шахс"
 msgid "validation failed"
 msgstr "Тасдиқлаш амалга ошмади"
 
-msgid "Errors"
-msgstr "Хатоликлар"
+msgid "No feedback for this event yet"
+msgstr ""
 
-msgid "Feedback"
-msgstr "Қайта алоқа"
-
-msgid "Indicators"
-msgstr "Индикаторлар"
-
-msgid "Warnings"
-msgstr "Огоҳлантиришлар"
+msgid "No indicator output for this event yet"
+msgstr ""
 
 msgid "Generate new event"
 msgstr "Янги ҳодиса/тадбир яратиш"
@@ -499,18 +495,6 @@ msgstr "Матнни ўз ичига олади"
 msgid "Yes"
 msgstr "Ҳа"
 
-msgid "mm/dd/yyyy"
-msgstr "кун/ой/йил"
-
-msgid "Years"
-msgstr "Йиллар"
-
-msgid "Months"
-msgstr "Ойлар"
-
-msgid "Days"
-msgstr "Кунлар"
-
 msgid "Uploading file"
 msgstr "Файл юкланмоқда"
 
@@ -577,6 +561,9 @@ msgstr "Жадвалда кўрсатиладиган устунлар"
 msgid "Column"
 msgstr "Устун"
 
+msgid "Visible"
+msgstr "Кўринадиган"
+
 msgid "Update"
 msgstr "Янгилаш"
 
@@ -628,14 +615,14 @@ msgstr "Оффлайн"
 msgid "Syncing"
 msgstr "Синхронлашмоқда"
 
-msgid "Add comment"
-msgstr "Изоҳ қўшиш"
+msgid "Add note"
+msgstr "Изоҳ қолдириш"
 
-msgid "You don't have access to write comments"
+msgid "You don't have access to write notes"
 msgstr ""
 
-msgid "Write comment"
-msgstr "Фикр ёзинг"
+msgid "Write note"
+msgstr ""
 
 msgid "was blanked out and hidden by your last action"
 msgstr ""
@@ -791,12 +778,6 @@ msgstr ""
 msgid "Choose an organisation unit to start reporting"
 msgstr ""
 
-msgid "No feedback for this event yet"
-msgstr ""
-
-msgid "No indicator output for this event yet"
-msgstr ""
-
 msgid "Program stage is invalid"
 msgstr ""
 
@@ -827,6 +808,11 @@ msgstr "Босқич"
 msgid "Registered events"
 msgstr "Рўйхатдан ўтган ҳодиса/тадбирлар"
 
+msgid ""
+"The category option is not valid for the selected organisation unit. Please "
+"select a valid combination."
+msgstr ""
+
 msgid "Please select {{category}}."
 msgstr ""
 
@@ -839,8 +825,10 @@ msgstr ""
 msgid "Please select an organisation unit."
 msgstr ""
 
-msgid "New"
-msgstr "Янги"
+msgid ""
+"You don't have access to create a {{trackedEntityName}} in the current "
+"selections"
+msgstr ""
 
 msgid "Choose the {{missingCategories}} to start reporting"
 msgstr "Ҳисоботни бошлаш учун {{missingCategories}} ни танланг"
@@ -848,8 +836,8 @@ msgstr "Ҳисоботни бошлаш учун {{missingCategories}} ни та
 msgid "Save as new"
 msgstr "Янги сифатида сақлаш"
 
-msgid "View enrollment"
-msgstr ""
+msgid "New"
+msgstr "Янги"
 
 msgid "Create for"
 msgstr "Учун яратиш"
@@ -942,6 +930,18 @@ msgstr ""
 "Ушбу саҳифани тарк этсангиз, янги алоқа-муносабатлар учун қилинган барча "
 "танловлар бекор қилинади "
 
+msgid "Errors"
+msgstr "Хатоликлар"
+
+msgid "Feedback"
+msgstr "Қайта алоқа"
+
+msgid "Indicators"
+msgstr "Индикаторлар"
+
+msgid "Warnings"
+msgstr "Огоҳлантиришлар"
+
 msgid "Show all events"
 msgstr "Барча ҳодиса/тадбирларни кўрсатиш"
 
@@ -980,6 +980,12 @@ msgid "Could not retrieve metadata. Please try again later."
 msgstr ""
 
 msgid "The enrollment event data could not be found"
+msgstr ""
+
+msgid "Loading"
+msgstr "Юкланмоқда"
+
+msgid "An error occurred while loading the form"
 msgstr ""
 
 msgid "Possible duplicates found"
@@ -1160,9 +1166,6 @@ msgid ""
 "program. All activity will be logged."
 msgstr ""
 
-msgid "Save comment"
-msgstr "Фикр/изоҳни сақланг"
-
 msgid "Enrollment actions"
 msgstr ""
 
@@ -1265,15 +1268,6 @@ msgstr ""
 msgid "Follow-up"
 msgstr "Кузатиш"
 
-msgid "Started at {{orgUnitName}}"
-msgstr " {{orgUnitName}} да бошланган"
-
-msgid "Owned by {{ownerOrgUnit}}"
-msgstr " {{ownerOrgUnit}} эгалиги асосида"
-
-msgid "Last updated {{date}}"
-msgstr " {{date}}да охирги марта янгиланган"
-
 msgid "Cancelled"
 msgstr "Бекор қилинди"
 
@@ -1283,13 +1277,7 @@ msgstr ""
 msgid "Add area"
 msgstr ""
 
-msgid "Comments about this enrollment"
-msgstr ""
-
-msgid "Write a comment about this enrollment"
-msgstr ""
-
-msgid "This enrollment doesn't have any comments"
+msgid "Please add or cancel the note before saving the event"
 msgstr ""
 
 msgid "organisation unit could not be retrieved. Please try again later."
@@ -1301,20 +1289,20 @@ msgstr ""
 msgid "program or stage is invalid"
 msgstr ""
 
+msgid "Notes about this enrollment"
+msgstr ""
+
+msgid "Write a note about this enrollment"
+msgstr ""
+
+msgid "This enrollment doesn't have any notes"
+msgstr ""
+
 msgid "Error"
 msgstr "Хатолик"
 
 msgid "Warning"
 msgstr "Огоҳлантириш"
-
-msgid "Comments about this event"
-msgstr ""
-
-msgid "Write a comment about this event"
-msgstr ""
-
-msgid "This event doesn't have any comments"
-msgstr ""
 
 msgid "stage not found in rules execution"
 msgstr ""
@@ -1334,7 +1322,19 @@ msgstr ""
 msgid "Event completed"
 msgstr "Ҳодиса/тадбир якунланди"
 
+msgid "The event cannot be edited after it has been completed"
+msgstr ""
+
 msgid "Back to all stages and events"
+msgstr ""
+
+msgid "Notes about this event"
+msgstr ""
+
+msgid "Write a note about this event"
+msgstr ""
+
+msgid "This event doesn't have any notes"
 msgstr ""
 
 msgid "Schedule date info"
@@ -1373,11 +1373,14 @@ msgstr ""
 msgid "Schedule date / Due date"
 msgstr ""
 
-msgid "Event comments"
+msgid "Event notes"
 msgstr ""
 
-msgid "Write a comment about this scheduled event"
+msgid "Write a note about this scheduled event"
 msgstr ""
+
+msgid "Save note"
+msgstr "Изоҳни сақлаш"
 
 msgid ""
 "Change information about this {{trackedEntityName}} here. To change "
@@ -1443,6 +1446,12 @@ msgstr ""
 msgid "Choose a {{linkableStageLabel}}"
 msgstr ""
 
+msgid "{{ linkableStageLabel }} is not repeatable"
+msgstr ""
+
+msgid "{{ linkableStageLabel }} has no linkable events"
+msgstr ""
+
 msgid "Ambiguous relationships, contact system administrator"
 msgstr ""
 
@@ -1466,8 +1475,31 @@ msgstr "Ҳисобот санаси"
 msgid "Please select a valid event"
 msgstr ""
 
+msgid "You do not have access to create events in this stage"
+msgstr ""
+
+msgid "This stage can only have one event"
+msgstr ""
+
 msgid "New {{ eventName }} event"
 msgstr ""
+
+msgid "An error occurred while deleting the event"
+msgstr ""
+
+msgid ""
+"Deleting an event is permanent and cannot be undone. Are you sure you want "
+"to delete this event?"
+msgstr ""
+
+msgid "An error occurred when updating event status"
+msgstr ""
+
+msgid "Unskip"
+msgstr ""
+
+msgid "Skip"
+msgstr "Ўтказиб юбориш"
 
 msgid "To open this event, please wait until saving is complete"
 msgstr ""
@@ -1475,13 +1507,7 @@ msgstr ""
 msgid "Show {{ rest }} more"
 msgstr ""
 
-msgid "Reset list"
-msgstr ""
-
 msgid "Go to full {{ eventName }}"
-msgstr ""
-
-msgid "This stage can only have one event"
 msgstr ""
 
 msgid "Events could not be retrieved. Please try again later."
@@ -1499,6 +1525,15 @@ msgstr ""
 
 msgid "Stages and Events"
 msgstr "Босқичлар ва Ҳодиса/тадбирлар"
+
+msgid "An error occurred while loading the widget."
+msgstr ""
+
+msgid "View linked event"
+msgstr ""
+
+msgid "Scheduled"
+msgstr "Режа бўйича"
 
 msgid "Changelog"
 msgstr ""
@@ -1664,9 +1699,6 @@ msgstr "Хатолик юз берди. Тафсилотларни журнал�
 
 msgid "Scheduled{{ escape }} due {{ time }}"
 msgstr ""
-
-msgid "Scheduled"
-msgstr "Режа бўйича"
 
 msgid "Overdue{{ escape }} due {{ time }}"
 msgstr ""

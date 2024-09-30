@@ -38,7 +38,7 @@ const changeEnrollmentAndEventsStatus = () => (
 );
 
 const showAllEventsInProgramStage = () => {
-    cy.get('[data-test="dhis2-uicore-tablefoot"]')
+    cy.get('[data-test="dhis2-uicore-tabletoolbar"]')
         .then(($footer) => {
             if ($footer.find('[data-test="show-more-button"]').length > 0) {
                 $footer.find('[data-test="show-more-button"]')
@@ -119,11 +119,6 @@ When(/^you click the button to (.*) without post request/, (buttonText) => {
 
 When('the enrollment overview is finished loading', () => {
     cy.get('[data-test="dhis2-uicore-circularloader"]').should('not.exist');
-    cy.get('[data-test="dhis2-uicore-datatable"]')
-        .within(() => {
-            cy.get('[data-test="dhis2-uicore-datatablerow"]')
-                .should('exist');
-        });
 });
 
 When('the form is finished loading', () => {
@@ -197,9 +192,15 @@ And('the enrollment status is active', () => {
     changeEnrollmentAndEventsStatus();
 });
 
-And('the user completes the event', () => {
+And('you click the Complete button', () => {
     cy.get('[data-test="dhis2-uicore-button"]')
         .contains('Complete')
+        .click();
+});
+
+And('you click the Save without completing button', () => {
+    cy.get('[data-test="dhis2-uicore-button"]')
+        .contains('Save without completing')
         .click();
 });
 
@@ -229,4 +230,24 @@ Then('the user sees the enrollment status and recently added event in Case outco
             cy.get('[data-test="dhis2-uicore-tag-text"]').contains('Completed').should('exist');
         });
     changeEnrollmentAndEventsStatus();
+});
+
+And(/^the events in (.*) are deleted$/, (name) => {
+    const programStages = [
+        { name: 'Lab monitoring', id: 'EPEcjy3FWmI' },
+        { name: 'Sputum smear microscopy', id: 'jdRD35YwbRH' },
+    ];
+    const programStage = programStages.find(e => e.name === name);
+
+    cy.buildApiUrl('tracker', 'enrollments/Pm0VlgHBgRm?fields=events[programStage,event]')
+        .then(url => cy.request(url))
+        .then(({ body }) => {
+            const eventsToDelete = body.events.filter(e => e.programStage === programStage.id);
+
+            if (eventsToDelete) {
+                cy.buildApiUrl('tracker?async=false&importStrategy=DELETE').then((eventUrl) => {
+                    cy.request('POST', eventUrl, { events: eventsToDelete });
+                });
+            }
+        });
 });

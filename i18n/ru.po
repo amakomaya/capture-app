@@ -1,17 +1,17 @@
-#
+# 
 # Translators:
 # Ulanbek Abakirov <ulans@mail.ru>, 2020
 # Wanda <wanda@frontlineaids.org>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2023
-# Philip Larsen Donnelly, 2024
 # Yury Rogachev <yury@dhis2.org>, 2024
-#
+# Viktor Varland <viktor@dhis2.org>, 2024
+# Philip Larsen Donnelly, 2024
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-04-12T20:48:54.429Z\n"
+"POT-Creation-Date: 2024-09-02T11:08:16.281Z\n"
 "PO-Revision-Date: 2019-06-27 07:31+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,9 +21,6 @@ msgstr ""
 
 msgid "Choose one or more dates..."
 msgstr "Выбрать одну или несколько дат..."
-
-msgid "Clear selections"
-msgstr "Очистить выбор"
 
 msgid "Choose a date..."
 msgstr "Выбрать дату..."
@@ -48,6 +45,9 @@ msgstr ""
 "время приложение Capture поддерживает одновременную работу только одной "
 "версии в том же самом домене. Обновите эту страницу, если вы хотите "
 "использовать эту версию, но имейте в виду, что другие версии будут закрыты."
+
+msgid "More"
+msgstr "Более"
 
 msgid "View {{programName}} dashboard"
 msgstr "Смотреть панель программы{{programName}} "
@@ -203,14 +203,14 @@ msgstr "Назначенный пользователь"
 msgid "Search for user"
 msgstr "Поиск пользователя"
 
+msgid "Notes"
+msgstr "Заметки"
+
 msgid "Basic info"
 msgstr "Основные данные"
 
 msgid "Status"
 msgstr "Статус"
-
-msgid "Comments"
-msgstr "Комментарии"
 
 msgid "Relationships"
 msgstr "Связи"
@@ -244,8 +244,8 @@ msgstr "Активный/ая/ое"
 msgid "Completed"
 msgstr "Завершен/а/о"
 
-msgid "Please add or cancel comment before saving the event"
-msgstr "Добавьте или отмените комментарии перед сохранением события"
+msgid "Please add or cancel note before saving the event"
+msgstr ""
 
 msgid "Save and add another"
 msgstr "Сохранить и добавить другую запись"
@@ -384,17 +384,11 @@ msgstr "Зарегистрированное лицо"
 msgid "validation failed"
 msgstr "ошибка проверки"
 
-msgid "Errors"
-msgstr "Ошибки"
+msgid "No feedback for this event yet"
+msgstr "Комментариев для данного события нет"
 
-msgid "Feedback"
-msgstr "Обратная связь"
-
-msgid "Indicators"
-msgstr "Индикаторы"
-
-msgid "Warnings"
-msgstr "Предупреждения"
+msgid "No indicator output for this event yet"
+msgstr "Индикаторов для данного события нет"
 
 msgid "Generate new event"
 msgstr "Создать новое событие"
@@ -509,18 +503,6 @@ msgstr "Содержит текст"
 msgid "Yes"
 msgstr "Да"
 
-msgid "mm/dd/yyyy"
-msgstr "мм/дд/гггг"
-
-msgid "Years"
-msgstr "Годы"
-
-msgid "Months"
-msgstr "Месяцы"
-
-msgid "Days"
-msgstr "Дни"
-
 msgid "Uploading file"
 msgstr "Загрузка файла"
 
@@ -587,6 +569,9 @@ msgstr "Столбцы, для отображения в таблице"
 msgid "Column"
 msgstr "Столбец"
 
+msgid "Visible"
+msgstr "Видимый"
+
 msgid "Update"
 msgstr "Обновить"
 
@@ -639,14 +624,14 @@ msgstr "Оффлайн"
 msgid "Syncing"
 msgstr "Синхронизация"
 
-msgid "Add comment"
-msgstr "Добавить комментарий"
+msgid "Add note"
+msgstr "Добавить заметку"
 
-msgid "You don't have access to write comments"
-msgstr "У вас нет доступа к написанию комментариев"
+msgid "You don't have access to write notes"
+msgstr ""
 
-msgid "Write comment"
-msgstr "Написать комментарий"
+msgid "Write note"
+msgstr ""
 
 msgid "was blanked out and hidden by your last action"
 msgstr "- удалено и скрыто вашим последним действием"
@@ -823,12 +808,6 @@ msgstr "Произошла ошибка при загрузке страницы
 msgid "Choose an organisation unit to start reporting"
 msgstr "Выберите организационную единицу, чтобы начать ввод данных"
 
-msgid "No feedback for this event yet"
-msgstr "Комментариев для данного события нет"
-
-msgid "No indicator output for this event yet"
-msgstr "Индикаторов для данного события нет"
-
 msgid "Program stage is invalid"
 msgstr "Этап программы недействителен"
 
@@ -859,6 +838,11 @@ msgstr "Этап"
 msgid "Registered events"
 msgstr "Зарегистрированные события"
 
+msgid ""
+"The category option is not valid for the selected organisation unit. Please "
+"select a valid combination."
+msgstr ""
+
 msgid "Please select {{category}}."
 msgstr "Выберите {{category}}."
 
@@ -871,8 +855,10 @@ msgstr "Или посмотреть все события, доступные в
 msgid "Please select an organisation unit."
 msgstr "Выберите организационную единицу."
 
-msgid "New"
-msgstr "Новый/ая/ое"
+msgid ""
+"You don't have access to create a {{trackedEntityName}} in the current "
+"selections"
+msgstr ""
 
 msgid "Choose the {{missingCategories}} to start reporting"
 msgstr "Выберите {{missingCategories}}, чтобы начать ввод данных."
@@ -880,8 +866,8 @@ msgstr "Выберите {{missingCategories}}, чтобы начать ввод
 msgid "Save as new"
 msgstr "Сохранить как новый/ую/ое"
 
-msgid "View enrollment"
-msgstr "Посмотреть регистрационную запись"
+msgid "New"
+msgstr "Новый/ая/ое"
 
 msgid "Create for"
 msgstr "Создать для"
@@ -971,6 +957,18 @@ msgid ""
 msgstr ""
 "Если покинуть данную страницу, все настройки новой связи будут утеряны"
 
+msgid "Errors"
+msgstr "Ошибки"
+
+msgid "Feedback"
+msgstr "Обратная связь"
+
+msgid "Indicators"
+msgstr "Индикаторы"
+
+msgid "Warnings"
+msgstr "Предупреждения"
+
 msgid "Show all events"
 msgstr "Показать все события"
 
@@ -1013,6 +1011,12 @@ msgstr "Не удалось получить метаданные. Повтор�
 
 msgid "The enrollment event data could not be found"
 msgstr "Данные событий для регистрационной записи - не найдены"
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "An error occurred while loading the form"
+msgstr ""
 
 msgid "Possible duplicates found"
 msgstr "Найдены возможные дубликаты "
@@ -1201,9 +1205,6 @@ msgstr ""
 "Вы должны указать причину проверки регистрационных записей в данной "
 "защищенной программе. Все действия будут регистрироваться."
 
-msgid "Save comment"
-msgstr "Сохранить комментарий"
-
 msgid "Enrollment actions"
 msgstr "Действия с регистрационной записью"
 
@@ -1319,15 +1320,6 @@ msgstr ""
 msgid "Follow-up"
 msgstr "Наблюдать"
 
-msgid "Started at {{orgUnitName}}"
-msgstr "Первоначальная регистрация в {{orgUnitName}}"
-
-msgid "Owned by {{ownerOrgUnit}}"
-msgstr "Принадлежит {{ownerOrgUnit}}"
-
-msgid "Last updated {{date}}"
-msgstr "Последнее обновление: {{date}}"
-
 msgid "Cancelled"
 msgstr "Отменен/а/о"
 
@@ -1337,14 +1329,8 @@ msgstr "Добавить координаты"
 msgid "Add area"
 msgstr "Добавить участок"
 
-msgid "Comments about this enrollment"
-msgstr "Комментарии о данной регистрационной записи"
-
-msgid "Write a comment about this enrollment"
-msgstr "Добавить комментарий о данной регистрационной записи"
-
-msgid "This enrollment doesn't have any comments"
-msgstr "У данной регистрационной записи нет комментариев"
+msgid "Please add or cancel the note before saving the event"
+msgstr ""
 
 msgid "organisation unit could not be retrieved. Please try again later."
 msgstr ""
@@ -1358,20 +1344,20 @@ msgstr ""
 msgid "program or stage is invalid"
 msgstr "программа или этап недействительны"
 
+msgid "Notes about this enrollment"
+msgstr ""
+
+msgid "Write a note about this enrollment"
+msgstr ""
+
+msgid "This enrollment doesn't have any notes"
+msgstr ""
+
 msgid "Error"
 msgstr "Ошибка"
 
 msgid "Warning"
 msgstr "Предупреждение"
-
-msgid "Comments about this event"
-msgstr "Комментарии о данном событии"
-
-msgid "Write a comment about this event"
-msgstr "Добавить комментарий о данном событии"
-
-msgid "This event doesn't have any comments"
-msgstr "У данного события нет комментариев"
 
 msgid "stage not found in rules execution"
 msgstr "этап не найден при выполнении правил"
@@ -1393,8 +1379,20 @@ msgstr ""
 msgid "Event completed"
 msgstr "Событие завершено"
 
+msgid "The event cannot be edited after it has been completed"
+msgstr ""
+
 msgid "Back to all stages and events"
 msgstr "Обратно ко всем этапам и событиям"
+
+msgid "Notes about this event"
+msgstr ""
+
+msgid "Write a note about this event"
+msgstr ""
+
+msgid "This event doesn't have any notes"
+msgstr ""
 
 msgid "Schedule date info"
 msgstr "Информация о запланированной дате"
@@ -1454,11 +1452,14 @@ msgstr "Информация о расписании"
 msgid "Schedule date / Due date"
 msgstr "Запланированная дата / Дата выполнения"
 
-msgid "Event comments"
-msgstr "Комментарии к событию"
+msgid "Event notes"
+msgstr ""
 
-msgid "Write a comment about this scheduled event"
-msgstr "Добавить комментарий о данном запланированном событии"
+msgid "Write a note about this scheduled event"
+msgstr ""
+
+msgid "Save note"
+msgstr "Сохранить заметку"
 
 msgid ""
 "Change information about this {{trackedEntityName}} here. To change "
@@ -1531,6 +1532,12 @@ msgstr "Создать связку с существующим этапом {{l
 msgid "Choose a {{linkableStageLabel}}"
 msgstr "Выбрать этап {{linkableStageLabel}}"
 
+msgid "{{ linkableStageLabel }} is not repeatable"
+msgstr ""
+
+msgid "{{ linkableStageLabel }} has no linkable events"
+msgstr ""
+
 msgid "Ambiguous relationships, contact system administrator"
 msgstr "Неопределенные связи, обратитесь к системному администратору"
 
@@ -1556,8 +1563,31 @@ msgstr "Дата отчета"
 msgid "Please select a valid event"
 msgstr "Выберите действительное событие"
 
+msgid "You do not have access to create events in this stage"
+msgstr ""
+
+msgid "This stage can only have one event"
+msgstr "Данный этап позволяет создать только одно событие"
+
 msgid "New {{ eventName }} event"
 msgstr "Новое событие {{ eventName }} "
+
+msgid "An error occurred while deleting the event"
+msgstr ""
+
+msgid ""
+"Deleting an event is permanent and cannot be undone. Are you sure you want "
+"to delete this event?"
+msgstr ""
+
+msgid "An error occurred when updating event status"
+msgstr ""
+
+msgid "Unskip"
+msgstr ""
+
+msgid "Skip"
+msgstr "Пропустить"
 
 msgid "To open this event, please wait until saving is complete"
 msgstr "Чтобы открыть это событие, дождитесь завершения сохранения"
@@ -1565,14 +1595,8 @@ msgstr "Чтобы открыть это событие, дождитесь за
 msgid "Show {{ rest }} more"
 msgstr "Показать {{ rest }} подробнее"
 
-msgid "Reset list"
-msgstr "Сброс списка"
-
 msgid "Go to full {{ eventName }}"
 msgstr "Перейти к полной версии события {{ eventName }}"
-
-msgid "This stage can only have one event"
-msgstr "Данный этап позволяет создать только одно событие"
 
 msgid "Events could not be retrieved. Please try again later."
 msgstr "Не удалось загрузить события. Повторите попытку позже."
@@ -1592,6 +1616,15 @@ msgstr " Событий запланировано: {{ scheduledEvents }}"
 
 msgid "Stages and Events"
 msgstr "Этапы и события"
+
+msgid "An error occurred while loading the widget."
+msgstr ""
+
+msgid "View linked event"
+msgstr ""
+
+msgid "Scheduled"
+msgstr "Запланировано"
 
 msgid "Changelog"
 msgstr "Лог изменений"
@@ -1759,9 +1792,6 @@ msgstr "Произошла ошибка. Подробности в лог-фай
 
 msgid "Scheduled{{ escape }} due {{ time }}"
 msgstr "Запланировано{{ escape }} на {{ time }}"
-
-msgid "Scheduled"
-msgstr "Запланировано"
 
 msgid "Overdue{{ escape }} due {{ time }}"
 msgstr "Просрочено {{ escape }} Срок {{ time }}"
