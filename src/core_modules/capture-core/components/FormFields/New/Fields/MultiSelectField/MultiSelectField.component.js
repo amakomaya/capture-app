@@ -11,14 +11,21 @@ const styles = theme => ({
     label: {
         display: 'flex',
         alignItems: 'center',
+
     },
     inputWrapperFocused: {
         border: `2px solid ${theme.palette.primary.light}`,
         borderRadius: '5px',
+               
     },
     inputWrapperUnfocused: {
         padding: 2,
-    },
+
+       },
+  
+
+     
+    
 });
 
 const MULTI_TEXT_SEPARATOR = ',';
@@ -44,7 +51,7 @@ const MultiSelectFieldComponentPlain = (props: Props) => {
     };
 
     return (
-        <div onBlur={handleBlur}>
+        <div onBlur={handleBlur} style={{ zIndex: 100, position: 'relative' }}>
             <MultiSelectFieldUI
                 dataTest="multi-select-field"
                 onChange={onHandleChange}
@@ -57,7 +64,8 @@ const MultiSelectFieldComponentPlain = (props: Props) => {
                 disabled={disabled}
             >
                 {options.map(option => (
-                    <MultiSelectOption key={option.id} label={option.label} value={option.value} />
+                    <MultiSelectOption key={option.id} label={option.label} value={option.value}  
+                    />
                 ))}
             </MultiSelectFieldUI>
         </div>
