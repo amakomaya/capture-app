@@ -26,10 +26,10 @@ const getDataStoreFromApi = async querySingleResource =>
         resource: 'dataStore/capture/useNewDashboard',
     });
 
-const getUserDataStoreFromApi = async querySingleResource =>
-    querySingleResource({
-        resource: 'userDataStore/capture/useNewDashboard',
-    });
+// const getUserDataStoreFromApi = async querySingleResource =>
+//     querySingleResource({
+//         resource: 'userDataStore/capture/useNewDashboard',
+//     });
 
 export const fetchDataStoreEpic = (action$: InputObservable, _: ReduxStore, { querySingleResource }: ApiUtils) =>
     action$.pipe(
