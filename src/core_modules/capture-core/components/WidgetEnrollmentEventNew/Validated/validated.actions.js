@@ -116,7 +116,6 @@ const convertDatesToGregorian = (events) => {
 
 
 export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessActionType }: Object) => {
-    console.log(serverData.events,'serverData.events')
     if (serverData.events) {
         serverData.events = convertDatesToGregorian(serverData.events);
     }
