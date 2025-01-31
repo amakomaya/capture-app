@@ -17,6 +17,7 @@ import { startRunRulesPostUpdateField } from '../../../DataEntry';
 import { startRunRulesOnUpdateForNewEnrollment } from './enrollment.actions';
 import type { QuerySingleResource } from '../../../../utils/api';
 
+
 export const batchActionTypes = {
     RULES_EXECUTED_POST_UPDATE_FIELD_FOR_ENROLLMENT: 'RulesExecutedPostUpdateFieldForEnrollment',
     UPDATE_FIELD_NEW_ENROLLMENT_ACTION_BATCH: 'UpdateFieldNewEnrollmentActionBatch',
@@ -36,9 +37,8 @@ export const runRulesOnUpdateFieldBatch = async ({
     stage,
     formFoundation,
     currentEvent,
-    querySingleResource,
-    onGetValidationContext,
-}: {
+}: 
+{
     program: TrackerProgram,
     formId: string,
     dataEntryId: string,
@@ -88,23 +88,11 @@ export const updateDataEntryFieldBatch = (
 ) => {
     const { dataEntryId, itemId } = innerAction.payload;
     const uid = uuid();
-
-    return batchActions(
-        [
-            innerAction,
-            startRunRulesPostUpdateField(dataEntryId, itemId, uid),
-            startRunRulesOnUpdateForNewEnrollment({
-                payload: innerAction.payload,
-                uid,
-                programId,
-                orgUnit,
-                stage,
-                formFoundation,
-                onGetValidationContext,
-            }),
-        ],
-        batchActionTypes.UPDATE_DATA_ENTRY_FIELD_NEW_ENROLLMENT_ACTION_BATCH,
-    );
+    return batchActions([
+        innerAction,
+        startRunRulesPostUpdateField(dataEntryId, itemId, uid),
+        startRunRulesOnUpdateForNewEnrollment(innerAction.payload, uid, programId, orgUnit, stage, formFoundation),
+    ], batchActionTypes.UPDATE_DATA_ENTRY_FIELD_NEW_ENROLLMENT_ACTION_BATCH);
 };
 
 export const updateFieldBatch = (

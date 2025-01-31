@@ -202,17 +202,17 @@ class NotesPlain extends React.Component<Props, State> {
                         <MenuItem
                             className={classes.noteItem}
                             key={n.clientId}
-                            data-test="note"
+                            data-test="comment"
                             label={<>
                                 <div className={classes.noteItemHeader}>
-                                    <div className={classes.noteItemUser} data-test="note-user">
+                                    <div className={classes.noteItemUser} data-test="comment-user">
                                         {n.createdBy ? `${n.createdBy.firstName} ${n.createdBy.surname}` : `${n.storedBy}` }
                                     </div>
-                                    <div className={classes.noteItemDate} data-test="note-date">
+                                    <div className={classes.noteItemDate} data-test="comment-date">
                                         {n.storedDate}
                                     </div>
                                 </div>
-                                <div data-test="note-text">
+                                <div data-test="comment-text">
                                     <Parser>{n.value}</Parser>
                                 </div>
                             </>}

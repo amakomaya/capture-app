@@ -23,16 +23,42 @@ const staticReplacements = [
     { regExp: new RegExp('V{execution_date}', 'g'), replacement: 'V{event_date}' },
 ];
 
-function performStaticReplacements(expression: string) {
-    return staticReplacements.reduce((accExpression, staticReplacement) => {
-        accExpression = accExpression.replace(staticReplacement.regExp, staticReplacement.replacement);
-        return accExpression;
-    }, expression);
-}
+// function performStaticReplacements(expression: string) {
+//     return staticReplacements.reduce((accExpression, staticReplacement) => {
+//         accExpression = accExpression.replace(staticReplacement.regExp, staticReplacement.replacement);
+//         return accExpression;
+//     }, expression);
+// }
 
-function getVariablesFromExpression(data: string) {
+function performStaticReplacements(expression) {
+    // Ensure that expression is a valid string
+    const safeExpression = typeof expression === 'string' ? expression : '';
+  
+    return staticReplacements.reduce((accExpression, staticReplacement) => {
+      // Ensure that accExpression is a string before using .replace
+      accExpression = typeof accExpression === 'string' ? accExpression : '';
+  
+      // Safeguard staticReplacement.regExp and staticReplacement.replacement
+      const regExp = staticReplacement.regExp instanceof RegExp ? staticReplacement.regExp : /(?:)/; // No-op RegExp if invalid
+      const replacement = typeof staticReplacement.replacement === 'string' ? staticReplacement.replacement : '';
+  
+      return accExpression.replace(regExp, replacement);
+    }, safeExpression);
+  }
+  
+
+// function getVariablesFromExpression(data: string) {
+//     return data.match(/[A#]{\w+.?\w*}/g) || [];
+// }
+
+function getVariablesFromExpression(data) {
+    // Check if data is a valid string, if not, return an empty array
+    if (typeof data !== 'string') {
+        return [];
+    }
     return data.match(/[A#]{\w+.?\w*}/g) || [];
 }
+
 
 function trimVariableQualifiers(input) {
     if (!input || (!isString(input))) {
@@ -88,10 +114,19 @@ function getVariables(action, rule, programId) {
     };
 }
 
+// function isValueCountPresent(rule, action) {
+//     // $FlowFixMe[incompatible-use] automated comment
+//     return rule.condition.indexOf('V{value_count}') >= 0 || action.data.indexOf('V{value_count}') >= 0;
+// }
+
 function isValueCountPresent(rule, action) {
-    // $FlowFixMe[incompatible-use] automated comment
-    return rule.condition.indexOf('V{value_count}') >= 0 || action.data.indexOf('V{value_count}') >= 0;
+    // Ensure that rule.condition and action.data are defined and are strings
+    const ruleCondition = typeof rule.condition === 'string' ? rule.condition : '';
+    const actionData = typeof action.data === 'string' ? action.data : '';
+
+    return ruleCondition.indexOf('V{value_count}') >= 0 || actionData.indexOf('V{value_count}') >= 0;
 }
+
 
 function replaceValueCount(rule, action, variableObjectsCurrentExpression) {
     let valueCountText = variableObjectsCurrentExpression.reduce((accValueCountText, variableCurrentRule, index) => {
@@ -117,9 +152,18 @@ function replaceValueCountIfPresent(rule, action, variableObjectsCurrentExpressi
     }
 }
 
+// function isPositiveValueCountPresent(rule, action) {
+//     // $FlowFixMe[incompatible-use] automated comment
+//     return rule.condition.indexOf('V{zero_pos_value_count}') >= 0 || action.data.indexOf('V{zero_pos_value_count}') >= 0;
+// }
+
+
 function isPositiveValueCountPresent(rule, action) {
-    // $FlowFixMe[incompatible-use] automated comment
-    return rule.condition.indexOf('V{zero_pos_value_count}') >= 0 || action.data.indexOf('V{zero_pos_value_count}') >= 0;
+    // Ensure rule.condition and action.data are valid strings
+    const condition = typeof rule.condition === 'string' ? rule.condition : '';
+    const data = typeof action.data === 'string' ? action.data : '';
+
+    return condition.indexOf('V{zero_pos_value_count}') >= 0 || data.indexOf('V{zero_pos_value_count}') >= 0;
 }
 
 function replacePositiveValueCount(rule, action, variableObjectsCurrentExpression) {

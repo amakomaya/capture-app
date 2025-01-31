@@ -1,3 +1,4 @@
+
 // @flow
 import { batchActions } from 'redux-batched-actions';
 import type { OrgUnit } from '@dhis2/rules-engine-javascript';
@@ -16,6 +17,8 @@ import { convertDateObjectToDateFormatString } from '../../../../utils/converter
 import { addFormData } from '../../../D2Form/actions/form.actions';
 import type { ProgramCategory } from '../../../WidgetEventSchedule/CategoryOptions/CategoryOptions.types';
 import { getDataEntryPropsToInclude } from '../EnrollmentWithFirstStageDataEntry';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
 
 const itemId = 'newEnrollment';
 
@@ -71,7 +74,12 @@ export const openDataEntryForNewEnrollmentBatchAsync = async ({
     const formId = getDataEntryKey(dataEntryId, itemId);
     const addFormDataActions = addFormData(`${dataEntryId}-${itemId}`, formValues);
     const firstStageDataEntryPropsToInclude = firstStage && getDataEntryPropsToInclude(firstStage);
-    const defaultDataEntryValues = { enrolledAt: convertDateObjectToDateFormatString(new Date()) };
+
+    const today = new Date();
+    const englishDate = moment(today).format('YYYY-MM-DD');
+    const nepaliDate = adToBs(englishDate );
+
+    const defaultDataEntryValues = { enrolledAt: nepaliDate};
     const dataEntryPropsToInclude = [
         ...enrollmentDataEntryPropsToInclude,
         ...extraDataEntryProps,

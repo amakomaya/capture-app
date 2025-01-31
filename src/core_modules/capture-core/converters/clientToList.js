@@ -11,8 +11,8 @@ import { MinimalCoordinates, PolygonCoordinates } from '../components/Coordinate
 import { TooltipOrgUnit } from '../components/Tooltips/TooltipOrgUnit';
 
 function convertDateForListDisplay(rawValue: string): string {
-    const momentDate = moment(rawValue);
-    return convertMomentToDateFormatString(momentDate);
+    const value = rawValue.length > 10 ? rawValue.substring(0, 10) : rawValue;
+    return value;
 }
 
 function convertDateTimeForListDisplay(rawValue: string): string {

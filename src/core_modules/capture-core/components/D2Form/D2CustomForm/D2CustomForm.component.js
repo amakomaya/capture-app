@@ -124,7 +124,8 @@ export class D2CustomForm extends React.Component<Props> {
                                     'data-custom-form-id': autoId,
                                 },
 
-                                // $FlowFixMe[incompatible-type] automated comment
+                                /* $FlowFixMe[incompatible-type] automated
+                                 * comment */
                                 // $FlowFixMe[prop-missing] automated comment
                                 ...path.walkChildren(),
                             );

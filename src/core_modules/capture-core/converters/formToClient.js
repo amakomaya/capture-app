@@ -3,6 +3,10 @@ import isString from 'd2-utilizr/lib/isString';
 import { parseNumber, parseTime } from 'capture-core-utils/parsers';
 import { dataElementTypes } from '../metaData';
 import { parseDate } from '../utils/converters/date';
+import { getTimeZone } from 'capture-core-utils/date/date.utils';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+
+
 
 type DateTimeValue = {
     date: string,
@@ -34,9 +38,20 @@ function convertDateTime(formValue: DateTimeValue): ?string {
 }
 
 function convertDate(dateValue: string) {
-    const parsedDate = parseDate(dateValue);
-    // $FlowFixMe[incompatible-use] automated comment
-    return parsedDate.isValid ? parsedDate.momentDate.toISOString() : null;
+    if(dateValue==="Invalid date"){
+        return;
+    }
+    try{
+        const timezone = getTimeZone(bsToAd(dateValue));
+        const date = `${dateValue}T${timezone}Z`;
+        return date;
+    }
+    catch(e){
+        const timezone = getTimeZone(dateValue);
+        const date = `${dateValue}T${timezone}Z`;
+        return date;
+    }
+   
 }
 
 function convertTime(timeValue: string) {

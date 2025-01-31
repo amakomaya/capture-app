@@ -25,6 +25,7 @@ import { useComputeDataFromEvent, useComputeHeaderColumn, formatRowForView } fro
 import { DEFAULT_NUMBER_OF_ROW, SORT_DIRECTION } from './hooks/constants';
 import { getProgramAndStageForProgram } from '../../../../../metaData/helpers';
 import type { Props } from './stageDetail.types';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
 import { EventRow } from './EventRow';
 import { errorCreator } from '../../../../../../capture-core-utils';
 
@@ -113,8 +114,9 @@ const StageDetailPlain = (props: Props) => {
     };
     const { stage } = getProgramAndStageForProgram(programId, stageId);
     const headerColumns = useComputeHeaderColumn(dataElements, hideDueDate, enableUserAssignment, stage?.stageForm);
+   
     const { loading, value: dataSource, error } = useComputeDataFromEvent(dataElements, events);
-
+    
     const [{ columnName, sortDirection }, setSortInstructions] = useState(defaultSortState);
     const [displayedRowNumber, setDisplayedRowNumber] = useState(DEFAULT_NUMBER_OF_ROW);
 

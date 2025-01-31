@@ -11,8 +11,8 @@ import { TooltipOrgUnit } from '../components/Tooltips/TooltipOrgUnit';
 
 
 function convertDateForView(rawValue: string): string {
-    const momentDate = moment(rawValue);
-    return convertMomentToDateFormatString(momentDate);
+    const value = rawValue.length > 10 ? rawValue.substring(0, 10) : rawValue;
+    return value;
 }
 function convertDateTimeForView(rawValue: string): string {
     const momentDate = moment(rawValue);

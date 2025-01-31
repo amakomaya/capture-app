@@ -99,6 +99,7 @@ export const openEventForEditInDataEntry = ({
     attributeValues?: Array<AttributeValue>,
     programCategory?: ProgramCategory
 }) => {
+
     const dataEntryPropsToInclude = [
         {
             id: 'occurredAt',

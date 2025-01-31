@@ -10,7 +10,6 @@ import { systemSettingsStore } from '../../../metaDataMemoryStores';
  */
 export function convertStringToDateFormat(date: string) {
     if (!date || !date.length) { return ''; }
-    const dateFormat = systemSettingsStore.get().dateFormat;
-    const formattedDateString = moment(date, dateFormat).format(dateFormat);
+    const formattedDateString =date.split('T')[0];;
     return formattedDateString;
 }

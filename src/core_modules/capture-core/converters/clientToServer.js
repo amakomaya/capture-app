@@ -18,10 +18,14 @@ type Assignee = {
 }
 
 function convertDate(rawValue: string): string {
-    const editedDate = rawValue;
-    const momentDate = moment(editedDate);
-    momentDate.locale('en');
-    return momentDate.format('YYYY-MM-DD');
+        const editedDate = rawValue;
+        const momentDate = moment(editedDate);
+        if(!momentDate.isValid()){
+            const editedDate = rawValue.split('T')[0];
+            return editedDate;
+        }
+        momentDate.locale('en');
+        return momentDate.format('YYYY-MM-DD');
 }
 
 function convertRange(parser: (value: any) => any, rangeValue: RangeValue) {

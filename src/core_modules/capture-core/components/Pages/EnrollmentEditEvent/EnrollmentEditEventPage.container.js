@@ -41,7 +41,7 @@ import { DefaultPageLayout } from './PageLayout/DefaultPageLayout.constants';
 import { getProgramEventAccess } from '../../../metaData';
 import { rollbackAssignee, setAssignee } from './EnrollmentEditEventPage.actions';
 import { convertClientToServer } from '../../../converters';
-import { CHANGELOG_ENTITY_TYPES } from '../../WidgetsChangelog';
+import { CHANGELOG_ENTITY_TYPES } from '../../WidgetsChangelog/common/Changelog/index';
 import { ReactQueryAppNamespace } from '../../../utils/reactQueryHelpers';
 import { statusTypes } from '../../../enrollment';
 import { cancelEditEventDataEntry } from '../../WidgetEventEdit/EditEventDataEntry/editEventDataEntry.actions';

@@ -4,6 +4,11 @@ import { effectMethods } from '../../../trackerOffline';
 import { actions as RelatedStageModes } from '../../WidgetRelatedStages/constants';
 import type { RequestEvent, LinkedRequestEvent } from './validated.types';
 import type { ExternalSaveHandler } from '../common.types';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
+// import NepaliDate from 'nepali-date-converter';
+
 
 export const newEventBatchActionTypes = {
     REQUEST_SAVE_AND_SET_SUBMISSION_IN_PROGRESS: 'NewEvent.RequestSaveAndSetSubmissionInProgress',
@@ -70,8 +75,51 @@ export const setSaveEnrollmentEventInProgress = ({
     linkMode,
 });
 
-export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessActionType }: Object) =>
-    actionCreator(newEventWidgetActionTypes.EVENT_SAVE)({}, {
+const isDateString = (value) => {
+    if (typeof value !== 'string') {
+        return false;
+    }
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    return datePattern.test(value);
+};
+
+const convertIfDateString = (value) => {
+    if (isDateString(value)) {
+        const convertedDate = moment(bsToAd(value)).format('YYYY-MM-DDTHH:mm:ss');
+        return convertedDate;
+    }
+    return value;
+};
+
+
+const convertDatesToGregorian = (events) => {
+    return events.map(event => {
+        if (event.occurredAt) {
+            event.occurredAt = convertIfDateString(event.occurredAt);
+        }
+        if (event.scheduledAt) {
+            event.scheduledAt = convertIfDateString(event.scheduledAt);
+        }
+        if (event.dataValues && event.dataValues.length > 0) {
+            event.dataValues = event.dataValues.map(dataValue => {
+                if (isDateString(dataValue.value)) {
+                    dataValue.value = convertIfDateString(dataValue.value);
+                }
+                return dataValue;
+            });
+        }
+        
+        return event;
+    });
+};
+
+
+
+export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessActionType }: Object) => {
+    if (serverData.events) {
+        serverData.events = convertDatesToGregorian(serverData.events);
+    }
+    return actionCreator(newEventWidgetActionTypes.EVENT_SAVE)({}, {
         offline: {
             effect: {
                 url: 'tracker?async=false',
@@ -82,6 +130,7 @@ export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessAct
             rollback: onSaveErrorActionType && { type: onSaveErrorActionType, meta: { serverData } },
         },
     });
+};
 
 export const startCreateNewAfterCompleting = ({ enrollmentId, isCreateNew, orgUnitId, programId, teiId, availableProgramStages }: Object) =>
     actionCreator(newEventWidgetActionTypes.START_CREATE_NEW_AFTER_COMPLETING)({ enrollmentId, isCreateNew, orgUnitId, programId, teiId, availableProgramStages });

@@ -10,6 +10,9 @@ import { AgeDateInput } from '../internal/AgeInput/AgeDateInput.component';
 import defaultClasses from './ageField.module.css';
 import { orientations } from '../constants/orientations.const';
 import { withInternalChangeHandler } from '../HOC/withInternalChangeHandler';
+import { adToBs, calculateAge } from '@sbmdkl/nepali-date-converter';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment'; 
 
 type AgeValues = {
     date?: ?string,
@@ -57,38 +60,39 @@ type Props = {
     datePlaceholder?: ?string,
     disabled?: ?boolean,
 };
+
+function checkDisabled(key){
+    if (key=="years"){
+        return false;
+    }
+    return true;
+}
+
 function getCalculatedValues(
     dateValue: ?string,
     onParseDate: DateParser,
     onGetFormattedDateStringFromMoment: DateStringFromMomentFormatter,
     moment: any,
 ): AgeValues {
-    const parseData = dateValue && onParseDate(dateValue);
-    if (!parseData || !parseData.isValid) {
+    const adDate = bsToAd(dateValue);
+
+    if (moment(adDate).isAfter(moment(), 'day')) {
         return {
             date: dateValue,
             years: '',
             months: '',
-            days: '',
+            days: '-1',
         };
-    }
-    const now = moment();
-    const age = moment(parseData.momentDate);
-
-    const years = now.diff(age, 'years');
-    age.add(years, 'years');
-
-    const months = now.diff(age, 'months');
-    age.add(months, 'months');
-
-    const days = now.diff(age, 'days');
-
-    return {
-        date: onGetFormattedDateStringFromMoment(parseData.momentDate),
-        years: years.toString(),
-        months: months.toString(),
-        days: days.toString(),
-    };
+    }   
+        const { day, month, year } = calculateAge(dateValue);
+        return {
+            date: dateValue,
+            years: year,
+            months: month,
+            days: day,
+        };
+    
+    
 }
 
 const messageTypeClass = {
@@ -104,6 +108,14 @@ class D2AgeFieldPlain extends Component<Props> {
     }
     static isPositiveOrZeroNumber(value: any) {
         return isValidPositiveInteger(value) || Number(value) === 0;
+    }
+
+    static isValidMonth(value: any){
+        return Number(value)<12;
+    }
+
+    static isValidDay(value: any){
+        return Number(value)<3;
     }
     // eslint-disable-next-line complexity
     static isValidNumbers(values: AgeValues) {
@@ -134,16 +146,56 @@ class D2AgeFieldPlain extends Component<Props> {
             return;
         }
 
-        const momentDate = moment(undefined, undefined, true);
-        momentDate.subtract(D2AgeFieldPlain.getNumberOrZero(values.years), 'years');
-        momentDate.subtract(D2AgeFieldPlain.getNumberOrZero(values.months), 'months');
-        momentDate.subtract(D2AgeFieldPlain.getNumberOrZero(values.days), 'days');
+        const today = new Date();
+        const englishDate = moment(today).format('YYYY-MM-DD');
+        const nepaliDate = adToBs(englishDate);
+
+        let nepYear = nepaliDate.substring(0, 4);
+        let nepMonth = nepaliDate.substring(5, 7); 
+        let nepDay = nepaliDate.substring(8, 10);
+
+        let year = D2AgeFieldPlain.getNumberOrZero(values.years);
+        let month =D2AgeFieldPlain.isValidMonth(D2AgeFieldPlain.getNumberOrZero(values.months));
+
+        let day= D2AgeFieldPlain.isValidDay(D2AgeFieldPlain.getNumberOrZero(values.days));
+
+        let dayDifference = nepDay - day;
+      
+
+        if(dayDifference<0){
+            // console.log(nepDay,'nepDay');
+            // console.log(day,'day')
+            // console.log(nepMonth,'nepMonth')
+            dayDifference = Number(nepDay) + 30 * Math.floor(day / 30) - Number(day);
+            // console.log(dayDifference,'dayDifference');
+            nepMonth = Number(nepMonth) - Math.floor(day / 30);
+            // console.log(nepMonth,'nepMonth');
+        }
+
+        let yearDifference = nepYear - year;
+        let monthDifference = nepMonth - month;
+
+        if(monthDifference<0){
+
+            monthDifference = Number(nepMonth) + 12 * Math.floor(month / 12) - Number(month);
+            nepYear = Number(nepYear) - Math.floor(month / 12);
+        }
+    
+        let formattedMonthDifference = monthDifference.toString().padStart(2, '0');
+        let formattedDayDifference = dayDifference.toString().padStart(2, '0');
+
+        const calculatAgeDateBS = `${yearDifference}-${formattedMonthDifference}-${formattedDayDifference}`;
+        // console.log(calculatAgeDateBS)
+
+      
+
         const calculatedValues = getCalculatedValues(
-            onGetFormattedDateStringFromMoment(momentDate),
+            calculatAgeDateBS,
             onParseDate,
             onGetFormattedDateStringFromMoment,
             moment,
         );
+    
         this.props.onBlur(calculatedValues);
     }
 
@@ -155,7 +207,8 @@ class D2AgeFieldPlain extends Component<Props> {
             onParseDate,
             onGetFormattedDateStringFromMoment,
             moment) : null;
-        this.props.onBlur(calculatedValues, options);
+        
+        this.props.onBlur(calculatedValues);
     }
 
     renderMessage = (key: string) => {
@@ -169,7 +222,7 @@ class D2AgeFieldPlain extends Component<Props> {
     }
 
     renderNumberInput = (currentValues: AgeValues, key: string, label: string) => {
-        const {
+        let {
             innerMessage,
             onChange,
             inFocus,
@@ -183,11 +236,15 @@ class D2AgeFieldPlain extends Component<Props> {
             dateCalendarLocale,
             moment,
             onParseDate,
+            disabled,
             ...passOnProps } = this.props;
+       
+        
         return (
             <div className={defaultClasses.ageNumberInputContainer}>
                 {/* $FlowFixMe[cannot-spread-inexact] automated comment */}
                 <AgeNumberInput
+                    disabled = {checkDisabled(key)}
                     label={i18n.t(label)}
                     value={currentValues[key]}
                     onBlur={numberValue => this.handleNumberBlur({ ...currentValues, [key]: numberValue })}
@@ -197,7 +254,9 @@ class D2AgeFieldPlain extends Component<Props> {
                 {innerMessage && this.renderMessage(key)}
             </div>
         );
+
     }
+
     renderDateInput = (currentValues: AgeValues, isVertical: boolean) => {
         const {
             onChange,

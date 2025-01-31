@@ -1,6 +1,7 @@
 // @flow
 import { actionCreator } from '../../actions/actions.utils';
 import type { ChangePageActionCreator, ReviewDuplicatesActionCreator } from './PossibleDuplicatesDialog.types';
+import { adToBs} from '@sbmdkl/nepali-date-converter';
 
 export const actionTypes = {
     DUPLICATES_REVIEW: 'PossibleDuplicatesReview',
@@ -28,6 +29,27 @@ export const reviewDuplicates = ({
         dataEntryId,
     });
 
+    function convertDatesToNepali(teis) {
+        const newTeis = { ...teis }; 
+        Object.keys(newTeis).forEach(key => {
+            const teiObj = newTeis[key];
+    
+            if (teiObj && teiObj.tei && teiObj.values) {
+                    for (const valKey in teiObj.values) {
+                    const value = teiObj.values[valKey];
+                    if (typeof value === 'string' && value.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                        teiObj.values[valKey] = adToBs(value);
+                    }
+                }
+            } else {
+                console.error(`teiObj.tei or teiObj.values is undefined for key ${key}`, teiObj);
+            }
+        });
+    
+        return newTeis;
+    }
+    
+  
 export const duplicatesForReviewRetrievalSuccess = (teis: Array<Object>, currentPage: number) =>
     actionCreator(actionTypes.DUPLICATES_REVIEW_RETRIEVAL_SUCCESS)({ teis, currentPage });
 

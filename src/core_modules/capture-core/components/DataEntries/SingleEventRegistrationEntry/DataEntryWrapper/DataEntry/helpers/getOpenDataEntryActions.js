@@ -1,7 +1,7 @@
 // @flow
 import { loadNewDataEntry } from '../../../../../DataEntry/actions/dataEntryLoadNew.actions';
 import { getEventDateValidatorContainers } from '../fieldValidators/eventDate.validatorContainersGetter';
-import { convertGeometryOut, convertStatusIn, convertStatusOut } from '../../../../index';
+import { convertGeometryOut, convertStatusIn, convertStatusOut } from '../../../../converters/index';
 import { getNoteValidatorContainers } from '../fieldValidators/note.validatorContainersGetter';
 import { dataEntryId, itemId, formId } from './constants';
 import { addFormData } from '../../../../../D2Form/actions/form.actions';

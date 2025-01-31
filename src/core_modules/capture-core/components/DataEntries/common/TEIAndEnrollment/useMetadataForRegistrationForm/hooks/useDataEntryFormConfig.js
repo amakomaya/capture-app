@@ -19,7 +19,6 @@ export const useDataEntryFormConfig = ({ selectedScopeId }: Props) => {
             select: dataEntryFormConfigQuery => dataEntryFormConfigQuery[selectedScopeId],
         },
     );
-
     return {
         dataEntryFormConfig,
         configIsFetched,

@@ -78,19 +78,18 @@ const DateComponentPlain = ({
     const dateChangeHandler = useCallback(({ calendarDateString }) => {
         setSelectedDate(calendarDateString);
     }, [setSelectedDate]);
-    const displayDate = String(convertValueClientToView(date, dataElementTypes.DATE));
-
+    const displayDate = date;
     const onOpenEdit = () => {
         // CalendarInput component only supports the YYYY-MM-DD format
-        setSelectedDate(moment(date).format('YYYY-MM-DD'));
+        setSelectedDate(date);
         setEditMode(true);
     };
     const saveHandler = () => {
         // CalendarInput component only supports the YYYY-MM-DD format
         if (selectedDate) {
-            const newDate = moment.utc(selectedDate, 'YYYY-MM-DD').format('YYYY-MM-DDTHH:mm:ss.SSS');
-            if (newDate !== date) {
-                onSave(newDate);
+            if (selectedDate !== date) {
+                
+                onSave(selectedDate);
             }
         }
         setEditMode(false);
@@ -99,13 +98,13 @@ const DateComponentPlain = ({
     return editMode ? (
         <div data-test="widget-enrollment-date">
             <div className={classes.inputField}>
-                <CalendarInput
-                    calendar="gregory"
+            <CalendarInput
+                    calendar="nepali"
                     dense
                     className={classes.calendar}
                     label={dateLabel}
                     date={selectedDate}
-                    locale={locale}
+                    locale="ne-NP"
                     onDateSelect={dateChangeHandler}
                 />
             </div>

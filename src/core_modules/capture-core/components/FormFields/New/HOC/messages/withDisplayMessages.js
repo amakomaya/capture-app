@@ -119,7 +119,6 @@ const getDisplayMessagesHOC = (InnerComponent: React.ComponentType<any>) =>
             }
 
             const { classes } = this.props;
-
             return {
                 element: DisplayMessagesHOC.createMessageElement(
                     message,

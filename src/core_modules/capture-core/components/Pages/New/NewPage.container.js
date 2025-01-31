@@ -17,6 +17,8 @@ import { dataEntryHasChanges } from '../../DataEntry/common/dataEntryHasChanges'
 import { useTrackedEntityInstances } from './hooks';
 import { deriveTeiName } from '../common/EnrollmentOverviewDomain/useTeiDisplayName';
 import { programCollection } from '../../../metaDataMemoryStores/programCollection/programCollection';
+import { adToBs} from '@sbmdkl/nepali-date-converter';
+
 import { useCategoryOptionIsValidForOrgUnit } from '../../../hooks/useCategoryComboIsValidForOrgUnit';
 import { TopBar } from './TopBar.container';
 
@@ -42,16 +44,28 @@ const useUserWriteAccess = (scopeId) => {
         return false;
     }
 };
+
 export const NewPage: ComponentType<{||}> = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { orgUnitId, programId, teiId } = useLocationQuery();
     const program = programId && programCollection.get(programId);
+
+    // const convertTrackedEntityInstanceAttributes = (trackedEntityAttribute)=>{
+    //     Object.keys(trackedEntityAttribute).forEach( key =>{
+    //         let attribute = trackedEntityAttribute[key];
+    //         if (attribute.valueType === 'AGE') {
+    //              attribute.value = ''; 
+    //         } 
+    //      })
+    //     };
+
     const { categoryOptionIsInvalidForOrgUnit } = useCategoryOptionIsValidForOrgUnit({
         selectedOrgUnitId: orgUnitId,
     });
     const { trackedEntityInstanceAttributes } = useTrackedEntityInstances(teiId, programId);
-    // $FlowFixMe
+    // convertTrackedEntityInstanceAttributes(trackedEntityInstanceAttributes);
+ 
     const trackedEntityType = program?.trackedEntityType;
     const teiDisplayName =
         trackedEntityInstanceAttributes &&

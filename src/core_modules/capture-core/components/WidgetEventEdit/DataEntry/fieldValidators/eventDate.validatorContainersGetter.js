@@ -3,7 +3,8 @@ import i18n from '@dhis2/d2-i18n';
 import { hasValue } from 'capture-core-utils/validators/form';
 import { isValidDate } from '../../../../utils/validation/validators/form';
 
-const preValidateDate = (value?: ?string, internalComponentError: ?{error?: ?string, errorCode?: ?string}) => {
+const preValidateDate = (value?: ?string) => {
+
     if (!value) {
         return true;
     }

@@ -1,5 +1,6 @@
 // @flow
 import type { OrgUnit } from '@dhis2/rules-engine-javascript';
+// import { bsToAd } from '@sbmdkl/nepali-date-converter';
 import { actionCreator, actionPayloadAppender } from '../../../../actions/actions.utils';
 import { ProgramStage, RenderFoundation } from '../../../../metaData';
 
@@ -22,17 +23,12 @@ export const startRunRulesOnUpdateForNewEnrollment = ({
     orgUnit: OrgUnit,
     stage?: ProgramStage,
     formFoundation: RenderFoundation,
-    onGetValidationContext: () => Object,
-}) =>
-    actionCreator(actionTypes.START_RUN_RULES_ON_UPDATE)({
-        innerPayload: payload,
-        uid,
-        programId,
-        orgUnit,
-        stage,
-        formFoundation,
-        onGetValidationContext,
-    });
+) =>{
+  
+     return actionCreator(actionTypes.START_RUN_RULES_ON_UPDATE)(
+        { innerPayload: payload, uid, programId, orgUnit, stage, formFoundation });
+}
+  
 
 export const startAsyncUpdateFieldForNewEnrollment = (
     innerAction: ReduxAction<any, any>,

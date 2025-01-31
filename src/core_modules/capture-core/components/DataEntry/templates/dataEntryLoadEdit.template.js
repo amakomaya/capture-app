@@ -21,8 +21,7 @@ export async function loadEditDataEntryAsync(
 ) {
     const dataEntryMeta = dataEntryPropsToInclude ? getDataEntryMeta(dataEntryPropsToInclude) : {};
     const dataEntryNotes = getDataEntryNotes(clientValuesForDataEntry);
-    const preDataEntryValues =
-        dataEntryPropsToInclude ? getDataEntryValues(dataEntryPropsToInclude, clientValuesForDataEntry) : {};
+    const preDataEntryValues = dataEntryPropsToInclude ? getDataEntryValues(dataEntryPropsToInclude, clientValuesForDataEntry) : {};
     const preFormValues = getFormValues(clientValuesForForm, formFoundation);
     const key = getDataEntryKey(dataEntryId, itemId);
     const {
@@ -31,10 +30,8 @@ export async function loadEditDataEntryAsync(
     } = onAddSubValues ?
         (await onAddSubValues(preDataEntryValues, preFormValues, formFoundation)) || {} :
         {};
-
     const dataEntryUI =
         dataEntryPropsToInclude ? validateDataEntryValues(dataEntryValues, dataEntryPropsToInclude) : {};
-
     return {
         actions: [
             loadEditDataEntry({

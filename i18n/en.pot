@@ -5,8 +5,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2024-12-15T15:25:38.375Z\n"
 "PO-Revision-Date: 2024-12-15T15:25:38.375Z\n"
+=======
+"POT-Creation-Date: 2024-09-30T05:19:09.121Z\n"
+"PO-Revision-Date: 2024-09-30T05:19:09.121Z\n"
+>>>>>>> origin/erecord-app-v2
 
 msgid "Choose one or more dates..."
 msgstr "Choose one or more dates..."
@@ -1098,6 +1103,9 @@ msgstr ""
 "You must provide a reason to check for enrollments in this protected "
 "program. All activity will be logged."
 
+msgid "Save comment"
+msgstr "Save comment"
+
 msgid "Enrollment actions"
 msgstr "Enrollment actions"
 
@@ -1228,6 +1236,21 @@ msgstr "Add coordinates"
 msgid "Add area"
 msgstr "Add area"
 
+<<<<<<< HEAD
+=======
+msgid "Comments about this enrollment"
+msgstr "Comments about this enrollment"
+
+msgid "Write a comment about this enrollment"
+msgstr "Write a comment about this enrollment"
+
+msgid "This enrollment doesn't have any comments"
+msgstr "This enrollment doesn't have any comments"
+
+msgid "Please add or cancel the note before saving the event"
+msgstr "Please add or cancel the note before saving the event"
+
+>>>>>>> origin/erecord-app-v2
 msgid "organisation unit could not be retrieved. Please try again later."
 msgstr "organisation unit could not be retrieved. Please try again later."
 
@@ -1251,6 +1274,15 @@ msgstr "Error"
 
 msgid "Warning"
 msgstr "Warning"
+
+msgid "Comments about this event"
+msgstr "Comments about this event"
+
+msgid "Write a comment about this event"
+msgstr "Write a comment about this event"
+
+msgid "This event doesn't have any comments"
+msgstr "This event doesn't have any comments"
 
 msgid "stage not found in rules execution"
 msgstr "stage not found in rules execution"
@@ -1466,6 +1498,9 @@ msgstr "Go to full {{ eventName }}"
 
 msgid "Events could not be retrieved. Please try again later."
 msgstr "Events could not be retrieved. Please try again later."
+
+msgid "Last updated {{date}}"
+msgstr "Last updated {{date}}"
 
 msgid "{{ count }} event"
 msgid_plural "{{ count }} event"

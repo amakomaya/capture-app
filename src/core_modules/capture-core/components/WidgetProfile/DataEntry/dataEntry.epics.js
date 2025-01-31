@@ -7,6 +7,8 @@ import { batchActions } from 'redux-batched-actions';
 import { convertFormToClient, convertClientToServer } from '../../../converters';
 import { dataEntryActionTypes, updateTei, setTeiModalError, setTeiValues } from './dataEntry.actions';
 import { GEOMETRY } from './helpers';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+
 
 const convertFn = pipe(convertFormToClient, convertClientToServer);
 
@@ -30,11 +32,32 @@ const standardGeoJson = (geometry) => {
     }
     return undefined;
 };
+// const isDateAttribute = (key) => {
+//     const dateAttributes = ['spFvx9FndA4', 'DSvwIwSjPu9','O4LsEDDUqLt','i607dSgfm4F','LeelllbVRYW'];
+//     return dateAttributes.includes(key);
+// };
+const isDateValue = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value);
+
+// const deriveAttributesFromFormValues = (formValues = {}) =>
+//     Object.keys(formValues)
+//         .filter(key => !geometryType(key))
+//         .map(key => ({ attribute: key, value: formValues[key] }));
 
 const deriveAttributesFromFormValues = (formValues = {}) =>
     Object.keys(formValues)
-        .filter(key => !geometryType(key))
-        .map(key => ({ attribute: key, value: formValues[key] }));
+        .filter(key => !geometryType(key)) // Example filter function, adjust as per your needs
+        .map(key => ({
+            attribute: key,
+            value: isDateValue(formValues[key]) ? bsToAd(formValues[key]) : formValues[key]
+        }));
+
+
+// const deriveAttributesFromFormValues = (formValues = {}) =>
+//     Object.entries(formValues).reduce((acc, [key, value]) => {
+//         if (!isDateAttribute(key)) acc.push({ attribute: key, value });
+//         else acc.push({ attribute: key, value: bsToAd (value) }); 
+//         return acc;
+//     }, []);
 
 const deriveGeometryFromFormValues = (formValues = {}) =>
     Object.keys(formValues)

@@ -365,27 +365,27 @@ class DateFilterPlain extends Component<Props, State> implements UpdatableFilter
                     <div className={classes.inputContainer}>
                         {/* $FlowSuppress: Flow not working 100% with HOCs */}
                         {/* $FlowFixMe[prop-missing] automated comment */}
-                        <FromDateFilter
-                            value={fromValue?.value}
+                        {/* <FromDateFilter
+                            value={value && value.from}
+                            error={minValueError}
+                            errorClass={classes.error}
                             onBlur={this.handleFieldBlur}
                             onEnterKey={this.handleEnterKeyInFrom}
                             onDateSelectedFromCalendar={this.handleDateSelectedFromCalendarInFrom}
-                            error={fromValue?.error}
-                            errorClass={classes.error}
-                        />
+                        /> */}
                     </div>
-                    <div className={classes.toLabelContainer}>{i18n.t('to')}</div>
+                    {/* <div className={classes.toLabelContainer}>{i18n.t('to')}</div> */}
                     <div className={classes.inputContainer}>
                         {/* $FlowSuppress: Flow not working 100% with HOCs */}
                         {/* $FlowFixMe[prop-missing] automated comment */}
-                        <ToDateFilter
-                            value={toValue?.value}
+                        {/* <ToDateFilter
+                            value={value && value.to}
+                            error={maxValueError}
+                            errorClass={classes.error}
                             onBlur={this.handleFieldBlur}
                             textFieldRef={this.setToD2DateTextFieldInstance}
                             onFocusUpdateButton={onFocusUpdateButton}
-                            error={toValue?.error}
-                            errorClass={classes.error}
-                        />
+                        /> */}
                     </div>
                 </div>
                 <div>

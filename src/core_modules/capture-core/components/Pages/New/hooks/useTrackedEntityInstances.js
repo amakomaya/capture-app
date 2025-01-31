@@ -2,6 +2,7 @@
 import { useMemo, useEffect } from 'react';
 import { useDataQuery } from '@dhis2/app-runtime';
 
+
 export const useTrackedEntityInstances = (teiId: string, programId: string) => {
     const { loading, data, refetch } = useDataQuery(
         useMemo(

@@ -225,9 +225,21 @@ export class DataElement {
     }
 
     convertValue(rawValue: any, onConvert: ConvertFn) {
-        return isArray(rawValue)
-            ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
-            : onConvert(rawValue, this.type, this);
+
+        let returnValue=  isArray(rawValue)
+        ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
+        : onConvert(rawValue, this.type, this);
+        
+        if( returnValue == 'Invalid date'){
+            return rawValue;
+        }
+        else {
+            return returnValue;
+        }
+        // return  isArray(rawValue)
+        // ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
+        // : onConvert(rawValue, this.type, this);
+        //to do
     }
 }
 

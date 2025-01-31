@@ -1,10 +1,20 @@
 // @flow
 import i18n from '@dhis2/d2-i18n';
-import { hasValue } from 'capture-core-utils/validators/form';
-import { isValidDate, isValidNonFutureDate } from '../../../../utils/validation/validators/form';
+import moment from 'moment';
+import { parseDate } from '../../../../utils/converters/date';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
 
-const isValidIncidentDate = (value: string, internalComponentError?: ?{error: ?string, errorCode: ?string}) => {
-    if (!value) {
+const convertNepaliDateToGregorian = (nepaliDate: string) => {
+    return bsToAd(nepaliDate);
+};
+const isValidIncidentDate = (value: string, isFutureDateAllowed: boolean) => {
+    const gregorianDate = convertNepaliDateToGregorian(value);
+    const dateContainer = parseDate(gregorianDate);
+    if (!dateContainer.isValid) {
+        return false;
+    }
+
+    if (isFutureDateAllowed) {
         return true;
     }
 
