@@ -49,8 +49,6 @@ export const useChangelogData = ({
         },
     );
 
-<<<<<<< HEAD
-=======
     const records: ?Array<ChangelogRecord> = useMemo(() => {
         if (!data) return undefined;
 
@@ -101,7 +99,6 @@ export const useChangelogData = ({
         }).filter(Boolean);
     }, [data, dataItemDefinitions, fromServerDate]);
 
->>>>>>> origin/erecord-app-v2
     return {
         rawRecords: data,
         pager: data?.pager,

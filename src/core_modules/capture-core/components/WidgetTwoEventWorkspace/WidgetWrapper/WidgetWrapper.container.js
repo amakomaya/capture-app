@@ -56,8 +56,8 @@ const WidgetWrapperPlain = ({ widget, type, stage, linkedStage, classes }: Props
                         {i18n.t(
                             'This {{stageName}} event is linked to a {{linkedStageName}} event. Review the linked event details before entering data below',
                             {
-                                linkedStageName: linkedStage?.name,
-                                stageName: stage?.name,
+                                linkedStageName: linkedStage.name,
+                                stageName: stage.name,
                                 interpolation: { escapeValue: false },
                             },
                         )}
