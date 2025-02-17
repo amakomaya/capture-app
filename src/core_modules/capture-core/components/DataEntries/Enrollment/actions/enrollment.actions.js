@@ -8,6 +8,7 @@ export const actionTypes = {
     START_RUN_RULES_ON_UPDATE: 'StartRunRulesOnUpdateForNewEnrollment',
 };
 
+
 export const startRunRulesOnUpdateForNewEnrollment = ({
     payload,
     uid,
@@ -23,11 +24,17 @@ export const startRunRulesOnUpdateForNewEnrollment = ({
     orgUnit: OrgUnit,
     stage?: ProgramStage,
     formFoundation: RenderFoundation,
-) =>{
-  
-     return actionCreator(actionTypes.START_RUN_RULES_ON_UPDATE)(
-        { innerPayload: payload, uid, programId, orgUnit, stage, formFoundation });
-}
+}) => {
+    return actionCreator(actionTypes.START_RUN_RULES_ON_UPDATE)({
+        innerPayload: payload, 
+        uid, 
+        programId, 
+        orgUnit, 
+        stage, 
+        formFoundation,
+    });
+};
+
   
 
 export const startAsyncUpdateFieldForNewEnrollment = (

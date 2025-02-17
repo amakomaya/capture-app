@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-12-03T10:58:18.077Z\n"
+"POT-Creation-Date: 2024-08-10T10:42:21.141Z\n"
 "PO-Revision-Date: 2019-06-27 07:31+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2024\n"
 "Language-Team: Arabic (Iraq) (https://app.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -41,39 +41,6 @@ msgstr ""
 "الإلتقاط فقط تشغيل نسخة واحدة بشكل متزامن (في نفس المجال). يرجى تحديث هذه "
 "الصفحة إذا كنت ترغب في استخدام هذه النسخة، ولكن اعلم أن هذا سيؤدي إلى إغلاق "
 "النسخ الأخرى."
-
-msgid "Enrollment dashboard"
-msgstr ""
-
-msgid "View event"
-msgstr ""
-
-msgid "Edit event"
-msgstr "تعديل الحدث"
-
-msgid "New event"
-msgstr "حدث جديد"
-
-msgid "Active enrollments"
-msgstr ""
-
-msgid "Completed enrollments"
-msgstr ""
-
-msgid "Cancelled enrollments"
-msgstr ""
-
-msgid "{{trackedEntityName}} list"
-msgstr ""
-
-msgid "Search"
-msgstr "البحث"
-
-msgid "Working List"
-msgstr ""
-
-msgid "Event list"
-msgstr ""
 
 msgid "More"
 msgstr ""
@@ -120,6 +87,66 @@ msgstr "يتم التحقق من القيمة"
 msgid "Async field update failed"
 msgstr "فشل تحديث حقل متزامن"
 
+msgid "A value is required"
+msgstr "قيمة مطلوبة"
+
+msgid "Please provide a valid number"
+msgstr "نرجوا ادخال صيغة رقمية صحيحة"
+
+msgid "Please provide a valid integer"
+msgstr "من فضلك ادخل رقم صحيح، من غير كسر"
+
+msgid "Please provide a positive integer"
+msgstr "من فضلك ادخل رقم صحيح موجب"
+
+msgid "Please provide zero or a positive integer"
+msgstr "من فضلك ادخل عدد صحيح موجب، أو صفر"
+
+msgid "Please provide a negative integer"
+msgstr "من فضلك ادخل احد الأعداد الصحيحة السالبة"
+
+msgid "Please provide a valid date"
+msgstr "نرجوا ادخال صيغة صحيحة للتاريخ"
+
+msgid "A date in the future is not allowed"
+msgstr ""
+
+msgid "Please provide a valid date and time"
+msgstr "من فضلك ادخل صيغة صحيحة للتاريخ والوقت"
+
+msgid "Please provide a valid time"
+msgstr "من فضلك ادخل صيغة صحيحة للوقت"
+
+msgid "Please provide an integer between 0 and 100"
+msgstr ""
+
+msgid "Please provide a valid url"
+msgstr "يرجى ادخال صيغة ارتباط تشعبي سليمة"
+
+msgid "Please provide a valid email address"
+msgstr "من فضلك ادخل صيغة بريد الكتروني سليمة"
+
+msgid "Please provide a valid age"
+msgstr "من فضلك ادخل صيغة عمرية سليمة"
+
+msgid "Please provide a valid phone number"
+msgstr "من فضلك ادخل صيغة رقم تلفون سليمة"
+
+msgid "Please provide a valid organisation unit"
+msgstr "من فضلك ادخل وحدة تنظيمية صالحة"
+
+msgid "Please provide valid coordinates"
+msgstr "من فضلك ادخل صيغة احداثيات سليمة"
+
+msgid "This value already exists"
+msgstr "هذه القيمة موجودة مسبقاً"
+
+msgid "\"From\" cannot be greater than \"To\""
+msgstr "لا يمكن ان تكون \"من\" اكبر من \"إلى\""
+
+msgid "Checking..."
+msgstr "يتم الفحص"
+
 msgid "Area"
 msgstr "مساحة"
 
@@ -131,12 +158,6 @@ msgstr "التسجيل"
 
 msgid "Complete event"
 msgstr ""
-
-msgid "A value is required"
-msgstr "قيمة مطلوبة"
-
-msgid "Please provide a valid date"
-msgstr "نرجوا ادخال صيغة صحيحة للتاريخ"
 
 msgid "{{ stageName }} - Basic info"
 msgstr ""
@@ -150,8 +171,8 @@ msgstr ""
 msgid "Please select {{categoryName}}"
 msgstr ""
 
-msgid "A date in the future is not allowed"
-msgstr ""
+msgid "A future date is not allowed"
+msgstr "غير مسموح تاريخ بالمستقبل"
 
 msgid "Saving a new enrollment in {{programName}} in {{orgUnitName}}."
 msgstr ""
@@ -275,6 +296,9 @@ msgstr ""
 
 msgid "No, cancel"
 msgstr ""
+
+msgid "New event"
+msgstr "حدث جديد"
 
 msgid "You don't have access to create an event in the current selections"
 msgstr ""
@@ -494,6 +518,9 @@ msgstr ""
 msgid "No match found"
 msgstr ""
 
+msgid "Search"
+msgstr "البحث"
+
 msgid "Clear"
 msgstr "مسح"
 
@@ -575,6 +602,15 @@ msgstr "البرنامج غير موجود"
 msgid "Selected program is invalid for selected organisation unit"
 msgstr ""
 
+msgid "Online"
+msgstr "متصل"
+
+msgid "Offline"
+msgstr "غير متصل"
+
+msgid "Syncing"
+msgstr "تزامن"
+
 msgid "Add note"
 msgstr ""
 
@@ -591,6 +627,42 @@ msgid "Notice"
 msgstr ""
 
 msgid "Close the notice"
+msgstr ""
+
+msgid "Use new Enrollment dashboard for {{programName}}"
+msgstr ""
+
+msgid "Opt in for {{programName}}"
+msgstr ""
+
+msgid ""
+"By clicking opt-in below, you will start using the new enrollment dashboard "
+"in the Capture app for this Tracker program. At the moment, there is certain"
+" functionality from Tracker Capture that has not yet been added, including "
+"relationship and referral functionality. The work on including this Tracker "
+"functionality in Capture is ongoing and will be added in upcoming app "
+"releases."
+msgstr ""
+
+msgid ""
+"The core team appreciates any feedback on this new functionality which is "
+"currently being beta tested, please report any issues and feedback in the "
+"DHIS2 JIRA project."
+msgstr ""
+
+msgid ""
+"Click the button below to opt-in to the new enrollment dashboard "
+"functionality in the Capture app (beta) for this Tracker program for all "
+"users."
+msgstr ""
+
+msgid "Yes, opt in"
+msgstr ""
+
+msgid "Stop using new Enrollment dashboard for {{programName}}"
+msgstr ""
+
+msgid "Opt out for {{programName}}"
 msgstr ""
 
 msgid "Enrollment with id \"{{enrollmentId}}\" does not exist"
@@ -651,9 +723,7 @@ msgstr ""
 msgid "Add new enrollment for {{teiDisplayName}} in this program."
 msgstr ""
 
-msgid ""
-"You do not have permissions to access to this program, registering unit or "
-"record, contact your administrator for more information."
+msgid "No access to program owner."
 msgstr ""
 
 msgid "{{teiDisplayName}} is not enrolled in this program."
@@ -680,6 +750,9 @@ msgid "View working list in this program."
 msgstr ""
 
 msgid "Page is missing required values from URL"
+msgstr ""
+
+msgid "Program is not valid"
 msgstr ""
 
 msgid "Org unit is not valid with current program"
@@ -828,6 +901,9 @@ msgstr ""
 msgid "You don't have access to edit this event"
 msgstr ""
 
+msgid "Edit event"
+msgstr "تعديل الحدث"
+
 msgid "View changelog"
 msgstr ""
 
@@ -863,6 +939,15 @@ msgstr "تعذر تحميل الحدث"
 msgid "Organisation unit could not be loaded"
 msgstr "تعذر تحميل الوحدة التنظيمية"
 
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+msgid "Edit Event"
+msgstr ""
+
+msgid "View Event"
+msgstr ""
+
 msgid "Selected program"
 msgstr "البرنامج المحدد"
 
@@ -891,9 +976,6 @@ msgid "Loading"
 msgstr "جار التحميل"
 
 msgid "An error occurred while loading the form"
-msgstr ""
-
-msgid "Back to all stages and events"
 msgstr ""
 
 msgid "Possible duplicates found"
@@ -1034,7 +1116,7 @@ msgstr ""
 msgid "Assigned to"
 msgstr ""
 
-msgid "You don't have access to edit the assigned user"
+msgid "You don't have access to edit this assignee"
 msgstr ""
 
 msgid "Edit"
@@ -1043,7 +1125,7 @@ msgstr "تعديل"
 msgid "No one is assigned to this event"
 msgstr "لم يتم تعيين أي شخص لهذا الحدث"
 
-msgid "You don't have access to assign a user to this event"
+msgid "You don't have access to assign an assignee"
 msgstr ""
 
 msgid "Assign"
@@ -1089,9 +1171,6 @@ msgstr ""
 msgid "Mark incomplete"
 msgstr ""
 
-msgid "You do not have access to delete this enrollment"
-msgstr ""
-
 msgid "Delete enrollment"
 msgstr ""
 
@@ -1129,9 +1208,6 @@ msgstr ""
 
 msgid "Coordinates"
 msgstr ""
-
-msgid "Please provide valid coordinates"
-msgstr "من فضلك ادخل صيغة احداثيات سليمة"
 
 msgid "Delete polygon"
 msgstr "حذف المضلع"
@@ -1175,10 +1251,10 @@ msgstr ""
 msgid "Follow-up"
 msgstr ""
 
-msgid "Started at{{escape}}"
+msgid "Started at {{orgUnitName}}"
 msgstr ""
 
-msgid "Owned by{{escape}}"
+msgid "Owned by {{ownerOrgUnit}}"
 msgstr ""
 
 msgid "Cancelled"
@@ -1220,9 +1296,6 @@ msgstr "تحذير"
 msgid "stage not found in rules execution"
 msgstr ""
 
-msgid "Please provide an valid organisation unit"
-msgstr ""
-
 msgid "Delete event"
 msgstr "حذف الحدث"
 
@@ -1239,6 +1312,9 @@ msgid "Event completed"
 msgstr ""
 
 msgid "The event cannot be edited after it has been completed"
+msgstr ""
+
+msgid "Back to all stages and events"
 msgstr ""
 
 msgid "Notes about this event"
@@ -1377,6 +1453,11 @@ msgstr ""
 msgid "Ambiguous relationships, contact system administrator"
 msgstr ""
 
+msgid ""
+"Enter {{linkableStageLabel}} details in the next step after completing this "
+"{{currentStageLabel}}."
+msgstr ""
+
 msgid "Enter details now"
 msgstr ""
 
@@ -1389,12 +1470,6 @@ msgstr ""
 msgid "Report date"
 msgstr ""
 
-msgid "Please enter a date"
-msgstr ""
-
-msgid "Please provide a valid organisation unit"
-msgstr "من فضلك ادخل وحدة تنظيمية صالحة"
-
 msgid "Please select a valid event"
 msgstr ""
 
@@ -1405,23 +1480,6 @@ msgid "This stage can only have one event"
 msgstr ""
 
 msgid "New {{ eventName }} event"
-msgstr ""
-
-msgid "An error occurred while deleting the event"
-msgstr ""
-
-msgid ""
-"Deleting an event is permanent and cannot be undone. Are you sure you want "
-"to delete this event?"
-msgstr ""
-
-msgid "An error occurred when updating event status"
-msgstr ""
-
-msgid "Unskip"
-msgstr ""
-
-msgid "Skip"
 msgstr ""
 
 msgid "To open this event, please wait until saving is complete"
@@ -1454,18 +1512,10 @@ msgstr ""
 msgid "Stages and Events"
 msgstr ""
 
-msgid "View linked event"
-msgstr ""
-
 msgid "An error occurred while loading the widget."
 msgstr ""
 
-msgid "Linked event"
-msgstr ""
-
-msgid ""
-"This {{stageName}} event is linked to a {{linkedStageName}} event. Review "
-"the linked event details before entering data below"
+msgid "View linked event"
 msgstr ""
 
 msgid "Scheduled"
@@ -1475,9 +1525,6 @@ msgid "Changelog"
 msgstr ""
 
 msgid "No changes to display"
-msgstr ""
-
-msgid "Updated"
 msgstr ""
 
 msgid "Created"
@@ -1496,15 +1543,6 @@ msgid "Data item"
 msgstr ""
 
 msgid "Change"
-msgstr ""
-
-msgid "Value"
-msgstr "القيمة"
-
-msgid "File"
-msgstr ""
-
-msgid "Image"
 msgstr ""
 
 msgid "New {{trackedEntityTypeName}} relationship"
@@ -1567,46 +1605,6 @@ msgstr "تنزيل البيانات"
 msgid "an error occurred loading working lists"
 msgstr "حدث خطأ اثناء تحميل قوائم العمل"
 
-msgid "You do not have access to complete events"
-msgstr ""
-
-msgid "Complete events"
-msgstr ""
-
-msgid "Are you sure you want to complete all active events in selection?"
-msgstr ""
-
-msgid "There are no active events to complete in the current selection."
-msgstr ""
-
-msgid "Error completing events"
-msgstr ""
-
-msgid "There was an error completing the events."
-msgstr ""
-
-msgid "Details (Advanced)"
-msgstr ""
-
-msgid "An unknown error occurred."
-msgstr ""
-
-msgid "An error occurred while completing events"
-msgstr ""
-
-msgid "An error occurred while deleting the events"
-msgstr ""
-
-msgid "You do not have access to delete events"
-msgstr ""
-
-msgid "Delete events"
-msgstr ""
-
-msgid ""
-"This cannot be undone. Are you sure you want to delete the selected events?"
-msgstr ""
-
 msgid "Registration Date"
 msgstr ""
 
@@ -1622,152 +1620,13 @@ msgstr ""
 msgid "Choose a program stage to filter by {{label}}"
 msgstr ""
 
-msgid ""
-"Some enrollments were completed successfully, but there was an error while "
-"completing the rest. Please see the details below."
+msgid "Active enrollments"
 msgstr ""
 
-msgid ""
-"There was an error while completing the enrollments. Please see the details "
-"below."
+msgid "Completed enrollments"
 msgstr ""
 
-msgid ""
-"An unexpected error occurred while fetching the enrollments. Please try "
-"again."
-msgstr ""
-
-msgid ""
-"There are currently no active enrollments in the selection. All enrollments "
-"are already completed or cancelled."
-msgstr ""
-
-msgid ""
-"This action will complete {{count}} active enrollment in your selection."
-msgid_plural ""
-"This action will complete {{count}} active enrollment in your selection."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "{{count}} enrollment already marked as completed will not be changed."
-msgid_plural ""
-"{{count}} enrollment already marked as completed will not be changed."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "Mark all events within enrollments as complete"
-msgstr ""
-
-msgid "You do not have access to bulk complete enrollments"
-msgstr ""
-
-msgid "Complete enrollments"
-msgstr ""
-
-msgid "Error completing enrollments"
-msgstr ""
-
-msgid "No active enrollments to complete"
-msgstr ""
-
-msgid "Complete {{count}} enrollment"
-msgid_plural "Complete {{count}} enrollment"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "An error occurred when completing the enrollments"
-msgstr ""
-
-msgid "An unknown error occurred when completing enrollments"
-msgstr ""
-
-msgid "You do not have access to delete enrollments"
-msgstr ""
-
-msgid "Delete enrollments"
-msgstr ""
-
-msgid "Delete selected enrollments"
-msgstr ""
-
-msgid ""
-"An error occurred while loading the selected enrollments. Please try again."
-msgstr ""
-
-msgid ""
-"This action will permanently delete the selected enrollments, including all "
-"associated data and events."
-msgstr ""
-
-msgid "Active enrollments ({{count}})"
-msgid_plural "Active enrollments ({{count}})"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "Completed enrollments ({{count}})"
-msgid_plural "Completed enrollments ({{count}})"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "Cancelled enrollments ({{count}})"
-msgid_plural "Cancelled enrollments ({{count}})"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "Delete {{count}} enrollment"
-msgid_plural "Delete {{count}} enrollment"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "An error occurred when deleting enrollments"
-msgstr ""
-
-msgid "Delete {{ trackedEntityName }} with all enrollments"
-msgstr ""
-
-msgid "Delete {{count}} {{ trackedEntityName }}"
-msgid_plural "Delete {{count}} {{ trackedEntityName }}"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid ""
-"Deleting records will also delete any associated enrollments and events. "
-"This cannot be undone. Are you sure you want to delete?"
-msgstr ""
-
-msgid "An error occurred while deleting the records"
+msgid "Cancelled enrollments"
 msgstr ""
 
 msgid "Working list could not be updated"
@@ -1777,18 +1636,6 @@ msgid "an error occurred loading the working lists"
 msgstr ""
 
 msgid "an error occurred loading Tracked entity instance lists"
-msgstr ""
-
-msgid "{{count}} selected"
-msgid_plural "{{count}} selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
-
-msgid "Deselect all"
 msgstr ""
 
 msgid "Update view"
@@ -1897,60 +1744,6 @@ msgid "Error editing the event, the changes made were not saved"
 msgstr ""
 
 msgid "Error updating the Assignee"
-msgstr ""
-
-msgid "Please provide a valid number"
-msgstr "نرجوا ادخال صيغة رقمية صحيحة"
-
-msgid "Please provide a valid integer"
-msgstr "من فضلك ادخل رقم صحيح، من غير كسر"
-
-msgid "Please provide a positive integer"
-msgstr "من فضلك ادخل رقم صحيح موجب"
-
-msgid "Please provide zero or a positive integer"
-msgstr "من فضلك ادخل عدد صحيح موجب، أو صفر"
-
-msgid "Please provide a negative integer"
-msgstr "من فضلك ادخل احد الأعداد الصحيحة السالبة"
-
-msgid "Please provide a valid date and time"
-msgstr "من فضلك ادخل صيغة صحيحة للتاريخ والوقت"
-
-msgid "Please provide a valid time"
-msgstr "من فضلك ادخل صيغة صحيحة للوقت"
-
-msgid "Please provide an integer between 0 and 100"
-msgstr ""
-
-msgid "Please provide a valid url"
-msgstr "يرجى ادخال صيغة ارتباط تشعبي سليمة"
-
-msgid "Please provide a valid email address"
-msgstr "من فضلك ادخل صيغة بريد الكتروني سليمة"
-
-msgid "Please provide a valid age"
-msgstr "من فضلك ادخل صيغة عمرية سليمة"
-
-msgid "Please provide a valid phone number"
-msgstr "من فضلك ادخل صيغة رقم تلفون سليمة"
-
-msgid "This value already exists"
-msgstr "هذه القيمة موجودة مسبقاً"
-
-msgid "\"From\" cannot be greater than \"To\""
-msgstr "لا يمكن ان تكون \"من\" اكبر من \"إلى\""
-
-msgid "Checking..."
-msgstr "يتم الفحص"
-
-msgid "Please provide a valid positive integer"
-msgstr ""
-
-msgid "Please enter a valid time"
-msgstr ""
-
-msgid "Please enter a time"
 msgstr ""
 
 msgid "Set coordinate"
