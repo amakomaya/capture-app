@@ -100,12 +100,12 @@ const DateComponentPlain = ({
         <div data-test="widget-enrollment-date">
             <div className={classes.inputField}>
                 <CalendarInput
-                    calendar="gregory"
+                    calendar="nepali"
                     dense
                     className={classes.calendar}
                     label={dateLabel}
                     date={selectedDate}
-                    locale={locale}
+                    locale="ne-NP"
                     onDateSelect={dateChangeHandler}
                 />
             </div>

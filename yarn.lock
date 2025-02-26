@@ -3809,6 +3809,11 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.10.4.tgz#427d5549943a9c6fce808e39ea64dbe60d4047f1"
   integrity sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==
 
+"@sbmdkl/nepali-date-converter@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/@sbmdkl/nepali-date-converter/-/nepali-date-converter-2.0.3.tgz#ea1cd402a339b36dc211136e27ea38d46fc86af6"
+  integrity sha512-2cdBIeNENgcSEAkDDXsm/wibFM+2PsXQPOP/SaRsNOG5Lbf1u6hrm9tYy0cGVGdTN272AeUG82vBCuh/yAzEmA==
+
 "@sideway/address@^4.1.5":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.5.tgz#4bc149a0076623ced99ca8208ba780d65a99b9d5"

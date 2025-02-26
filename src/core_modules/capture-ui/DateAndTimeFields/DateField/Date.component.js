@@ -73,7 +73,7 @@ export class DateField extends React.Component<Props, State> {
 
         const calculatedInputWidth = inputWidth || width;
         const calculatedCalendarWidth = calendarWidth || width;
-        const calendarType = calendar || 'gregory';
+        const calendarType = 'nepali';
         const format = systemSettingsStore.get().dateFormat;
         const errorProps = innerMessage && innerMessage.messageType === 'error'
             ? { error: !!innerMessage.message?.dateInnerErrorMessage,
@@ -97,6 +97,7 @@ export class DateField extends React.Component<Props, State> {
                     width={String(calculatedCalendarWidth)}
                     inputWidth={String(calculatedInputWidth)}
                     onFocus={this.props.onFocus}
+                    locale="ne-NP"
                     disabled={this.props.disabled}
                     {...errorProps}
                     maxDate={calendarMaxMoment && formatDate(calendarMaxMoment, format)}
