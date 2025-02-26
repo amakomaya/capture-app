@@ -1,30 +1,38 @@
-// @flow
-import i18n from '@dhis2/d2-i18n';
 import { hasValue } from 'capture-core-utils/validators/form';
-import { isValidDate, isValidNonFutureDate } from '../../../../utils/validation/validators/form';
-
-const isValidEnrollmentDate = (value: string, internalComponentError?: ?{error: ?string, errorCode: ?string}) => {
-    if (!value) {
-        return true;
-    }
-
-    return isValidDate(value, internalComponentError);
+import i18n from '@dhis2/d2-i18n';
+import moment from 'moment';
+import { parseDate } from '../../../../utils/converters/date';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+const isValidEnrollmentDate = (value, isFutureDateAllowed) => {
+  const dateContainer = parseDate(value);
+  if (!dateContainer.isValid) {
+    return false;
+  }
+  if (isFutureDateAllowed) {
+    return true;
+  }
+  const momentDate = dateContainer.momentDate;
+  const momentToday = moment();
+  // $FlowFixMe -> if parseDate returns isValid true, there should always be a momentDate
+  const isNotFutureDate = momentDate.isSameOrBefore(momentToday);
+  return {
+    valid: isNotFutureDate,
+    message: i18n.t('A future date is not allowed')
+  };
 };
-
-export const getEnrollmentDateValidatorContainer = () => {
-    const validatorContainers = [
-        {
-            validator: hasValue,
-            errorMessage:
-                i18n.t('A value is required'),
-        },
-        {
-            validator: isValidEnrollmentDate,
-            errorMessage: i18n.t('Please provide a valid date'),
-        },
-        { validator: isValidNonFutureDate,
-            errorMessage: i18n.t('A date in the future is not allowed'),
-        },
-    ];
-    return validatorContainers;
+const convertNepaliDateToGregorian = nepaliDate => {
+  return bsToAd(nepaliDate);
+};
+export const getEnrollmentDateValidatorContainer = isFutureEnrollmentDateAllowed => {
+  const validatorContainers = [{
+    validator: hasValue,
+    message: i18n.t('A value is required')
+  }, {
+    validator: value => {
+      const gregorianDate = convertNepaliDateToGregorian(value);
+      return isValidEnrollmentDate(gregorianDate, isFutureEnrollmentDateAllowed);
+    },
+    message: i18n.t('Please provide a valid date')
+  }];
+  return validatorContainers;
 };

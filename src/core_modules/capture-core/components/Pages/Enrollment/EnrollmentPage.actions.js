@@ -1,5 +1,6 @@
 // @flow
 import { actionCreator } from '../../../actions/actions.utils';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
 
 export const enrollmentPageActionTypes = {
     PAGE_OPEN: 'EnrollmentPage.Open',
@@ -40,6 +41,29 @@ export const enrollmentPageActionTypes = {
     UPDATE_ENROLLMENT_DATE: 'EnrollmentPage.UpdateEnrollmentDate',
 };
 
+const convertDateToBS = dateString => {
+    try {
+      const dateOnlyString = dateString.split('T')[0];
+      const nepaliDate = adToBs(dateOnlyString);
+      return nepaliDate;
+    } catch (e) {
+      return dateString;
+    }
+  };
+  const isDateString = value => {
+    if (typeof value !== 'string') {
+      return false; // Return false if value is not a string
+    }
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    return datePattern.test(value.split('T')[0]);
+  };
+  const convertIfDateString = value => {
+    if (isDateString(value)) {
+      const convertedDate = convertDateToBS(value);
+      return convertedDate;
+    }
+    return value;
+  };
 
 type IdSuite = {
     teiId?: ?string,
@@ -62,8 +86,86 @@ export const resetEnrollmentId = (payload: IdSuite) =>
 export const fetchEnrollmentId = (enrollmentId: string) =>
     actionCreator(enrollmentPageActionTypes.FETCH_ENROLLMENT_ID)({ enrollmentId });
 
-export const verifyEnrollmentIdSuccess = ({ enrollmentId, trackedEntity, program }: Object) =>
-    actionCreator(enrollmentPageActionTypes.VERIFY_ENROLLMENT_ID_SUCCESS)({ enrollmentId, teiId: trackedEntity, programId: program });
+
+    export const verifyFetchedEnrollments = _ref2 => {
+        let {
+          teiId,
+          programId,
+          action
+        } = _ref2;
+        // Assuming action.payload contains enrollments array similar to the provided example
+      
+        const convertEnrollmentDates = enrollment => {
+          if (enrollment.enrolledAt) {
+            enrollment.enrolledAt = convertIfDateString(enrollment.enrolledAt);
+          }
+          if (enrollment.occurredAt) {
+            enrollment.occurredAt = convertIfDateString(enrollment.occurredAt);
+          }
+          if (enrollment.createdAt) {
+            enrollment.createdAt = convertIfDateString(enrollment.createdAt);
+          }
+          if (enrollment.updatedAt) {
+            enrollment.updatedAt = convertIfDateString(enrollment.updatedAt);
+          }
+          if (enrollment.events && enrollment.events.length > 0) {
+            enrollment.events.forEach(event => {
+              if (event.scheduledAt) {
+                event.scheduledAt = convertIfDateString(event.scheduledAt);
+              }
+              if (event.occurredAt) {
+                event.occurredAt = convertIfDateString(event.occurredAt);
+              }
+              if (event.createdAt) {
+                event.createdAt = convertIfDateString(event.createdAt);
+              }
+              if (event.updatedAt) {
+                event.updatedAt = convertIfDateString(event.updatedAt);
+              }
+              if (event.completedAt) {
+                event.completedAt = convertIfDateString(event.completedAt);
+              }
+              if (event.dataValues && event.dataValues.length > 0) {
+                event.dataValues.forEach(dataValue => {
+                  if (dataValue.createdAt) {
+                    dataValue.createdAt = convertIfDateString(dataValue.createdAt);
+                  }
+                  if (dataValue.updatedAt) {
+                    dataValue.updatedAt = convertIfDateString(dataValue.updatedAt);
+                  }
+                });
+              }
+              return event;
+            });
+          }
+          if (enrollment.attributes && enrollment.attributes.length > 0) {
+            enrollment.attributes = enrollment.attributes.forEach(attributes => {
+              if (isDateString(attributes.value)) {
+                attributes.value = convertDateToBS(attributes.value);
+              }
+              if (isDateString(attributes.createdAt)) {
+                attributes.createdAt = convertDateToBS(attributes.createdAt);
+              }
+              if (isDateString(attributes.updatedAt)) {
+                attributes.updatedAt = convertDateToBS(attributes.updatedAt);
+              }
+              return attributes;
+            });
+          }
+          return enrollment;
+        };
+      
+        return actionCreator(enrollmentPageActionTypes.VERIFY_FETCHED_ENROLLMENTS)({
+          teiId,
+          programId,
+          action: {
+            type: 'EnrollmentPage.FetchEnrollmentsSuccess',
+            payload: {
+              enrollments: action.payload.enrollments.map(convertEnrollmentDates)
+            }
+          }
+        });
+      };
 
 export const fetchEnrollmentIdSuccess = (payload: IdSuite) =>
     actionCreator(enrollmentPageActionTypes.FETCH_ENROLLMENT_ID_SUCCESS)(payload);
