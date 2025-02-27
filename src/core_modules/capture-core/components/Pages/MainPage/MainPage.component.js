@@ -65,8 +65,10 @@ const MainPagePlain = ({
             {showMainPage ? (
                 <>
                     {MainPageStatus === MainPageStatuses.DEFAULT && (
-                        <NoSelectionsInfoBox />
-                    )}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <img src="https://mnch.mohp.gov.np/storage/dhis2-erecord.png" alt="Img" style={{ width: '50%', height: 'auto', margin: '30px' }} />
+                        </div>                   
+                     )}
                     {MainPageStatus === MainPageStatuses.WITHOUT_ORG_UNIT_SELECTED && (
                         <WithoutOrgUnitSelectedMessage programId={programId} setShowAccessible={setShowAccessible} />
                     )}
