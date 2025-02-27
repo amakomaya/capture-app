@@ -19,9 +19,9 @@ import { loadNewDataEntry } from '../../DataEntry/actions/dataEntryLoadNew.actio
 import { rulesExecutedPostUpdateField } from '../../DataEntry/actions/dataEntry.actions';
 import { getRulesActionsForTEIAsync } from './ProgramRules';
 import { addFormData } from '../../D2Form/actions/form.actions';
-import { updateFieldUIOnly } from '../../D2Form/FormBuilder/formBuilder.actions';
 import type { Geometry } from './helpers/types';
-import type { QuerySingleResource } from '../../../utils/api';
+import { adToBs } from '@sbmdkl/nepali-date-converter'; 
+
 
 export const TEI_MODAL_STATE = {
     OPEN: 'Open',
@@ -113,14 +113,12 @@ export const getUpdateFieldActions = async ({
         querySingleResource,
         onGetValidationContext,
     });
-    const updateFieldUIAction = updateFieldUIOnly(uiState, elementId, formId);
 
     return batchActions(
         [
             innerAction,
             rulesActions,
             rulesExecutedPostUpdateField(dataEntryId, itemId, uid),
-            updateFieldUIAction,
         ],
         dataEntryActionTypes.UPDATE_FIELD_PROFILE_ACTION_BATCH,
     );
@@ -195,19 +193,38 @@ export const updateTei = ({
         },
     );
 
-export const getOpenDataEntryActions = ({
-    dataEntryId,
-    itemId,
-    formValues,
-}: {
-    dataEntryId: string,
-    itemId: string,
-    formValues: { [key: string]: any },
-}) =>
-    batchActions(
-        [
-            ...loadNewDataEntry(dataEntryId, itemId, dataEntryPropsToInclude),
-            addFormData(`${dataEntryId}-${itemId}`, formValues),
-        ],
-        dataEntryActionTypes.OPEN_DATA_ENTRY_PROFILE_ACTION_BATCH,
-    );
+    const convertDateToBS = (dateString) => {
+        if (typeof dateString === 'string') {
+            const dateOnlyString = dateString.split('T')[0];
+            const nepaliDate = adToBs(dateOnlyString);
+            return nepaliDate;
+        }
+        return dateString; 
+    };
+    function convertFormValuesDates(formValues) {
+        const convertedValues = { ...formValues };
+    
+        Object.keys(convertedValues).forEach(key => {
+            if (typeof convertedValues[key] === 'object' && convertedValues[key] !== null) {
+                convertedValues[key] = convertFormValuesDates(convertedValues[key]);
+            } else if (typeof convertedValues[key] === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(convertedValues[key])) {
+                convertedValues[key] = convertDateToBS(convertedValues[key]);
+            }
+        });
+    
+        return convertedValues;
+    }
+    export const getOpenDataEntryActions = ({ dataEntryId, itemId, formValues }) => {
+        const convertedFormValues = convertFormValuesDates(formValues);
+    
+        return batchActions(
+            [
+                ...loadNewDataEntry(dataEntryId, itemId, dataEntryPropsToInclude),
+                addFormData(`${dataEntryId}-${itemId}`, convertedFormValues),
+            ],
+            dataEntryActionTypes.OPEN_DATA_ENTRY_PROFILE_ACTION_BATCH,
+        );
+    };
+
+
+

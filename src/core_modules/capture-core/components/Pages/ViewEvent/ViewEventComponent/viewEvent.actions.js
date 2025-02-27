@@ -1,6 +1,8 @@
 // @flow
 import { actionCreator } from 'capture-core/actions/actions.utils';
 import type { UserFormField } from '../../../FormFields/UserField';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
 
 export const actionTypes = {
     VIEW_EVENT_FROM_URL: 'ViewEventFromUrl',
@@ -27,7 +29,42 @@ export const viewEventFromUrl = (data: Object) =>
         eventId: data.nextProps.viewEventId || data.nextProps.eventId,
         page: data.nextPage,
     });
-
+    const isDateString = (value) => {
+        if (typeof value !== 'string') {
+            return false; // Return false if value is not a string
+        }
+        const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+        return datePattern.test(value.split('T')[0]); 
+    };
+    
+    const convertIfDateString = (value) => {
+        if (isDateString(value)) {
+            try{
+                const convertedDate = adToBs(moment(value).format('YYYY-MM-DD')); 
+                return convertedDate;
+            }
+            catch (e){
+                return value;
+            }
+            
+        }
+        return value;
+    };
+    const convertDatesInObject = (obj) => {
+        if (typeof obj !== 'object' || obj === null) {
+            return obj;
+        }
+    
+        if (Array.isArray(obj)) {
+            return obj.map(convertDatesInObject);
+        }
+    
+        return Object.keys(obj).reduce((acc, key) => {
+            const value = obj[key];
+            acc[key] = typeof value === 'string' ? convertIfDateString(value) : convertDatesInObject(value);
+            return acc;
+        }, {});
+    };
 export const changeEventFromUrl = (eventId: string, page: string) =>
     actionCreator(actionTypes.VIEW_EVENT_FROM_URL)({ eventId, page });
 
@@ -43,8 +80,14 @@ export const orgUnitRetrievedOnUrlUpdate = (orgUnit: Object, eventContainer: Obj
 export const orgUnitCouldNotBeRetrievedOnUrlUpdate = (eventContainer: Object) =>
     actionCreator(actionTypes.ORG_UNIT_RETRIEVAL_FAILED_ON_URL_UPDATE)({ eventContainer });
 
-export const startOpenEventForView = (eventContainer: Object, orgUnit: Object) =>
-    actionCreator(actionTypes.START_OPEN_EVENT_FOR_VIEW)({ eventContainer, orgUnit });
+// export const startOpenEventForView = (eventContainer: Object, orgUnit: Object) =>
+//     actionCreator(actionTypes.START_OPEN_EVENT_FOR_VIEW)({ eventContainer, orgUnit });
+export const startOpenEventForView = (eventContainer: Object, orgUnit: Object) => {
+    const convertedEventContainer = convertDatesInObject(eventContainer);
+    const convertedOrgUnit = convertDatesInObject(orgUnit);
+
+    return actionCreator(actionTypes.START_OPEN_EVENT_FOR_VIEW)({ eventContainer: convertedEventContainer, orgUnit: convertedOrgUnit });
+};
 
 export const addEventNote = (eventId: string, note: Object) =>
     actionCreator(actionTypes.ADD_EVENT_NOTE)({ eventId, note });

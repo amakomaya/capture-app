@@ -29,6 +29,10 @@ import { getCategoriesDataFromEventAsync } from './getCategoriesDataFromEvent';
 import { eventWorkingListsActionTypes } from '../../../WorkingLists/EventWorkingLists';
 import { resetLocationChange } from '../../../ScopeSelector/QuickSelector/actions/QuickSelector.actions';
 import { buildUrlQueryString } from '../../../../utils/routing';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
+
+
 
 export const getEventOpeningFromEventListEpic = (
     action$: InputObservable,
@@ -69,6 +73,34 @@ export const getEventOpeningFromEventListEpic = (
         ),
     );
 
+    const isDateString = (value) => {
+        if (typeof value !== 'string') {
+            return false;
+        }
+        const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+        return datePattern.test(value.split('T')[0]); 
+    };
+    
+    const convertNepaliDate =(value) =>{
+        if (isDateString(value)) {
+            try{
+                const convertedDate = adToBs(moment(value).format('YYYY-MM-DD'));
+                return convertedDate;
+            }
+            catch(e){
+                return value; 
+            }
+        }
+        return value;
+    };
+    
+    const convertValuesDates = (values) => {
+        const convertedValues = {};
+        Object.keys(values).forEach(key => {
+            convertedValues[key] = convertNepaliDate(values[key]);
+        });
+        return convertedValues;
+    };
 export const getEventFromUrlEpic = (
     action$: InputObservable,
     store: ReduxStore,
@@ -87,7 +119,13 @@ export const getEventFromUrlEpic = (
                     }
                     // need to retrieve category names from API (due to 50k category options requirement)
                     return getCategoriesDataFromEventAsync(eventContainer.event, querySingleResource)
-                        .then(categoriesData => eventFromUrlRetrieved(eventContainer, prevProgramId, categoriesData));
+                    .then(categoriesData => {
+                        const updatedEventContainer = { ...eventContainer }; 
+                        updatedEventContainer.event.occurredAt = convertNepaliDate(updatedEventContainer.event.occurredAt);
+                        updatedEventContainer.event.scheduledAt = convertNepaliDate(updatedEventContainer.event.scheduledAt);
+                        updatedEventContainer.values = convertValuesDates(updatedEventContainer.values);
+                        return eventFromUrlRetrieved(updatedEventContainer, prevProgramId, categoriesData)
+                    });
                 })
                 .catch((error) => {
                     const { message, details } = getErrorMessageAndDetails(error);

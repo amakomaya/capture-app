@@ -1,6 +1,8 @@
 // @flow
 import { dataElementTypes, DataElement, OptionSet, Option } from '../../../../metaData';
 import { convertValue } from '../../../../converters/clientToView';
+import { adToBs} from '@sbmdkl/nepali-date-converter';
+
 
 type Attribute = {
     attribute: string,
@@ -26,5 +28,10 @@ export const convertClientToView = (clientAttribute: Attribute) => {
         );
         dataElement.optionSet = new OptionSet(attribute, options, null, dataElement);
     }
+    if (typeof value === 'string' && (value.match(/^\d{4}-\d{2}-\d{2}$/) || value.match(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/))) {
+        const dateOnlyString = value.split('T')[0];
+        return adToBs(dateOnlyString);
+    }
+    // return value;
     return convertValue(value, valueType, dataElement);
 };
