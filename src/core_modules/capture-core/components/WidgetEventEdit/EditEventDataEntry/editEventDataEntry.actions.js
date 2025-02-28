@@ -1,6 +1,8 @@
 // @flow
 import { actionCreator } from '../../../actions/actions.utils';
 import { effectMethods } from '../../../trackerOffline';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import moment from 'moment';
 
 export const batchActionTypes = {
     START_SAVE_EDIT_EVENT_DATA_ENTRY_BATCH: 'StartSaveEditEventDataEntryBatchForViewSingleEvent',
@@ -34,33 +36,68 @@ export const requestSaveEditEventDataEntry = (itemId: string, dataEntryId: strin
         { skipLogging: ['formFoundation'] },
     );
 
-export const startSaveEditEventDataEntry = (
-    eventId: string,
-    serverData: Object,
-    triggerActionCommit?: ?string,
-    triggerActionRollback?: ?string,
-) =>
-    actionCreator(actionTypes.START_SAVE_EDIT_EVENT_DATA_ENTRY)(
-        {},
-        {
-            offline: {
-                effect: {
-                    url: 'tracker?async=false&importStrategy=UPDATE',
-                    method: effectMethods.POST,
-                    data: serverData,
-                },
-                commit: {
-                    type: actionTypes.EDIT_EVENT_DATA_ENTRY_SAVED,
-                    meta: { eventId, triggerAction: triggerActionCommit },
-                },
-                rollback: {
-                    type: actionTypes.SAVE_EDIT_EVENT_DATA_ENTRY_FAILED,
-                    meta: { eventId, triggerAction: triggerActionRollback },
+    const isDateString = (value) => {
+        const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+        return datePattern.test(value);
+    };
+    
+    const convertIfDateString = (value) => {
+        if (isDateString(value)) {
+            const convertedDate = moment(bsToAd(value)).format('YYYY-MM-DDTHH:mm:ss');
+            return convertedDate;
+        }
+        return value;
+    };
+    const convertDatesToGregorian = (events) => {
+        return events.map(event => {
+            if (event.occurredAt) {
+                event.occurredAt = convertIfDateString(event.occurredAt);
+            }
+            if (event.scheduledAt) {
+                event.scheduledAt = convertIfDateString(event.scheduledAt);
+            }
+            if (event.dataValues && event.dataValues.length > 0) {
+                event.dataValues = event.dataValues.map(dataValue => {
+                    if (isDateString(dataValue.value)) {
+                        dataValue.value = convertIfDateString(dataValue.value);
+                    }
+                    return dataValue;
+                });
+            }
+            
+            return event;
+        });
+    };
+
+    export const startSaveEditEventDataEntry = (
+        eventId: string,
+        serverData: Object,
+        triggerActionCommit?: ?string,
+        triggerActionRollback?: ?string,
+    ) => {
+        serverData.events = convertDatesToGregorian(serverData.events);
+        return actionCreator(actionTypes.START_SAVE_EDIT_EVENT_DATA_ENTRY)(
+            {},
+            {
+                offline: {
+                    effect: {
+                        url: 'tracker?async=false&importStrategy=UPDATE',
+                        method: effectMethods.POST,
+                        data: serverData,
+                    },
+                    commit: {
+                        type: actionTypes.EDIT_EVENT_DATA_ENTRY_SAVED,
+                        meta: { eventId, triggerAction: triggerActionCommit },
+                    },
+                    rollback: {
+                        type: actionTypes.SAVE_EDIT_EVENT_DATA_ENTRY_FAILED,
+                        meta: { eventId, triggerAction: triggerActionRollback },
+                    },
                 },
             },
-        },
-    );
-
+        );
+    };
+    
 export const prerequisitesErrorLoadingEditEventDataEntry = (message: string) =>
     actionCreator(actionTypes.PREREQUISITES_ERROR_LOADING_EDIT_EVENT_DATA_ENTRY)(message);
 

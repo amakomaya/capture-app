@@ -24,7 +24,7 @@ export const useEnrollment = ({
 
     const { error, loading, data, refetch } = useDataQuery(
         useMemo(
-            () => ({adToBs
+            () => ({
                 enrollment: {
                     resource: 'tracker/enrollments/',
                     id: ({ variables: { enrollmentId: updatedEnrollmentId } }) => updatedEnrollmentId,

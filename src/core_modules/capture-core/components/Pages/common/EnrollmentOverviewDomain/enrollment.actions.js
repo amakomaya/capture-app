@@ -1,7 +1,8 @@
 // @flow
 import { actionCreator } from '../../../../actions/actions.utils';
 import type { EventReducerProps } from '../../../WidgetEnrollment/enrollment.types';
-import { adToBs, bsToAd } from '@sbmdkl/nepali-date-converter';
+import { adToBs ,bsToAd} from '@sbmdkl/nepali-date-converter';
+import { getTimeZone } from '../../../../../capture-core-utils/date/date.utils';
 
 export const enrollmentSiteActionTypes = {
     COMMON_ENROLLMENT_SITE_DATA_SET: 'EnrollmentSite.SetCommonData',
@@ -27,107 +28,125 @@ export const enrollmentSiteActionTypes = {
     SET_EXTERNAL_ENROLLMENT_STATUS: 'Enrollment.SetExternalEnrollmentStatus',
 };
 
-const convertDateToBS = dateString => {
-    try {
+const convertDateToBS = (dateString) => {
+  try{
       const dateOnlyString = dateString.split('T')[0];
       const timezone = getTimeZone(dateString);
       const nepaliDate = `${adToBs(dateOnlyString)}T${timezone}`;
       return nepaliDate;
-    } catch (e) {
+  }
+  catch(e){
       return dateString;
-    }
-  };
-  const convertDateToAD = dateString => {
-    try {
-      const dateOnlyString = dateString.split('T')[0];
+  }
+  
+};
+
+const convertDateToAD = (dateString) => {
+  try{
+      const dateOnlyString = dateString.split('T')[0]; 
       const englishDate = bsToAd(dateOnlyString);
       return englishDate;
-    } catch (e) {
+  }
+  catch(e){
       return dateString;
-    }
-  };
-  const isDateString = value => {
-    if (typeof value !== 'string') {
-      return false;
-    }
-    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-    return datePattern.test(value.split('T')[0]);
-  };
-  const convertIfDateString = value => {
-    if (isDateString(value)) {
+  }  
+  
+};
+
+
+
+const isDateString = (value) => {
+  if (typeof value !== 'string') {
+      return false; 
+  }
+  const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+  return datePattern.test(value.split('T')[0]); 
+};
+
+const convertIfDateString = (value) => {
+  if (isDateString(value)) {
       const convertedDate = convertDateToBS(value);
       return convertedDate;
-    }
-    return value;
-  };
-  const convertIfDateengString = value => {
-    if (isDateString(value)) {
+  }
+  return value;
+};
+
+const convertIfDateengString = (value) => {
+  if (isDateString(value)) {
       const convertedDate = convertDateToAD(value);
       return convertedDate;
-    }
-    return value;
-  };
+  }
+  return value;
+};
 
-  export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
-    const convertEnrollmentDates = enrollment => {
+export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
+  const convertEnrollmentDates = (enrollment) => {
       if (enrollment.enrolledAt) {
-        enrollment.enrolledAt = convertIfDateString(enrollment.enrolledAt);
+          enrollment.enrolledAt = convertIfDateString(enrollment.enrolledAt);
       }
+      
       if (enrollment.occurredAt) {
-        enrollment.occurredAt = convertIfDateString(enrollment.occurredAt);
+          enrollment.occurredAt = convertIfDateString(enrollment.occurredAt);
       }
+
       if (enrollment.createdAt) {
-        enrollment.createdAt = convertIfDateString(enrollment.createdAt);
+          enrollment.createdAt = convertIfDateString(enrollment.createdAt);
       }
       if (enrollment.updatedAt) {
-        enrollment.updatedAt = convertIfDateString(enrollment.updatedAt);
+          enrollment.updatedAt = convertIfDateString(enrollment.updatedAt);
       }
+
       if (enrollment.events && enrollment.events.length > 0) {
-        enrollment.events.forEach(event => {
-          if (event.scheduledAt) {
-            event.scheduledAt = convertIfDateString(event.scheduledAt);
-          }
-          if (event.occurredAt) {
-            event.occurredAt = convertIfDateString(event.occurredAt);
-          }
-          if (event.createdAt) {
-            event.createdAt = convertIfDateString(event.createdAt);
-          }
-          if (event.updatedAt) {
-            event.updatedAt = convertIfDateString(event.updatedAt);
-          }
-          if (event.completedAt) {
-            event.completedAt = convertIfDateString(event.completedAt);
-          }
-          if (event.dataValues && event.dataValues.length > 0) {
-            event.dataValues.forEach(dataValue => {
-              if (dataValue.createdAt) {
-                dataValue.createdAt = convertIfDateString(dataValue.createdAt);
+          enrollment.events.forEach(event => {
+              if (event.scheduledAt) {
+                  event.scheduledAt = convertIfDateString(event.scheduledAt);
+              } 
+              if (event.occurredAt) {
+                  event.occurredAt = convertIfDateString(event.occurredAt);
+              }                
+              if (event.createdAt) {
+                  event.createdAt = convertIfDateString(event.createdAt);
               }
-              if (dataValue.updatedAt) {
-                dataValue.updatedAt = convertIfDateString(dataValue.updatedAt);
+              if (event.updatedAt) {
+                  event.updatedAt = convertIfDateString(event.updatedAt);
               }
-            });
-          }
-        });
+              if (event.completedAt) {
+                  event.completedAt = convertIfDateString(event.completedAt);
+              }
+
+              if (event.dataValues && event.dataValues.length > 0) {
+                  event.dataValues.forEach(dataValue => {
+                      if (dataValue.createdAt) {
+                          dataValue.createdAt = convertIfDateString(dataValue.createdAt);
+                      }
+                      if (dataValue.updatedAt) {
+                          dataValue.updatedAt = convertIfDateString(dataValue.updatedAt);
+                      }
+                  });
+              }
+          });
       }
+
       return enrollment;
-    };
-    enrollment = convertEnrollmentDates(enrollment);
-    const convertAttributeValuesDates = attributeValues => {
-      return attributeValues.map(attr => {
-        if (isDateString(attr.value)) {
-          attr.value = convertDateToBS(attr.value);
-        }
-        return attr;
-      });
-    };
-    attributeValues = convertAttributeValuesDates(attributeValues);
-    return actionCreator(enrollmentSiteActionTypes.COMMON_ENROLLMENT_SITE_DATA_SET)({
-      enrollment,
-      attributeValues
-    });
   };
+
+  enrollment = convertEnrollmentDates(enrollment);
+
+  const convertAttributeValuesDates = (attributeValues) => {
+      return attributeValues.map(attr => {
+          if (isDateString(attr.value)) {
+              attr.value = convertDateToBS(attr.value);
+          }
+          return attr;
+      });
+  };
+
+  attributeValues = convertAttributeValuesDates(attributeValues);
+
+  return actionCreator(enrollmentSiteActionTypes.COMMON_ENROLLMENT_SITE_DATA_SET)({ enrollment, attributeValues });
+};
+
+
 export const updateEnrollmentDate = (enrollmentDate: string) =>
     actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_DATE)({
         enrollmentDate,
@@ -154,28 +173,27 @@ export const commitEnrollmentEvent = (eventId: string) =>
         eventId,
     });
 
-    const convertDatesToGregorian = events => {
-        return events.map(event => {
+    const convertDatesToGregorian = (events) => {
+      return events.map(event => {
           if (event.occurredAt) {
-            event.occurredAt = convertIfDateengString(event.occurredAt);
+              event.occurredAt = convertIfDateengString (event.occurredAt);
           }
           if (event.scheduledAt) {
-            event.scheduledAt = convertIfDateengString(event.scheduledAt);
+              event.scheduledAt = convertIfDateengString (event.scheduledAt);
           }
           if (event.completedAt) {
-            event.completedAt = convertIfDateengString(event.completedAt);
+              event.completedAt = convertIfDateengString (event.completedAt);
           }
           if (event.updatedAt) {
-            event.updatedAt = convertIfDateengString(event.updatedAt);
+              event.updatedAt = convertIfDateengString (event.updatedAt);
           }
           return event;
-        });
-      };
-export const updateOrAddEnrollmentEvents = ({ events }: EventReducerProps) =>{
+      });
+  };
+  export const updateOrAddEnrollmentEvents = ({ events }: EventReducerProps) => {
     const convertedEvents = convertDatesToGregorian(events);
-    return actionCreator(enrollmentSiteActionTypes.UPDATE_OR_ADD_ENROLLMENT_EVENTS)({ events:convertedEvents });
-
-}
+    return actionCreator(enrollmentSiteActionTypes.UPDATE_OR_ADD_ENROLLMENT_EVENTS)({ events: convertedEvents });
+  };
 
 export const deleteEnrollmentEvent = (eventId: string) =>
     actionCreator(enrollmentSiteActionTypes.DELETE_ENROLLMENT_EVENT)({ eventId });
@@ -204,10 +222,23 @@ export const updateEnrollmentEventWithoutId = (uid: string, eventData: Object) =
 
 export const saveFailed = () => actionCreator(enrollmentSiteActionTypes.SAVE_FAILED)();
 
-export const updateEnrollmentAttributeValues = (attributeValues: Array<{ [key: string]: string }>) =>
-    actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_ATTRIBUTE_VALUES)({
-        attributeValues,
+
+const isDateValue = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value);
+export const updateEnrollmentAttributeValues = (attributeValues) => {
+    const updatedAttributeValues = attributeValues.map(attr => {
+        if (isDateValue(attr.value)) {
+            return {
+                ...attr,
+                value: bsToAd(attr.value),
+            };
+        }
+        return attr;
     });
+
+    return actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_ATTRIBUTE_VALUES)({
+        attributeValues: updatedAttributeValues,
+    });
+};
 
 export const showEnrollmentError = ({ message }: { message: string }) =>
     actionCreator(enrollmentSiteActionTypes.ERROR_ENROLLMENT)({

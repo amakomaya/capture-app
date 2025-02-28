@@ -6,6 +6,8 @@
  * @param {string} format: the moment format
  * @returns {string} A formatted string with european glyphs
  */
+import moment from "moment";
+
 export function getFormattedStringFromMomentUsingEuropeanGlyphs(
     momentDate: moment$Moment,
     format: string = 'YYYY-MM-DD',
@@ -13,3 +15,7 @@ export function getFormattedStringFromMomentUsingEuropeanGlyphs(
     const europeanMoment = momentDate.clone().locale('en');
     return europeanMoment.format(format);
 }
+export function getTimeZone(date){
+    return moment(date).format('HH:mm:ss.SSS');
+}
+

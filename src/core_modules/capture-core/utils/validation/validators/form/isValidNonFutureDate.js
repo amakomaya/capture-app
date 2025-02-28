@@ -6,6 +6,7 @@ const CUSTOM_VALIDATION_MESSAGES = {
 };
 
 export const isValidNonFutureDate = (value: string, internalComponentError?: ?{error: ?string, errorCode: ?string}) => {
+    
     if (!value) {
         return true;
     }
@@ -19,3 +20,7 @@ export const isValidNonFutureDate = (value: string, internalComponentError?: ?{e
 
     return true;
 };
+
+
+
+

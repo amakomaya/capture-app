@@ -1,7 +1,7 @@
 // @flow
 import { useMemo } from 'react';
 import { convertDateObjectToDateFormatString } from '../../../utils/converters/date';
-import type { RelatedStagesEvents } from '../RelatedStagesActions/RelatedStagesActions.types';
+import  { RelatedStagesEvents } from '../RelatedStagesActions/RelatedStagesActions.types';
 import { useApiDataQuery } from '../../../utils/reactQueryHelpers';
 import { handleAPIResponse, REQUESTED_ENTITIES } from '../../../utils/api';
 

@@ -13,6 +13,7 @@ import { NonBundledDhis2Icon } from '../../../../NonBundledDhis2Icon';
 import type { Props } from './stageOverview.types';
 import { isEventOverdue } from '../StageDetail/hooks/helpers';
 import {bsToAd } from '@sbmdkl/nepali-date-converter';
+import { getTimeZone } from 'capture-core-utils/date/date.utils';
 
 const styles = {
     container: {
