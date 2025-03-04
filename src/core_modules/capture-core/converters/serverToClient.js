@@ -27,7 +27,7 @@ const optionSetConvertersForType = {
     [dataElementTypes.INTEGER_ZERO_OR_POSITIVE]: parseNumber,
     [dataElementTypes.INTEGER_NEGATIVE]: parseNumber,
     [dataElementTypes.PERCENTAGE]: parseNumber,
-    [dataElementTypes.DATE]: (d2Value: string) => moment(d2Value, 'YYYY-MM-DD').toISOString(),
+    [dataElementTypes.DATE]: (d2Value: string) => d2Value.split('T')[0],
     [dataElementTypes.DATETIME]: (d2Value: string) => moment(d2Value, 'YYYY-MM-DD HH:mm').toISOString(),
     [dataElementTypes.TIME]: convertTime,
     [dataElementTypes.TRUE_ONLY]: (d2Value: string) => ((d2Value === 'true') || null),
