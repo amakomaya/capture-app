@@ -10,11 +10,16 @@ import { stringifyNumber } from './common/stringifyNumber';
 import { MinimalCoordinates, PolygonCoordinates } from '../components/Coordinates';
 import { TooltipOrgUnit } from '../components/Tooltips/TooltipOrgUnit';
 
-function convertDateForListDisplay(rawValue: string): string {
-    const momentDate = moment(rawValue);
-    return convertMomentToDateFormatString(momentDate);
-}
+// function convertDateForListDisplay(rawValue: string): string {
+//     const momentDate = moment(rawValue);
+//     return convertMomentToDateFormatString(momentDate);
+// }
 
+
+function convertDateForListDisplay(rawValue: string): string {
+    const value = rawValue.length > 10 ? rawValue.substring(0, 10) : rawValue;
+    return value;
+}
 function convertDateTimeForListDisplay(rawValue: string): string {
     const momentDate = moment(rawValue);
     const dateString = convertMomentToDateFormatString(momentDate);

@@ -288,7 +288,6 @@ const getSaveHandler = (
             const generalErrors = state.rulesEffectsGeneralErrors[key] && state.rulesEffectsGeneralErrors[key].error;
             const foundation = onGetFormFoundation ? onGetFormFoundation(props) : props.formFoundation;
             const reduxSections = state.formsSectionsFieldsUI[key];
-
             return {
                 itemId,
                 saveAttempted:

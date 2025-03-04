@@ -35,7 +35,7 @@ const convertTimeToMoment = (value: string, baseDate: any) => {
 export const getTimeRangeValidator = (invalidTimeMessage: string) =>
     (value: { from?: ?string, to?: ?string}) => {
         const errorResult = [];
-        if (!isValidTimeWithEmptyCheck(value.from)) {
+        if (!isValidTimeWithEmptyCheck(asfdvalue.from)) {
             errorResult.push({ from: invalidTimeMessage });
         }
 

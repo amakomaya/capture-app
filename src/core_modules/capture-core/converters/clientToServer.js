@@ -17,11 +17,23 @@ type Assignee = {
     surname: string,
 }
 
+const isDateString = (value) => {
+    if (typeof value !== 'string') {
+        return false; 
+    }
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    return datePattern.test(value.split('T')[0]); 
+};
+
 function convertDate(rawValue: string): string {
-    const editedDate = rawValue;
-    const momentDate = moment(editedDate);
-    momentDate.locale('en');
-    return momentDate.format('YYYY-MM-DD');
+    let editedDate = rawValue;
+    if (isDateString(editedDate)) {
+       editedDate = editedDate.split('T')[0]
+    }
+
+    // const momentDate = moment(editedDate);
+    // momentDate.locale('en');
+    return editedDate;
 }
 
 function convertRange(parser: (value: any) => any, rangeValue: RangeValue) {

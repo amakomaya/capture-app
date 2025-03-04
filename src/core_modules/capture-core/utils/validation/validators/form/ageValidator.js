@@ -2,6 +2,7 @@
 import i18n from '@dhis2/d2-i18n';
 import { isValidZeroOrPositiveInteger } from 'capture-core-utils/validators/form';
 import { isValidDate } from './dateValidator';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
 
 type AgeValues = {
     date?: ?string,
@@ -47,6 +48,7 @@ function validateNumbers(years: ?string, months: ?string, days: ?string) {
 
 function validateDate(date: ?string, internalComponentError?: ?{error: ?string, errorCode: ?string}) {
     const { valid } = isValidDate(date, internalComponentError);
+
     return valid ?
         { valid: true } :
         { valid: false, errorMessage: { date: errorMessages.date } };

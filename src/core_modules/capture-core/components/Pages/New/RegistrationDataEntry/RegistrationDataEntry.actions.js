@@ -54,12 +54,14 @@ export const startSavingNewTrackedEntityInstanceWithEnrollment = (
         programStageId?: string,
         eventId?: string,
     },
-) =>
-    actionCreator(registrationFormActionTypes.NEW_TRACKED_ENTITY_INSTANCE_WITH_ENROLLMENT_SAVE_START)({
+) =>{
+   return actionCreator(registrationFormActionTypes.NEW_TRACKED_ENTITY_INSTANCE_WITH_ENROLLMENT_SAVE_START)({
         enrollmentPayload,
         uid,
         redirect,
     });
+}
+   
 
 export const saveNewTrackedEntityInstanceWithEnrollment = ({
     candidateForRegistration,

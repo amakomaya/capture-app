@@ -1,6 +1,10 @@
 // @flow
 
+import { parseDate } from '../../../../../capture-core-utils/parsers';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
+
 export function isValidDate(value: ?string, internalComponentError?: ?{error: ?string, errorCode: ?string}) {
+
     if (!value) {
         return { valid: false, errorMessage: null };
     }
@@ -18,3 +22,15 @@ export function isValidDate(value: ?string, internalComponentError?: ?{error: ?s
 
     return { valid: true, errorMessage: null };
 }
+/**
+ *
+//  * @export
+//  * @param {string} value
+//  * @param {string} format
+//  * @returns {boolean}
+//  */
+
+//  export function isValidDate(value: string, format: string) {
+//     const parseData = parseDate(bsToAd(value), format);
+//     return parseData.isValid;
+// }

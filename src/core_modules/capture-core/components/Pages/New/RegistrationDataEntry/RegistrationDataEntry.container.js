@@ -28,6 +28,7 @@ export const RegistrationDataEntry: ComponentType<OwnProps> = ({
     const dispatchOnSaveWithoutEnrollment = useCallback(
         (teiPayload) => { dispatch(startSavingNewTrackedEntityInstance(teiPayload)); },
         [dispatch]);
+        
 
     const dispatchOnSaveWithEnrollment = useCallback(
         (enrollmentPayload, redirect) => {

@@ -81,20 +81,18 @@ const DateComponentPlain = ({
     const displayDate = String(convertValueClientToView(date, dataElementTypes.DATE));
 
     const onOpenEdit = () => {
-        // CalendarInput component only supports the YYYY-MM-DD format
-        setSelectedDate(moment(date).format('YYYY-MM-DD'));
+        setSelectedDate(date);
         setEditMode(true);
     };
     const saveHandler = () => {
-        // CalendarInput component only supports the YYYY-MM-DD format
         if (selectedDate) {
-            const newDate = moment.utc(selectedDate, 'YYYY-MM-DD').format('YYYY-MM-DDTHH:mm:ss.SSS');
-            if (newDate !== date) {
-                onSave(newDate);
+            if (selectedDate !== date) {
+                onSave(selectedDate);
             }
         }
         setEditMode(false);
     };
+
 
     return editMode ? (
         <div data-test="widget-enrollment-date">
