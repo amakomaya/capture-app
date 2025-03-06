@@ -3,9 +3,9 @@ import isString from 'd2-utilizr/lib/isString';
 import { parseNumber, parseTime } from 'capture-core-utils/parsers';
 import { dataElementTypes } from '../metaData';
 import { parseDate } from '../utils/converters/date';
-import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import { adToBs, bsToAd } from '@sbmdkl/nepali-date-converter';
 import { getTimeZone } from 'capture-core-utils/date/date.utils';
-
+import moment from 'moment';
 type DateTimeValue = {
     date: string,
     time: string,
@@ -17,7 +17,9 @@ type RangeValue = {
 }
 
 function convertDateTime(formValue: DateTimeValue): ?string {
-    const editedDate = formValue.date;
+
+
+    const editedDate = bsToAd(formValue.date);
     const editedTime = formValue.time;
 
     const parsedTime = parseTime(editedTime);
@@ -28,11 +30,21 @@ function convertDateTime(formValue: DateTimeValue): ?string {
 
     const parsedDate = editedDate ? parseDate(editedDate) : null;
     if (!(parsedDate && parsedDate.isValid)) return null;
-    // $FlowFixMe[incompatible-type] automated comment
     const momentDateTime: moment$Moment = parsedDate.momentDate;
-    momentDateTime.hour(hours);
-    momentDateTime.minute(minutes);
-    return momentDateTime.toISOString();
+    // momentDateTime.hour(hours);
+    // momentDateTime.minute(minutes);
+    // const test = momentDateTime.toISOString();
+   const formatDate = moment(momentDateTime).format('YYYY-MM-DD');
+   const dateBs = adToBs(formatDate);
+//    const date = `${dateBs} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`
+//    const test = `${dateBs}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00.000Z`
+   
+
+   return `${dateBs}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00.000Z`;
+
+    
+
+    // 2025-02-12T18:15:00.000Z test
 }
 
 // function convertDate(dateValue: string) {

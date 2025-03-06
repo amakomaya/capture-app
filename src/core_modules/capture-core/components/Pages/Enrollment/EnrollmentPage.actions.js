@@ -52,9 +52,20 @@ type IdSuite = {
 
 const convertDateToBS = (dateString) => {
     try{
-        const dateOnlyString = dateString.split('T')[0];
-        const nepaliDate = adToBs(dateOnlyString);
-        return nepaliDate;
+        // const dateOnlyString = dateString.split('T')[0];
+        if (dateString.includes('T')) {
+            const [bsDate, timePart] = value.split('T'); 
+            if (bsDate) {
+                const adDate = adToBs(bsDate);
+                const convertedDate = `${adDate}T${timePart}`;
+                return convertedDate;
+            }
+        } else {
+            const adDate = bsToAd(value);
+            const convertedDate = `${adDate}T00:00:00`;
+            return convertedDate;
+        }
+      
     }
     catch(e){
         return dateString;
@@ -68,8 +79,11 @@ const isDateString = (value) => {
     if (typeof value !== 'string') {
         return false; // Return false if value is not a string
     }
-    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-    return datePattern.test(value.split('T')[0]); 
+    const datePattern1 = /^\d{4}-\d{2}-\d{2}$/;
+    const datePattern2 = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/; 
+
+    return datePattern1.test(value.split('T')[0])|| datePattern2.test(value);
+    ; 
 };
 
 const convertIfDateString = (value) => {
@@ -189,6 +203,10 @@ export const verifyFetchedEnrollments = ({ teiId, programId, action }) => {
                         }
                         if (dataValue.updatedAt) {
                             dataValue.updatedAt = convertIfDateString(dataValue.updatedAt);
+                        }
+                        if (dataValue.value){
+                            dataValue.value = convertIfDateString(dataValue.value);
+
                         }
                     });
                 }

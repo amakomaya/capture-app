@@ -17,6 +17,7 @@ import { mainOptionKeys, mainOptionTranslatedTexts } from './options';
 import { getDateFilterData } from './dateFilterDataGetter';
 import { RangeFilter } from './RangeFilter.component';
 import { parseDate } from '../../../utils/converters/date';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
 
 const getStyles = (theme: Theme) => ({
     fromToContainer: {
@@ -121,8 +122,14 @@ const isAbsoluteRangeFilterValid = (from, to) => {
     if (!from?.value && !to?.value) {
         return false;
     }
+    const valueFrom = from?.value;
+    // const fromValue = bsToAd(valueFrom);
     const fromValue = from?.value;
-    const toValue = to?.value;
+
+    const valueTo = to?.value;
+    // const toValue =  bsToAd(valueTo);
+    const toValue =to?.value;
+   
     const parseResultFrom = fromValue ? parseDate(fromValue) : { isValid: true, moment: null };
     const parseResultTo = toValue ? parseDate(toValue) : { isValid: true, moment: null };
 
@@ -273,11 +280,17 @@ class DateFilterPlain extends Component<Props, State> implements UpdatableFilter
         };
         const isRelativeRangeValue = () => valueObject?.start || valuePart?.start || valuePart?.end;
         const isAbsoluteRangevalue = () => valueObject?.from || valuePart?.from || valuePart?.to;
-
         if (isAbsoluteRangevalue()) {
             valueObject.main = mainOptionKeys.ABSOLUTE_RANGE;
             delete valueObject.start;
             delete valueObject.end;
+
+            if (valueObject.from?.value) {
+                valueObject.from.value = bsToAd(valueObject.from.value);
+            }
+            if (valueObject.to?.value) {
+                valueObject.to.value = bsToAd(valueObject.to.value);
+            }
         } else if (isRelativeRangeValue()) {
             valueObject.main = mainOptionKeys.RELATIVE_RANGE;
             delete valueObject.from;
@@ -289,7 +302,6 @@ class DateFilterPlain extends Component<Props, State> implements UpdatableFilter
             // $FlowFixMe[incompatible-type] automated comment
             valueObject.main = null;
         }
-
         return Object.keys(valueObject).filter(key => valueObject[key]).length > 0 ? valueObject : null;
     }
 

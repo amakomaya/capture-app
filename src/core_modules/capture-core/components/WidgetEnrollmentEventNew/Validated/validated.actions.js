@@ -73,21 +73,45 @@ export const setSaveEnrollmentEventInProgress = ({
 });
 
 
+// const isDateString = (value) => {
+//     if (typeof value !== 'string') {
+//         return false;
+//     }
+//     const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+//     return datePattern.test(value);
+// };
 const isDateString = (value) => {
-    if (typeof value !== 'string') {
-        return false;
-    }
-    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-    return datePattern.test(value);
+    const datePattern1 = /^\d{4}-\d{2}-\d{2}$/; 
+    const datePattern2 = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/; 
+
+    return datePattern1.test(value) || datePattern2.test(value);
 };
 
 const convertIfDateString = (value) => {
-    if (isDateString(value)) {
-        const convertedDate = moment(bsToAd(value)).format('YYYY-MM-DDTHH:mm:ss');
-        return convertedDate;
+    if (value && isDateString(value)) { 
+
+        if (value.includes('T')) {
+            const [bsDate, timePart] = value.split('T');
+            
+            if (bsDate) {
+                const adDate = bsToAd(bsDate);
+                const convertedDate = `${formatDate(adDate)}T${timePart}`;
+                return convertedDate;
+            }
+        } else {
+            const adDate = bsToAd(value);
+            const convertedDate = `${formatDate(adDate)}T00:00:00`; 
+            return convertedDate;
+        }
     }
-    return value;
+    return value; 
 };
+
+function formatDate(dateString) {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+}
 
 
 const convertDatesToGregorian = (events) => {
@@ -112,9 +136,11 @@ const convertDatesToGregorian = (events) => {
 };
 
 export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessActionType }: Object) => {
+
     if (serverData.events) {
         serverData.events = convertDatesToGregorian(serverData.events);
     }
+
     return actionCreator(newEventWidgetActionTypes.EVENT_SAVE)({}, {
         offline: {
             effect: {
