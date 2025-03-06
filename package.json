@@ -1,7 +1,7 @@
 {
     "name": "erecord",
     "homepage": ".",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "cacheVersion": "7",
     "serverVersion": "38",
     "license": "BSD-3-Clause",
