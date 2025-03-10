@@ -73,19 +73,23 @@ const getLastUpdatedAt = (events, fromServerDate) => {
 
     if (lastEventUpdated) {
         const { updatedAt } = lastEventUpdated;
-        try{
-            const dateOnlyString = updatedAt.split('T')[0];
-            const timezone = getTimeZone(updatedAt);
-            const engdate = `${bsToAd(dateOnlyString)}T${timezone}`;
-            return lastEventUpdated?.updatedAt && moment(engdate).isValid()
-                ? i18n.t('Last updated {{date}}', { date: moment(fromServerDate(engdate)).fromNow() })
-                : null;
-        }
-        catch(e){
-            return lastEventUpdated?.updatedAt && moment(updatedAt).isValid()
+        return lastEventUpdated?.updatedAt && moment(updatedAt).isValid()
             ? i18n.t('Last updated {{date}}', { date: moment(fromServerDate(updatedAt)).fromNow() })
             : null;
-        }
+        // try{
+        //     const dateOnlyString = updatedAt.split('T')[0];
+        //     const timezone = getTimeZone(updatedAt);
+        //     console.log(dateOnlyString,'dateOnlyString')
+        //     const engdate = `${bsToAd(dateOnlyString)}T${timezone}`;
+        //     return lastEventUpdated?.updatedAt && moment(engdate).isValid()
+        //         ? i18n.t('Last updatedxzcvb {{date}}', { date: moment(fromServerDate(engdate)).fromNow() })
+        //         : null;
+        // }
+        // catch(e){
+        //     return lastEventUpdated?.updatedAt && moment(updatedAt).isValid()
+        //     ? i18n.t('Last updated {{date}}', { date: moment(fromServerDate(updatedAt)).fromNow() })
+        //     : null;
+        // }
     }
         
     
