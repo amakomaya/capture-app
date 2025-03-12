@@ -82,10 +82,21 @@ export const getEventOpeningFromEventListEpic = (
     };
     
     const convertNepaliDate =(value) =>{
+        
         if (isDateString(value)) {
             try{
-                const convertedDate = adToBs(moment(value).format('YYYY-MM-DD'));
-                return convertedDate;
+                if (value.includes('T')) {
+                    const [bsDate, timePart] = value.split('T'); 
+                    if (bsDate) {
+                        const adDate = adToBs(bsDate);
+                        const convertedDate = `${adDate}T${timePart}`;
+                        return convertedDate;
+                    }
+                } else {
+                    const adDate = adToBs(value);
+                    const convertedDate = adDate;
+                    return convertedDate;
+                }
             }
             catch(e){
                 return value; 
