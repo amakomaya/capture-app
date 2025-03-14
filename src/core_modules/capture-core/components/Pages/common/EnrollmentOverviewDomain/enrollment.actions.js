@@ -30,11 +30,26 @@ export const enrollmentSiteActionTypes = {
 
 const convertDateToBS = (dateString) => {
   try{
-      const dateOnlyString = dateString.split('T')[0];
-      const timezone = getTimeZone(dateString);
-      const nepaliDate = `${adToBs(dateOnlyString)}T${timezone}`;
-      return nepaliDate;
+    //   const dateOnlyString = dateString.split('T')[0];
+    //   console.log(dateString,'dateString')
+    //   const timezone = getTimeZone(dateString);
+    //   const nepaliDate = `${adToBs(dateOnlyString)}T${timezone}`;
+    //   console.log(nepaliDate,'nepaliDate')
+    //   return nepaliDate;
+    if (dateString.includes('T')) {
+        const [bsDate, timePart] = dateString.split('T'); 
+        if (bsDate) {
+            const adDate = adToBs(bsDate);
+            const convertedDate = `${adDate}T${timePart}`;
+            return convertedDate;
+        }
+    } else {
+        const adDate = adToBs(dateString);
+        const convertedDate = `${adDate}T00:00:00`;
+        return convertedDate;
+    }
   }
+
   catch(e){
       return dateString;
   }
@@ -79,7 +94,7 @@ const convertIfDateengString = (value) => {
   return value;
 };
 
-export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
+export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {4
   const convertEnrollmentDates = (enrollment) => {
       if (enrollment.enrolledAt) {
           enrollment.enrolledAt = convertIfDateString(enrollment.enrolledAt);
@@ -89,12 +104,12 @@ export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
           enrollment.occurredAt = convertIfDateString(enrollment.occurredAt);
       }
 
-      if (enrollment.createdAt) {
-          enrollment.createdAt = convertIfDateString(enrollment.createdAt);
-      }
-      if (enrollment.updatedAt) {
-          enrollment.updatedAt = convertIfDateString(enrollment.updatedAt);
-      }
+    //   if (enrollment.createdAt) {
+    //       enrollment.createdAt = convertIfDateString(enrollment.createdAt);
+    //   }
+    //   if (enrollment.updatedAt) {
+    //       enrollment.updatedAt = convertIfDateString(enrollment.updatedAt);
+    //   }
 
       if (enrollment.events && enrollment.events.length > 0) {
           enrollment.events.forEach(event => {
@@ -104,24 +119,27 @@ export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
               if (event.occurredAt) {
                   event.occurredAt = convertIfDateString(event.occurredAt);
               }                
-              if (event.createdAt) {
-                  event.createdAt = convertIfDateString(event.createdAt);
-              }
-              if (event.updatedAt) {
-                  event.updatedAt = convertIfDateString(event.updatedAt);
-              }
-              if (event.completedAt) {
-                  event.completedAt = convertIfDateString(event.completedAt);
-              }
-
+            //   if (event.createdAt) {
+            //       event.createdAt = convertIfDateString(event.createdAt);
+            //   }
+            //   if (event.updatedAt) {
+            //       event.updatedAt = convertIfDateString(event.updatedAt);
+            //   }
+            //   if (event.completedAt) {
+            //       event.completedAt = convertIfDateString(event.completedAt);
+            //   }
               if (event.dataValues && event.dataValues.length > 0) {
                   event.dataValues.forEach(dataValue => {
-                      if (dataValue.createdAt) {
-                          dataValue.createdAt = convertIfDateString(dataValue.createdAt);
-                      }
-                      if (dataValue.updatedAt) {
-                          dataValue.updatedAt = convertIfDateString(dataValue.updatedAt);
-                      }
+                    //   if (dataValue.createdAt) {
+                    //       dataValue.createdAt = convertIfDateString(dataValue.createdAt);
+                    //   }
+                    //   if (dataValue.updatedAt) {
+                    //       dataValue.updatedAt = convertIfDateString(dataValue.updatedAt);
+                    //   }
+                    if (dataValue.value){
+                        dataValue.value = convertIfDateString(dataValue.value);
+
+                    }
                   });
               }
           });
@@ -145,7 +163,11 @@ export const setCommonEnrollmentSiteData = (enrollment, attributeValues) => {
 
   return actionCreator(enrollmentSiteActionTypes.COMMON_ENROLLMENT_SITE_DATA_SET)({ enrollment, attributeValues });
 };
+// export const setCommonEnrollmentSiteData = (enrollment: ApiEnrollment, attributeValues: ApiAttributeValues) =>{
+//     console.log(enrollment,'enrollment')
+//     return actionCreator(enrollmentSiteActionTypes.COMMON_ENROLLMENT_SITE_DATA_SET)({ enrollment, attributeValues });
 
+// }
 
 export const updateEnrollmentDate = (enrollmentDate: string) =>
     actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_DATE)({

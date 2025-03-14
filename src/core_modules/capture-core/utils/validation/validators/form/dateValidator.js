@@ -1,10 +1,6 @@
 // @flow
 
-import { parseDate } from '../../../../../capture-core-utils/parsers';
-import { bsToAd } from '@sbmdkl/nepali-date-converter';
-
 export function isValidDate(value: ?string, internalComponentError?: ?{error: ?string, errorCode: ?string}) {
-
     if (!value) {
         return { valid: false, errorMessage: null };
     }

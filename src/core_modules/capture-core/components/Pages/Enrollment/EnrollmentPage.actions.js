@@ -54,14 +54,14 @@ const convertDateToBS = (dateString) => {
     try{
         // const dateOnlyString = dateString.split('T')[0];
         if (dateString.includes('T')) {
-            const [bsDate, timePart] = value.split('T'); 
+            const [bsDate, timePart] = dateString.split('T'); 
             if (bsDate) {
                 const adDate = adToBs(bsDate);
                 const convertedDate = `${adDate}T${timePart}`;
                 return convertedDate;
             }
         } else {
-            const adDate = bsToAd(value);
+            const adDate = adToBs(dateString);
             const convertedDate = `${adDate}T00:00:00`;
             return convertedDate;
         }
@@ -170,13 +170,13 @@ export const verifyFetchedEnrollments = ({ teiId, programId, action }) => {
             enrollment.occurredAt = convertIfDateString(enrollment.occurredAt);
         }
 
-        if (enrollment.createdAt) {
-            enrollment.createdAt = convertIfDateString(enrollment.createdAt);
-        }
+        // if (enrollment.createdAt) {
+        //     enrollment.createdAt = convertIfDateString(enrollment.createdAt);
+        // }
 
-        if (enrollment.updatedAt) {
-            enrollment.updatedAt = convertIfDateString(enrollment.updatedAt);
-        }
+        // if (enrollment.updatedAt) {
+        //     enrollment.updatedAt = convertIfDateString(enrollment.updatedAt);
+        // }
         
     
         if (enrollment.events && enrollment.events.length > 0) {
@@ -187,23 +187,23 @@ export const verifyFetchedEnrollments = ({ teiId, programId, action }) => {
                 if (event.occurredAt) {
                     event.occurredAt = convertIfDateString(event.occurredAt);
                 }                
-                if (event.createdAt) {
-                    event.createdAt = convertIfDateString(event.createdAt);
-                }
-                if (event.updatedAt) {
-                    event.updatedAt = convertIfDateString(event.updatedAt);
-                }
-                if (event.completedAt) {
-                    event.completedAt = convertIfDateString(event.completedAt);
-                }
+                // if (event.createdAt) {
+                //     event.createdAt = convertIfDateString(event.createdAt);
+                // }
+                // if (event.updatedAt) {
+                //     event.updatedAt = convertIfDateString(event.updatedAt);
+                // }
+                // if (event.completedAt) {
+                //     event.completedAt = convertIfDateString(event.completedAt);
+                // }
                 if (event.dataValues && event.dataValues.length > 0) {
                     event.dataValues.forEach(dataValue => {
-                        if (dataValue.createdAt) {
-                            dataValue.createdAt = convertIfDateString(dataValue.createdAt);
-                        }
-                        if (dataValue.updatedAt) {
-                            dataValue.updatedAt = convertIfDateString(dataValue.updatedAt);
-                        }
+                        // if (dataValue.createdAt) {
+                        //     dataValue.createdAt = convertIfDateString(dataValue.createdAt);
+                        // }
+                        // if (dataValue.updatedAt) {
+                        //     dataValue.updatedAt = convertIfDateString(dataValue.updatedAt);
+                        // }
                         if (dataValue.value){
                             dataValue.value = convertIfDateString(dataValue.value);
 

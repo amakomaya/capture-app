@@ -62,7 +62,7 @@ export class D2Date extends React.Component<Props, State> {
             ...passOnProps
         } = this.props;
 
-        const calendarType = 'nepali';
+        const calendarType = 'gregory';
         const format = systemSettingsStore.get().dateFormat;
 
         return (
@@ -78,7 +78,6 @@ export class D2Date extends React.Component<Props, State> {
                     inputWidth={inputWidth}
                     onFocus={onFocus}
                     disabled={disabled}
-                    locale="ne-NP"
                 />
             </div>
         );
