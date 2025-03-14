@@ -285,12 +285,6 @@ class DateFilterPlain extends Component<Props, State> implements UpdatableFilter
             delete valueObject.start;
             delete valueObject.end;
 
-            if (valueObject.from?.value) {
-                valueObject.from.value = bsToAd(valueObject.from.value);
-            }
-            if (valueObject.to?.value) {
-                valueObject.to.value = bsToAd(valueObject.to.value);
-            }
         } else if (isRelativeRangeValue()) {
             valueObject.main = mainOptionKeys.RELATIVE_RANGE;
             delete valueObject.from;

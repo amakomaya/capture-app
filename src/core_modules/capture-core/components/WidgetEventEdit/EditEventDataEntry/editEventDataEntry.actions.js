@@ -63,7 +63,7 @@ export const requestSaveEditEventDataEntry = (itemId: string, dataEntryId: strin
                 }
             } else {
                 const adDate = bsToAd(value);
-                const convertedDate = `${formatDate(adDate)}T00:00:00`; // Default time
+                const convertedDate = `${formatDate(adDate)}`; // Default time
                 return convertedDate;
             }
         }

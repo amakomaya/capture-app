@@ -175,9 +175,10 @@ class D2AgeFieldPlain extends Component<Props> {
             monthDifference = Number(nepMonth) + 12 * Math.floor(month / 12) - Number(month);
             nepYear = Number(nepYear) - Math.floor(month / 12);
         }
-    
-        let formattedMonthDifference = monthDifference.toString().padStart(2, '0');
-        let formattedDayDifference = dayDifference.toString().padStart(2, '0');
+
+        let formattedMonthDifference = (monthDifference === 0 ? 1 : monthDifference).toString().padStart(2, '0');
+        let formattedDayDifference = (dayDifference === 0 ? 1 : dayDifference).toString().padStart(2, '0');
+
 
         const calculatAgeDateBS = `${yearDifference}-${formattedMonthDifference}-${formattedDayDifference}`;
 

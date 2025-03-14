@@ -89,7 +89,7 @@ const isDateString = (value) => {
 
 const convertIfDateString = (value) => {
     if (value && isDateString(value)) { 
-
+        console.log(value,'convertDatesToGregorian')
         if (value.includes('T')) {
             const [bsDate, timePart] = value.split('T');
             
@@ -100,7 +100,7 @@ const convertIfDateString = (value) => {
             }
         } else {
             const adDate = bsToAd(value);
-            const convertedDate = `${formatDate(adDate)}T00:00:00`; 
+            const convertedDate = `${formatDate(adDate)}`; 
             return convertedDate;
         }
     }
