@@ -89,7 +89,6 @@ const isDateString = (value) => {
 
 const convertIfDateString = (value) => {
     if (value && isDateString(value)) { 
-        console.log(value,'convertDatesToGregorian')
         if (value.includes('T')) {
             const [bsDate, timePart] = value.split('T');
             

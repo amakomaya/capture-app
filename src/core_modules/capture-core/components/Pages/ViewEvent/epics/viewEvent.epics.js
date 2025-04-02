@@ -102,6 +102,7 @@ export const getEventOpeningFromEventListEpic = (
                 return value; 
             }
         }
+        
         return value;
     };
     
@@ -135,6 +136,7 @@ export const getEventFromUrlEpic = (
                         updatedEventContainer.event.occurredAt = convertNepaliDate(updatedEventContainer.event.occurredAt);
                         updatedEventContainer.event.scheduledAt = convertNepaliDate(updatedEventContainer.event.scheduledAt);
                         updatedEventContainer.values = convertValuesDates(updatedEventContainer.values);
+
                         return eventFromUrlRetrieved(updatedEventContainer, prevProgramId, categoriesData)
                     });
                 })

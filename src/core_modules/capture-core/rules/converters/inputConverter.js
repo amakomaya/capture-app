@@ -3,6 +3,7 @@
 import log from 'loglevel';
 import moment from 'moment';
 import type { IConvertInputRulesValue } from '@dhis2/rules-engine-javascript';
+import { bsToAd } from '@sbmdkl/nepali-date-converter';
 
 const dateMomentFormat = 'YYYY-MM-DD';
 
@@ -23,8 +24,17 @@ export const inputConverter: IConvertInputRulesValue = {
         if (!value) {
             return null;
         }
-        const momentObject = moment(value);
+        let  dateEn = null;
+        if (value.includes('T')) {
+            const [bsDate, timePart] = value.split('T');
+            dateEn = bsToAd(bsDate);          
+        }
+        else{
+            dateEn = bsToAd(value);
+        }
+        const momentObject = moment(dateEn);
         momentObject.locale('en');
+        const test = momentObject.format(dateMomentFormat);
         return momentObject.format(dateMomentFormat);
     },
     convertDateTime: convertStringValue,

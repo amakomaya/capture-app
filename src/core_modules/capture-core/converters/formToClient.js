@@ -36,15 +36,10 @@ function convertDateTime(formValue: DateTimeValue): ?string {
     // const test = momentDateTime.toISOString();
    const formatDate = moment(momentDateTime).format('YYYY-MM-DD');
    const dateBs = adToBs(formatDate);
-//    const date = `${dateBs} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`
-//    const test = `${dateBs}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00.000Z`
    
-
    return `${dateBs}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00.000Z`;
 
     
-
-    // 2025-02-12T18:15:00.000Z test
 }
 
 // function convertDate(dateValue: string) {

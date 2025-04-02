@@ -225,9 +225,17 @@ export class DataElement {
     }
 
     convertValue(rawValue: any, onConvert: ConvertFn) {
+        //problem
+        // console.log(rawValue,'rawValue')
+        const test = isArray(rawValue)
+        ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
+        : onConvert(rawValue, this.type, this);
+        // console.log(test,'test')
         return isArray(rawValue)
             ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
             : onConvert(rawValue, this.type, this);
     }
+ 
+    
 }
 

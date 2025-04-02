@@ -20,8 +20,7 @@ const isValidIncidentDate = (value: string, isFutureDateAllowed: boolean) => {
     if (isFutureDateAllowed) {
         return true;
     }
-
-    return isValidDate(value, internalComponentError);
+    return isValidDate(value);
 };
 
 
