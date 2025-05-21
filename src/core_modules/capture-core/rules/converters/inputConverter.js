@@ -24,17 +24,19 @@ export const inputConverter: IConvertInputRulesValue = {
         if (!value) {
             return null;
         }
-        let  dateEn = null;
+        let dateEn = null;
+
         if (value.includes('T')) {
-            const [bsDate, timePart] = value.split('T');
-            dateEn = bsToAd(bsDate);          
+            const [datePart] = value.split('T');
+            const isNepaliDate = /^\d{4}/.test(datePart) && parseInt(datePart.substring(0, 4)) >= 2070;
+            dateEn = isNepaliDate ? bsToAd(datePart) : datePart;
+        } else {
+            const isNepaliDate = /^\d{4}/.test(value) && parseInt(value.substring(0, 4)) >= 2070;
+            dateEn = isNepaliDate ? bsToAd(value) : value;
         }
-        else{
-            dateEn = bsToAd(value);
-        }
+        
         const momentObject = moment(dateEn);
         momentObject.locale('en');
-        const test = momentObject.format(dateMomentFormat);
         return momentObject.format(dateMomentFormat);
     },
     convertDateTime: convertStringValue,
