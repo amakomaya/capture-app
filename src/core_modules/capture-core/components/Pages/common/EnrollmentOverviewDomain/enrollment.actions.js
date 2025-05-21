@@ -246,22 +246,25 @@ export const saveFailed = () => actionCreator(enrollmentSiteActionTypes.SAVE_FAI
 
 
 const isDateValue = (value) => /^\d{4}-\d{2}-\d{2}$/.test(value);
-export const updateEnrollmentAttributeValues = (attributeValues) => {
-    const updatedAttributeValues = attributeValues.map(attr => {
-        if (isDateValue(attr.value)) {
-            return {
-                ...attr,
-                value: bsToAd(attr.value),
-            };
-        }
-        return attr;
+// export const updateEnrollmentAttributeValues = (attributeValues) => {
+//     const updatedAttributeValues = attributeValues.map(attr => {
+//         if (isDateValue(attr.value)) {
+//             console.log(attr.value,'attr.value')
+//             return {
+//                 ...attr,
+//                 value: bsToAd(attr.value),
+//             };
+//         }
+//         return attr;
+//     });
+//     return actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_ATTRIBUTE_VALUES)({
+//         attributeValues:updatedAttributeValues,
+//     });
+// };
+export const updateEnrollmentAttributeValues = (attributeValues: Array<{ [key: string]: string }>) =>
+    actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_ATTRIBUTE_VALUES)({
+        attributeValues,
     });
-
-    return actionCreator(enrollmentSiteActionTypes.UPDATE_ENROLLMENT_ATTRIBUTE_VALUES)({
-        attributeValues: updatedAttributeValues,
-    });
-};
-
 export const showEnrollmentError = ({ message }: { message: string }) =>
     actionCreator(enrollmentSiteActionTypes.ERROR_ENROLLMENT)({
         message,
