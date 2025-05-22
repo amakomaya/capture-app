@@ -4,7 +4,11 @@ import { effectMethods } from '../../../trackerOffline';
 import { relatedStageActions } from '../../WidgetRelatedStages';
 import type { RequestEvent, LinkedRequestEvent } from '../../DataEntries';
 import type { ExternalSaveHandler } from '../common.types';
-import { bsToAd } from '@sbmdkl/nepali-date-converter';
+import { requestScheduleEvent ,scheduleEvent} from '../../WidgetEventSchedule/WidgetEventSchedule.actions';
+import{scheduleEnrollmentEventEpic}  from '../../WidgetEventSchedule/WidgetEventSchedule.epics'
+import { v4 as uuid } from 'uuid';
+
+import { adToBs, bsToAd } from '@sbmdkl/nepali-date-converter';
 import moment from 'moment';
 
 export const newEventBatchActionTypes = {
@@ -135,7 +139,6 @@ const convertDatesToGregorian = (events) => {
 };
 
 export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessActionType }: Object) => {
-
     if (serverData.events) {
         serverData.events = convertDatesToGregorian(serverData.events);
     }
@@ -152,6 +155,65 @@ export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessAct
         },
     });
 };
+const uid = uuid();
+
+// export const saveEvents = ({ serverData, onSaveErrorActionType, onSaveSuccessActionType }: Object) => {
+
+//     const triggerScheduleAction = (event, scheduleDateValue) => {
+//         const scheduleEventData = {
+//             events: [{
+//                 scheduledAt: scheduleDateValue,
+//                 notes: [],
+//                 trackedEntity: event.trackedEntity,
+//                 event: event.event,
+//                 orgUnit: event.orgUnit,
+//                 program: event.program,
+//                 programStage: event.programStage,
+//                 enrollment: event.enrollment,
+//                 status:"SCHEDULE",
+//                 dataValues:[],}]
+//         };
+
+//         return scheduleEvent(
+//             scheduleEventData,
+//             uid,
+//             onSaveSuccessActionType="ScheduleEvent.ScheduleEventSuccess",
+//             onSaveErrorActionType="ScheduleEvent.ScheduleEventError"
+//         );
+//     };
+
+//     if (serverData.events) {
+//         serverData.events = convertDatesToGregorian(serverData.events);
+//         serverData.events.forEach(event => {
+//             if (event.dataValues) {
+//                 const scheduleDataValue = event.dataValues.find(
+//                     dv => dv.dataElement === 'pCsAu8XUqTK'
+//                 );
+//                 console.log(event,'event')
+//                 if (scheduleDataValue) {
+//                     if (isDateString(scheduleDataValue.value)) {
+//                         const scheduleDataValueNp = adToBs(scheduleDataValue.value)
+//                         console.log('scheduleDataValue',scheduleDataValueNp)
+//                         return triggerScheduleAction(event, scheduleDataValueNp);
+//                     }
+//                 }
+//             }
+//         });
+//     }
+
+//     return actionCreator(newEventWidgetActionTypes.EVENT_SAVE)({}, {
+//         offline: {
+//             effect: {
+//                 url: 'tracker?async=false',
+//                 method: effectMethods.POST,
+//                 data: serverData,
+//             },
+//             commit: onSaveSuccessActionType && { type: onSaveSuccessActionType, meta: { serverData } },
+//             rollback: onSaveErrorActionType && { type: onSaveErrorActionType, meta: { serverData } },
+//         },
+//     });
+// };
+
 
 export const startCreateNewAfterCompleting = ({ enrollmentId, isCreateNew, orgUnitId, programId, teiId, availableProgramStages }: Object) =>
     actionCreator(newEventWidgetActionTypes.START_CREATE_NEW_AFTER_COMPLETING)({ enrollmentId, isCreateNew, orgUnitId, programId, teiId, availableProgramStages });
