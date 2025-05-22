@@ -224,18 +224,80 @@ export class DataElement {
         return null;
     }
 
+    // convertValue(rawValue: any, onConvert: ConvertFn) {
+    //     //problem
+    //     console.log(rawValue,'rawValue')
+    //     const test = isArray(rawValue)
+    //     ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
+    //     : onConvert(rawValue, this.type, this);
+    //     console.log(test,'test')
+    //     return isArray(rawValue)
+    //         ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
+    //         : onConvert(rawValue, this.type, this);
+    // }
+
     convertValue(rawValue: any, onConvert: ConvertFn) {
-        //problem
-        // console.log(rawValue,'rawValue')
-        const test = isArray(rawValue)
-        ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
-        : onConvert(rawValue, this.type, this);
-        // console.log(test,'test')
-        return isArray(rawValue)
-            ? rawValue.map(valuePart => onConvert(valuePart, this.type, this))
-            : onConvert(rawValue, this.type, this);
+        if (typeof rawValue === 'object' && rawValue !== null && 
+            'date' in rawValue && 'time' in rawValue) {
+            const isoString = `${rawValue.date}T${rawValue.time}:00.000Z`;
+            return isoString;
+        }
+
+
+        if (isArray(rawValue)) {
+            return rawValue.map(valuePart => onConvert(valuePart, this.type, this));
+        } else {
+            if (typeof rawValue === 'string' && rawValue.includes('T')) {
+                const dateObj = new Date(rawValue);
+                const originalHours = dateObj.getUTCHours().toString().padStart(2, '0');
+                const originalMinutes = dateObj.getUTCMinutes().toString().padStart(2, '0');
+                const originalTime = `${originalHours}:${originalMinutes}`;
+                
+                const converted = onConvert(rawValue, this.type, this);
+                
+                if (converted && typeof converted === 'object' && 'time' in converted) {
+                    return { ...converted, time: originalTime };
+                }
+                return converted;
+            }
+            return onConvert(rawValue, this.type, this);
+        }
     }
  
+    // convertValue(rawValue: any, onConvert: ConvertFn) {
+    //     console.log(rawValue, 'rawValue');
+        
+    //     // If the value is already in {date, time} format, return it as-is
+    //     if (typeof rawValue === 'object' && rawValue !== null && 
+    //         'date' in rawValue && 'time' in rawValue) {
+    //         return `${rawValue.date} ${rawValue.time}`;
+    //     }
+        
+    //     // Handle array case
+    //     if (isArray(rawValue)) {
+    //         return rawValue.map(valuePart => onConvert(valuePart, this.type, this));
+    //     }
+        
+    //     // Handle date string case
+    //     if (typeof rawValue === 'string' && rawValue.includes('T')) {
+    //         const dateObj = new Date(rawValue);
+    //         const originalDate = rawValue.split('T')[0];
+    //         const originalHours = dateObj.getUTCHours().toString().padStart(2, '0');
+    //         const originalMinutes = dateObj.getUTCMinutes().toString().padStart(2, '0');
+    //         const originalTime = `${originalHours}:${originalMinutes}`;
+            
+    //         const converted = onConvert(rawValue, this.type, this);
+            
+    //         // If conversion returns an object with date/time, keep original time
+    //         if (converted && typeof converted === 'object' && 'time' in converted) {
+    //             return { ...converted, time: originalTime };
+    //         }
+    //         return converted;
+    //     }
+        
+    //     // Default case
+    //     return onConvert(rawValue, this.type, this);
+    // }
     
 }
 

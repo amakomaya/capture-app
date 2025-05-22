@@ -33,6 +33,7 @@ class DateTimeTimePlain extends React.Component<Props> {
                 label=""
                 onBlur={this.handleBlur}
                 onChange={this.handleChange}
+                type="time"
                 {...errorProps}
             />
         );

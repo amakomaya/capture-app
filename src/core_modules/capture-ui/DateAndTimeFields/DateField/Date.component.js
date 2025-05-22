@@ -2,6 +2,7 @@
 import React from 'react';
 import { CalendarInput } from '@dhis2/ui';
 import { systemSettingsStore } from '../../../capture-core/metaDataMemoryStores';
+import './customStyles.css';
 
 type ValidationOptions = {
     error?: ?string,
