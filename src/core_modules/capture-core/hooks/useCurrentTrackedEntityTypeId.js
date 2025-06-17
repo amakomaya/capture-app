@@ -15,5 +15,5 @@ const FALLBACK_TRACKED_ENTITY_TYPE_ID = 'CWkDesHkKCs';
 
 export const useCurrentTrackedEntityTypeId = () => 
     useSelector(({ currentSelections }) => 
-        currentSelections?.trackedEntityTypeId || '' || FALLBACK_TRACKED_ENTITY_TYPE_ID
+        currentSelections?.trackedEntityTypeId || FALLBACK_TRACKED_ENTITY_TYPE_ID
     );

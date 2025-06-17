@@ -20,19 +20,25 @@ export const outputConverter: IConvertOutputRulesEffectsValue = {
     convertEmail: (value: string): string => value,
     convertBoolean: (value: boolean): string => (value ? 'true' : 'false'),
     convertTrueOnly: (value: boolean): string => (value ? 'true' : 'false'),
+    // this was to fix future date issue need to reverify
+    // convertDate: (value: string): string => {
+    //     const momentDate = moment(value, dateMomentFormat);
+    //     let  dateNp = null;
+    //     if (value.includes('T')) {
+    //         const [bsDate, timePart] = value.split('T');
+    //         dateNp = adToBs(bsDate);          
+    //     }
+    //     else{
+    //         dateNp = adToBs(value);
+    //     }
+    //     // const dateNp = adToBs(momentDate)
+    //     return dateNp;
+    //     // return convertMomentToDateFormatString(dateNp);
+    // },
+
     convertDate: (value: string): string => {
         const momentDate = moment(value, dateMomentFormat);
-        let  dateNp = null;
-        if (value.includes('T')) {
-            const [bsDate, timePart] = value.split('T');
-            dateNp = adToBs(bsDate);          
-        }
-        else{
-            dateNp = adToBs(value);
-        }
-        // const dateNp = adToBs(momentDate)
-        return dateNp;
-        // return convertMomentToDateFormatString(dateNp);
+        return convertMomentToDateFormatString(momentDate);
     },
     convertDateTime: (value: string): ?Object => {
         const momentDateTime = moment(value);
