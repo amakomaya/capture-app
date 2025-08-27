@@ -37,7 +37,7 @@ class DateTimeRangeFieldPlain extends React.Component<Props> {
         return (
             <UIDateTimeRangeField
                 {...passOnProps}
-                locale={systemSettingsStore.get().uiLocale}
+                locale={"ne-NP"}
             />
         );
     }

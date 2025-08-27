@@ -13,7 +13,7 @@ export const getDateFieldConfigForCustomForm = (metaData: DateDataElement, optio
         maxWidth: 350,
         calendarWidth: 350,
         calendarMax: !metaData.allowFutureDate ? convertDateObjectToDateFormatString(moment()) : undefined,
-        calendarType: systemSettingsStore.get().calendar,
+        calendarType: "nepali",
         dateFormat: systemSettingsStore.get().dateFormat,
     }, metaData);
 

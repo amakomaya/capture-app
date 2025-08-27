@@ -152,7 +152,7 @@ const DateComponentPlain = ({
                     label={dateLabel}
                     dense
                     locale={locale}
-                    calendarType={systemSettingsStore.get().calendar}
+                    calendarType={'nepali'}
                     dateFormat={systemSettingsStore.get().dateFormat}
                     validation={validation}
                     calendarMax={!allowFutureDate ? convertDateObjectToDateFormatString(moment()) : undefined}

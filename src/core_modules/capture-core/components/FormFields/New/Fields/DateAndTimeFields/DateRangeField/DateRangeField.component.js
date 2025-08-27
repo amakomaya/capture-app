@@ -45,7 +45,7 @@ const DateRangeFieldPlain = (props: Props) => {
     return (
         <UIDateRangeField
             {...passOnProps}
-            locale={systemSettingsStore.get().uiLocale}
+            locale={"ne-NP"}
         />
     );
 };

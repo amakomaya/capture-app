@@ -60,7 +60,7 @@ export class D2Date extends React.Component<Props, State> {
             ...passOnProps
         } = this.props;
 
-        const calendarType = systemSettingsStore.get().calendar || 'gregory';
+        const calendarType = 'nepali';
         const format = systemSettingsStore.get().dateFormat;
 
         return (

@@ -18,7 +18,8 @@ export const getAgeFieldConfig = (metaData: DateDataElement, options: Object, qu
         shrinkDisabled: options.formHorizontal,
         dateCalendarWidth: options.formHorizontal ? 250 : 350,
         datePopupAnchorPosition: getCalendarAnchorPosition(options.formHorizontal),
-        calendarType: systemSettingsStore.get().calendar,
+        // calendarType: systemSettingsStore.get().calendar,
+        calendarType: "nepali",
         dateFormat: systemSettingsStore.get().dateFormat,
         calendarMax: !metaData.allowFutureDate ? convertDateObjectToDateFormatString(moment()) : undefined,
     }, options, metaData);

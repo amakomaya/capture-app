@@ -25,7 +25,7 @@ export function convertIsoToLocalCalendar(isoDate: ?string): string {
 
     const formattedIsoDate = momentDate.format('YYYY-MM-DD');
 
-    const calendar = systemSettingsStore.get().calendar;
+    const calendar = 'nepali';
     const dateFormat = systemSettingsStore.get().dateFormat;
 
     const { year, eraYear, month, day } = convertFromIso8601(formattedIsoDate, calendar);

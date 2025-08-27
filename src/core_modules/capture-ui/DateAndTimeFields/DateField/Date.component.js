@@ -80,6 +80,10 @@ export class DateField extends React.Component<Props, State> {
         const calculatedInputWidth = inputWidth || width;
         const calculatedCalendarWidth = calendarWidth || width;
         const calendar = calendarType || 'gregory';
+        console.log(calendarType,'calendarType')
+        console.log(dateFormat,'dateFormat')
+        console.log(locale,'locale')
+
         const format = dateFormat || 'YYYY-MM-DD';
         const errorProps = validation || (innerMessage && innerMessage.messageType === 'error'
             ? { error: !!innerMessage.message?.dateInnerErrorMessage,

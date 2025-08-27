@@ -22,7 +22,7 @@ export function temporalToString(temporalDate: PlainDate | null, dateFormat: ?st
     }
 
     try {
-        const calendar = systemSettingsStore.get().calendar;
+        const calendar = 'nepali';
         const year = calendar === 'ethiopian' ? temporalDate.eraYear : temporalDate.year;
         const month = temporalDate.month;
         const day = temporalDate.day;

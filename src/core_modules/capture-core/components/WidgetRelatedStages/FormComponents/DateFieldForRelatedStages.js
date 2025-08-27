@@ -47,7 +47,7 @@ export const DateFieldForRelatedStages = ({
         setTouched(true);
         onBlurDateField(event, internalComponentError);
     };
-    const calendarType = systemSettingsStore.get().calendar;
+    const calendarType = 'nepali';
     const dateFormat = systemSettingsStore.get().dateFormat;
     const shouldShowError = (touched || saveAttempted);
     return (

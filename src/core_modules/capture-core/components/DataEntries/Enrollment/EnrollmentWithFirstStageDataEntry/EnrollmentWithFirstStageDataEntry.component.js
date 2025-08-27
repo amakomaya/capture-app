@@ -220,7 +220,7 @@ const getReportDateSettingsFn = () => {
             required: true,
             calendarWidth: props.formHorizontal ? 250 : 350,
             popupAnchorPosition: getCalendarAnchorPosition(props.formHorizontal),
-            calendarType: systemSettingsStore.get().calendar,
+            calendarType: "nepali",
             dateFormat: systemSettingsStore.get().dateFormat,
         }),
         getPropName: () => stageMainDataIds.OCCURRED_AT,

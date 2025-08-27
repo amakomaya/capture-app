@@ -168,7 +168,7 @@ const buildReportDateSettingsFn = () => {
             calendarWidth: props.formHorizontal ? 250 : 350,
             orientation: getOrientation(props.formHorizontal),
             popupAnchorPosition: getCalendarAnchorPosition(props.formHorizontal),
-            calendarType: systemSettingsStore.get().calendar,
+            calendarType: "nepali",
             dateFormat: systemSettingsStore.get().dateFormat,
         }),
         getPropName: () => 'occurredAt',

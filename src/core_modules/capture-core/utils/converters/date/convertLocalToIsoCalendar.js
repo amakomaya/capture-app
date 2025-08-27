@@ -17,7 +17,7 @@ export function convertLocalToIsoCalendar(localDate: ?string): string {
         return '';
     }
 
-    const calendar = systemSettingsStore.get().calendar;
+    const calendar = 'nepali';
 
     const { year, month, day } = convertToIso8601(localDate, calendar);
     const dateString = `${padWithZeros(year, 4)}-${padWithZeros(month, 2)}-${padWithZeros(day, 2)}`;

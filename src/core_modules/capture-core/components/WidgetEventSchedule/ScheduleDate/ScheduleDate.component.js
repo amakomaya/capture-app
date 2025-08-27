@@ -119,7 +119,7 @@ const ScheduleDatePlain = ({
                         setScheduleDate(date);
                         setValidation(validateDate(date, internalComponentError));
                     }}
-                    calendarType={systemSettingsStore.get().calendar}
+                    calendarType={'nepali'}
                     dateFormat={systemSettingsStore.get().dateFormat}
                     validation={validation}
                 />

@@ -13,7 +13,7 @@ export const getDateTimeFieldConfigForCustomForm = (metaData: MetaDataElement, o
         calendarWidth: '350px',
         orientation: orientations.HORIZONTAL,
         shrinkDisabled: false,
-        calendarType: systemSettingsStore.get().calendar,
+        calendarType: "nepali",
         dateFormat: systemSettingsStore.get().dateFormat,
     }, metaData);
 

@@ -117,8 +117,8 @@ const getEnrollmentDateSettings = () => {
             calendarMax: !props.enrollmentMetadata.allowFutureEnrollmentDate ?
                 convertDateObjectToDateFormatString(moment()) :
                 undefined,
-            calendarType: systemSettingsStore.get().calendar,
-            dateFormat: systemSettingsStore.get().dateFormat,
+                calendarType: "nepali",
+                dateFormat: systemSettingsStore.get().dateFormat,
         }),
         getPropName: () => 'enrolledAt',
         getValidatorContainers: getEnrollmentDateValidatorContainer,
@@ -169,8 +169,8 @@ const getIncidentDateSettings = () => {
             calendarMax: !props.enrollmentMetadata.allowFutureIncidentDate ?
                 convertDateObjectToDateFormatString(moment()) :
                 undefined,
-            calendarType: systemSettingsStore.get().calendar,
-            dateFormat: systemSettingsStore.get().dateFormat,
+                calendarType: "nepali",
+                dateFormat: systemSettingsStore.get().dateFormat,
         }),
         getPropName: () => 'occurredAt',
         getPassOnFieldData: () => true,

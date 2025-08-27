@@ -15,7 +15,7 @@ export const getDateRangeFieldConfig = (metaData: MetaDataElement, options: Obje
         dateMaxWidth: options.formHorizontal ? '150px' : '350px',
         calendarWidth: options.formHorizontal ? '250px' : '350px',
         popupAnchorPosition: getCalendarAnchorPosition(options.formHorizontal),
-        calendarType: systemSettingsStore.get().calendar,
+        calendarType: "nepali",
         dateFormat: systemSettingsStore.get().dateFormat,
     }, options, metaData);
 

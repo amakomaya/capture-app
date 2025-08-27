@@ -68,7 +68,7 @@ const DateFieldPlain = (props: Props) => {
             {/*  $FlowFixMe[cannot-spread-inexact] automated comment */}
             <UIDateField
                 placeholder={systemSettingsStore.get().dateFormat.toLowerCase()}
-                locale={systemSettingsStore.get().uiLocale}
+                locale={"ne-NP"}
                 value={value}
                 onBlur={onBlur}
                 disabled={disabled}

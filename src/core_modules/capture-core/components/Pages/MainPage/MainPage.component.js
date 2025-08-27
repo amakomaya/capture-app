@@ -1,5 +1,5 @@
 // @flow
-import React, { useMemo } from 'react';
+import React, { useMemo,useEffect,useState } from 'react';
 import { compose } from 'redux';
 import { colors, spacers } from '@dhis2/ui';
 import { withStyles } from '@material-ui/core/styles';
@@ -19,6 +19,7 @@ import {
     InvalidCategoryCombinationForOrgUnitMessage,
 } from './InvalidCategoryCombinationForOrgUnitMessage/InvalidCategoryCombinationForOrgUnitMessage';
 import { NoSelectionsInfoBox } from './NoSelectionsInfoBox';
+import { useConfig } from '@dhis2/app-runtime';
 
 const getStyles = () => ({
     listContainer: {
@@ -68,6 +69,9 @@ const MainPagePlain = ({
         const isEventProgram = !trackedEntityTypeId;
         return noProgramSelected || noOrgUnitSelected || isEventProgram || displayFrontPageList || selectedTemplateId;
     }, [programId, orgUnitId, trackedEntityTypeId, displayFrontPageList, selectedTemplateId]);
+    const { baseUrl } = useConfig();
+    const [programs, setPrograms] = useState([]);
+
 
     if (MainPageStatus === MainPageStatuses.SHOW_BULK_DATA_ENTRY_PLUGIN) {
         return (
@@ -81,12 +85,56 @@ const MainPagePlain = ({
         );
     }
 
+    useEffect(() => {
+        fetch(`${baseUrl}/api/programs`)
+          .then(res => res.json())
+          .then(data => {
+            if (data?.programs) {
+              setPrograms(data.programs);
+            }
+          })
+          .catch(err => console.error("Error fetching programs:", err));
+      }, []);
+
     return (
         <>
             {showMainPage ? (
                 <>
                     {MainPageStatus === MainPageStatuses.DEFAULT && (
-                        <NoSelectionsInfoBox />
+                        // <NoSelectionsInfoBox />
+                        <div>
+                        <div style={{ marginLeft: '5%', marginRight: '5%', marginTop: '30px',marginBottom:'30px' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '30px' ,marginBottom:'30px'}}>
+                            {/* <button onClick={startQRScan} style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', width:'100%',border: '2px solid #ccc', borderRadius: '8px' }}>
+                            <img src="/assets/icons/icon.jpg" alt="Scan icon" style={{ width: '60px', height: '30px' , alignItems: 'center'}} /> Scan Bar/QR Code
+                            </button> */}
+                            <div id="qr-reader" style={{ width: '300px', marginTop: '20px' }}></div>
+                            </div>
+                            <div style={{ display: 'flex', gap: '5%', flexWrap: 'wrap' }}>
+                                <div style={{ width: '50%' }}>
+                                    <div style={{ border: '2px solid #ccc', borderRadius: '8px', padding: '8px' }}>
+                                        <h3>Search</h3>
+                                            <SearchBox />
+                                    </div>
+                                </div>
+
+                                <div style={{ width: '40%', padding: '16px', overflowY: 'auto'}}>
+                                <h3>Programs</h3>
+                                <ul style={{ padding: 0, listStyleType: 'none' }}>
+                                    {programs.map(program => (
+                                    <li key={program.id} style={{ padding: '8px 0', borderBottom: '1px solid #eee' }}>
+                                        <a style={{color: 'inherit',textDecoration:'underline'}} href={`/api/apps/e-record/index.html#/?programId=${program.id}&selectedTemplateId=${program.id}-default&all`}>{program.displayName}</a>
+                                    </li>
+                                    ))}
+                                </ul>
+                                </div>
+                            </div>
+
+                            
+                             
+                        </div>
+
+                    </div>
                     )}
                     {MainPageStatus === MainPageStatuses.WITHOUT_ORG_UNIT_SELECTED && (
                         <WithoutOrgUnitSelectedMessage programId={programId} setShowAccessible={setShowAccessible} />

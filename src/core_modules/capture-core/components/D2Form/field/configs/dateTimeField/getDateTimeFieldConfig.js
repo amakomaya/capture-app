@@ -15,7 +15,7 @@ export const getDateTimeFieldConfig = (metaData: MetaDataElement, options: Objec
         orientation: options.formHorizontal ? orientations.VERTICAL : orientations.HORIZONTAL,
         shrinkDisabled: options.formHorizontal,
         popupAnchorPosition: getCalendarAnchorPosition(options.formHorizontal),
-        calendarType: systemSettingsStore.get().calendar,
+        calendarType: "nepali",
         dateFormat: systemSettingsStore.get().dateFormat,
     }, options, metaData);
 

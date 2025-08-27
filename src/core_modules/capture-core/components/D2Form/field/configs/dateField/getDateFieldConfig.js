@@ -18,9 +18,10 @@ export const getDateFieldConfig = (metaData: DateDataElement, options: Object, q
         calendarWidth: options.formHorizontal ? 250 : 350,
         popupAnchorPosition: getCalendarAnchorPosition(options.formHorizontal),
         calendarMax: !metaData.allowFutureDate ? convertDateObjectToDateFormatString(moment()) : undefined,
-        calendarType: systemSettingsStore.get().calendar,
+        calendarType: "nepali",
         dateFormat: systemSettingsStore.get().dateFormat,
     }, options, metaData);
+
 
     return createFieldConfig({
         component: DateFieldForForm,
