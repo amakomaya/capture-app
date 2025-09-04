@@ -4,6 +4,7 @@ import log from 'loglevel';
 import moment from 'moment';
 import type { IConvertOutputRulesEffectsValue } from '@dhis2/rules-engine-javascript';
 import { convertMomentToDateFormatString } from '../../utils/converters/date';
+import { adToBs } from '@sbmdkl/nepali-date-converter';
 
 
 // These functions are only used for creating assignment effects
@@ -20,8 +21,9 @@ export const outputConverter: IConvertOutputRulesEffectsValue = {
     convertBoolean: (value: boolean): string => (value ? 'true' : 'false'),
     convertTrueOnly: (value: boolean): string => (value ? 'true' : 'false'),
     convertDate: (value: string): string => {
-        const momentDate = moment(value, dateMomentFormat);
-        return convertMomentToDateFormatString(momentDate);
+        const dateNp = adToBs(value);
+        // return convertMomentToDateFormatString(dateNp);
+        return dateNp;
     },
     convertDateTime: (value: string): ?Object => {
         const momentDateTime = moment(value);
